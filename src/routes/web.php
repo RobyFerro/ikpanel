@@ -13,7 +13,7 @@
 
 Route::prefix(env('IKPANEL_URL'))->group(function(){
 
-    Route::post('/', 'LoginController@authenticate');
+    Route::post('/login', 'LoginController@authenticate');
 
     Route::post('/logout', "LoginController@logout");
 
