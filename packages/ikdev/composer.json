@@ -1,0 +1,11 @@
+{
+    "name": "Ikdev/Ikpanel",
+    "description": "Interactive Knowledge Development Web App Generator",
+    "authors": [
+        {
+            "name": "Roberto Ferro",
+            "email": "roberto.ferro@ikdev.eu"
+        }
+    ],
+    "require": {}
+}
