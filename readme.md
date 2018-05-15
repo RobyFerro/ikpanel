@@ -22,7 +22,7 @@ IKPANEL_URL=MIO_URL
 
 * Inserire service provider come da esempio in file config/app.php
 ```
-Ikdev\Ikpanel\IkpanelServiceProvider::class,
+ikdev\ikpanel\IkpanelServiceProvider::class,
 ```
 
 * Eseguire comando 

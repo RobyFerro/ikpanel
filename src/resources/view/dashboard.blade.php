@@ -128,7 +128,7 @@
     <div class="sidebar-menu">
         <ul class="menu-items">
             @component('ikpanel::navigation',
-            ['items' => \Ikdev\Ikpanel\App\Http\Controllers\ikpanelController::getNavigationMenu()])
+            ['items' => \ikdev\ikpanel\App\Http\Controllers\ikpanelController::getNavigationMenu()])
             @endcomponent
         </ul>
         <div class="clearfix"></div>

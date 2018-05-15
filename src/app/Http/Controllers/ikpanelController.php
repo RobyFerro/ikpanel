@@ -5,11 +5,11 @@
  * Date: 21/04/18
  * Time: 13:25
  */
-namespace Ikdev\Ikpanel\App\Http\Controllers;
+namespace ikdev\ikpanel\App\Http\Controllers;
 
 use Illuminate\Database\QueryException;
 use Illuminate\Routing\Controller as BaseController;
-use Ikdev\Ikpanel\app\Menu;
+use ikdev\ikpanel\app\Menu;
 
 class ikpanelController extends BaseController
 {

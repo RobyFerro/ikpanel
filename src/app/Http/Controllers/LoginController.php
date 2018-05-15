@@ -1,6 +1,6 @@
 <?php
 
-namespace Ikdev\Ikpanel\App\Http\Controllers;
+namespace ikdev\ikpanel\App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

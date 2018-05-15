@@ -1,12 +1,12 @@
 <?php
 
-namespace Ikdev\Ikpanel\App\Http\Controllers;
+namespace ikdev\ikpanel\App\Http\Controllers;
 
-use Ikdev\Ikpanel\App\Http\Requests\UserDelete;
-use Ikdev\Ikpanel\App\Http\Requests\UserEdit;
-use Ikdev\Ikpanel\App\Http\Requests\UserRequest;
-use Ikdev\Ikpanel\app\Role;
-use Ikdev\Ikpanel\app\Users;
+use ikdev\ikpanel\App\Http\Requests\UserDelete;
+use ikdev\ikpanel\App\Http\Requests\UserEdit;
+use ikdev\ikpanel\App\Http\Requests\UserRequest;
+use ikdev\ikpanel\app\Role;
+use ikdev\ikpanel\app\Users;
 use Illuminate\Database\QueryException;
 use Illuminate\Routing\Controller as BaseController;
 

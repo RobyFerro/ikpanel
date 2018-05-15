@@ -1,6 +1,6 @@
 <?php
 
-namespace Ikdev\Ikpanel\Http\Middleware;
+namespace ikdev\ikpanel\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

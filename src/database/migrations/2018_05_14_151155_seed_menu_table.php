@@ -4,7 +4,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Ikdev\Ikpanel\app\Menu;
+use ikdev\ikpanel\app\Menu;
 
 class SeedMenuTable extends Migration
 {

@@ -21,7 +21,7 @@ Route::prefix(env('IKPANEL_URL'))->group(function(){
         return view('ikpanel::login');
     });
 
-    Route::group(['middleware' => 'Ikdev\Ikpanel\Http\Middleware\AuthMiddleware'], function () {
+    Route::group(['middleware' => 'ikdev\ikpanel\Http\Middleware\AuthMiddleware'], function () {
         Route::get('/users', 'UserController@index');
         Route::get('/users/edit/{id}', 'UserController@edit');
         Route::put('/users/edit', 'UserController@update');
@@ -36,7 +36,7 @@ Route::prefix(env('IKPANEL_URL'))->group(function(){
 
 });
 
-/*Route::group(['middleware' => 'Ikdev\Ikpanel\Http\Middleware\AuthMiddleware'], function () {
+/*Route::group(['middleware' => 'ikdev\ikpanel\Http\Middleware\AuthMiddleware'], function () {
 
     Route::get('/users', 'UserController@index');
     Route::get('/users/edit/{id}', 'UserController@edit');

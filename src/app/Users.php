@@ -6,7 +6,7 @@
  * Time: 21:17
  */
 
-namespace Ikdev\Ikpanel\app;
+namespace ikdev\ikpanel\app;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

@@ -4,8 +4,8 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Ikdev\Ikpanel\app\Users;
-use Ikdev\Ikpanel\app\Role;
+use ikdev\ikpanel\app\Users;
+use ikdev\ikpanel\app\Role;
 
 class SeedFirstUserNeedToChangeIt extends Migration
 {

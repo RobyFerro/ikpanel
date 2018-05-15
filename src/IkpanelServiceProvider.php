@@ -1,6 +1,6 @@
 <?php
 
-namespace Ikdev\Ikpanel;
+namespace ikdev\ikpanel;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -42,7 +42,7 @@ class IkpanelServiceProvider extends ServiceProvider
     protected function mapWebRoutes() {
 
         Route::middleware('web')
-            ->namespace("Ikdev\Ikpanel\app\Http\Controllers")
+            ->namespace("ikdev\ikpanel\app\Http\Controllers")
             ->group(base_path('packages/ikdev/ikpanel/src/routes/web.php'));
     }
 }
