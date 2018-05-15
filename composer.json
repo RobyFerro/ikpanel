@@ -1,7 +1,7 @@
 {
     "name": "ikdev/ikpanel",
     "description": "Interactive Knowledge Development Web App Generator",
-    "license": "GNUGPLv3",
+    "license": "GPLv3",
     "authors": [
         {
             "name": "Roberto Ferro",
