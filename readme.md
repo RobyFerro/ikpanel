@@ -2,16 +2,9 @@
 ### ikpanel - Web App Generator
 
 Operazioni necessarie all'installazione:
-* Inserire la cartella ikdev all'interno della directory "packages".
-* Modificare file composer.json con il seguente codice.
 
-``` json
-autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/",
-            "Ikdev\\Ikpanel\\": "packages/ikdev/ikpanel/src"
-        }
-    },
+``` 
+composer require ikdev/ikpanel
 ```
 
 * Aggiungere il seguente valore all'interno del file .env
