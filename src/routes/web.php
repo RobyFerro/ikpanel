@@ -22,11 +22,19 @@ Route::prefix(env('IKPANEL_URL'))->group(function(){
     });
 
     Route::group(['middleware' => 'ikdev\ikpanel\Http\Middleware\AuthMiddleware'], function () {
+
         Route::get('/users', 'UserController@index');
         Route::get('/users/edit/{id}', 'UserController@edit');
         Route::put('/users/edit', 'UserController@update');
         Route::put('/users/insert', 'UserController@insert');
         Route::delete('/users/delete', 'UserController@remove');
+
+        Route::get('/media', function(){
+            return view('ikpanel::filemanager');
+        });
+
+        Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
+        Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
 
         Route::get('/', function () {
             return view('ikpanel::dashboard');
