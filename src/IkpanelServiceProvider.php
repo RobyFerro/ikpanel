@@ -43,6 +43,6 @@ class IkpanelServiceProvider extends ServiceProvider
 
         Route::middleware('web')
             ->namespace("ikdev\ikpanel\app\Http\Controllers")
-            ->group(base_path('packages/ikdev/ikpanel/src/routes/web.php'));
+            ->group(__DIR__.'/routes/web.php');
     }
 }
