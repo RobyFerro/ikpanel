@@ -9,7 +9,9 @@
             "email": "roberto.ferro@ikdev.eu"
         }
     ],
-    "require": {},
+    "require": {
+        "unisharp/laravel-filemanager":"~1.8"
+    },
     "autoload": {
         "psr-4": {
             "ikdev\\ikpanel\\": "src/"
