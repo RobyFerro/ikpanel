@@ -1,11 +1,17 @@
 {
     "name": "ikdev/ikpanel",
     "description": "Interactive Knowledge Development Web App Generator",
+    "license": "MIT",
     "authors": [
         {
             "name": "Roberto Ferro",
             "email": "roberto.ferro@ikdev.eu"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ikdev\\ikpanel\\": "src/"
+        }
+    }
 }
