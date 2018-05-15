@@ -1,6 +1,6 @@
 <?php
 
-namespace ikdeviIkpanel\app;
+namespace ikdev\ikpanel\app;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
