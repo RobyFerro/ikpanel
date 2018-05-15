@@ -1,7 +1,6 @@
 {
     "name": "ikdev/ikpanel",
     "description": "Interactive Knowledge Development Web App Generator",
-    "version": "1.0-beta.1",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
