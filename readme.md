@@ -5,11 +5,8 @@
 [![Latest Unstable Version](https://poser.pugx.org/ikdev/ikpanel/v/unstable)](https://packagist.org/packages/ikdev/ikpanel)
 [![License](https://poser.pugx.org/ikdev/ikpanel/license)](https://packagist.org/packages/ikdev/ikpanel)
 
-##### Warning
-This package require Laravel Framework. You can install it through the following command.
-``` 
-composer require laravel/laravel
-```
+#### Warning
+This package require [Laravel Framework](https://github.com/laravel/laravel) .
 
 #### Getting started
 
@@ -50,8 +47,9 @@ php artisan vendor:publish --tag=ikpanel
 
 ## v1.0 progress
 
-- [x] Administration panel
-- [x] Integrate Laravel Filemanager
+- [x] Administration panel (done)
+- [x] Integrate Laravel Filemanager (done)
+- [ ] Role managing
 - [ ] Traslate Laravel Filemanager
 - [ ] Remplace template HTML (ElaAdmin)
 - [ ] Enable/disable module

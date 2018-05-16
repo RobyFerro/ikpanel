@@ -1,8 +1,8 @@
 {
     "name": "ikdev/ikpanel",
-    "description": "Interactive Knowledge Development Web App Generator",
+    "description": "Administration panel for Laravel framework",
     "license": "GPL-3.0-or-later",
-    "type": "project",
+    "type": "library",
     "version":"v1.0-beta.1",
     "keywords": [
         "laravel",
