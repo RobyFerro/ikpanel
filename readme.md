@@ -41,6 +41,6 @@ php artisan vendor:publish --tag=ikpanel
 
 - [x] Inserita logica amministrativa
 - [x] Integrazione Laravel Filemanager
-- [] Traduzione Laravel Filemanager
-- [] Sostituzine template HTML
-- [] Integrazione modulo Blog
+- [ ] Traduzione Laravel Filemanager
+- [ ] Sostituzine template HTML (ElaAdmin)
+- [ ] Integrazione modulo Blog
