@@ -6,7 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use ikdev\ikpanel\app\Menu;
 
-class SeedMenuTable extends Migration
+class SeedMenuTable2 extends Migration
 {
     /**
      * Run the migrations.
