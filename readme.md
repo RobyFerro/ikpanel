@@ -49,6 +49,7 @@ php artisan vendor:publish --tag=ikpanel
 
 - [x] Administration panel (done)
 - [x] Integrate Laravel Filemanager (done)
+- [ ] User avatar
 - [ ] Role managing
 - [ ] Traslate Laravel Filemanager
 - [ ] Remplace template HTML (ElaAdmin)
