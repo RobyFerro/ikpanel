@@ -2,6 +2,12 @@
     "name": "ikdev/ikpanel",
     "description": "Interactive Knowledge Development Web App Generator",
     "license": "GPL-3.0-or-later",
+    "keywords": [
+        "laravel",
+        "administration-panel",
+        "manager",
+        "filemanager"
+    ],
     "authors": [
         {
             "name": "Roberto Ferro",
@@ -9,6 +15,7 @@
         }
     ],
     "require": {
+        "php": ">=7.1",
         "unisharp/laravel-filemanager":"~1.8"
     },
     "autoload": {
