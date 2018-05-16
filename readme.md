@@ -38,7 +38,7 @@ php artisan vendor:publish --tag=ikpanel
 ```
 
 ## Credenziali primo accesso:
-* Username : boba.ferro@demo.com
+* Username : boba.fett@demo.com
 * Password : toor
 
 ## v1.0 progress
