@@ -1,6 +1,11 @@
 # Interactive Knowledge Development
 ### ikpanel - Web App Generator
 
+[![Latest Stable Version](https://poser.pugx.org/ikdev/ikpanel/v/stable)](https://packagist.org/packages/ikdev/ikpanel)
+[![Total Downloads](https://poser.pugx.org/ikdev/ikpanel/downloads)](https://packagist.org/packages/ikdev/ikpanel)
+[![Latest Unstable Version](https://poser.pugx.org/ikdev/ikpanel/v/unstable)](https://packagist.org/packages/ikdev/ikpanel)
+[![License](https://poser.pugx.org/ikdev/ikpanel/license)](https://packagist.org/packages/ikdev/ikpanel)
+
 Operazioni necessarie all'installazione:
 
 ``` 
