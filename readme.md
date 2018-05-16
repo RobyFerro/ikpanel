@@ -6,10 +6,12 @@
 [![License](https://poser.pugx.org/ikdev/ikpanel/license)](https://packagist.org/packages/ikdev/ikpanel)
 
 #### Warning
-This package require [Laravel Framework](https://github.com/laravel/laravel) .
+This package require [Laravel Framework](https://github.com/laravel/laravel).
+
+#### Demo
+Click [here](https://demo.ikpanel.eu/) to try ikpanel
 
 #### Getting started
-
 Execute the following command:
 ``` 
 composer require ikdev/ikpanel
