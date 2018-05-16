@@ -3,6 +3,7 @@
     "description": "Interactive Knowledge Development Web App Generator",
     "license": "GPL-3.0-or-later",
     "type": "project",
+    "version":"v1.0-beta.1",
     "keywords": [
         "laravel",
         "administration-panel",
