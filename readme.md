@@ -1,5 +1,4 @@
-# Interactive Knowledge Development
-### ikpanel - Web App Generator
+# Interactive Knowledge Development: @ikpanel - Web App Generator
 
 [![Latest Stable Version](https://poser.pugx.org/ikdev/ikpanel/v/stable)](https://packagist.org/packages/ikdev/ikpanel)
 [![Total Downloads](https://poser.pugx.org/ikdev/ikpanel/downloads)](https://packagist.org/packages/ikdev/ikpanel)
