@@ -36,3 +36,11 @@ php artisan vendor:publish --tag=lfm_config
 php artisan vendor:publish --tag=lfm_public
 php artisan vendor:publish --tag=ikpanel
 ```
+
+## v1.0 progress
+
+- [x] Inserita logica amministrativa
+- [x] Integrazione Laravel Filemanager
+- [] Traduzione Laravel Filemanager
+- [] Sostituzine template HTML
+- [] Integrazione modulo Blog
