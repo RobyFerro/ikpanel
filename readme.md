@@ -37,6 +37,10 @@ php artisan vendor:publish --tag=lfm_public
 php artisan vendor:publish --tag=ikpanel
 ```
 
+## Credenziali primo accesso:
+* Username : boba.ferro@demo.com
+* Password : toor
+
 ## v1.0 progress
 
 - [x] Inserita logica amministrativa
