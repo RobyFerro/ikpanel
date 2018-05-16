@@ -5,31 +5,32 @@
 [![Latest Unstable Version](https://poser.pugx.org/ikdev/ikpanel/v/unstable)](https://packagist.org/packages/ikdev/ikpanel)
 [![License](https://poser.pugx.org/ikdev/ikpanel/license)](https://packagist.org/packages/ikdev/ikpanel)
 
-Operazioni necessarie all'installazione:
+#### Getting started
 
+Execute the following command:
 ``` 
 composer require ikdev/ikpanel
 ```
 
-* Aggiungere il seguente valore all'interno del file .env
+* Add the following string into your .env file
 
 ``` json
 IKPANEL_URL=MY_URL
 ```
 
-* Inserire service provider come da esempio in file config/app.php
+* Add the followings service provider in config/app.php 
 ```
 ikdev\ikpanel\IkpanelServiceProvider::class,
 Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
 Intervention\Image\ImageServiceProvider::class,
 ```
 
-* E aggiungi la classe alias
+* Add the following class alias
 ```
  'Image' => Intervention\Image\Facades\Image::class,
 ```
 
-* Eseguire comandi
+Execute the followings commands:
 ```
 php composer.phar update && php composer.phar dump-autoload -o
 php artisan vendor:publish --tag=lfm_config
@@ -37,14 +38,15 @@ php artisan vendor:publish --tag=lfm_public
 php artisan vendor:publish --tag=ikpanel
 ```
 
-## Credenziali primo accesso:
+## Default users credentials:
 * Username : boba.fett@demo.com
 * Password : toor
 
 ## v1.0 progress
 
-- [x] Inserita logica amministrativa
-- [x] Integrazione Laravel Filemanager
-- [ ] Traduzione Laravel Filemanager
-- [ ] Sostituzine template HTML (ElaAdmin)
-- [ ] Integrazione modulo Blog
+- [x] Administration panel
+- [x] Integrate Laravel Filemanager
+- [ ] Traslate Laravel Filemanager
+- [ ] Remplace template HTML (ElaAdmin)
+- [ ] Enable/disable module
+- [ ] Blog module
