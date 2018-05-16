@@ -9,7 +9,6 @@
         }
     ],
     "require": {
-        "laravel/laravel":"~5.6",
         "unisharp/laravel-filemanager":"~1.8"
     },
     "autoload": {

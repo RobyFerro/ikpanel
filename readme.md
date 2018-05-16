@@ -5,6 +5,12 @@
 [![Latest Unstable Version](https://poser.pugx.org/ikdev/ikpanel/v/unstable)](https://packagist.org/packages/ikdev/ikpanel)
 [![License](https://poser.pugx.org/ikdev/ikpanel/license)](https://packagist.org/packages/ikdev/ikpanel)
 
+##### Warning
+This package require Laravel Framework. You can install it through the following command.
+``` 
+composer require laravel/laravel
+```
+
 #### Getting started
 
 Execute the following command:
