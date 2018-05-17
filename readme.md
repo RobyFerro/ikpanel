@@ -10,6 +10,8 @@ This package require [Laravel Framework](https://github.com/laravel/laravel).
 
 #### Demo
 Click [here](https://demo.ikpanel.eu/) to try ikpanel
+* Username: boba.fetto@demo.it
+* Password: toor
 
 #### Getting started
 Execute the following command:
@@ -43,6 +45,12 @@ php artisan vendor:publish --tag=lfm_public
 php artisan vendor:publish --tag=ikpanel
 ```
 
+Remove default migration from your laravel installation and execute the last command:
+```
+php artisan migrate
+```
+
+
 ## Default users credentials:
 * Username : boba.fett@demo.com
 * Password : toor
@@ -51,6 +59,7 @@ php artisan vendor:publish --tag=ikpanel
 
 - [x] Administration panel (done)
 - [x] Integrate Laravel Filemanager (done)
+- [ ] Improve installation procedure
 - [ ] User avatar
 - [ ] Role managing
 - [ ] Traslate Laravel Filemanager
