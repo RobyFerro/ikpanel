@@ -19,7 +19,7 @@
     "require": {
         "php": ">=7.1",
         "unisharp/laravel-filemanager":"~1.8",
-        "doctrine/inflector": "~1.2"
+        "doctrine/inflector": "v1.2"
     },
     "autoload": {
         "psr-4": {
