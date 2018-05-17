@@ -16,7 +16,7 @@ Click [here](https://demo.ikpanel.eu/) to try ikpanel
 #### Getting started
 Execute the following command:
 ``` 
-composer require ikdev/ikpanel
+composer require "ikdev/ikpanel:dev-master"
 ```
 
 * Add the following string into your .env file
