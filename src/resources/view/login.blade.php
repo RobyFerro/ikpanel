@@ -66,7 +66,7 @@
                  height="22"--}}>
             <p class="p-t-35">Sign into your ikpanel account</p>
             <!-- START Login Form -->
-            <form id="form-login" class="p-t-15" role="form" action="{{ env('IKPANEL_URL') }}" method="POST">
+            <form id="form-login" class="p-t-15" role="form" action="{{ env('IKPANEL_URL') }}/login" method="POST">
                 <!-- START Form Control-->
                 <div class="form-group form-group-default">
                     <label>Login</label>
