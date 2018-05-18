@@ -1,10 +1,10 @@
 <?php
 
+use ikdev\ikpanel\app\app\Menu;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use ikdev\ikpanel\app\Menu;
 
 class SeedMenuTable2 extends Migration
 {

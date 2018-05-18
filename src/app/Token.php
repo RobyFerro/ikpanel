@@ -13,26 +13,32 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Role
+ * Class Token
  * @package ikdev\ikpanel\app\
  * @property int $id
- * @property string $group_name
+ * @property int $id_group
+ * @property string $name
+ * @property string $description
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  */
-class Role extends Model {
+class Token extends Model {
 	use SoftDeletes;
 	
-	protected $table = 'role';
+	protected $table = 'token';
 	protected $primaryKey = 'id';
 	protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 	
-	public function user() {
-		return $this->hasMany(Users::class, 'role', 'id');
+	public function roles() {
+		return $this->belongsToMany(Role::class, 'token_role', 'tokenid','roleid');
 	}
 	
-	public function token() {
-		return $this->belongsToMany(Token::class, 'token_role', 'roleid','tokenid');
+	public function group(){
+		return $this->hasOne(TokenGroup::class, 'id','id_group');
+	}
+	
+	public function menu(){
+		return $this->hasMany(Menu::class,'id_token','id');
 	}
 }

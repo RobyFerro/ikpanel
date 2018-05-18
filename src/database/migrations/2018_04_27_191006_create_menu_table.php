@@ -15,6 +15,7 @@ class CreateMenuTable extends Migration
     {
         Schema::create('menu', function (Blueprint $table) {
             $table->integer('id',true);
+            $table->integer('id_token')->nullable();
             $table->string('name',50);
             $table->string('route', 255);
             $table->string('icon', 50);
