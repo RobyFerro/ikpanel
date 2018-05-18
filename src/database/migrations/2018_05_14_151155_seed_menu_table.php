@@ -1,6 +1,6 @@
 <?php
 
-use ikdev\ikpanel\app\app\Menu;
+use ikdev\ikpanel\app\Menu;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
