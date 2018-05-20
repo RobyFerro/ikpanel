@@ -26,3 +26,24 @@ function mconfirm(message, callback) {
         callback(false);
     });
 }
+
+function mloading(status, message, timeout) {
+
+    status=status===undefined?true:status;
+    message=message===undefined?'Caricamento dei dati in corso...':message;
+    timeout=timeout===undefined?0:timeout;
+
+    $('#mloading-gui').on('show.bs.modal', function () {
+        $(this).find('#mloading-message').html(message);
+    });
+
+    setTimeout(function () {
+        if(status){
+            //  show modal ringer custom confirmation
+            $('#mloading-gui').modal('show');
+        }
+        else{
+            $('#mloading-gui').modal('hide');
+        }
+    }, timeout);
+}
