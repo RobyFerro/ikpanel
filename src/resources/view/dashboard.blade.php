@@ -37,6 +37,10 @@
           rel="stylesheet"
           type="text/css"
           media="screen"/>
+    <link href="{{ asset('ikpanel/plugins/css/ikpanel.css') }}"
+          rel="stylesheet"
+          type="text/css"
+          media="screen"/>
     <!-- BEGIN Pages CSS-->
     <link href="{{ asset('ikpanel/pages/css/pages-icons.css') }}" rel="stylesheet" type="text/css">
     <link class="main-stylesheet" href="{{ asset('ikpanel/pages/css/pages.css') }}" rel="stylesheet" type="text/css"/>
