@@ -71,7 +71,7 @@
         <div class="modal-content">
             <div class="modal-body" style="text-align: center">
                 <i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw"></i>
-                <h2 id="modal_message"></h2>
+                <h2 id="mloading-message"></h2>
             </div>
         </div>
     </div>

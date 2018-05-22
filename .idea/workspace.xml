@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca95c1e5-73f7-4535-8b4d-d5cf09533f8f" name="Default" comment="Changed laravel filemanager version">
-      <change afterPath="$PROJECT_DIR$/src/app/Token.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/TokenGroup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110848_create_token_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111220_create_token_role_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111623_add_foreign_keys_to_base_tables.php" afterDir="false" />
+    <list default="true" id="ca95c1e5-73f7-4535-8b4d-d5cf09533f8f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_22_161056_add_foreign_key_to_user.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_22_161056_add_foreign_key_to_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111100_create_token_group_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_27_191006_create_menu_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_04_27_191006_create_menu_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,108 +30,21 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="2018_05_15_155155_seed_menu_table_2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/public/plugins/js/global.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <state relative-caret-position="228">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018_05_18_110848_create_token_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_110848_create_token_table.php">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/view/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-              <folding>
-                <element signature="e#7#45#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2018_05_18_111100_create_token_group_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111100_create_token_group_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-              <folding>
-                <element signature="e#7#45#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2018_05_18_111220_create_token_role_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111220_create_token_role_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-              <folding>
-                <element signature="e#7#45#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2018_05_18_111623_add_foreign_keys_to_base_tables.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111623_add_foreign_keys_to_base_tables.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding>
-                <element signature="e#7#45#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Menu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Menu.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Role.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Role.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Token.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Token.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenGroup.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/TokenGroup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Users.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/Users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-              <folding>
-                <element signature="e#127#145#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="149">
+              <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -157,6 +56,7 @@
       <find>ikdev\ikpanel</find>
       <find>Ikdev\Ikpanel</find>
       <find>mobile</find>
+      <find>ecit</find>
     </findStrings>
     <replaceStrings>
       <replace>ikdev\ikpanel</replace>
@@ -176,16 +76,18 @@
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_04_21_142356_create_user_table.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php" />
-        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php" />
-        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php" />
         <option value="$PROJECT_DIR$/src/app/Menu.php" />
         <option value="$PROJECT_DIR$/src/app/Role.php" />
         <option value="$PROJECT_DIR$/src/app/Token.php" />
         <option value="$PROJECT_DIR$/src/app/TokenGroup.php" />
         <option value="$PROJECT_DIR$/src/app/Users.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/login.blade.php" />
+        <option value="$PROJECT_DIR$/src/public/plugins/js/global.js" />
+        <option value="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" />
       </list>
     </option>
   </component>
@@ -199,10 +101,10 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="312" />
-    <option name="y" value="-908" />
-    <option name="width" value="1616" />
-    <option name="height" value="916" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -227,20 +129,35 @@
               <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
               <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
               <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
               <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -256,12 +173,13 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\database\migrations" />
-      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\resources\view" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\app" />
+      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\database\migrations" />
+      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\resources\view" />
       <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel" />
     </key>
   </component>
@@ -316,7 +234,12 @@
       <workItem from="1526584780080" duration="114000" />
       <workItem from="1526634480969" duration="1172000" />
       <workItem from="1526639592012" duration="21000" />
-      <workItem from="1526663061804" duration="259000" />
+      <workItem from="1526663061804" duration="406000" />
+      <workItem from="1526663685497" duration="700000" />
+      <workItem from="1526822563981" duration="87000" />
+      <workItem from="1526827051918" duration="725000" />
+      <workItem from="1526906629257" duration="598000" />
+      <workItem from="1526990709180" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="Modificata struttura">
       <created>1526376154257</created>
@@ -619,27 +542,61 @@
       <option name="project" value="LOCAL" />
       <updated>1526584827653</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="New migrations to manage permission.&#10;New model to manage permission">
+      <created>1526663388232</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1526663388232</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Bugfix namespace">
+      <created>1526663710440</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1526663710440</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Bugfix url login">
+      <created>1526663934434</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1526663934434</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Insert modal loading screen function">
+      <created>1526827101764</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1526827101764</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Bugfix id modal loading">
+      <created>1526990778656</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1526990778658</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18408000" />
+    <option name="totallyTimeSpent" value="20964000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="312" y="-908" width="1616" height="916" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24919441" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053704" side_tool="true" weight="0.32545045" />
+      <window_info anchor="right" id="Database" order="3" weight="0.1433942" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32882884" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.328877" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32545045" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2380026" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.1433942" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946293" visible="true" weight="0.32545045" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -649,6 +606,7 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,11 +644,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Spostata licenza in root directory" />
-    <MESSAGE value="Inserito laravel file manager" />
-    <MESSAGE value="Integrato laravel-filemanager" />
-    <MESSAGE value="Rimosso numero versione" />
-    <MESSAGE value="Modificato readme" />
     <MESSAGE value="Inseriti badge in readme" />
     <MESSAGE value="Modificato titolo readme" />
     <MESSAGE value="Inserite checklist in readme" />
@@ -711,23 +664,14 @@
     <MESSAGE value="Improved readme" />
     <MESSAGE value="Changed laravel filemanager version" />
     <MESSAGE value="Updated installation instruction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated installation instruction" />
+    <MESSAGE value="New migrations to manage permission.&#10;New model to manage permission" />
+    <MESSAGE value="Bugfix namespace" />
+    <MESSAGE value="Bugfix url login" />
+    <MESSAGE value="Insert modal loading screen function" />
+    <MESSAGE value="Bugfix id modal loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix id modal loading" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -977,13 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/view/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="143" column="21" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -995,9 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,9 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,9 +946,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,64 +956,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_110848_create_token_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111100_create_token_group_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111220_create_token_role_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111623_add_foreign_keys_to_base_tables.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Menu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -1112,11 +986,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Users.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="e#127#145#0#PHP" expanded="true" />
-          </folding>
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/view/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111623_add_foreign_keys_to_base_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111220_create_token_role_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111100_create_token_group_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_110848_create_token_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/plugins/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/view/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
         </state>
       </provider>
     </entry>
