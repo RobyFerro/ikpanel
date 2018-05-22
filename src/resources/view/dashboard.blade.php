@@ -70,7 +70,7 @@
 <!-- END Overlay Content !-->
 
 <!-- region MODAL CARICAMENTO -->
-<div class="modal fade fill-in" id="mloading-gui">
+<div class="modal fade fill-in" data-backdrop="static" data-keyboard="false" id="mloading-gui">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body" style="text-align: center">
