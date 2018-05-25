@@ -2,208 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca95c1e5-73f7-4535-8b4d-d5cf09533f8f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/Http/Controllers/EcitPanelController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Http/Controllers/RoleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Http/Requests/role/RoleEdit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Http/Requests/role/RoleNew.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/RouteGroup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/TokenType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110020_create_token_type_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110040_create_route_group_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_200050_seed_token_group_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_200060_seed_token_type_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_200070_seed_token_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_210000_seed_menu_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_220000_seed_token_role_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_22_200000_seed_route_groupe_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/img/ecit_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/img/ecit_wallpaper.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/img/logo_white - Copia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-brands.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-brands.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-light.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-light.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-regular.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-regular.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-solid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-solid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_animated.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_bordered-pulled.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_core.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_fixed-width.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_icons.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_larger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_rotated-flipped.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_screen-reader.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_stacked.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fa-brands.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fa-light.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fa-regular.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fa-solid.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fontawesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_animated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_bordered-pulled.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_core.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_fixed-width.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_larger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_rotated-flipped.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_stacked.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fa-brands.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fa-light.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fa-regular.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fa-solid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fontawesome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/js/role_edit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/js/role_new.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/plugins/js/role_show.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/view/components/action_buttons.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/view/role/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/view/role/new.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/view/role/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Http/Middleware/AuthMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Middleware/AuthMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Http/Requests/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Requests/UserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Token.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Token.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/TokenGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/TokenGroup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_21_142356_create_user_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_21_142356_create_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_04_21_140000_create_user_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_21_142427_create_role_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_21_142427_create_role_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_04_21_140010_create_role_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_27_191006_create_menu_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_27_191006_create_menu_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_04_27_190000_create_menu_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110848_create_token_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110848_create_token_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110000_create_token_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111100_create_token_group_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111100_create_token_group_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110010_create_token_group_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111220_create_token_role_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111220_create_token_role_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110030_create_token_role_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111623_add_foreign_keys_to_base_tables.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111623_add_foreign_keys_to_base_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111111_add_foreign_keys_to_base_tables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/assets/img/logo_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/img/logo_2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/assets/img/logo_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/img/logo_white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/assets/img/logo_white_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/img/logo_white_2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-brands.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-brands.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-brands.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-brands.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-light.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-regular.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-regular.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-regular.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-regular.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-solid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-solid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-solid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-solid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome-all.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome-all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_animated.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_animated.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_bordered-pulled.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_bordered-pulled.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_core.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_core.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_fixed-width.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_fixed-width.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_larger.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_larger.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_list.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_list.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_rotated-flipped.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_rotated-flipped.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_screen-reader.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_screen-reader.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_stacked.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_stacked.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-brands.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-brands.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-light.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-light.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-regular.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-regular.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-solid.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-solid.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fontawesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fontawesome.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_animated.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_animated.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_bordered-pulled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_bordered-pulled.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_core.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_fixed-width.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_fixed-width.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_larger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_larger.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_rotated-flipped.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_rotated-flipped.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_screen-reader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_screen-reader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_stacked.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_stacked.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-brands.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-brands.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-light.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-light.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-regular.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-regular.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-solid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-solid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fontawesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fontawesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-light-300.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-light-300.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/plugins/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/js/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/example.default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/example.default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/view/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/navigation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -232,13 +31,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="EcitPanelController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/EcitPanelController.php">
+      <file leaf-file-name="2018_05_20_200010_seed_first_user_need_to_change_it.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="161">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
-                <element signature="e#144#175#0#PHP" expanded="true" />
+                <element signature="e#7#34#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -302,7 +101,6 @@
         <option value="$PROJECT_DIR$/src/app/RouteGroup.php" />
         <option value="$PROJECT_DIR$/src/app/Role.php" />
         <option value="$PROJECT_DIR$/src/app/Menu.php" />
-        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200050_seed_token_group_table.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200060_seed_token_type_table.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200070_seed_token_table.php" />
@@ -319,6 +117,7 @@
         <option value="$PROJECT_DIR$/src/app/Http/Controllers/RoleController.php" />
         <option value="$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php" />
       </list>
     </option>
   </component>
@@ -349,6 +148,24 @@
             <path>
               <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
               <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -439,21 +256,7 @@
       <workItem from="1526999542290" duration="194000" />
       <workItem from="1527000161038" duration="603000" />
       <workItem from="1527243009971" duration="129000" />
-      <workItem from="1527281101342" duration="1816000" />
-    </task>
-    <task id="LOCAL-00003" summary="Bugfix name">
-      <created>1526377613425</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1526377613425</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Bugfix namespace">
-      <created>1526379172577</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1526379172577</updated>
+      <workItem from="1527281101342" duration="2563000" />
     </task>
     <task id="LOCAL-00005" summary="Bugfix namespace">
       <created>1526379445605</created>
@@ -784,17 +587,31 @@
       <option name="project" value="LOCAL" />
       <updated>1526999722821</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="New permission tool.">
+      <created>1527282956112</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1527282956113</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Edited first user credentials.">
+      <created>1527283535596</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1527283535596</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25376000" />
+    <option name="totallyTimeSpent" value="26123000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20891514" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37432867" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053704" side_tool="true" weight="0.32545045" />
@@ -851,8 +668,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Inserite checklist in readme" />
-    <MESSAGE value="Modificata migrazione primo utente.&#10;Aggiornato readme" />
     <MESSAGE value="Aggiornato readme" />
     <MESSAGE value="Insert laravel framework dependency" />
     <MESSAGE value="Rimossa reuqire laravel in composer.json&#10;Aggiornato readme" />
@@ -876,7 +691,9 @@
     <MESSAGE value="Bugfix id modal loading" />
     <MESSAGE value="Bugfix z-index loading modal.&#10;New ikpanel.css" />
     <MESSAGE value="Buxfix mloading. Disabled keyboard and mouse" />
-    <option name="LAST_COMMIT_MESSAGE" value="Buxfix mloading. Disabled keyboard and mouse" />
+    <MESSAGE value="New permission tool." />
+    <MESSAGE value="Edited first user credentials." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited first user credentials." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -985,16 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_04_21_140000_create_user_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/public/plugins/js/global.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1080,16 +887,6 @@
           <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding>
             <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding>
-            <element signature="e#7#34#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1288,6 +1085,26 @@
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#144#175#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_04_21_140000_create_user_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#7#34#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
