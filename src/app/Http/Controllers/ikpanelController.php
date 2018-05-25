@@ -33,6 +33,7 @@ class ikpanelController extends BaseController
             $menu_items = $mod_menu
                 ->whereNull('relation')
                 ->whereIn('id_token', $active_token)
+                ->orWhereNull('id_token')
                 ->with(['children' => function($query) use ($active_token){
                     $query->whereIn('id_token', $active_token)
                         ->orWhereNull('id_token');
