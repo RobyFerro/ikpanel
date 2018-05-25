@@ -9,12 +9,12 @@
 namespace ikdev\ikpanel\app;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class Users
- * @package ikdev\ikpanel\app\
+ * @package ecit\admin_panel\app
  * @property int $id
  * @property string $name
  * @property string $surname
@@ -25,8 +25,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ * @property Role $user_role
  */
-class Users extends Model {
+class Users extends Authenticatable {
 	use SoftDeletes;
 	
 	protected $table = 'users';
@@ -37,4 +38,8 @@ class Users extends Model {
 	public function user_role() {
 		return $this->belongsTo(Role::class, 'role', 'id');
 	}
+
+	public function hasToken($token){
+	    return in_array($token, $this->user_role->token()->pluck('id')->toArray());
+    }
 }

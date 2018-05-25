@@ -6,9 +6,9 @@
 </li>
 
 @foreach($items as $item)
-    @if(count($item->sub_level) !== 0)
+    @if(count($item->children) !== 0)
         <li>
-            <a href="{{ env('IKPANEL_URL').''.$item->route }}" class="detailed">
+            <a href='javascript:;'>
                 <span class="title">{{ $item->name }}</span>
                 <span class='arrow'></span>
             </a>
@@ -16,7 +16,7 @@
                 <i class="{{ $item->icon }}"></i>
             </span>
             <ul class='sub-menu'>
-                @foreach ($item->sub_level as $child)
+                @foreach ($item->children as $child)
                     <li>
                         <a href="{{env('IKPANEL_URL').''.$child->route}}" class='detailed'>
                             <span class='title'>{{$child->name}}</span>

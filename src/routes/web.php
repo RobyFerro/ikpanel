@@ -13,46 +13,58 @@
 
 Route::prefix(env('IKPANEL_URL'))->group(function(){
 
+	//region AUTENTICAZIONE
     Route::post('/login', 'LoginController@authenticate');
-
     Route::post('/logout', "LoginController@logout");
-
     Route::get('/login', function(){
         return view('ikpanel::login');
     });
+    //endregion
 
     Route::group(['middleware' => 'ikdev\ikpanel\Http\Middleware\AuthMiddleware'], function () {
 
-        Route::get('/users', 'UserController@index');
-        Route::get('/users/edit/{id}', 'UserController@edit');
-        Route::put('/users/edit', 'UserController@update');
-        Route::put('/users/insert', 'UserController@insert');
-        Route::delete('/users/delete', 'UserController@remove');
+	    Route::get('/', function () {
+		    return view('ikpanel::dashboard');
+	    });
 
-        Route::get('/media', function(){
-            return view('ikpanel::filemanager');
+	    Route::prefix('users')->group(function(){
+
+		    Route::group(['as'=>'showUsers'],function(){
+			    Route::get('/', 'UserController@index');
+		    });
+
+		    Route::group(['as'=>'addUser'],function(){
+			    Route::put('/users/insert', 'UserController@insert');
+		    });
+
+		    Route::group(['as'=>'editUser'],function(){
+			    Route::get('/users/edit/{id}', 'UserController@edit');
+			    Route::put('/users/edit', 'UserController@update');
+		    });
+
+		    Route::group(['as'=>'deleteUser'],function(){
+		    	Route::delete('/users/delete', 'UserController@remove');
+		    });
         });
 
-        Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
-        Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
+	    Route::prefix('roles')->group(function(){
+		    Route::group(['as'=>'showRoles'],function(){
+				Route::get('/','RoleController@show');
+		    });
 
-        Route::get('/', function () {
-            return view('ikpanel::dashboard');
-        });
+		    Route::group(['as'=>'addRole'],function(){
+			    Route::get('/new','RoleController@add');
+			    Route::post('/insert','RoleController@insert');
+		    });
+
+		    Route::group(['as'=>'editRole'],function(){
+			    Route::get('/edit/{id}','RoleController@edit');
+			    Route::put('/update','RoleController@update');
+		    });
+
+		    Route::group(['as'=>'deleteRole'],function(){
+			    Route::delete('/delete/{id}','RoleController@delete');
+		    });
+	    });
     });
-
-
 });
-
-/*Route::group(['middleware' => 'ikdev\ikpanel\Http\Middleware\AuthMiddleware'], function () {
-
-    Route::get('/users', 'UserController@index');
-    Route::get('/users/edit/{id}', 'UserController@edit');
-    Route::put('/users/edit', 'UserController@update');
-    Route::put('/users/insert', 'UserController@insert');
-    Route::delete('/users/delete', 'UserController@remove');
-
-    Route::get('/dashboard', function () {
-        return view('ikpanel::dashboard');
-    });
-});*/

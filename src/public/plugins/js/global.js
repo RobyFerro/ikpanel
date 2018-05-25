@@ -27,23 +27,34 @@ function mconfirm(message, callback) {
     });
 }
 
-function mloading(status, message, timeout) {
+function getInput(selector=null){
+	let data=[],
+		precision='';
 
-    status=status===undefined?true:status;
-    message=message===undefined?'Caricamento dei dati in corso...':message;
-    timeout=timeout===undefined?0:timeout;
+	precision+=selector===null?'':selector;
 
-    $('#mloading-gui').on('show.bs.modal', function () {
-        $(this).find('#mloading-message').html(message);
-    });
-
-    setTimeout(function () {
-        if(status){
-            //  show modal ringer custom confirmation
-            $('#mloading-gui').modal('show');
-        }
-        else{
-            $('#mloading-gui').modal('hide');
-        }
-    }, timeout);
 }
+
+function sendNotifications(xhr){
+	var response = JSON.parse(xhr.responseText);
+	var errors=response.errors;
+
+	for (var err in errors) {
+		var opt = {
+			"style": "simple",
+			"message": '<span><strong>Attenzione: </strong></span>' + errors[err],
+			"showClose": true,
+			"type": "danger"
+		};
+
+		$('body').pgNotification(opt).show();
+	} // for
+}
+
+$(document).ready(function () {
+
+	$.ajaxPrefilter(function (options, originalOptions) {
+		options.headers = {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')};
+	});
+
+});

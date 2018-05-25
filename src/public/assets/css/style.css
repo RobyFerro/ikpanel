@@ -4,6 +4,84 @@
 
 */
 
-#saving{
+#saving {
     z-index: 1059 !important;
+}
+
+.breadcrumb a {
+    margin-left: 0 !important;
+}
+
+.thumbnail-wrapper > img {
+    border: solid black 1px;
+    border-radius: 100%;
+}
+
+.jumbotron {
+    margin-bottom: 16px !important;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.mgroup {
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 3px;
+    background: white;
+    position: relative;
+    padding: 40px 13px 13px 13px;
+}
+
+.mgroup > legend{
+    width: auto;
+    font-family: 'Montserrat';
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    left: 13px;
+    position: absolute;
+    top: 12px;
+    margin: 0px;
+}
+
+ul.nolist{
+    list-style: none;
+    padding-left: 0px;
+}
+
+ul.nolist li{
+    padding:0px;
+}
+
+ul.nolist ul.nolist{
+    padding-left: 25px;
+}
+
+.checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.group-name{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+table.table-condensed td{
+    padding: 5px 20px !important;
+}
+
+table tr.header-row td{
+    background: #e7e9eb;
+    font-weight: bold;
+}
+
+.table tbody tr td .checkbox label::after {
+    left: 3px;
+}
+
+.header-white{
+    background: white;
+    color: #626262;
 }

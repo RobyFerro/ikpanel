@@ -1,8 +1,8 @@
 @extends('ikpanel::dashboard')
 
-@section('title','Modifica utente')
+@section('title','')
 
-@section('section_name','Modifica utente')
+@section('section_name','')
 
 @section('initial_link')
 @endsection

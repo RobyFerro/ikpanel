@@ -4,34 +4,34 @@ namespace ikdev\ikpanel\app;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Menu
- * @package ikdev\ikpanel\app\
- * @property int $id
- * @property int $id_token
+ * @package ecit\admin_panel\app
+ * @property string $id
+ * @property string $id_token
  * @property string $name
  * @property string $route
  * @property string $icon
- * @property int $relation
+ * @property string $relation
+ * @property int $order
  * @property Carbon $created_at
  * @property Carbon $updated_at
- * @property Carbon $deleted_at
  */
 class Menu extends Model {
-	use SoftDeletes;
 	
 	protected $table = 'menu';
 	protected $primaryKey = 'id';
-	protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+	protected $dates = ['created_at', 'updated_at'];
+	public $incrementing = false;
+	public $keyType = 'string';
 	
-	public function sub_level() {
-		return $this->hasMany(Menu::class, 'relation', 'id');
+	public function parent() {
+		return $this->belongsTo(Menu::class, 'relation', 'id');
 	}
 	
-	public function main_level() {
-		return $this->belongsTo(Menu::class, 'relation', 'id');
+	public function children() {
+		return $this->hasMany(Menu::class, 'relation', 'id');
 	}
 	
 	public function token(){

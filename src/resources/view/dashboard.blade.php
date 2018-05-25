@@ -6,6 +6,7 @@
     <meta charset="utf-8"/>
     <title>{{ env('APP_NAME') }} - @ikpanel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link rel="apple-touch-icon" href="{{ asset('ikpanel/pages/ico/60.png') }}">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('ikpanel/pages/ico/76.png') }}">
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('ikpanel/pages/ico/120.png') }}">
@@ -34,10 +35,6 @@
           type="text/css"
           media="screen"/>
     <link href="{{ asset('ikpanel/assets/plugins/switchery/css/switchery.min.css') }}"
-          rel="stylesheet"
-          type="text/css"
-          media="screen"/>
-    <link href="{{ asset('ikpanel/plugins/css/ikpanel.css') }}"
           rel="stylesheet"
           type="text/css"
           media="screen"/>
@@ -132,7 +129,7 @@
     <div class="sidebar-menu">
         <ul class="menu-items">
             @component('ikpanel::navigation',
-            ['items' => \ikdev\ikpanel\App\Http\Controllers\ikpanelController::getNavigationMenu()])
+            ['items' => \ikdev\ikpanel\App\Http\Controllers\ikpanelController::getUserMenu()])
             @endcomponent
         </ul>
         <div class="clearfix"></div>

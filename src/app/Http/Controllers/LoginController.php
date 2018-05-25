@@ -1,6 +1,6 @@
 <?php
 
-namespace ikdev\ikpanel\App\Http\Controllers;
+namespace ecit\admin_panel\App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

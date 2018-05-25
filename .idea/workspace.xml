@@ -2,7 +2,208 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca95c1e5-73f7-4535-8b4d-d5cf09533f8f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/Http/Controllers/EcitPanelController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Http/Controllers/RoleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Http/Requests/role/RoleEdit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Http/Requests/role/RoleNew.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/RouteGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/TokenType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110020_create_token_type_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110040_create_route_group_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_200050_seed_token_group_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_200060_seed_token_type_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_200070_seed_token_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_210000_seed_menu_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_220000_seed_token_role_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_22_200000_seed_route_groupe_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/img/ecit_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/img/ecit_wallpaper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/img/logo_white - Copia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/assets/plugins/bootstrap-4.1.1/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-brands.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-brands.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-light.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-regular.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-regular.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-solid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fa-solid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/_variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fa-brands.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fa-light.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fa-regular.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fa-solid.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/less/fontawesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fa-brands.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fa-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fa-regular.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fa-solid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fontawesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-light-300.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/js/role_edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/js/role_new.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/plugins/js/role_show.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/view/components/action_buttons.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/view/role/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/view/role/new.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/view/role/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Http/Middleware/AuthMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Middleware/AuthMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Http/Requests/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Requests/UserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Token.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Token.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/TokenGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/TokenGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_21_142356_create_user_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_21_142356_create_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_04_21_140000_create_user_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_21_142427_create_role_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_21_142427_create_role_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_04_21_140010_create_role_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_27_191006_create_menu_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_04_27_191006_create_menu_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_04_27_190000_create_menu_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110848_create_token_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110848_create_token_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110000_create_token_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111100_create_token_group_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111100_create_token_group_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110010_create_token_group_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111220_create_token_role_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111220_create_token_role_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_110030_create_token_role_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111623_add_foreign_keys_to_base_tables.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111623_add_foreign_keys_to_base_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2018_05_18_111111_add_foreign_keys_to_base_tables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/assets/img/logo_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/img/logo_2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/assets/img/logo_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/img/logo_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/assets/img/logo_white_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/assets/img/logo_white_2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-brands.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-brands.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-brands.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-brands.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-light.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-regular.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-regular.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-regular.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-regular.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-solid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-solid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-solid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fa-solid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome-all.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome-all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_animated.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_animated.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_bordered-pulled.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_bordered-pulled.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_core.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_core.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_fixed-width.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_fixed-width.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_icons.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_larger.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_larger.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_list.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_list.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_mixins.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_rotated-flipped.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_rotated-flipped.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_screen-reader.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_screen-reader.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_stacked.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_stacked.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/_variables.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-brands.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-brands.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-light.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-light.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-regular.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-regular.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-solid.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fa-solid.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fontawesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/less/fontawesome.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_animated.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_animated.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_bordered-pulled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_bordered-pulled.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_core.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_fixed-width.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_fixed-width.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_icons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_larger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_larger.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_list.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_rotated-flipped.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_rotated-flipped.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_screen-reader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_screen-reader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_stacked.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_stacked.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-brands.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-brands.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-light.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-light.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-regular.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-regular.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-solid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fa-solid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fontawesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/scss/fontawesome.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-light-300.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-light-300.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/plugins/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/plugins/js/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/example.default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/example.default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/navigation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,29 +232,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/public/plugins/js/global.js">
+      <file leaf-file-name="EcitPanelController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/EcitPanelController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resources/view/dashboard.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ikpanel.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/public/plugins/css/ikpanel.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+            <state relative-caret-position="69">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#144#175#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,23 +274,51 @@
         <option value="$PROJECT_DIR$/src/.gitignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/LICENCE.md" />
-        <option value="$PROJECT_DIR$/src/routes/web.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_04_21_142356_create_user_table.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php" />
-        <option value="$PROJECT_DIR$/src/app/Menu.php" />
-        <option value="$PROJECT_DIR$/src/app/Role.php" />
-        <option value="$PROJECT_DIR$/src/app/Token.php" />
-        <option value="$PROJECT_DIR$/src/app/TokenGroup.php" />
-        <option value="$PROJECT_DIR$/src/app/Users.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php" />
-        <option value="$PROJECT_DIR$/src/resources/view/login.blade.php" />
         <option value="$PROJECT_DIR$/src/public/plugins/js/global.js" />
         <option value="$PROJECT_DIR$/src/public/plugins/css/ikpanel.css" />
+        <option value="$PROJECT_DIR$/src/routes/web.php" />
+        <option value="$PROJECT_DIR$/src/resources/example.default.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/navigation.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/login.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/filemanager.blade.php" />
         <option value="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/user/index.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/user/edit.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/role/edit.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/role/new.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/role/show.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/view/components/action_buttons.blade.php" />
+        <option value="$PROJECT_DIR$/src/app/Users.php" />
+        <option value="$PROJECT_DIR$/src/app/TokenType.php" />
+        <option value="$PROJECT_DIR$/src/app/TokenGroup.php" />
+        <option value="$PROJECT_DIR$/src/app/Token.php" />
+        <option value="$PROJECT_DIR$/src/app/RouteGroup.php" />
+        <option value="$PROJECT_DIR$/src/app/Role.php" />
+        <option value="$PROJECT_DIR$/src/app/Menu.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200050_seed_token_group_table.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200060_seed_token_type_table.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200070_seed_token_table.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_210000_seed_menu_table.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_220000_seed_token_role_table.php" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2018_05_22_200000_seed_route_groupe_table.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Requests/UserRequest.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Requests/UserEdit.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Requests/UserDelete.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Requests/role/RoleNew.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Requests/role/RoleEdit.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Middleware/AuthMiddleware.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/RoleController.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php" />
       </list>
     </option>
   </component>
@@ -117,7 +331,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -129,7 +343,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,67 +350,32 @@
               <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
               <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\database\migrations" />
+      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src" />
+      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\app" />
+      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\resources\view" />
       <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\app" />
-      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\database\migrations" />
-      <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel\src\resources\view" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\roberto.ferro\PhpstormProjects\ikpanel" />
     </key>
   </component>
@@ -258,13 +436,10 @@
       <workItem from="1526827051918" duration="725000" />
       <workItem from="1526906629257" duration="598000" />
       <workItem from="1526990709180" duration="1969000" />
-    </task>
-    <task id="LOCAL-00002" summary="Bugfix route login">
-      <created>1526377366789</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1526377366789</updated>
+      <workItem from="1526999542290" duration="194000" />
+      <workItem from="1527000161038" duration="603000" />
+      <workItem from="1527243009971" duration="129000" />
+      <workItem from="1527281101342" duration="1816000" />
     </task>
     <task id="LOCAL-00003" summary="Bugfix name">
       <created>1526377613425</created>
@@ -602,25 +777,33 @@
       <option name="project" value="LOCAL" />
       <updated>1526996956810</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Buxfix mloading. Disabled keyboard and mouse">
+      <created>1526999722821</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1526999722821</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22634000" />
+    <option name="totallyTimeSpent" value="25376000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24919441" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20891514" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053704" side_tool="true" weight="0.32545045" />
       <window_info anchor="right" id="Database" order="3" weight="0.1433942" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32882884" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3277027" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.328877" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49946293" visible="true" weight="0.32545045" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946293" weight="0.32508436" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -668,7 +851,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Modificato titolo readme" />
     <MESSAGE value="Inserite checklist in readme" />
     <MESSAGE value="Modificata migrazione primo utente.&#10;Aggiornato readme" />
     <MESSAGE value="Aggiornato readme" />
@@ -693,376 +875,108 @@
     <MESSAGE value="Insert modal loading screen function" />
     <MESSAGE value="Bugfix id modal loading" />
     <MESSAGE value="Bugfix z-index loading modal.&#10;New ikpanel.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix z-index loading modal.&#10;New ikpanel.css" />
+    <MESSAGE value="Buxfix mloading. Disabled keyboard and mouse" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buxfix mloading. Disabled keyboard and mouse" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="161">
-            <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="598">
-            <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="230">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/src/resources/example.default.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="230">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="230">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="230">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IkpanelServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="230">
-            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IkpanelServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IkpanelServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENCE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="161">
-            <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="23">
-            <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_04_21_142356_create_user_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_04_21_142427_create_role_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_04_27_191006_create_menu_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Role.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Token.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/TokenGroup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/view/navigation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/view/user/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="144" column="10" lean-forward="true" selection-start-line="144" selection-start-column="10" selection-end-line="144" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/view/filemanager.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/view/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+        <state relative-caret-position="1104">
+          <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111623_add_foreign_keys_to_base_tables.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/view/user/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        <state>
+          <caret column="17" selection-start-column="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111220_create_token_role_table.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/view/role/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="189">
+          <caret line="94" column="16" lean-forward="true" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111100_create_token_group_table.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/view/role/new.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="166">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_110848_create_token_table.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/view/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="516">
+          <caret line="60" column="46" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/view/role/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        <state relative-caret-position="437">
+          <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/public/plugins/js/global.js">
+    <entry file="file://$PROJECT_DIR$/src/public/plugins/js/role_new.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="138">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/plugins/js/role_show.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/plugins/js/role_edit.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/public/plugins/css/ikpanel.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1071,10 +985,310 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/view/dashboard.blade.php">
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_04_21_140000_create_user_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        <state relative-caret-position="-161">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/plugins/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/view/components/action_buttons.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_04_21_140010_create_role_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_04_27_190000_create_menu_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_110000_create_token_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_110020_create_token_type_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_110030_create_token_role_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_110040_create_route_group_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_111111_add_foreign_keys_to_base_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_18_110010_create_token_group_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#7#34#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_200050_seed_token_group_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_200060_seed_token_type_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="e#7#39#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_200070_seed_token_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_210000_seed_menu_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_220000_seed_token_role_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="2" selection-start-column="27" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_22_200000_seed_route_groupe_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding>
+            <element signature="e#7#40#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/TokenType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#127#145#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/TokenGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="e#127#145#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Token.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/RouteGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="e#127#145#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Requests/UserRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#54#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Requests/UserEdit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Requests/UserDelete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Requests/role/RoleEdit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Requests/role/RoleNew.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Middleware/AuthMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/RoleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-690">
+          <caret line="83" column="8" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+          <folding>
+            <element signature="e#54#104#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#54#101#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding>
+            <element signature="e#141#180#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/EcitPanelController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#144#175#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

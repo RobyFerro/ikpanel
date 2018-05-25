@@ -6,27 +6,28 @@
  * Time: 21:17
  */
 
-namespace ikdev\ikpanel\app;;
+namespace ikdev\ikpanel\app;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class TokenGroup
- * @package ikdev\ikpanel\app\
- * @property int $id
+ * @package ecit\admin_panel\app
+ * @property string $id
  * @property string $group_name
+ * @property string $description
+ * @property string $icon
  * @property Carbon $created_at
  * @property Carbon $updated_at
- * @property Carbon $deleted_at
  */
 class TokenGroup extends Model {
-	use SoftDeletes;
 	
 	protected $table = 'token_group';
 	protected $primaryKey = 'id';
-	protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+	protected $dates = ['created_at', 'updated_at'];
+	public $incrementing = false;
+	public $keyType = 'string';
 	
 	public function token() {
 		return $this->hasMany(Token::class, 'id_group', 'id');
