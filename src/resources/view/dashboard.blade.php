@@ -63,7 +63,6 @@
 </head>
 <body class="fixed-header">
 @yield('beforebody')
-<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- END Overlay Content !-->
 
 <!-- region MODAL CARICAMENTO -->

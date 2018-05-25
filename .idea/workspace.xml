@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ca95c1e5-73f7-4535-8b4d-d5cf09533f8f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,14 +32,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="2018_05_20_200010_seed_first_user_need_to_change_it.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php">
+      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="115">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/public/plugins/js/global.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
               <folding>
-                <element signature="e#7#34#0#PHP" expanded="true" />
+                <element signature="n#!!block;n#mconfirm#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/view/dashboard.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -58,6 +77,7 @@
       <find>Ikdev\Ikpanel</find>
       <find>mobile</find>
       <find>ecit</find>
+      <find>token</find>
     </findStrings>
     <replaceStrings>
       <replace>ikdev\ikpanel</replace>
@@ -80,14 +100,12 @@
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_10_110648_seed_first_user_need_to_change_it.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_14_151155_seed_menu_table.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_15_155155_seed_menu_table_2.php" />
-        <option value="$PROJECT_DIR$/src/public/plugins/js/global.js" />
         <option value="$PROJECT_DIR$/src/public/plugins/css/ikpanel.css" />
         <option value="$PROJECT_DIR$/src/routes/web.php" />
         <option value="$PROJECT_DIR$/src/resources/example.default.blade.php" />
         <option value="$PROJECT_DIR$/src/resources/view/navigation.blade.php" />
         <option value="$PROJECT_DIR$/src/resources/view/login.blade.php" />
         <option value="$PROJECT_DIR$/src/resources/view/filemanager.blade.php" />
-        <option value="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/src/resources/view/user/index.blade.php" />
         <option value="$PROJECT_DIR$/src/resources/view/user/edit.blade.php" />
         <option value="$PROJECT_DIR$/src/resources/view/role/edit.blade.php" />
@@ -115,9 +133,11 @@
         <option value="$PROJECT_DIR$/src/app/Http/Middleware/AuthMiddleware.php" />
         <option value="$PROJECT_DIR$/src/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/src/app/Http/Controllers/RoleController.php" />
-        <option value="$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/src/app/Http/Controllers/ikpanelController.php" />
         <option value="$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php" />
+        <option value="$PROJECT_DIR$/src/public/plugins/js/global.js" />
+        <option value="$PROJECT_DIR$/src/resources/view/dashboard.blade.php" />
       </list>
     </option>
   </component>
@@ -158,14 +178,51 @@
               <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
               <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
               <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Middleware" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ikpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ikpanel" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -256,21 +313,7 @@
       <workItem from="1526999542290" duration="194000" />
       <workItem from="1527000161038" duration="603000" />
       <workItem from="1527243009971" duration="129000" />
-      <workItem from="1527281101342" duration="2563000" />
-    </task>
-    <task id="LOCAL-00005" summary="Bugfix namespace">
-      <created>1526379445605</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1526379445605</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Inserito autoload">
-      <created>1526383772561</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1526383772561</updated>
+      <workItem from="1527281101342" duration="3117000" />
     </task>
     <task id="LOCAL-00007" summary="Bugfix route path">
       <created>1526383977282</created>
@@ -601,17 +644,31 @@
       <option name="project" value="LOCAL" />
       <updated>1527283535596</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Bugfix namespace">
+      <created>1527283772412</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1527283772412</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Bugfix mloading function">
+      <created>1527283992103</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1527283992103</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26123000" />
+    <option name="totallyTimeSpent" value="26677000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37432867" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20622987" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053704" side_tool="true" weight="0.32545045" />
@@ -668,7 +725,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Aggiornato readme" />
     <MESSAGE value="Insert laravel framework dependency" />
     <MESSAGE value="Rimossa reuqire laravel in composer.json&#10;Aggiornato readme" />
     <MESSAGE value="Insert keywords in composer.json" />
@@ -685,7 +741,6 @@
     <MESSAGE value="Changed laravel filemanager version" />
     <MESSAGE value="Updated installation instruction" />
     <MESSAGE value="New migrations to manage permission.&#10;New model to manage permission" />
-    <MESSAGE value="Bugfix namespace" />
     <MESSAGE value="Bugfix url login" />
     <MESSAGE value="Insert modal loading screen function" />
     <MESSAGE value="Bugfix id modal loading" />
@@ -693,7 +748,9 @@
     <MESSAGE value="Buxfix mloading. Disabled keyboard and mouse" />
     <MESSAGE value="New permission tool." />
     <MESSAGE value="Edited first user credentials." />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited first user credentials." />
+    <MESSAGE value="Bugfix namespace" />
+    <MESSAGE value="Bugfix mloading function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix mloading function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -701,13 +758,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/example.default.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -764,13 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/view/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="60" column="46" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/view/role/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -799,13 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/public/plugins/js/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -1035,23 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Http/Middleware/AuthMiddleware.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/RoleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <caret line="83" column="8" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
-          <folding>
-            <element signature="e#54#104#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1059,13 +1078,6 @@
           <folding>
             <element signature="e#54#101#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -1099,6 +1111,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Middleware/AuthMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-253">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/migrations/2018_05_20_200010_seed_first_user_need_to_change_it.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -1106,6 +1125,45 @@
           <folding>
             <element signature="e#7#34#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/RoleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="45" />
+          <folding>
+            <element signature="e#54#104#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/plugins/js/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1584" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/plugins/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+          <folding>
+            <element signature="n#!!block;n#mconfirm#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/view/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
         </state>
       </provider>
     </entry>
