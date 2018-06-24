@@ -1,16 +1,16 @@
 <li class="m-t-30">
-    <a href="{{ env('IKPANEL_URL') }}" class="detailed">
+    <a href="{{ admin_url() }}" class="detailed">
         <span class="title">Home</span>
     </a>
     <span class="icon-thumbnail "><i class="pg-home"></i></span>
 </li>
 
 @foreach($items as $item)
-    @if(count($item->children) !== 0)
+    @if(count($item->children) > 0)
         <li>
             <a href='javascript:;'>
                 <span class="title">{{ $item->name }}</span>
-                <span class='arrow'></span>
+                <span class="arrow" style="padding-right: 3px;"></span>
             </a>
             <span class="folder-link icon-thumbnail">
                 <i class="{{ $item->icon }}"></i>
@@ -18,10 +18,10 @@
             <ul class='sub-menu'>
                 @foreach ($item->children as $child)
                     <li>
-                        <a href="{{env('IKPANEL_URL').''.$child->route}}" class='detailed'>
+                        <a href="{{admin_url($child->route)}}" class='detailed'>
                             <span class='title'>{{$child->name}}</span>
                         </a>
-                        <a href='{{ env('IKPANEL_URL').''.$child->route }}' class="sub-icon-link icon-thumbnail">
+                        <a href='{{ admin_url($child->route) }}' class="sub-icon-link icon-thumbnail" style="padding: 0;">
                             <i class='{{ $child->icon }}'></i>
                         </a>
                     </li>
@@ -30,8 +30,8 @@
         </li>
     @else
         <li>
-            <a href="{{ env('IKPANEL_URL').''.$item->route }}" class="detailed">
-                <span class="title">{{ $item->name }}</span>
+            <a href="{{ admin_url($item->route) }}" class="detailed">
+                <span class="title" style="width: auto;">{{ $item->name }}</span>
             </a>
             <span class="icon-thumbnail ">
                 <i class="{{ $item->icon }}"></i>

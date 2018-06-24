@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Role
- * @package ecit\admin_panel\app
+ * @package ikdev\ikpanel\app
  * @property int $id
  * @property string $group_name
  * @property Carbon $created_at

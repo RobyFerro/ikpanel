@@ -13,7 +13,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: 'PUT',
 			contentType: 'application/json',
-			url: ikpanel_url+'/roles/update',
+			url: admin_panel_url+'/roles/update',
 			data: JSON.stringify({
 				'role_id':$('#role_id').val(),
 				'role_name':$('#role_name').val(),
@@ -25,7 +25,7 @@ $(document).ready(function(){
 						location.reload();
 						break;
 					case 'close':
-						location.href=ikpanel_url+'/roles/';
+						location.href=admin_panel_url+'/roles/';
 						break;
 				}
 			},
@@ -34,9 +34,11 @@ $(document).ready(function(){
 			},
 			beforeSend:function(){
 				thisButton.prop('disabled',true);
+				mloading(true);
 			},
 			complete: function(){
 				thisButton.prop('disabled',false);
+				mloading(false);
 			}
 		}); // Ajax
 

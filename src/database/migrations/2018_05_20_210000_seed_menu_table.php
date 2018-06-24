@@ -12,21 +12,37 @@ class SeedMenuTable extends Migration {
 	public function up() {
 		Menu::insert([
 			[
-				'id'       => 'SHOW_USERS',
+				'id'       => 'ITEM_SHOW_USERS',
 				'id_token' => 'SHOW_USERS',
 				'name'     => 'Utenti',
 				'route'    => '/users',
 				'icon'     => 'fas fa-users',
-				'relation' => null
+				'relation' => 'FOLDER_SETTINGS'
 			],
 			[
-				'id'       => 'SHOW_ROLES',
+				'id'       => 'ITEM_SHOW_ROLES',
 				'id_token' => 'SHOW_ROLES',
 				'name'     => 'Ruoli',
 				'route'    => '/roles',
 				'icon'     => 'fas fa-user-shield',
-				'relation' => null
-			]
+				'relation' => 'FOLDER_SETTINGS'
+			],
+			[
+				'id'       => 'ITEM_SHOW_LOGS',
+				'id_token' => 'SHOW_LOGS',
+				'name'     => 'Logs',
+				'route'    => '/logs',
+				'icon'     => 'fas fa-user-secret',
+				'relation' => 'FOLDER_SETTINGS'
+			],
+            [
+                'id'       => 'FOLDER_SETTINGS',
+                'id_token' => 'SHOW_SETTINGS',
+                'name'     => 'Impostazioni',
+                'route'    => null,
+                'icon'     => 'fas fa-cogs',
+                'relation' => null
+            ]
 		]);
 	}
 	

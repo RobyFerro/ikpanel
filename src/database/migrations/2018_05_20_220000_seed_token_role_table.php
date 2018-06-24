@@ -15,7 +15,7 @@ class SeedTokenRoleTable extends Migration
     public function up()
     {
         Role::find(1)->token()->attach([
-	        'SHOW_USERS','SHOW_ROLES',
+	        'SHOW_USERS','SHOW_ROLES','SHOW_LOGS','SHOW_SETTINGS'
         ]);
     }
 

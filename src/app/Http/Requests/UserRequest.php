@@ -27,6 +27,7 @@ class UserRequest extends FormRequest
         return [
             "mail" => 'required|unique:users,email',
             "name" => "required",
+	        "user_role"=>'required|exists:role,id',
             "surname" => "required",
             "password" => "same:password_1|min:8|required",
             "password_1" => "same:password|min:8|required",
@@ -39,6 +40,8 @@ class UserRequest extends FormRequest
             "mail.required" => "L'indirizzo mail è necessario.",
             "mail.unique" => "L'indirizzo inserito è già presente all'interno del database.",
             "name.required" => "Il nome è necessario",
+	        "user_role.required"=>"Il ruolo è richiesto.",
+	        "user_role.exists"=>"Il ruolo non è valido.",
             "surname.required" => "Il cognome è necessario",
             "password.same" => "Le password inserite non corrispondono",
             "password_1.same" => "Le password inserite non corrispondono",

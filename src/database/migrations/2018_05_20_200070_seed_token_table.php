@@ -15,27 +15,34 @@ class SeedTokenTable extends Migration
     public function up()
     {
         Token::insert([
-        	//region USERS
         	[
         		'id'=>'SHOW_USERS',
-		        'name'=>'showUsers',
-		        'description'=>'Gestione utenti',
+		        'name'=>'Gestione utenti',
 		        'id_group'=>'USERS',
 		        'id_type'=>'VIEW',
 		        'relation'=>null
 	        ],
-	        //endregion
-	
-	        //region ROLES
 	        [
 		        'id'=>'SHOW_ROLES',
-		        'name'=>'showRoles',
-		        'description'=>'Gestione ruoli',
+		        'name'=>'Gestione ruoli',
 		        'id_group'=>'USERS',
 		        'id_type'=>'VIEW',
 		        'relation'=>null
-	        ]
-	        //endregion
+	        ],
+	        [
+		        'id'=>'SHOW_LOGS',
+		        'name'=>'Logs',
+		        'id_group'=>'USERS',
+		        'id_type'=>'VIEW',
+		        'relation'=>null
+	        ],
+            [
+                'id'=>'SHOW_SETTINGS',
+                'name'=>'Impostazioni',
+                'id_group'=>'GENERAL_SETTINGS',
+                'id_type'=>'VIEW',
+                'relation'=>null
+            ]
         ]);
     }
 

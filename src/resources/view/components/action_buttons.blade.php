@@ -1,4 +1,4 @@
-<!-- START ecit_admin::components.action_buttons -->
+<!-- START ikpanel::components.action_buttons -->
 <div class="btn-group">
 	<button type="button" class="btn btn-success action-save" data-action="save">
 		<i class="fas fa-floppy-o"></i>
@@ -16,10 +16,10 @@
 	</div>
 </div>
 
-<a type='button' class="btn btn-danger btn-cons" href="{{ env('IKPANEL_URL') }}{{ $close or '' }}">
+<a type='button' class="btn btn-danger btn-cons" href="{{ $close or '#' }}">
 	<i class="fa fa-times-circle" aria-hidden="true"></i>
 	Chiudi
 </a>
 
 {{ $slot }}
-<!-- END ecit_admin::components.action_buttons -->
+<!-- END ikpanel::components.action_buttons -->

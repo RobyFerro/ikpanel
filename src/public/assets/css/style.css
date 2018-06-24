@@ -1,49 +1,12 @@
-/*
-
-* Override Pages default styles or create your own styles here
-
-*/
-
-#saving {
-    z-index: 1059 !important;
-}
-
-.breadcrumb a {
-    margin-left: 0 !important;
-}
-
-.thumbnail-wrapper > img {
-    border: solid black 1px;
-    border-radius: 100%;
-}
-
-.jumbotron {
-    margin-bottom: 16px !important;
-}
-
+/***********************************************************************************************************************
+STILI GLOBALI
+***********************************************************************************************************************/
 .text-bold {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
-.mgroup {
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    border-radius: 3px;
-    background: white;
-    position: relative;
-    padding: 40px 13px 13px 13px;
-}
-
-.mgroup > legend{
-    width: auto;
-    font-family: 'Montserrat';
-    font-size: 10.5px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-weight: 500;
-    left: 13px;
-    position: absolute;
-    top: 12px;
-    margin: 0px;
+.text-link{
+    color: #0062cc !important;
 }
 
 ul.nolist{
@@ -68,8 +31,119 @@ ul.nolist ul.nolist{
     font-size: 16px;
 }
 
+.mb-10{
+    margin-bottom: 10px;
+}
+
 table.table-condensed td{
     padding: 5px 20px !important;
+}
+
+table.table-valign td,
+table.table-valign th{
+    vertical-align: middle;
+}
+
+.pointer{
+    cursor:pointer;
+}
+
+.or-spacer{
+    color: #999;
+    margin: 0 10px;
+    text-transform: uppercase;
+}
+
+.or-spacer::before {
+    content: "\2014\00a0";
+}
+
+.or-spacer::after {
+    content: "\00a0\2014";
+}
+
+.lw-100{
+    min-width: 100px;
+}
+
+.lw-200{
+    min-width: 200px;
+}
+
+.lw-300{
+    min-width: 300px;
+}
+
+.input-group-addon.btn i {
+    top: 0px;
+}
+
+i.required-asterisk{
+    color: #f55753;
+}
+i.required-asterisk::after {
+    content: "*";
+    font-size: 17px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-weight: bold;
+}
+
+.form-control[readonly]{
+    color:black;
+}
+
+.form-group.readonly{
+    background:none;
+}
+
+.jhide{
+    display: none;
+}
+
+/***********************************************************************************************************************
+STILI BACK-END
+***********************************************************************************************************************/
+#saving {
+    z-index: 1059 !important;
+}
+
+.breadcrumb a {
+    margin-left: 0 !important;
+}
+
+.jumbotron {
+    margin-bottom: 16px !important;
+}
+
+.mgroup {
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 3px;
+    background: white;
+    position: relative;
+    padding: 40px 13px 13px 13px;
+}
+
+.mgroup > legend{
+    width: auto;
+    font-family: 'Montserrat';
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    left: 13px;
+    position: absolute;
+    top: 12px;
+    margin: 0px;
+}
+
+label.label-pages{
+    font-family: 'Montserrat';
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 table tr.header-row td{
@@ -84,4 +158,139 @@ table tr.header-row td{
 .header-white{
     background: white;
     color: #626262;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li > a.detailed > .title {
+    line-height: 40px;
+}
+
+.topbar-separator{
+    width: 1px;
+    height: 30px;
+    border-left: 1px solid #e6e6e6;
+}
+
+/*region FIX STILE SELECT2 CON PAGES*/
+.form-group-default.form-group-default-select2 .select2-container .select2-selection--single {
+    padding-left: 4px;
+    padding-right: 40px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    /*top: 21px !important;*/
+    top: 4px !important;
+}
+
+.form-group-default-select2 .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 21px !important;
+}
+/*endregion*/
+
+/*region FIX ICONA PIN SIDEBAR*/
+[data-toggle-pin="sidebar"] > i:before {
+    content: "\f111";
+}
+
+[data-toggle-pin="sidebar"] > i {
+    font-weight: 400 !important;
+}
+/*endregion*/
+
+/*region FIX POSIZIONE FRECCIA NEL BOTTONE CON MENU A TENDINA*/
+.dropdown-toggle::after {
+    right: 13px;
+}
+/*endregion*/
+
+/*region FIX POSIZIONE FRECCIA DROPDOWN NAVBAR ITEM*/
+ul.navbar-nav li.nav-item a.dropdown-toggle::after {
+    position: initial;
+}
+/*endregion*/
+
+/*region FIX STILE INPUT GROUP CON ADDON*/
+.input-group{
+    flex-wrap: nowrap;
+}
+
+.input-group-addon i {
+    top: 8px;
+}
+/*endregion*/
+
+/*region FIX ICONE MENU PIÙ GRANDI*/
+.icon-thumbnail > i {
+    font-size: 16px;
+}
+/*endregion*/
+
+/*region FIX CARATTERI TAGLIATI NELL'INPUT*/
+.overlay .overlay-search {
+    height: 110px;
+}
+/*endregion*/
+
+.truncate-ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+a.hover-underline:hover{
+    text-decoration: underline;
+}
+
+.search-separator{
+    border-bottom: solid 1px #e9e9e9;
+    padding: 5px 0;
+}
+
+/*region AVATAR*/
+
+.avatar-box{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin:10px;
+    display: inline-block;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.avatar-mini{
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.avatar-user{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align: -10px !important;
+    margin-right: 3px;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+/*endregion*/
+
+
+
+.login-wrapper {
+    background-color: white !important;
+}
+
+.login-wrapper .bg-pic > img {
+    height: 80%;
+    opacity: 1;
+}
+
+.bg-pic-fix{
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 65%;
 }

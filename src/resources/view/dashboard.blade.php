@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!--suppress ALL -->
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
     <meta charset="utf-8"/>
-    <title>{{ env('APP_NAME') }} - @ikpanel</title>
+    <title>{{ env('APP_NAME') }}  @if(View::hasSection('section_name')) - @yield('section_name') @endif</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link rel="apple-touch-icon" href="{{ asset('ikpanel/pages/ico/60.png') }}">
@@ -20,7 +19,7 @@
     <link href="{{ asset('ikpanel/assets/plugins/pace/pace-theme-flash.css') }}"
           rel="stylesheet"
           type="text/css"/>
-    <link href="{{ asset('ikpanel/assets/plugins/bootstrap/css/bootstrap.min.css') }}"
+    <link href="{{ asset('ikpanel/assets/plugins/bootstrap-4.1.1/css/bootstrap.min.css') }}"
           rel="stylesheet"
           type="text/css"/>
     <link href="{{ asset('ikpanel/assets/plugins/font-awesome/css/font-awesome.css') }}"
@@ -41,8 +40,11 @@
     <!-- BEGIN Pages CSS-->
     <link href="{{ asset('ikpanel/pages/css/pages-icons.css') }}" rel="stylesheet" type="text/css">
     <link class="main-stylesheet" href="{{ asset('ikpanel/pages/css/pages.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('ikpanel/plugins/fontawesome-pro-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('ikpanel/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css') }}" rel="stylesheet" type="text/css"/>
+    <!-- IKPANEL PANEL -->
     <link href="{{ asset('ikpanel/assets/css/style.css') }}" rel="stylesheet" type="text/css"/>
+	<!-- BACKEND -->
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css"/>
     <!--[if lte IE 9]>
     <link href="{{ asset('ikpanel/pages/css/ie9.css') }}" rel="stylesheet" type="text/css"/>
     <![endif]-->
@@ -54,50 +56,16 @@
                 document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="{{ asset('ikpanel/pages/css/windows.chrome.fix.css') }}" />'
         }
 
-        if(ikpanel_url !== undefined){
-            delete ikpanel_url;
+        if(admin_panel_url !== undefined){
+            delete admin_panel_url;
         } // if
 
-        var ikpanel_url = "{{ env('IKPANEL_URL') }}";
+        var admin_panel_url = "{!! admin_url() !!}";
     </script>
 </head>
 <body class="fixed-header">
 @yield('beforebody')
 <!-- END Overlay Content !-->
-
-<!-- region MODAL CARICAMENTO -->
-<div class="modal fade fill-in" data-backdrop="static" data-keyboard="false" id="mloading-gui">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body" style="text-align: center">
-                <i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw"></i>
-                <h2 id="mloading-message"></h2>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- endregion MODAL CARICAMENTO -->
-
-<!--region MODAL CONFIRM-->
-<div class="modal fade fill-in" data-backdrop="static" data-keyboard="false" id="mconfirm-gui" tabindex="-1"
-     role="dialog" aria-hidden="true">
-    <div class="modal-dialog ">
-        <div class="modal-content">
-            <div class="modal-body text-center">
-                <h2 id="mconfirm-message">###</h2>
-            </div>
-            <div class="modal-footer" style="width: 100%;">
-                <div class="btn-group" style="margin:0 auto">
-                    <button type="button" id="mconfirm-ok" class="btn btn-info" style="min-width:100px;">OK</button>
-                    <button type="button" id="mconfirm-cancel" class="btn btn-default" style="min-width:100px;">
-                        Annulla
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--endregion END MODAL CONFIRM -->
 
 <!-- BEGIN SIDEBAR -->
 <div class="page-sidebar" data-pages="sidebar">
@@ -105,21 +73,20 @@
     </div>
     <!-- BEGIN SIDEBAR HEADER -->
     <div class="sidebar-header">
-        <img src="{{ asset('ikpanel/assets/img/ikpanel-white.png') }}"
+        <img src="{{ asset('ikpanel/assets/img/logo_white.png') }}"
              alt="logo"
              class="brand"
-             data-src="{{ asset('ikpanel/assets/img/ikpanel-white.png') }}"
-             data-src-retina="{{ asset('ikpanel/assets/img/ikpanel-white.png') }}"
-             width="78"
-             height="22">
+             data-src="{{ asset('ikpanel/assets/img/logo_white.png') }}"
+             data-src-retina="{{ asset('ikpanel/assets/img/logo_white.png') }}"
+             width="78">
         <div class="sidebar-header-controls">
-            <button data-pages-toggle="#appMenu" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" type="button">
+            {{--<button data-pages-toggle="#appMenu" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" type="button">
                 <i class="fa fa-angle-down fs-16"></i>
-            </button>
+            </button>--}}
             <button data-toggle-pin="sidebar"
                     class="btn btn-link visible-lg-inline"
                     type="button"><i
-                        class="fa fs-12"></i>
+                        class="fas fs-12"></i>
             </button>
         </div>
     </div>
@@ -181,12 +148,11 @@
         <div class=" pull-left sm-table hidden-xs hidden-sm">
             <div class="header-inner">
                 <div class="brand inline">
-                    <img src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
+                    <img src="{{ asset('ikpanel/assets/img/logo.png') }}"
                          alt="logo"
-                         data-src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
-                         data-src-retina="{{ asset('assets/img/ikpanel.png') }}"
-                         width="78"
-                         height="22">
+                         data-src="{{ asset('ikpanel/assets/img/logo.png') }}"
+                         data-src-retina="{{ asset('ikpanel/assets/img/logo.png') }}"
+                         width="78">
                 </div>
                 {{--<!-- START NOTIFICATION LIST -->
                 <ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l b-r no-style p-l-30 p-r-20">
@@ -323,10 +289,12 @@
                     </li>
                 </ul>
                 <!-- END NOTIFICATIONS LIST -->--}}
-                {{--
-                <a href="#" class="search-link" data-toggle="search"><i class="pg-search"></i>Type anywhere to <span
-                      class="bold">search</span></a>
-                 --}}
+                <span class="topbar-separator"></span>
+                <a href="#" class="search-link" data-toggle="search">
+                    <i class="fas fa-search" style="vertical-align: text-bottom;"></i>
+                    Scrivi qualcosa per iniziare la <span class="bold">ricerca</span>
+                </a>
+                
             </div>
         </div>
         <div class=" pull-right">
@@ -337,32 +305,31 @@
         </div>
         <div class=" pull-right">
             <!-- START User Info-->
-            <div class="visible-lg visible-md m-t-10">
+            <div class="visible-lg visible-md">
                 <div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
                     <span class="semi-bold">{{ \Illuminate\Support\Facades\Auth::user()->name }}</span>
                     <span class="text-master">{{ \Illuminate\Support\Facades\Auth::user()->surname }}</span>
                 </div>
                 <div class="dropdown pull-left">
-                    <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    <button class="profile-dropdown-toggle pointer" type="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                <span class="thumbnail-wrapper d32 circular inline m-t-5">
-                <img src="{{ asset('ikpanel/assets/img/profiles/user-3.png') }}"
-                     alt=""
-                     data-src="{{ asset('ikpanel/assets/img/profiles/user-3.png') }}"
-                     data-src-retina="{{ asset('ikpanel/assets/img/profiles/user-3.png') }}"
-                     width="32"
-                     height="32">
-            </span>
+                        <span class="thumbnail-wrapper d32 circular inline m-t-5">
+                            <img src="{{ asset('ikpanel/assets/img/profiles/user.png') }}"
+                                 alt=""
+                                 data-src="{{ asset('ikpanel/assets/img/profiles/user.png') }}"
+                                 data-src-retina="{{ asset('ikpanel/assets/img/profiles/user.png') }}"
+                                 width="32"
+                                 height="32">
+                        </span>
                     </button>
                     <ul class="dropdown-menu profile-dropdown" role="menu">
                         <li class="bg-master-lighter">
-                            <a href="{{ url('/logout') }}"
+                            <a href="{{ admin_url('/logout') }}"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                class="clearfix">
-                                <span class="pull-left">Logout</span>
-                                <span class="pull-right"><i class="pg-power"></i></span>
+                                <i class="fas fa-sign-out-alt fa-fw"></i> Logout
                             </a>
-                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ admin_url('/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
                         </li>
@@ -785,7 +752,7 @@
 <!-- START OVERLAY -->
 <div class="overlay" style="display: none" data-pages="search">
     <!-- BEGIN Overlay Content !-->
-    <div class="overlay-content has-results m-t-20">
+    <div class="overlay-content has-results">
         <!-- BEGIN Overlay Header !-->
         <div class="container-fluid">
             <!-- BEGIN Overlay Logo !-->
@@ -793,8 +760,8 @@
                  src="{{ asset('ikpanel/assets/img/logo.png') }}"
                  alt="logo"
                  data-src="{{ asset('ikpanel/assets/img/logo.png') }}"
-                 data-src-retina="{{ asset('ikpanel/assets/img/logo_2x.png') }}"
-                 width="78" height="22">
+                 data-src-retina="{{ asset('ikpanel/assets/img/logo.png') }}"
+                 width="78">
             <!-- END Overlay Logo !-->
             <!-- BEGIN Overlay Close !-->
             <a href="#" class="close-icon-light overlay-close text-black fs-16">
@@ -805,29 +772,29 @@
         <!-- END Overlay Header !-->
         <div class="container-fluid">
             <!-- BEGIN Overlay Controls !-->
-            <input id="overlay-search" class="no-border overlay-search bg-transparent" placeholder="Search..."
+            <input id="overlay-search" class="no-border overlay-search bg-transparent" placeholder="Cerca..."
                    autocomplete="off" spellcheck="false">
             <br>
-            <div class="inline-block">
+            {{--<div class="inline-block">
                 <div class="checkbox right">
                     <input id="checkboxn" type="checkbox" value="1" checked="checked">
                     <label for="checkboxn"><i class="fa fa-search"></i> Search within page</label>
                 </div>
-            </div>
-            <div class="inline-block m-l-10">
-                <p class="fs-13">Press enter to search</p>
-            </div>
+            </div>--}}
+            {{--<div class="inline-block">
+                <p class="fs-13">Premi <b>INVIO</b> per cercare</p>
+            </div>--}}
             <!-- END Overlay Controls !-->
         </div>
         <!-- BEGIN Overlay Search Results, This part is for demo purpose, you can add anything you like !-->
         <div class="container-fluid">
-          <span>
+            {{--<span>
                 <strong>suggestions :</strong>
             </span>
             <span id="overlay-suggestions"></span>
-            <br>
-            <div class="search-results m-t-40">
-                <p class="bold">Pages Search Results</p>
+            <br>--}}
+            <div id="search-results">
+                {{--<p class="bold">Risultati della ricerca</p>
                 <div class="row">
                     <div class="col-md-6">
                         <!-- BEGIN Search Result Item !-->
@@ -922,7 +889,7 @@
                         </div>
                         <!-- END Search Result Item !-->
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
         <!-- END Overlay Search Results !-->
@@ -935,7 +902,7 @@
 <script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-1.11.1.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('ikpanel/assets/plugins/modernizr.custom.js') }}" type="text/javascript"></script>
 <script src="{{ asset('ikpanel/assets/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('ikpanel/assets/plugins/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('ikpanel/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-easy.js') }}" type="text/javascript"></script>
 <script src="{{ asset('ikpanel/assets/plugins/jquery-unveil/jquery.unveil.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('ikpanel/assets/plugins/jquery-bez/jquery.bez.min.js') }}"></script>
@@ -949,9 +916,15 @@
 <script src="{{ asset('ikpanel/pages/js/pages.js') }}" type="text/javascript"></script>
 <!-- END CORE TEMPLATE JS -->
 <!-- BEGIN PAGE LEVEL JS -->
+{!! script('ikpanel/assets/plugins/jquery-typewatch/jquery.typewatch.js') !!}
 <script src="{{ asset('ikpanel/assets/js/scripts.js') }}" type="text/javascript"></script>
 <script src="{{ asset('ikpanel/plugins/js/global.js') }}"></script>
 <!-- END PAGE LEVEL JS -->
+
+<!-- CUSTOM COMPONENTS -->
+@component('ikpanel::components.modern_gui')@endcomponent
+<!-- END CUSTOM COMPONENTS -->
+
 @yield('final_script')
 </body>
 </html>

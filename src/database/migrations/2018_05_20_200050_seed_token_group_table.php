@@ -18,7 +18,11 @@ class SeedTokenGroupTable extends Migration
         	[
         		'id'=>'USERS',
 		        'group_name'=>'Utenti'
-	        ]
+	        ],
+            [
+                'id' => 'GENERAL_SETTINGS',
+                'group_name' => 'Generali'
+            ]
         ]);
     }
 

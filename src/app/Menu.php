@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Menu
- * @package ecit\admin_panel\app
+ * @package ikdev\ikpanel\app
  * @property string $id
  * @property string $id_token
  * @property string $name

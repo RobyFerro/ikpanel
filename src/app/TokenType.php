@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TokenType
- * @package ecit\admin_panel\app
+ * @package ikdev\ikpanel\app
  * @property string $id
  * @property Carbon $created_at
  * @property Carbon $updated_at

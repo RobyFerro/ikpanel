@@ -16,7 +16,6 @@ class CreateTokenTable extends Migration
         Schema::create('token', function (Blueprint $table) {
             $table->string('id',64)->primary();
 	        $table->string('name', 255);
-	        $table->string('description', 255);
 	        $table->string('id_group',64);
 	        $table->string('id_type',64);
 	        $table->string('relation',64)->nullable();

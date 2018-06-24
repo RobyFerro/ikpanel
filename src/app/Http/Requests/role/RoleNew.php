@@ -1,6 +1,6 @@
 <?php
 
-namespace ikdev\ikpanel\App\Http\Requests\role;
+namespace ikdev\ikpanel\app\Http\Requests\role;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;

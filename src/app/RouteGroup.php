@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class RouteGroup
- * @package ecit\admin_panel\app
+ * @package ikdev\ikpanel\app
  * @property string $id
  * @property string $name
  * @property string $description

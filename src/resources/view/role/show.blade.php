@@ -5,7 +5,13 @@
 @section('section_name', 'Gestione permessi')
 
 @section('initial_link')
-
+	<link type="text/css" rel="stylesheet"
+	      href="{{ asset('ikpanel/assets/plugins/jquery-datatable/media/css/jquery.dataTables.css') }}">
+	<link type="text/css" rel="stylesheet"
+	      href="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css') }}">
+	<link media="screen" type="text/css" rel="stylesheet"
+	      href="{{ asset('ikpanel/assets/plugins/datatables-responsive/css/datatables.responsive.css') }}">
+	{!! css('ikpanel/assets/plugins/select2/css/select2.css') !!}
 @endsection
 
 @section('before_body')
@@ -16,12 +22,12 @@
 	<div class="row action-navbar" id="action-navbar">
 		<div class="col-md-12">
 
-			<a type="button" href="{{env('IKPANEL_URL')}}/roles/new" class="btn btn-primary btn-sm">
+			<a type="button" href="{{ admin_url('/roles/new') }}" class="btn btn-primary btn-sm">
 				<i class="fas fa-plus fa-fw"></i>
 				Aggiungi ruolo
 			</a>
 
-			<a type='button' class="btn btn-danger btn-sm" href="{{env('IKPANEL_URL')}}">
+			<a type='button' class="btn btn-danger btn-sm" href="{{ admin_url() }}">
 				<i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>
 				Chiudi
 			</a>
@@ -32,53 +38,42 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-4">
-			<div class="form-group">
-				<label>Cerca</label>
-				<input type="text" id="search-table" class="form-control pull-right" placeholder="Search">
+			<div class="form-group form-group-default ">
+				<label for="search-filter">Cerca</label>
+				<input type="text" class="form-control" id="search-filter">
+			</div>
+		</div>
+		<div class="col-md-5"></div>
+		<div class="col-md-3">
+			<div class="form-group form-group-default form-group-default-select2">
+				<label for="status-filter">Filtro per stato</label>
+				<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1" aria-hidden="true" autocomplete="off">
+					<option value="ALL">Tutti</option>
+					<option value="ACTIVE" selected>Attivi</option>
+					<option value="DELETED">Eliminati</option>
+				</select>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12">
-			<table id="ruoli" class="table table-condensed dataTable" cellspacing="0" width="100%">
-				<thead>
-				<tr>
-					<th>Tipo</th>
-					<th>Stato</th>
-					<th style="text-align: right">Azione</th>
-				</tr>
-				</thead>
-				<tbody>
-				@foreach($roles as $role)
-					<tr>
-						<td>{{ $role->group_name }}</td>
-						<td>
-							@if(is_null($role->deleted_at))
-								<i class="fa fa-check-circle fa-fw text-success"></i>
-								<span class="text-success text-bold">Attivo</span>
-							@else
-								<i class="fa fa-times-circle fa-fw text-danger"></i>
-								<span class="text-danger text-bold">Disattivo</span>
-							@endif
-						</td>
-						<td style="text-align: right">
-							<a href="{{env('IKPANEL_URL')}}/roles/edit/{{ $role->id }}"
-							   class="btn btn-info btn-sm">
-								<i class="fas fa-edit fa-fw"></i>
-								Modifica
-							</a>
-							<button class="btn btn-danger btn-small action-delete" data-id="{{ $role->id }}">
-								<i class="fas fa-trash-alt fa-fw"></i> Elimina
-							</button>
-						</td>
-					</tr>
-				@endforeach
-				</tbody>
-			</table>
+		<div class="col-md-12" id="table-content">
+			@component('ikpanel::role.table',['roles'=>$roles])
+			@endcomponent
 		</div>
 	</div>
 @endsection
 
 @section('final_script')
+	<script type="text/javascript"
+	        src="{{ asset('ikpanel/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js') }}"></script>
+	<script type="text/javascript"
+	        src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js') }}"></script>
+	<script type="text/javascript"
+	        src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js') }}"></script>
+	<script src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/datatables.responsive.js') }}"
+	        type="text/javascript"></script>
+	<script src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/lodash.min.js') }}"
+	        type="text/javascript"></script>
+	{!! script('ikpanel/assets/plugins/select2/js/select2.js') !!}
 	<script type="text/javascript" src="{{ asset('ikpanel/plugins/js/role_show.js') }}?{{ time() }}"></script>
 @endsection

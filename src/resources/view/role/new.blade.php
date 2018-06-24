@@ -17,7 +17,7 @@
 	<div class="row action-navbar" id="action-navbar">
 		<div class="col-md-12">
 
-			@component('ikpanel::components.action_buttons',['close'=>'/roles/'])
+			@component('ikpanel::components.action_buttons',['close'=>admin_url('/roles/')])
 			@endcomponent
 		</div>
 	</div>
@@ -61,7 +61,7 @@
 								   {{ $token->isChecked or '' }}
 								   autocomplete="off">
 							<label for="permission-{{  $token->id }}">
-								<span class="text-bold" style="vertical-align: top !important;">{{  $token->description }}</span>
+								<span class="text-bold" style="vertical-align: top !important;">{{  $token->name }}</span>
 							</label>
 						</div>
 					</td>
@@ -78,7 +78,7 @@
 									   {{ $child->isChecked or '' }}
 									   autocomplete="off">
 								<label for="permission-{{  $child->id }}">
-									<span class="text-bold" style="vertical-align: top !important;">{{  $child->description }}</span>
+									<span class="text-bold" style="vertical-align: top !important;">{{  $child->name }}</span>
 								</label>
 							</div>
 						</td>

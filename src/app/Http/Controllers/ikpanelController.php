@@ -46,4 +46,12 @@ class ikpanelController extends BaseController
         return $menu_items;
 
 	}
+
+    /**
+     * Carica la vista Home
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function home(){
+        return view('ikpanel::home');
+    }
 }

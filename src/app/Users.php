@@ -14,7 +14,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class Users
- * @package ecit\admin_panel\app
+ * @package ikdev\ikpanel\app
  * @property int $id
  * @property string $name
  * @property string $surname
@@ -42,4 +42,5 @@ class Users extends Authenticatable {
 	public function hasToken($token){
 	    return in_array($token, $this->user_role->token()->pluck('id')->toArray());
     }
+
 }

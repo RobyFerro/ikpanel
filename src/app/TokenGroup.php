@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class TokenGroup
- * @package ecit\admin_panel\app
+ * @package ikdev\ikpanel\app
  * @property string $id
  * @property string $group_name
  * @property string $description

@@ -13,7 +13,7 @@ $(document).ready(function () {
 		$.ajax({
 			type: 'POST',
 			contentType: 'application/json',
-			url: ikpanel_url+'/roles/insert',
+			url: admin_panel_url+'/roles/insert',
 			data: JSON.stringify({
 				'role_name':$('#role_name').val(),
 				'permissions':permissions
@@ -22,13 +22,13 @@ $(document).ready(function () {
 
 				switch (thisButton.data('action')){
 					case 'save':
-						location.href=ikpanel_url+'/roles/edit/'+data.id;
+						location.href=admin_panel_url+'/roles/edit/'+data.id;
 						break;
 					case 'new':
 						location.reload();
 						break;
 					case 'close':
-						location.href=ikpanel_url+'/roles/';
+						location.href=admin_panel_url+'/roles/';
 						break;
 				}
 			},
@@ -37,9 +37,11 @@ $(document).ready(function () {
 			},
 			beforeSend:function(){
 				thisButton.prop('disabled',true);
+                mloading(true);
 			},
 			complete: function(){
 				thisButton.prop('disabled',false);
+                mloading(false);
 			}
 		}); // Ajax
 

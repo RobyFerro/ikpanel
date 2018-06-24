@@ -29,6 +29,7 @@
           media="screen"/>
     <link href="{{ asset('ikpanel/pages/css/pages-icons.css') }}" rel="stylesheet" type="text/css">
     <link class="main-stylesheet" href="{{ asset('ikpanel/pages/css/pages.css') }}" rel="stylesheet" type="text/css"/>
+    {!! css('ikpanel/assets/css/style.css') !!}
 </head>
 <body class="fixed-header ">
 <div class="login-wrapper ">
