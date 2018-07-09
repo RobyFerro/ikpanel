@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ikpanelController extends BaseController
 {
-
-    public static function getUserMenu(){
+	
+	/**
+	 * Ottiene il menu di navigazione
+	 * @return mixed
+	 */
+	public static function getUserMenu(){
         /** @var Users $current_user */
         $mod_menu = new Menu();
 
@@ -46,12 +50,12 @@ class ikpanelController extends BaseController
         return $menu_items;
 
 	}
-
-    /**
-     * Carica la vista Home
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function home(){
+	
+	/**
+	 * Ottiene la vista home
+	 * @return mixed
+	 */
+	public function home(){
         return view('ikpanel::home');
     }
 }

@@ -13,14 +13,13 @@ class LoginController extends BaseController
 
         if (Auth::attempt($credentials)) {
             $request->session()->put('version', shell_exec('git describe --tags'));
-            return view('ikpanel::dashboard');
         }
-
-        return view('ikpanel::login');
+        
+        return redirect(admin_url());
     }
 
     public function logout(){
         Auth::logout();
-        return view('ikpanel::login');
+        return redirect(admin_url());
     }
 }
