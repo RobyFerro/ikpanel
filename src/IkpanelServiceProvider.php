@@ -44,7 +44,7 @@ class IkpanelServiceProvider extends ServiceProvider
     protected function mapWebRoutes() {
 
         Route::middleware('web')
-            ->namespace("ikdev\ikpanel\app\Http\Controllers")
+            ->namespace("ikdev/ikpanel/app/Http/Controllers")
             ->group(__DIR__.'/routes/web.php');
     }
 }

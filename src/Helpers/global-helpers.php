@@ -40,7 +40,7 @@ function app_url($url = '') {
 function admin_url($url = '') {
 	$protocol = 'http' . (Request::secure() ? 's' : '') . '://';
 	$host = $_SERVER['HTTP_HOST'] . str_replace('/index.php', '', $_SERVER['PHP_SELF']);
-	$fullurl = $host . (env('ECIT_PANEL_URL') == '/' ? '' : env('ECIT_PANEL_URL')) . $url;
+	$fullurl = $host . (env('IKPANEL_URL') == '/' ? '' : env('IKPANEL_URL')) . $url;
 	$fullurl = str_replace('//', '/', $fullurl);
 	return $protocol . $fullurl;
 }
@@ -53,22 +53,6 @@ function admin_url($url = '') {
  */
 function script($url, $nocache = false) {
 	$out = '';
-	
-	switch ($url) {
-		case 'SELECT2':
-			$url = 'ecit/assets/plugins/select2/js/select2.js';
-			break;
-		case 'DATATABLE':
-			$url = '';
-			break;
-		case '':
-			$url = '';
-			break;
-		/*
-		case '': $url=''; break;
-		case '': $url=''; break;
-		*/
-	}
 	
 	if (is_array($url)) {
 		foreach ($url as $item) {
