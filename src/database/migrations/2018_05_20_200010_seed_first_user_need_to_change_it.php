@@ -27,9 +27,9 @@ class SeedFirstUserNeedToChangeIt extends Migration
         try {
             $mod_users->name = 'Super';
             $mod_users->surname = 'User';
-            $mod_users->email = 'boba.fett@ikdev.eu';
+            $mod_users->email = 'boba.fett@ikpanel.eu';
             $mod_users->role = $mod_role->id;
-            $mod_users->password = bcrypt("0");
+            $mod_users->password = bcrypt("toor");
             $mod_users->save();
         } catch (QueryException $e) {
             throw $e;

@@ -2,8 +2,9 @@
 
 namespace ikdev\ikpanel\App\Http\Controllers;
 
-use ikdev\ikpanel\app\App\Http\Requests\users\AddUserRequest;
-use ikdev\ikpanel\app\App\Http\Requests\users\EditUserRequest;
+
+use ikdev\ikpanel\App\Http\Requests\users\AddUserRequest;
+use ikdev\ikpanel\App\Http\Requests\users\EditUserRequest;
 use ikdev\ikpanel\app\Logs;
 use ikdev\ikpanel\app\Role;
 use ikdev\ikpanel\app\Users;

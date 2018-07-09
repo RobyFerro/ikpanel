@@ -73,11 +73,11 @@
     </div>
     <!-- BEGIN SIDEBAR HEADER -->
     <div class="sidebar-header">
-        <img src="{{ asset('ikpanel/assets/img/logo_white.png') }}"
+        <img src="{{ asset('ikpanel/assets/img/ikpanel-white.png') }}"
              alt="logo"
              class="brand"
-             data-src="{{ asset('ikpanel/assets/img/logo_white.png') }}"
-             data-src-retina="{{ asset('ikpanel/assets/img/logo_white.png') }}"
+             data-src="{{ asset('ikpanel/assets/img/ikpanel-white.png') }}"
+             data-src-retina="{{ asset('ikpanel/assets/img/ikpanel-white.png') }}"
              width="78">
         <div class="sidebar-header-controls">
             {{--<button data-pages-toggle="#appMenu" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" type="button">
@@ -148,10 +148,10 @@
         <div class=" pull-left sm-table hidden-xs hidden-sm">
             <div class="header-inner">
                 <div class="brand inline">
-                    <img src="{{ asset('ikpanel/assets/img/logo.png') }}"
+                    <img src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
                          alt="logo"
-                         data-src="{{ asset('ikpanel/assets/img/logo.png') }}"
-                         data-src-retina="{{ asset('ikpanel/assets/img/logo.png') }}"
+                         data-src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
+                         data-src-retina="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
                          width="78">
                 </div>
                 {{--<!-- START NOTIFICATION LIST -->
@@ -757,10 +757,10 @@
         <div class="container-fluid">
             <!-- BEGIN Overlay Logo !-->
             <img class="overlay-brand"
-                 src="{{ asset('ikpanel/assets/img/logo.png') }}"
+                 src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
                  alt="logo"
-                 data-src="{{ asset('ikpanel/assets/img/logo.png') }}"
-                 data-src-retina="{{ asset('ikpanel/assets/img/logo.png') }}"
+                 data-src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
+                 data-src-retina="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
                  width="78">
             <!-- END Overlay Logo !-->
             <!-- BEGIN Overlay Close !-->

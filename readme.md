@@ -10,7 +10,7 @@ This package require [Laravel Framework](https://github.com/laravel/laravel).
 
 #### Demo
 Click [here](https://demo.ikpanel.eu/) to try ikpanel
-* Username: boba.fetto@demo.it
+* Username: boba.fetto@ikpanel.eu
 * Password: toor
 
 #### Getting started
@@ -30,6 +30,31 @@ IKPANEL_URL=MY_URL
 ikdev\ikpanel\IkpanelServiceProvider::class,
 Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
 Intervention\Image\ImageServiceProvider::class,
+```
+
+* Replace the Model User into config/auth.php like the following example:
+```
+'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+        ],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
+    ],
+
+```
+with:
+```
+'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => \ikdev\ikpanel\app\Users::class,
+        ],
+    ],
 ```
 
 * Add the following class alias
@@ -52,7 +77,7 @@ php artisan migrate
 
 
 ## Default users credentials:
-* Username : boba.fett@demo.com
+* Username : boba.fett@ikpanel.eu
 * Password : toor
 
 ## v1.0 progress
@@ -61,7 +86,7 @@ php artisan migrate
 - [x] Integrate Laravel Filemanager (done)
 - [ ] Improve installation procedure
 - [ ] User avatar
-- [ ] Role managing
+- [x] Role managing (done)
 - [ ] Traslate Laravel Filemanager
 - [ ] Remplace template HTML (ElaAdmin)
 - [ ] Enable/disable module
