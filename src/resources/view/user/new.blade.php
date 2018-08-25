@@ -1,114 +1,137 @@
 @extends('ikpanel::dashboard')
 
-@section('title', 'Nuovo ruolo')
+@section('title','Nuovo utente')
 
-@section('section_name', 'Nuovo ruolo')
+@section('section_name','Nuovo utente')
 
 @section('initial_link')
 	<link media="screen" type="text/css" rel="stylesheet"
-		  href="{{ asset('plugins/switchery/css/switchery.min.css') }}">
+	      href="{{ asset('ikpanel/assets/plugins/select2/css/select2.css') }}">
 @endsection
 
 @section('before_body')
-
 @endsection
 
 @section('action_navbar')
-	<div class="row action-navbar" id="action-navbar">
-		<div class="col-md-12">
-
-			@component('ikpanel::components.action_buttons',['close'=>admin_url('/roles/')])
-			@endcomponent
-		</div>
-	</div>
+	@component('ikpanel::components.action_buttons', ['close' => admin_url('/users/')])
+	@endcomponent
 @endsection
 
 @section('content')
-	<h4>Dettagli</h4>
 	<div class="row">
-		<div class="col-md-12">
-			<div class="form-group form-group-default required">
-				<label>Nome</label>
-				<input type="text"
-					   id="role_name"
-					   class="form-control dati-utente"
-					   autocomplete="off">
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group form-group-default required">
+						<label for="name">Nome</label>
+						<input class="form-control form-data"
+						       id="name"
+						       type="text"
+						       autocomplete="off">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group form-group-default required">
+						<label for="surname">Cognome</label>
+						<input class="form-control form-data"
+						       id="surname"
+						       type="text"
+						       autocomplete="off">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group form-group-default required">
+						<label for="mail">Email</label>
+						<input class="form-control form-data"
+						       id="mail"
+						       type="email"
+						       autocomplete="off">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group form-group-default required">
+						<label for="password">Password</label>
+						<input class="form-control form-data"
+						       id="password"
+						       type="password"
+						       autocomplete="off">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group form-group-default required">
+						<label for="repassword">Ripeti password</label>
+						<input class="form-control form-data"
+						       id="repassword"
+						       type="password"
+						       autocomplete="off">
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-
-	<table class="table table-bordered table-condensed">
-		<thead>
-		<tr>
-			<th class="header-white">Permessi</th>
-		</tr>
-		</thead>
-		<tbody>
-
-		@foreach($groups as $group)
-
-			<tr class="header-row">
-				<td>{{ $group->group_name }}</td>
-			</tr>
-			@foreach($group->token as $token)
-				<tr>
-					<td>
-						<div class="checkbox check-default" style="margin:0;">
-							<input type="checkbox"
-								   class="data-permissions"
-								   id="permission-{{ $token->id }}"
-								   data-id="{{ $token->id }}"
-								   {{ $token->isChecked or '' }}
-								   autocomplete="off">
-							<label for="permission-{{  $token->id }}">
-								<span class="text-bold" style="vertical-align: top !important;">{{  $token->name }}</span>
-							</label>
-						</div>
-					</td>
-				</tr>
-
-				@foreach($token->children as $child)
-					<tr>
-						<td style="padding-left: 40px !important;">
-							<div class="checkbox check-default" style="margin:0;">
-								<input type="checkbox"
-									   class="data-permissions"
-									   id="permission-{{ $child->id }}"
-									   data-id="{{ $child->id }}"
-									   {{ $child->isChecked or '' }}
-									   autocomplete="off">
-								<label for="permission-{{  $child->id }}">
-									<span class="text-bold" style="vertical-align: top !important;">{{  $child->name }}</span>
-								</label>
+		<div class="col-md-1"></div>
+		<div class="col-md-3">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group form-group-default">
+						<label>Foto utente</label>
+						
+						<div class="text-center">
+							<div class="avatar-cool">
+								<img id="avatar-image"
+								     class="avatar-cool-image img img-fluid rounded-circle"
+								     @if(!empty($user->avatar))
+								     src="{{url($user->avatar)}}"
+								     @else
+								     src="{{asset('ikpanel/assets/img/profiles/avatar-default.png')}}"
+										@endif
+								/>
+								<div id="avatar-button" class="avatar-cool-edit">
+									<i class="fas fa-pencil-alt fa-fw"></i>
+								</div>
+								<input type="file" id="avatar" class="form-data jhide"
+								       accept=".jpg, .png, .jpeg|images/*"
+								       autocomplete="off"/>
 							</div>
-						</td>
-					</tr>
-				@endforeach
-
-			@endforeach
-
-
-		@endforeach
-
-		</tbody>
-	</table>
-
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group form-group-default form-group-default-select2 required">
+						<label for="role">Ruolo</label>
+						<select id="role"
+						        class="full-width select2-hidden-accessible form-data"
+						        tabindex="-1"
+						        aria-hidden="true"
+						        autocomplete="off">
+							<option></option>
+							@foreach($roles as $role)
+								<option value="{{ $role->id }}">{{ $role->group_name }}</option>
+							@endforeach
+						</select>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 @endsection
 
 @section('final_script')
-	<script src="{{ asset('ikpanel/assets/js/jquery.redirect.js') }}"></script>
 	<script type="text/javascript"
-			src="{{ asset('ikpanel/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js') }}"></script>
+	        src="{{ asset('ikpanel/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js') }}"></script>
 	<script type="text/javascript"
-			src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js') }}"></script>
+	        src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js') }}"></script>
 	<script type="text/javascript"
-			src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js') }}"></script>
-	<script type="text/javascript"
-			src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/datatables.responsive.js') }}"></script>
-	<script type="text/javascript"
-			src="{{ asset('ikpanel/assets/lugins/datatables-responsive/js/lodash.min.js') }}"></script>
-	<script type="text/javascript"
-			src="{{ asset('ikpanel/assets/plugins/switchery/js/switchery.min.js') }}"></script>
-	<script type="text/javascript"
-			src="{{ asset('ikpanel/plugins/js/role_new.js') }}?{{ time() }}"></script>
+	        src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js') }}"></script>
+	<script src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/datatables.responsive.js') }}"
+	        type="text/javascript"></script>
+	<script src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/lodash.min.js') }}"
+	        type="text/javascript"></script>
+	<script type="text/javascript" src="{{ asset('ikpanel/assets/plugins/select2/js/select2.js') }}"></script>
+	<script src="{{ asset('ikpanel/plugins/js/users_new.js') }}" type="text/javascript"></script>
+	
 @endsection
