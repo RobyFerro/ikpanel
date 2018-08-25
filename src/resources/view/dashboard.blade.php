@@ -40,15 +40,15 @@
 	<!-- BEGIN Pages CSS-->
 	<link href="{{ asset('ikpanel/pages/css/pages-icons.css') }}" rel="stylesheet" type="text/css">
 	<link class="main-stylesheet" href="{{ asset('ikpanel/pages/css/pages.css') }}" rel="stylesheet" type="text/css"/>
-	<link href="{{ asset('ikpanel/plugins/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css') }}"
+	<link href="{{ asset('ikpanel/plugins/fontawesome-pro-5.2.0/css/all.min.css') }}"
 	      rel="stylesheet" type="text/css"/>
-	<!-- IKPANEL PANEL -->
+	<!-- ikpanel  -->
 	<link href="{{ asset('ikpanel/assets/css/style.css') }}" rel="stylesheet" type="text/css"/>
 	<!-- BACKEND -->
-	<link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css"/>
-<!--[if lte IE 9]>
-    <link href="{{ asset('ikpanel/pages/css/ie9.css') }}" rel="stylesheet" type="text/css"/>
-    <![endif]-->
+	{!! css('css/admin.css', true) !!}
+	<!--[if lte IE 9]>
+	<link href="{{ asset('ikpanel/pages/css/ie9.css') }}" rel="stylesheet" type="text/css"/>
+	<![endif]-->
 	@yield('initial_link')
 	<script type="text/javascript">
 		window.onload = function() {
@@ -61,10 +61,24 @@
 			delete admin_panel_url;
 		} // if
 		
-		var admin_panel_url = "{!! admin_url() !!}";
+		if(app_url !== undefined) {
+			delete app_url;
+		} // if
+		
+		var admin_panel_url = "{!! admin_url() !!}",
+			app_url = "{!! app_url() !!}";
 	</script>
 </head>
-<body class="fixed-header">
+
+@php
+	$cookies = $_COOKIE;
+	$menupin = '';
+	if(isset($cookies['menu']) && $cookies['menu'] == 'ON') {
+		$menupin = 'menu-pin';
+	}
+@endphp
+
+<body class="fixed-header {{$menupin}}">
 @yield('beforebody')
 <!-- END Overlay Content !-->
 	
@@ -74,17 +88,17 @@
 		</div>
 		<!-- BEGIN SIDEBAR HEADER -->
 		<div class="sidebar-header">
-			<img src="{{ asset('ikpanel/assets/img/ikpanel-white.png') }}"
+			<img src="{{ asset('ikpanel/assets/img/logo_white.png') }}"
 			     alt="logo"
 			     class="brand"
-			     data-src="{{ asset('ikpanel/assets/img/ikpanel-white.png') }}"
-			     data-src-retina="{{ asset('ikpanel/assets/img/ikpanel-white.png') }}"
+			     data-src="{{ asset('ikpanel/assets/img/logo_white.png') }}"
+			     data-src-retina="{{ asset('ikpanel/assets/img/logo_white.png') }}"
 			     width="78">
 			<div class="sidebar-header-controls">
 				{{--<button data-pages-toggle="#appMenu" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" type="button">
 					<i class="fa fa-angle-down fs-16"></i>
 				</button>--}}
-				<button data-toggle-pin="sidebar"
+				<button data-toggle-pin="sidebar" id="menu-lock"
 				        class="btn btn-link visible-lg-inline"
 				        type="button"><i
 							class="fas fs-12"></i>
@@ -149,21 +163,15 @@
 			<div class=" pull-left sm-table hidden-xs hidden-sm">
 				<div class="header-inner">
 					<div class="brand inline">
-						<img src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
+						<img src="{{ asset('ikpanel/assets/img/logo.png') }}"
 						     alt="logo"
-						     data-src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
-						     data-src-retina="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
+						     data-src="{{ asset('ikpanel/assets/img/logo.png') }}"
+						     data-src-retina="{{ asset('ikpanel/assets/img/logo.png') }}"
 						     width="78">
 					</div>
-					{<!-- START NOTIFICATION LIST -->
-					@include('ecit_admin::components.notification')
+					<!-- START NOTIFICATION LIST -->
+					@include('ikpanel::components.notification')
 					{{-- STOP NOTIFICATION LIST--}}
-					<span class="topbar-separator"></span>
-					<a href="#" class="search-link" data-toggle="search">
-						<i class="fas fa-search" style="vertical-align: text-bottom;"></i>
-						Scrivi qualcosa per iniziare la <span class="bold">ricerca</span>
-					</a>
-				
 				</div>
 			</div>
 			<div class=" pull-right">
@@ -184,15 +192,22 @@
 						        aria-haspopup="true"
 						        aria-expanded="false">
                         <span class="thumbnail-wrapper d32 circular inline m-t-5">
-                            <img src="{{ asset('ikpanel/assets/img/profiles/user.png') }}"
-                                 alt=""
-                                 data-src="{{ asset('ikpanel/assets/img/profiles/user.png') }}"
-                                 data-src-retina="{{ asset('ikpanel/assets/img/profiles/user.png') }}"
+                            <img alt="Foto utente"
+                                 @if(!empty(Illuminate\Support\Facades\Auth::user()->avatar))
+                                 src="{{url(Illuminate\Support\Facades\Auth::user()->avatar)}}"
+                                 @else
+                                 src="{{asset('ikpanel/assets/img/profiles/avatar-default.png')}}"
+                                 @endif
                                  width="32"
                                  height="32">
                         </span>
 						</button>
 						<ul class="dropdown-menu profile-dropdown" role="menu">
+							<li>
+								<a href="{{ admin_url('/profile') }}" class="clearfix">
+									<i class="fas fa-user fa-fw"></i> Il mio account
+								</a>
+							</li>
 							<li class="bg-master-lighter">
 								<a href="{{ admin_url('/logout') }}"
 								   onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
@@ -252,11 +267,11 @@
 				<div class="copyright sm-text-center">
 					<p class="small no-margin pull-left sm-pull-reset">
 						<span class="hint-text">Copyright © 2018</span>
-						<span class="font-montserrat">Interactive Knowledge Development</span>.
+						<span class="font-montserrat">Interective Knowledge Development Srl</span>.
 						<span class="hint-text">All rights reserved.</span>
-						<span class="sm-block"><a href="#" class="m-l-10 m-r-10">Terms of use</a> |
-                        <a href="#" class="m-l-10">Privacy Policy</a>
-                    </span>
+						{{--<span class="sm-block"><a href="#" class="m-l-10 m-r-10">Terms of use</a> |
+							<a href="#" class="m-l-10">Privacy Policy</a>
+						</span>--}}
 					</p>
 					<p class="small no-margin pull-right sm-pull-reset">
 						<span class="font-montserrat"><i>{{ env('APP_NAME') }} {{ Session::get('version') }}</i></span>
@@ -628,10 +643,10 @@
 			<div class="container-fluid">
 				<!-- BEGIN Overlay Logo !-->
 				<img class="overlay-brand"
-				     src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
+				     src="{{ asset('ikpanel/assets/img/logo.png') }}"
 				     alt="logo"
-				     data-src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
-				     data-src-retina="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
+				     data-src="{{ asset('ikpanel/assets/img/logo.png') }}"
+				     data-src-retina="{{ asset('ikpanel/assets/img/logo.png') }}"
 				     width="78">
 				<!-- END Overlay Logo !-->
 				<!-- BEGIN Overlay Close !-->
@@ -766,31 +781,38 @@
 			<!-- END Overlay Search Results !-->
 		</div>
 	</div>
-	@stack('modal-container')
-	<!-- END OVERLAY -->
+@stack('modal-container')
+<!-- END OVERLAY -->
 	<!-- BEGIN VENDOR JS -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/pace/pace.min.js') }}" type="text/javascript"></script>
-	<script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-1.11.1.min.js') }}" type="text/javascript"></script>
+	{{--<script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-1.11.1.min.js') }}" type="text/javascript"></script>--}}
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	        crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+	        integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+	        crossorigin="anonymous"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/modernizr.custom.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.min.js') }}"
 	        type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-easy.js') }}" type="text/javascript"></script>
-	<script src="{{ asset('ikpanel/assets/plugins/jquery-unveil/jquery.unveil.min.js') }}"
-	        type="text/javascript"></script>
+	<script src="{{ asset('ikpanel/assets/plugins/jquery-unveil/jquery.unveil.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-bez/jquery.bez.min.js') }}"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-ios-list/jquery.ioslist.min.js') }}"
 	        type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-actual/jquery.actual.min.js') }}"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+	<script src="{{ asset('ikpanel/plugins/fontawesome-pro-5.2.0/js/all.min.js')}}" data-auto-replace-svg="false"></script>
 	<!-- END VENDOR JS -->
 	<!-- BEGIN CORE TEMPLATE JS -->
 	<script src="{{ asset('ikpanel/pages/js/pages.js') }}" type="text/javascript"></script>
 	<!-- END CORE TEMPLATE JS -->
 	<!-- BEGIN PAGE LEVEL JS -->
 	{!! script('ikpanel/assets/plugins/jquery-typewatch/jquery.typewatch.js') !!}
+	<script src="{{ asset('ikpanel/assets/plugins/js-cookie/js.cookie.js') }}"></script>
 	<script src="{{ asset('ikpanel/assets/js/scripts.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/plugins/js/global.js') }}"></script>
 	<!-- END PAGE LEVEL JS -->
@@ -800,5 +822,6 @@
 <!-- END CUSTOM COMPONENTS -->
 	
 	@yield('final_script')
+	@stack('final_script')
 </body>
 </html>
