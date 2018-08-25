@@ -11,6 +11,7 @@ $(document).ready(function(){
         sPaginationType: "bootstrap",
         destroy: true,
         scrollCollapse: true,
+	    stateSave:true,
         oLanguage: {
             sLengthMenu: "_MENU_ ",
             sInfo: "Stai visualizzando da <b>_START_ a _END_</b> su _TOTAL_ risultati",

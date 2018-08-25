@@ -11,6 +11,7 @@ namespace ikdev\ikpanel\app;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * Class Users
@@ -29,6 +30,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class Users extends Authenticatable {
 	use SoftDeletes;
+	use Notifiable;
 	
 	protected $table = 'users';
 	protected $primaryKey = 'id';

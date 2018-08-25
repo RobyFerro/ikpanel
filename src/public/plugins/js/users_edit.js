@@ -2,14 +2,35 @@ $(function () {
 	
 	$('#role').select2();
 	
+	//region AVATAR
+	$('#avatar-button').on('click', function() {
+		$('#avatar').trigger('click');
+	});
+	
+	let filereader = new FileReader();
+	$('#avatar').on('change', function(e) {
+		filereader.readAsDataURL(e.target.files[0]);
+	});
+	
+	filereader.onload = function(e) {
+		let avatar = $('#avatar-image'),
+			avatar_width = avatar.width();
+		avatar.prop('src', e.target.result);
+		avatar.height(avatar_width);
+	};
+	//endregion
+	
 	$('.action-save').on('click', function() {
 		let me = $(this);
 		
 		$.ajax({
-			type: 'PUT',
-			contentType: 'application/json',
+			type: 'POST',
+			cache: false,
+			contentType: false,
+			processData: false,
+			acceptCharset: 'utf-8',
 			url: admin_panel_url+'/users/update',
-			data: JSON.stringify(getInput()),
+			data: getInputFormDataJson(),
 			success: function (data) {
 				
 				switch (me.data('action')){

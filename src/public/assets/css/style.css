@@ -102,6 +102,16 @@ i.required-asterisk::after {
     display: none;
 }
 
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: unset !important;
+}
+
+mark{
+    padding:0;
+    background:#FFFF66;
+    color:#000000;
+}
+
 /***********************************************************************************************************************
 STILI BACK-END
 ***********************************************************************************************************************/
@@ -230,6 +240,12 @@ ul.navbar-nav li.nav-item a.dropdown-toggle::after {
 }
 /*endregion*/
 
+/*region FIX NOTIFICHE SOTTO MODAL*/
+.pgn-wrapper{
+    z-index: 99999 !important;
+}
+/*endregion*/
+
 .truncate-ellipsis{
     white-space: nowrap;
     overflow: hidden;
@@ -284,8 +300,22 @@ a.hover-underline:hover{
     background-color: white !important;
 }
 
+.login-wrapper .bg-pic > img {
+    height: 80%;
+    opacity: 1;
+}
+
 .bg-pic-fix{
     background-repeat: no-repeat;
     background-position: left;
     background-size: 65%;
 }
+
+/*region FIX FOOTER WIDTH*/
+@media only screen and (min-width: 980px) {
+    body.menu-pin .page-container .page-content-wrapper .footer {
+        left: 250px;
+        width: auto;
+    }
+}
+/*endregion*/

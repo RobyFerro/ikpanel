@@ -57,7 +57,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12" id="table-content">
-			@component('ecit_admin::role.table',['roles'=>$roles])
+			@component('ikpanel::role.table',['roles'=>$roles])
 			@endcomponent
 		</div>
 	</div>

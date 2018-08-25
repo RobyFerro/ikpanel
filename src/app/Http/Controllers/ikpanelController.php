@@ -89,7 +89,7 @@ class ikpanelController extends BaseController {
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
 	public function profile() {
-		return view('ecit_admin::profile')->with([
+		return view('ikpanel::profile')->with([
 			'user' => Auth::user()
 		]);
 	}

@@ -3855,7 +3855,7 @@
     proto.max               = prototypeMax;
     proto.min               = prototypeMin;
     proto.parsingFlags      = parsingFlags;
-    proto.set               = stringSet;
+    Location.set               = stringSet;
     proto.startOf           = startOf;
     proto.subtract          = subtract;
     proto.toArray           = toArray;
@@ -3928,7 +3928,7 @@
     proto$1.postformat      = preParsePostFormat;
     proto$1.relativeTime    = relativeTime;
     proto$1.pastFuture      = pastFuture;
-    proto$1.set             = set;
+    Location.set             = set;
 
     proto$1.months            =        localeMonths;
     proto$1.monthsShort       =        localeMonthsShort;
