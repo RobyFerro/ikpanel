@@ -33,7 +33,11 @@ class RoleEdit extends FormRequest
     	
         return $rules;
     }
-
+	
+	/**
+	 * Error messages
+	 * @return array
+	 */
     public function messages()
     {
         return [

@@ -1,56 +1,46 @@
-<table id="users-table" class="table table-valign table-condensed" cellspacing="0" width="100%">
+<table id="roles-table" class="table table-valign table-condensed" cellspacing="0" width="100%">
 	<colgroup>
-		<col style="width: 50px;">
+		<col style="width: 70px;">
 		<col style="width: auto;">
 		<col style="width: auto;">
 		<col style="width: auto;">
-		<col style="width: 80px;">
-		<col style="width: 280px;">
 	</colgroup>
 	<thead>
 	<tr>
 		<th>#</th>
-		<th>Nome</th>
-		<th>Cognome</th>
-		<th>Email</th>
+		<th>Tipo</th>
 		<th>Stato</th>
-		<th style="text-align: right">Azioni</th>
+		<th style="text-align: right">Azione</th>
 	</tr>
 	</thead>
 	<tbody>
-	@foreach($users as $i=>$user)
+	@foreach($roles as $i=>$role)
 		<tr>
-			<td>{{ ($i+1) }}</td>
-			<td>{{ $user->name }}</td>
-			<td>{{ $user->surname }}</td>
-			<td>{{ $user->email }}</td>
-			<td class="text-center">
-				@if(is_null($user->deleted_at))
-					<span class="fa-stack" data-toggle="tip" title="Attivo" style="font-size: 10px;">
-						<i class="fas fa-circle fa-stack-2x"></i>
-						<i class="fas fa-check fa-stack-1x fa-inverse"></i>
-					</span>
+			<td>{{ $i+1 }}</td>
+			<td>{{ $role->group_name }}</td>
+			<td>
+				@if(is_null($role->deleted_at))
+					<i class="fa fa-check-circle fa-fw text-success"></i>
+					<span class="text-success text-bold">Attivo</span>
 				@else
-					<span class="fa-stack" data-toggle="tip" title="Eliminato" style="font-size: 10px;">
-						<i class="fas fa-circle fa-stack-2x"></i>
-						<i class="fas fa-trash-alt fa-stack-1x fa-inverse"></i>
-					</span>
+					<i class="fa fa-times-circle fa-fw text-danger"></i>
+					<span class="text-danger text-bold">Disattivo</span>
 				@endif
 			</td>
-			<td style="text-align: right;">
-				@if(is_null($user->deleted_at))
-					<a href="{{admin_url('/users/edit/'.$user->id)}}"
+			<td style="text-align: right">
+				@if(is_null($role->deleted_at))
+					<a href="{{admin_url('/roles/edit/'.$role->id)}}"
 					   class="btn btn-info btn-sm" style="min-width: 110px;">
 						<i class="fas fa-edit fa-fw"></i>
 						Modifica
 					</a>
 					<button class="btn btn-danger btn-sm action-delete" style="min-width: 110px;"
-					        data-id="{{ $user->id }}">
+					        data-id="{{ $role->id }}">
 						<i class="fas fa-trash-alt fa-fw"></i> Elimina
 					</button>
 				@else
 					<button class="btn btn-success btn-sm action-restore" style="min-width: 110px;"
-					        data-id="{{ $user->id }}">
+					        data-id="{{ $role->id }}">
 						<i class="fas fa-undo-alt fa-fw"></i> Ripristina
 					</button>
 				@endif

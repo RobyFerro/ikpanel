@@ -18,6 +18,26 @@ use Illuminate\Http\Request;
  */
 class EditUserRequest extends FormRequest
 {
+	/**
+	 * EditUserRequest constructor.
+	 * @param Request $request
+	 */
+	public function __construct(Request $request) {
+		
+		$data = json_decode($request->data, true);
+		$request->request->remove('data');
+		
+		foreach ($data as $item) {
+			$myvalue = isset($item['value']) ? $item['value'] : null;
+			
+			if (is_string($myvalue) && strlen($myvalue) == 0) {
+				$myvalue = null;
+			} // if
+			
+			$request->request->set($item['id'], $myvalue);
+		} // foreach
+	}
+	
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -36,14 +56,15 @@ class EditUserRequest extends FormRequest
     public function rules(Request $request)
     {
     	$rules=[];
-    	
-    	$rules['id']='required|exists:users,id';
-    	$rules['name']='required|min:1|max:50';
-    	$rules['surname']='required|min:1|max:50';
-    	$rules['mail']='nullable|email|max:50|unique:users,email';
+	
+	    $rules['id'] = 'required|exists:users,id';
+	    $rules['name'] = 'required|min:1|max:50';
+	    $rules['surname'] = 'required|min:1|max:50';
+	    $rules['mail'] = 'nullable|email|max:50|unique:users,email';
 	    $rules['password'] = 'nullable|min:1|max:255|same:repassword|required_with:repassword';
 	    $rules['repassword'] = 'nullable';
-	    $rules['role']='required|exists:role,id';
+	    $rules['role'] = 'required|exists:role,id';
+	    $rules['avatar'] = 'nullable|file|mimes:jpeg,png,jpg|max:2048|dimensions:min_width=50';
         
         return $rules;
     }
@@ -69,6 +90,11 @@ class EditUserRequest extends FormRequest
 	    $message['password.required_with'] = 'Il campo "Password" è richiesto.';
 	    $message['role.required'] = 'Il campo "Ruolo" è richiesto.';
 	    $message['role.exists'] = 'Il ruolo selezionato non esiste.';
+	    $message['avatar.required'] = 'La foto del candidato è richiesta!';
+	    $message['avatar.mimes'] = 'La foto del candidato deve essere un file jpeg o png!';
+	    $message['avatar.file'] = 'La foto del candidato deve essere un file.';
+	    $message['avatar.max'] = 'La foto del candidato non può superare i 2MB di grandezza!';
+	    $message['avatar.dimensions'] = 'La foto del candidato deve essere minimo di 50 pixel larghezza/altezza.';
 	    
 	    return $message;
     }

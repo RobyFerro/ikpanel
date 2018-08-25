@@ -24,6 +24,9 @@ Route::prefix(env('IKPANEL_URL'))->group(function(){
 	Route::group(['middleware' => 'ikdev\ikpanel\Http\Middleware\AuthMiddleware'], function(){
 		
 		Route::get('/', 'ikpanelController@home');
+		Route::get('/search', 'EcitPanelController@search');
+		Route::get('/profile', 'EcitPanelController@profile');
+		Route::post('/profile/update', 'EcitPanelController@profileUpdate');
 		
 		Route::prefix('users')->group(function(){
 			
@@ -39,7 +42,7 @@ Route::prefix(env('IKPANEL_URL'))->group(function(){
 			
 			Route::group(['as' => 'editUser'], function(){
 				Route::get('/edit/{id}', 'UserController@edit');
-				Route::put('/update','UserController@update');
+				Route::post('/update','UserController@update');
 			});
 			
 			Route::group(['as' => 'deleteUser'], function(){

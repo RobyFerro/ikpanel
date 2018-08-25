@@ -35,12 +35,29 @@ class Users extends Authenticatable {
 	protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 	protected $hidden = ['password', 'remember_token'];
 	
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
 	public function user_role() {
 		return $this->belongsTo(Role::class, 'role', 'id');
 	}
-
+	
+	/**
+	 * @param $token
+	 * @return bool
+	 */
 	public function hasToken($token){
 	    return in_array($token, $this->user_role->token()->pluck('id')->toArray());
     }
+	
+	/**
+	 * @return null|string
+	 */
+	public function getFullnameAttribute() {
+		if (!empty($this->id)) {
+			return "$this->name $this->surname";
+		}
+		return null;
+	}
 
 }

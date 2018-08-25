@@ -8,6 +8,8 @@
 
 namespace ikdev\ikpanel\App\Http\Controllers;
 
+use ikdev\ikpanel\App\Http\Requests\ProfileRequest;
+use ikdev\ikpanel\app\Http\Classes\PanelUtilities;
 use ikdev\ikpanel\app\Users;
 
 use Illuminate\Database\QueryException;
@@ -15,7 +17,6 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use ikdev\ikpanel\app\Menu;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cache;
 
 class ikpanelController extends BaseController {
 	
@@ -74,4 +75,58 @@ class ikpanelController extends BaseController {
 	public function home(){
         return view('ikpanel::home');
     }
+	
+	/**
+	 * Load search view
+	 * @param Request $request
+	 */
+    public function search(Request $request){
+		//
+    }
+	
+	/**
+	 * Load profile view
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function profile() {
+		return view('ecit_admin::profile')->with([
+			'user' => Auth::user()
+		]);
+	}
+	
+	/**
+	 * Update user profile
+	 * @param ProfileRequest $request
+	 * @return array
+	 */
+	public function profileUpdate(ProfileRequest $request) {
+		
+		$password = $request->input('password');
+		
+		DB::beginTransaction();
+		
+		try {
+			/** @var Users $user */
+			$user = Users::find(Auth::id());
+			
+			if (!is_null($password)) {
+				$user->password = bcrypt($password);
+				$user->save();
+			}
+			
+			if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
+				PanelUtilities::saveUserAvatar($user->id, $request->file('avatar'));
+			}
+			
+			DB::commit();
+			
+			return [true];
+			
+		} catch (Exception $e) {
+			DB::rollBack();
+			throw $e;
+		}
+	}
+ 
+ 
 }

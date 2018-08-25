@@ -28,10 +28,17 @@ class Logs extends Model{
 	const TYPE_DANGER = 'DANGER';
 	const TYPE_ERROR = 'ERROR';
 	
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
 	public function user(){
 		return $this->belongsTo(Users::class, 'userid', 'id');
 	}
 	
+	/**
+	 * @param $value
+	 * @return string
+	 */
 	public function getDateAttribute($value){
 		return Carbon::createFromFormat('Y-m-d H:i:s',$value)->format('d/m/Y H:i:s');
 	}
@@ -106,6 +113,11 @@ class Logs extends Model{
 		self::log($action,self::TYPE_ERROR,func_get_args());
 	}
 	
+	/**
+	 * @param $format
+	 * @param $args
+	 * @return mixed
+	 */
 	private static function format($format,$args)
 	{
 		//$args = func_get_args();
