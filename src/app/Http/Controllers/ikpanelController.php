@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use ikdev\ikpanel\app\Menu;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ikpanelController extends BaseController {
 	

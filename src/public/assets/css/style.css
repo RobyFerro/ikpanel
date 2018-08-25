@@ -300,11 +300,6 @@ a.hover-underline:hover{
     background-color: white !important;
 }
 
-.login-wrapper .bg-pic > img {
-    height: 80%;
-    opacity: 1;
-}
-
 .bg-pic-fix{
     background-repeat: no-repeat;
     background-position: left;

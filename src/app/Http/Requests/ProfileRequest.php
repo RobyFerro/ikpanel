@@ -1,6 +1,6 @@
 <?php
 
-namespace ecit\admin_panel\App\Http\Requests;
+namespace ikdev\ikpanel\App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
