@@ -10,6 +10,16 @@ class SeedMenuTable extends Migration {
 	 * @return void
 	 */
 	public function up() {
+		
+		Menu::insert([
+			'id'       => 'FOLDER_SETTINGS',
+			'id_token' => 'SHOW_SETTINGS',
+			'name'     => 'Impostazioni',
+			'route'    => null,
+			'icon'     => 'fas fa-cogs',
+			'relation' => null
+		]);
+		
 		Menu::insert([
 			[
 				'id'       => 'ITEM_SHOW_USERS',
@@ -34,15 +44,7 @@ class SeedMenuTable extends Migration {
 				'route'    => '/logs',
 				'icon'     => 'fas fa-user-secret',
 				'relation' => 'FOLDER_SETTINGS'
-			],
-            [
-                'id'       => 'FOLDER_SETTINGS',
-                'id_token' => 'SHOW_SETTINGS',
-                'name'     => 'Impostazioni',
-                'route'    => null,
-                'icon'     => 'fas fa-cogs',
-                'relation' => null
-            ]
+			]
 		]);
 	}
 	
