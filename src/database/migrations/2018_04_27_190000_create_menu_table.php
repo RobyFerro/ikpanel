@@ -19,7 +19,7 @@ class CreateMenuTable extends Migration
             $table->string('name',50);
             $table->string('route', 255)->nullable();
             $table->string('icon', 50)->nullable();
-            $table->string('relation',64)->nullable();
+            $table->integer('relation',64)->nullable();
             $table->integer('order')->nullable();
             $table->timestamps();
         });
