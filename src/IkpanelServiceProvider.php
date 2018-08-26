@@ -16,8 +16,7 @@ class IkpanelServiceProvider extends ServiceProvider
     {
         $this->publishes([
         	__DIR__.'/public' => public_path('ikpanel/'),
-	        __DIR__.'/resources/assets' => resource_path('assets/'),
-	        __DIR__.'composer.json' => base_path(),
+	        __DIR__.'/resources/assets' => resource_path('assets/')
         ], 'ikpanel');
         
         $this->loadRoutesFrom(__DIR__ .'/routes/web.php');
