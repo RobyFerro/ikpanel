@@ -1,7 +1,7 @@
 <?php
 
-use ecit\admin_panel\app\Role;
-use ecit\admin_panel\app\Users;
+use ikdev\ikpanel\app\Role;
+use ikdev\ikpanel\app\Users;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\QueryException;
 

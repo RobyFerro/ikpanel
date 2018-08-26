@@ -1,6 +1,6 @@
 <?php
 
-use ecit\admin_panel\app\Menu;
+use ikdev\ikpanel\app\Menu;
 use Illuminate\Database\Migrations\Migration;
 
 class SeedMenuTable extends Migration {

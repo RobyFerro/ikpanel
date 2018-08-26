@@ -71,7 +71,7 @@
 						     @if(!empty($user->avatar))
 						     src="{{url($user->avatar)}}"
 						     @else
-						     src="{{asset('ecit/assets/img/profiles/avatar-default.png')}}"
+						     src="{{asset('ikpanel/assets/img/profiles/avatar-default.png')}}"
 								@endif
 						/>
 						<div id="avatar-button" class="avatar-cool-edit">

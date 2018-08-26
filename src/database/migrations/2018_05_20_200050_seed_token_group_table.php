@@ -1,6 +1,6 @@
 <?php
 
-use ecit\admin_panel\app\TokenGroup;
+use ikdev\ikpanel\app\TokenGroup;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;

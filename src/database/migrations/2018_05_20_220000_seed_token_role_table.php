@@ -1,6 +1,6 @@
 <?php
 
-use ecit\admin_panel\app\Role;
+use ikdev\ikpanel\app\Role;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
