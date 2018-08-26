@@ -85,9 +85,8 @@ php artisan migrate
 - [x] Administration panel (done)
 - [x] Integrate Laravel Filemanager (done)
 - [ ] Improve installation procedure
-- [ ] User avatar
+- [x] User avatar (done)
+- [x] Permission manager (done)
+- [x] Notification manager (done)
 - [x] Role managing (done)
 - [ ] Traslate Laravel Filemanager
-- [ ] Remplace template HTML (ElaAdmin)
-- [ ] Enable/disable module
-- [ ] Blog module
