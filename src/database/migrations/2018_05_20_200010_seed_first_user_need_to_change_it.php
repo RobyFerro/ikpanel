@@ -1,7 +1,7 @@
 <?php
 
-use ikdev\ikpanel\app\Role;
-use ikdev\ikpanel\app\Users;
+use ecit\admin_panel\app\Role;
+use ecit\admin_panel\app\Users;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\QueryException;
 
@@ -29,7 +29,7 @@ class SeedFirstUserNeedToChangeIt extends Migration
             $mod_users->surname = 'User';
             $mod_users->email = 'boba.fett@ikpanel.eu';
             $mod_users->role = $mod_role->id;
-            $mod_users->password = bcrypt("toor");
+            $mod_users->password = bcrypt("0");
             $mod_users->save();
         } catch (QueryException $e) {
             throw $e;

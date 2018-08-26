@@ -10,7 +10,7 @@ This package require [Laravel Framework](https://github.com/laravel/laravel).
 
 #### Demo
 Click [here](https://demo.ikpanel.eu/) to try ikpanel
-* Username: boba.fetto@ikpanel.eu
+* Username: boba.fett@ikpanel.eu
 * Password: toor
 
 #### Getting started
