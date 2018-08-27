@@ -31,14 +31,14 @@
 								<div class="heading open">
 									<a href="#" class="text-complete pull-left">
 										<i class="pg-map fs-16 m-r-10"></i>
-										<a href="{!! admin_url($notification->data['link']) !!}">
-								<span class="bold">
-									{!! $notification->data['title'] !!}
-								</span>
+										<a href="{!! admin_url($notification->data['link']) !!}?notification={!! $notification->id  !!}">
+											<span class="bold">
+												{!! $notification->data['title'] !!}
+											</span>
 										</a>
 										<span class="fs-12 m-l-10">
-								{{-- NOME --}}
-							</span>
+											{{-- NOME --}}
+										</span>
 									</a>
 									<div class="pull-right">
 										<div class="thumbnail-wrapper d16 circular inline m-t-15 m-r-10 toggle-more-details">

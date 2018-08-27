@@ -19,6 +19,10 @@ class IkpanelServiceProvider extends ServiceProvider
 	        __DIR__.'/resources/assets' => resource_path('assets/'),
 	        __DIR__.'/node' => base_path('/')
         ], 'ikpanel');
+	
+	    $this->publishes([
+		    __DIR__.'/app/Http/Kernel.php' => app_path('Http/Kernel.php'),
+	    ], 'ikpanel_kernel');
         
         $this->loadRoutesFrom(__DIR__ .'/routes/web.php');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
