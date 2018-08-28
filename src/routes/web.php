@@ -80,5 +80,13 @@ Route::prefix(env('IKPANEL_URL'))->group(function() {
 			});
 		});
 		
+		Route::prefix('file-manager')->group(function() {
+			
+			Route::group(['as' => 'filemanager'], function() {
+				Route::get('/', 'ikpanelController@showFileManager');
+			});
+			
+		});
+		
 	});
 });

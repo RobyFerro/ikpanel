@@ -28,7 +28,7 @@ IKPANEL_URL=MY_URL
 * Add the followings service provider in config/app.php 
 ```
 ikdev\ikpanel\IkpanelServiceProvider::class,
-Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+Alexusmai\LaravelFileManager\FileManagerServiceProvider::class,
 Intervention\Image\ImageServiceProvider::class,
 ```
 
@@ -65,8 +65,8 @@ with:
 Execute the followings commands:
 ```
 php composer.phar update && php composer.phar dump-autoload -o
-php artisan vendor:publish --tag=lfm_config
-php artisan vendor:publish --tag=lfm_public
+php artisan vendor:publish --tag=fm-config
+php artisan vendor:publish --tag=fm-assets
 php artisan vendor:publish --tag=ikpanel
 ```
 

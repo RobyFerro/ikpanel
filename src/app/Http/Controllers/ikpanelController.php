@@ -128,6 +128,13 @@ class ikpanelController extends BaseController {
 			throw $e;
 		}
 	}
+	
+	/**
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function showFileManager(){
+		return view('ikpanel::file_manager');
+	}
  
  
 }

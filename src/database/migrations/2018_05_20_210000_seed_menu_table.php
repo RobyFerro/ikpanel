@@ -44,6 +44,14 @@ class SeedMenuTable extends Migration {
 				'route'    => '/logs',
 				'icon'     => 'fas fa-user-secret',
 				'relation' => 'FOLDER_SETTINGS'
+			],
+			[
+				'id'       => 'ITEM_FILE_MANAGER',
+				'id_token' => 'FILE_MANAGER',
+				'name'     => 'File manager',
+				'route'    => '/file-manager',
+				'icon'     => 'far fa-file',
+				'relation' => 'FOLDER_SETTINGS'
 			]
 		]);
 	}
