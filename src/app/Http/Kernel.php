@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use ikdev\ikpanel\app\Http\Middleware\NotificationMiddleware;
+use ikdev\ikpanel\Http\Middleware\AuthMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -36,7 +38,10 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-
+        'ikpanel' => [
+	        AuthMiddleware::class,
+	        NotificationMiddleware::class,
+        ],
         'api' => [
             'throttle:60,1',
             'bindings',

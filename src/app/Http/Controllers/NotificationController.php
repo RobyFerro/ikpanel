@@ -35,22 +35,23 @@ class NotificationController extends BaseController {
 	 * @param $status
 	 * @return array
 	 */
-	public function showNotifications($status) {
+	public function showNotifications($status = 'all') {
 		
 		$user = Auth::user();
 		
 		switch ($status) {
 			case 'all':
-				$notifications = $user->notifications;
+				$notifications = $user->notifications->paginate(20);
 				break;
 			case 'unread':
-				$notifications = $user->unreadNotifications;
+				$notifications = $user->unreadNotifications->paginate(20);
 				break;
 			default:
 				$notifications = [];
 		} // switch
 		
-		return $notifications;
+		return view('ikpanel::notification_list')
+			->with(['notifications' => $notifications]);
 		
 	}
 	

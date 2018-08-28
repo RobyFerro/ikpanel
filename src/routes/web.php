@@ -26,6 +26,7 @@ Route::prefix(env('IKPANEL_URL'))->group(function() {
 		Route::get('/', 'ikpanelController@home');
 		Route::get('/search', 'ikpanelController@search');
 		Route::get('/profile', 'ikpanelController@profile');
+		Route::get('/notifications', 'NotificationController@showNotifications');
 		Route::post('/profile/update', 'ikpanelController@profileUpdate');
 		
 		Route::prefix('users')->group(function() {

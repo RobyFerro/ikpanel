@@ -78,7 +78,7 @@
 						@endforeach
 					</div>
 					<div class="notification-footer text-center">
-						<a href="#" class="">Leggi tutte le notifiche</a>
+						<a href="{{ admin_url('/notifications') }}" class="">Mostra tutte</a>
 						<a data-toggle="refresh" class="portlet-refresh text-black pull-right"
 						   href="#">
 							<i class="pg-refresh_new"></i>

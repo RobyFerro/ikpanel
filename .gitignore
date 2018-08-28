@@ -1,6 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Laravel template
-vendor/
 node_modules/
 npm-debug.log
 
