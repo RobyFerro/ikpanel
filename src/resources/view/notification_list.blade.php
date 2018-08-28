@@ -15,27 +15,29 @@
 @endsection
 
 @section('content')
-	<ul class="list-unstyled">
-		@foreach($notifications as $item)
-			<li class="media">
-				<img class="mr-3" style="max-width: 50px" src="{{ asset($item->data['img']) }}"
-				     alt="Generic placeholder image">
-				<div class="media-body">
-					<a href="{!! admin_url($item->data['link']) !!}?notification={!! $item->id  !!}">
-						<h5 class="mt-0 mb-1">{!! $item->data['title'] !!}</h5>
-					</a>
-					{!! $item->data['message'] !!}
-					<span class="pull-right">
-						@if(!is_null($item->read_at))
-							<i class="far fa-book-open"></i>
-							{{ $item->read_at->format('d/m/Y H:i:s') }}
-						@endif
-					</span>
-				</div>
-			</li>
-			<hr>
-		@endforeach
-	</ul>
+	@foreach($notifications as $item)
+		@php
+			$read = !is_null($item->read_at) ? 'bg-white' : 'bg-complete-lighter';
+		@endphp
+		<div class="media {!! $read !!} m-2 p-2">
+			<img class="mr-3" style="max-width: 50px" src="{{ asset($item->data['img']) }}"
+			     alt="Generic placeholder image">
+			<div class="media-body">
+				<a href="{!! admin_url($item->data['link']) !!}?notification={!! $item->id  !!}">
+					<h5 class="mt-0 mb-1">{!! $item->data['title'] !!}</h5>
+				</a>
+				{!! $item->data['message'] !!}
+				<span class="pull-right">
+					@if(!is_null($item->read_at))
+						<i class="far fa-book-open"></i>
+						{{ $item->read_at->format('d/m/Y H:i:s') }}
+					@else
+						<i>Non letta</i>
+					@endif
+				</span>
+			</div>
+		</div>
+	@endforeach
 	{{ $notifications->links('ikpanel::vendor.pagination.default') }}
 @endsection
 
