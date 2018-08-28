@@ -314,3 +314,7 @@ a.hover-underline:hover{
     }
 }
 /*endregion*/
+
+.sticky-top {
+    z-index: 999 !important;
+}
