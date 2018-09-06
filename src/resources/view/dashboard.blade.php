@@ -798,14 +798,14 @@
 	<script src="{{ asset('ikpanel/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.min.js') }}"
 	        type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-easy.js') }}" type="text/javascript"></script>
-	<script src="{{ asset('ikpanel/assets/plugins/jquery-unveil/jquery.unveil.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('ikpanel/assets/plugins/jquery-unveil/jquery.unveil.min.js') }}"
+	        type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-bez/jquery.bez.min.js') }}"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-ios-list/jquery.ioslist.min.js') }}"
 	        type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-actual/jquery.actual.min.js') }}"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
-	<script src="{{ asset('ikpanel/plugins/fontawesome-pro-5.2.0/js/all.min.js')}}" data-auto-replace-svg="false"></script>
 	<!-- END VENDOR JS -->
 	<!-- BEGIN CORE TEMPLATE JS -->
 	<script src="{{ asset('ikpanel/pages/js/pages.js') }}" type="text/javascript"></script>
