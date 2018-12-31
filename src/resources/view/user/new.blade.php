@@ -20,102 +20,113 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-8">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group form-group-default required">
-						<label for="name">Nome</label>
-						<input class="form-control form-data"
-						       id="name"
-						       type="text"
-						       autocomplete="off">
+			<div class="card">
+				<div class="card-header">
+					<div class="card-title">
+						Generali
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="form-group form-group-default required">
-						<label for="surname">Cognome</label>
-						<input class="form-control form-data"
-						       id="surname"
-						       type="text"
-						       autocomplete="off">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group form-group-default required">
+								<label for="name">Nome</label>
+								<input class="form-control form-data"
+								       id="name"
+								       type="text"
+								       autocomplete="off">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group form-group-default required">
+								<label for="surname">Cognome</label>
+								<input class="form-control form-data"
+								       id="surname"
+								       type="text"
+								       autocomplete="off">
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="form-group form-group-default required">
-						<label for="mail">Email</label>
-						<input class="form-control form-data"
-						       id="mail"
-						       type="email"
-						       autocomplete="off">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group form-group-default required">
+								<label for="mail">Email</label>
+								<input class="form-control form-data"
+								       id="mail"
+								       type="email"
+								       autocomplete="off">
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group form-group-default required">
-						<label for="password">Password</label>
-						<input class="form-control form-data"
-						       id="password"
-						       type="password"
-						       autocomplete="off">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group form-group-default required">
-						<label for="repassword">Ripeti password</label>
-						<input class="form-control form-data"
-						       id="repassword"
-						       type="password"
-						       autocomplete="off">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-1"></div>
-		<div class="col-md-3">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="form-group form-group-default">
-						<label>Foto utente</label>
-						
-						<div class="text-center">
-							<div class="avatar-cool">
-								<img id="avatar-image"
-								     class="avatar-cool-image img img-fluid rounded-circle"
-								     @if(!empty($user->avatar))
-								     src="{{url($user->avatar)}}"
-								     @else
-								     src="{{asset('ikpanel/assets/img/profiles/avatar-default.png')}}"
-										@endif
-								/>
-								<div id="avatar-button" class="avatar-cool-edit">
-									<i class="fas fa-pencil-alt fa-fw"></i>
-								</div>
-								<input type="file" id="avatar" class="form-data jhide"
-								       accept=".jpg, .png, .jpeg|images/*"
-								       autocomplete="off"/>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group form-group-default required">
+								<label for="password">Password</label>
+								<input class="form-control form-data"
+								       id="password"
+								       type="password"
+								       autocomplete="off">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group form-group-default required">
+								<label for="repassword">Ripeti password</label>
+								<input class="form-control form-data"
+								       id="repassword"
+								       type="password"
+								       autocomplete="off">
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-12">
-					<div class="form-group form-group-default form-group-default-select2 required">
-						<label for="role">Ruolo</label>
-						<select id="role"
-						        class="full-width select2-hidden-accessible form-data"
-						        tabindex="-1"
-						        aria-hidden="true"
-						        autocomplete="off">
-							<option></option>
-							@foreach($roles as $role)
-								<option value="{{ $role->id }}">{{ $role->group_name }}</option>
-							@endforeach
-						</select>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group form-group-default">
+								<label>Foto utente</label>
+								
+								<div class="text-center">
+									<div class="avatar-cool">
+										<img id="avatar-image"
+										     class="avatar-cool-image img img-fluid rounded-circle"
+										     @if(!empty($user->avatar))
+										     src="{{url($user->avatar)}}"
+										     @else
+										     src="{{asset('ikpanel/assets/img/profiles/avatar-default.png')}}"
+												@endif
+										/>
+										<div id="avatar-button" class="avatar-cool-edit">
+											<i class="fas fa-pencil-alt fa-fw"></i>
+										</div>
+										<input type="file" id="avatar" class="form-data jhide"
+										       accept=".jpg, .png, .jpeg|images/*"
+										       autocomplete="off"/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group form-group-default form-group-default-select2 required">
+								<label for="role">Ruolo</label>
+								<select id="role"
+								        class="full-width select2-hidden-accessible form-data"
+								        tabindex="-1"
+								        aria-hidden="true"
+								        autocomplete="off">
+									<option></option>
+									@foreach($roles as $role)
+										<option value="{{ $role->id }}">{{ $role->group_name }}</option>
+									@endforeach
+								</select>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 @endsection
