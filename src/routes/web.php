@@ -13,7 +13,7 @@
 
 Route::prefix(env('IKPANEL_URL'))->group(function() {
 	
-	//region AUTENTICAZIONE
+	//region Authentication
 	Route::post('/login', 'LoginController@authenticate');
 	Route::post('/logout', "LoginController@logout");
 	Route::get('/login', function() {
@@ -24,6 +24,7 @@ Route::prefix(env('IKPANEL_URL'))->group(function() {
 	Route::group(['middleware' => 'ikpanel'], function() {
 		
 		Route::get('/', 'ikpanelController@home');
+		Route::get('/navigation', 'ikpanelController@getUserMenu');
 		Route::get('/search', 'ikpanelController@search');
 		Route::get('/profile', 'ikpanelController@profile');
 		Route::get('/notifications', 'NotificationController@showNotifications');

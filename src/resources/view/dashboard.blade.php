@@ -108,10 +108,8 @@
 		<!-- END SIDEBAR HEADER -->
 		<!-- BEGIN SIDEBAR MENU -->
 		<div class="sidebar-menu">
-			<ul class="menu-items">
-				@component('ikpanel::navigation',
-				['items' => \ikdev\ikpanel\App\Http\Controllers\ikpanelController::getUserMenu()])
-				@endcomponent
+			<ul class="menu-items" id="navigation">
+				<navigation></navigation>
 			</ul>
 			<div class="clearfix"></div>
 		</div>
@@ -786,7 +784,6 @@
 	<!-- BEGIN VENDOR JS -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/pace/pace.min.js') }}" type="text/javascript"></script>
-	{{--<script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-1.11.1.min.js') }}" type="text/javascript"></script>--}}
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 	        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	        crossorigin="anonymous"></script>
@@ -797,7 +794,7 @@
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.min.js') }}"
 	        type="text/javascript"></script>
-	<script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-easy.js') }}" type="text/javascript"></script>
+	{{--<script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-easy.js') }}" type="text/javascript"></script>--}}
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-unveil/jquery.unveil.min.js') }}"
 	        type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-bez/jquery.bez.min.js') }}"></script>
@@ -815,11 +812,12 @@
 	<script src="{{ asset('ikpanel/assets/plugins/js-cookie/js.cookie.js') }}"></script>
 	<script src="{{ asset('ikpanel/assets/js/scripts.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/plugins/js/global.js') }}"></script>
+	<script src="{{ asset('js/app.js') }}"></script>
 	<!-- END PAGE LEVEL JS -->
 	
 	<!-- CUSTOM COMPONENTS -->
 	@component('ikpanel::components.modern_gui')@endcomponent
-<!-- END CUSTOM COMPONENTS -->
+	<!-- END CUSTOM COMPONENTS -->
 	
 	@yield('final_script')
 	@stack('final_script')

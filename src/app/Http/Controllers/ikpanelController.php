@@ -49,7 +49,8 @@ class ikpanelController extends BaseController {
 				->with(['children' => function($query) use ($active_token) {
 					$query->whereIn('id_token', $active_token)
 						->orWhereNull('id_token');
-				}])
+				}
+				])
 				->get();
 		} catch (QueryException $e) {
 			throw $e;
@@ -61,6 +62,11 @@ class ikpanelController extends BaseController {
 				if (count($item->children) == 0) {
 					unset($menu_items[$key]);
 				} // if
+				
+				foreach ($item->children as &$child) {
+					$child->route = env('IKPANEL_URL') . $child->route;
+				} // foreach
+				
 			} // if
 			
 		} // foreach
@@ -73,17 +79,17 @@ class ikpanelController extends BaseController {
 	 * Carica la vista Home
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
-	public function home(){
-        return view('ikpanel::home');
-    }
+	public function home() {
+		return view('ikpanel::home');
+	}
 	
 	/**
 	 * Load search view
 	 * @param Request $request
 	 */
-    public function search(Request $request){
+	public function search(Request $request) {
 		//
-    }
+	}
 	
 	/**
 	 * Load profile view
@@ -132,9 +138,9 @@ class ikpanelController extends BaseController {
 	/**
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
-	public function showFileManager(){
+	public function showFileManager() {
 		return view('ikpanel::file_manager');
 	}
- 
- 
+	
+	
 }
