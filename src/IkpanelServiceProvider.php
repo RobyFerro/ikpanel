@@ -30,6 +30,10 @@ class IkpanelServiceProvider extends ServiceProvider {
 		$this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 		$this->loadViewsFrom(__DIR__ . '/resources/view', 'ikpanel');
 		
+		
+		// BLOG MODULE
+		$this->loadMigrationsFrom(__DIR__ . '/Modules/blog/database/migrations');
+		
 		parent::boot();
 	}
 	
