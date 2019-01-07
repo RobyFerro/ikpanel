@@ -62,11 +62,6 @@ class ikpanelController extends BaseController {
 				if (count($item->children) == 0) {
 					unset($menu_items[$key]);
 				} // if
-				
-				foreach ($item->children as &$child) {
-					$child->route = env('IKPANEL_URL') . $child->route;
-				} // foreach
-				
 			} // if
 			
 		} // foreach

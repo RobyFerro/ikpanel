@@ -1,8 +1,12 @@
 @extends('ikpanel::dashboard')
 
-@section('title','Modifica utente')
+@section('title')
+	{{ __('users.edit.title') }}
+@endsection
 
-@section('section_name','Modifica utente')
+@section('section_name')
+	{{ __('users.edit.breadcrumb') }}
+@endsection
 
 @section('initial_link')
 	<link media="screen" type="text/css" rel="stylesheet"
@@ -24,14 +28,16 @@
 			<div class="card">
 				<div class="card-header">
 					<div class="card-title">
-						Generali
+						{{ __('users.edit.card.general.title') }}
 					</div>
 				</div>
 				<div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-group-default required">
-								<label for="name">Nome</label>
+								<label for="name">
+									{{ __('users.edit.inputs.name') }}
+								</label>
 								<input class="form-control form-data"
 								       id="name"
 								       type="text"
@@ -41,7 +47,9 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-group-default required">
-								<label for="surname">Cognome</label>
+								<label for="surname">
+									{{ __('users.edit.inputs.surname') }}
+								</label>
 								<input class="form-control form-data"
 								       id="surname"
 								       type="text"
@@ -53,7 +61,9 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group form-group-default">
-								<label for="mail">Email</label>
+								<label for="mail">
+									{{ __('users.edit.inputs.email') }}
+								</label>
 								<input class="form-control form-data"
 								       id="mail"
 								       type="email"
@@ -65,7 +75,9 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group form-group-default">
-								<label for="password">Password</label>
+								<label for="password">
+									{{ __('users.edit.inputs.password') }}
+								</label>
 								<input class="form-control form-data"
 								       id="password"
 								       type="password"
@@ -74,7 +86,9 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group form-group-default">
-								<label for="repassword">Ripeti password</label>
+								<label for="repassword">
+									{{ __('users.edit.inputs.repeat-password') }}
+								</label>
 								<input class="form-control form-data"
 								       id="repassword"
 								       type="password"
@@ -92,7 +106,9 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group form-group-default">
-								<label>Foto utente</label>
+								<label>
+									{{ __('users.edit.inputs.avatar') }}
+								</label>
 								
 								<div class="text-center">
 									<div class="avatar-cool">
@@ -116,7 +132,9 @@
 						</div>
 						<div class="col-md-12">
 							<div class="form-group form-group-default form-group-default-select2 required">
-								<label for="role">Ruolo</label>
+								<label for="role">
+									{{ __('users.edit.inputs.role') }}
+								</label>
 								<select id="role"
 								        class="full-width select2-hidden-accessible form-data"
 								        tabindex="-1"
@@ -132,7 +150,7 @@
 					</div>
 				</div>
 			</div>
-			
+		
 		</div>
 	</div>
 @endsection

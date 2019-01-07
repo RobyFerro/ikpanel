@@ -1,8 +1,12 @@
 @extends('ikpanel::dashboard')
 
-@section('title','Gestione utenti')
+@section('title')
+	{{ __('users.show.title') }}
+@endsection
 
-@section('section_name','Gestione utenti')
+@section('section_name')
+	{{ __('users.show.breadcrumb') }}
+@endsection
 
 @section('initial_link')
 	<link type="text/css" rel="stylesheet"
@@ -22,12 +26,12 @@
 		<div class="col-md-12">
 			<a type="button" href="{{admin_url('/users/new')}}" class="btn btn-primary btn-sm">
 				<i class="fas fa-plus fa-fw"></i>
-				Nuovo utente
+				{{ __('users.show.buttons.new') }}
 			</a>
 			
 			<a type='button' class="btn btn-danger btn-sm" href="{{admin_url()}}">
 				<i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>
-				Chiudi
+				{{ __('users.show.buttons.close') }}
 			</a>
 		</div>
 	</div>
@@ -37,18 +41,29 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group form-group-default ">
-				<label for="search-filter">Cerca</label>
+				<label for="search-filter">
+					{{ __('users.show.search') }}
+				</label>
 				<input type="text" class="form-control" id="search-filter">
 			</div>
 		</div>
 		<div class="col-md-5"></div>
 		<div class="col-md-3">
 			<div class="form-group form-group-default form-group-default-select2">
-				<label for="status-filter">Filtro per stato</label>
-				<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1" aria-hidden="true" autocomplete="off">
-					<option value="ALL">Tutti</option>
-					<option value="ACTIVE" selected>Attivi</option>
-					<option value="DELETED">Eliminati</option>
+				<label for="status-filter">
+					{{ __('users.show.filter_label') }}
+				</label>
+				<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1" aria-hidden="true"
+				        autocomplete="off">
+					<option value="ALL">
+						{{ __('users.show.filters.all') }}
+					</option>
+					<option value="ACTIVE" selected>
+						{{ __('users.show.filters.active') }}
+					</option>
+					<option value="DELETED">
+						{{ __('users.show.filters.deleted') }}
+					</option>
 				</select>
 			</div>
 		</div>
