@@ -21,3 +21,10 @@ Homestead.json
 .rocketeer/
 /.idea/workspace.xml
 /.idea/
+
+
+src/resources/assets/js/**/*.js
+src/resources/assets/js/**/*.js.map
+
+src/Modules/blog/resources/assets/js/**/*.js
+src/Modules/blog/resources/assets/js/**/*.js.map

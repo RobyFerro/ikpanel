@@ -20,7 +20,8 @@
     "php": ">=7.1",
     "unisharp/laravel-filemanager": "~1.8",
     "intervention/image": "^2.4",
-    "alexusmai/laravel-file-manager": "^1.0"
+    "alexusmai/laravel-file-manager": "^1.0",
+    "sentry/sentry-laravel": "latest"
   },
   "autoload": {
     "psr-4": {

@@ -1,11 +1,11 @@
 @extends('ikpanel::dashboard')
 
 @section('title')
-	{{ __('users.edit.title') }}
+	{{ __('ikpanel::users.edit.title') }}
 @endsection
 
 @section('section_name')
-	{{ __('users.edit.breadcrumb') }}
+	{{ __('ikpanel::users.edit.breadcrumb') }}
 @endsection
 
 @section('initial_link')
@@ -28,7 +28,7 @@
 			<div class="card">
 				<div class="card-header">
 					<div class="card-title">
-						{{ __('users.edit.card.general.title') }}
+						{{ __('ikpanel::users.edit.card.general.title') }}
 					</div>
 				</div>
 				<div class="card-body">
@@ -36,7 +36,7 @@
 						<div class="col-md-6">
 							<div class="form-group form-group-default required">
 								<label for="name">
-									{{ __('users.edit.inputs.name') }}
+									{{ __('ikpanel::users.edit.inputs.name') }}
 								</label>
 								<input class="form-control form-data"
 								       id="name"
@@ -48,7 +48,7 @@
 						<div class="col-md-6">
 							<div class="form-group form-group-default required">
 								<label for="surname">
-									{{ __('users.edit.inputs.surname') }}
+									{{ __('ikpanel::users.edit.inputs.surname') }}
 								</label>
 								<input class="form-control form-data"
 								       id="surname"
@@ -62,7 +62,7 @@
 						<div class="col-md-12">
 							<div class="form-group form-group-default">
 								<label for="mail">
-									{{ __('users.edit.inputs.email') }}
+									{{ __('ikpanel::users.edit.inputs.email') }}
 								</label>
 								<input class="form-control form-data"
 								       id="mail"
@@ -76,7 +76,7 @@
 						<div class="col-md-6">
 							<div class="form-group form-group-default">
 								<label for="password">
-									{{ __('users.edit.inputs.password') }}
+									{{ __('ikpanel::users.edit.inputs.password') }}
 								</label>
 								<input class="form-control form-data"
 								       id="password"
@@ -87,7 +87,7 @@
 						<div class="col-md-6">
 							<div class="form-group form-group-default">
 								<label for="repassword">
-									{{ __('users.edit.inputs.repeat-password') }}
+									{{ __('ikpanel::users.edit.inputs.repeat-password') }}
 								</label>
 								<input class="form-control form-data"
 								       id="repassword"
@@ -107,7 +107,7 @@
 						<div class="col-md-12">
 							<div class="form-group form-group-default">
 								<label>
-									{{ __('users.edit.inputs.avatar') }}
+									{{ __('ikpanel::users.edit.inputs.avatar') }}
 								</label>
 								
 								<div class="text-center">
@@ -133,7 +133,7 @@
 						<div class="col-md-12">
 							<div class="form-group form-group-default form-group-default-select2 required">
 								<label for="role">
-									{{ __('users.edit.inputs.role') }}
+									{{ __('ikpanel::users.edit.inputs.role') }}
 								</label>
 								<select id="role"
 								        class="full-width select2-hidden-accessible form-data"

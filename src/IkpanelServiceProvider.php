@@ -14,8 +14,7 @@ class IkpanelServiceProvider extends ServiceProvider {
 	public function boot() {
 		$this->publishes([
 			__DIR__ . '/public'           => public_path('ikpanel/'),
-			__DIR__ . '/resources/assets' => resource_path('assets/'),
-			__DIR__ . '/node'             => base_path('/')
+			__DIR__ . '/resources/assets' => resource_path('assets/')
 		], 'ikpanel');
 		
 		$this->publishes([
@@ -29,10 +28,18 @@ class IkpanelServiceProvider extends ServiceProvider {
 		$this->loadRoutesFrom(__DIR__ . '/routes/web.php');
 		$this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 		$this->loadViewsFrom(__DIR__ . '/resources/view', 'ikpanel');
+		$this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'ikpanel');
 		
 		
 		// BLOG MODULE
 		$this->loadMigrationsFrom(__DIR__ . '/Modules/blog/database/migrations');
+		$this->loadViewsFrom(__DIR__ . '/Modules/blog/resources/view', 'ikpanel-blog');
+		$this->loadRoutesFrom(__DIR__ . '/Modules/blog/routes/web.php');
+		$this->loadTranslationsFrom(__DIR__ . '/Modules/blog/resources/lang', 'ikpanel-blog');
+		
+		$this->publishes([
+			__DIR__ . '/Modules/blog/public/js' => public_path('ikpanel/modules/blog/js')
+		], 'ikpanel-blog');
 		
 		parent::boot();
 	}
@@ -57,5 +64,10 @@ class IkpanelServiceProvider extends ServiceProvider {
 		Route::middleware('web')
 			->namespace("ikdev\ikpanel\app\Http\Controllers")
 			->group(__DIR__ . '/routes/web.php');
+		
+		// Blog modules
+		Route::middleware('web')
+			->namespace("ikdev\ikpanel\Modules\blog\app\Http\Controllers")
+			->group(__DIR__ . '/Modules/blog/routes/web.php');
 	}
 }

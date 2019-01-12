@@ -15,6 +15,9 @@ class CreatePostTable extends Migration {
 			$table->increments('id');
 			$table->integer('id_category');
 			$table->foreign('id_category')->references('id')->on('blog_categories');
+			$table->integer('id_owner');
+			$table->foreign('id_owner')->references('id')->on('users');
+			$table->string('owner_alias', 255)->nullable();
 			$table->string('title', 255);
 			$table->text('description')->nullable();
 			$table->text('content');
