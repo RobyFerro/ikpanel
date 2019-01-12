@@ -17,12 +17,12 @@ SGui.actionButtonRestore = '.action-restore';
 SGui.actionButtonDelete = '.action-delete';
 
 // Delete messages
-SGui.actionDeleteMessage = 'Sto eliminando lo step selezionato... ';
-SGui.actionDeleteQuestion = 'Sei sicuro di voler eliminare lo step selezionato? ';
+SGui.actionDeleteMessage = 'Sto eliminando la categoria...';
+SGui.actionDeleteQuestion = 'Sei sicuro di voler eliminare la categoria selezionata?';
 
 // Restore messages
-SGui.actionRestoreMessage = 'Sto ripristinando lo step selezionato...';
-SGui.actionRestoreQuestion = 'Sei sicuro di voler ripristinare lo step selezionato?';
+SGui.actionRestoreMessage = 'Sto ripristinando la categoria...';
+SGui.actionRestoreQuestion = 'Sei sicuro di voler ripristinare la categoria selezionata?';
 
 // Start script
 SGui.init();

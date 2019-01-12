@@ -9,9 +9,6 @@
 			{{ __('ikpanel-blog::blog.categories.show.table.name') }}
 		</th>
 		<th>
-			{{ __('ikpanel-blog::blog.categories.show.table.description') }}
-		</th>
-		<th>
 		</th>
 	</tr>
 	</thead>
@@ -24,16 +21,13 @@
 			<td>
 				{{ $cat->name }}
 			</td>
-			<td>
-				{{ $cat->description }}
-			</td>
 			<td style="text-align: right">
 				@if(is_null($cat->deleted_at))
 					<div class="btn-group" role="group" aria-label="edit-category">
-						<button type="button" class="btn btn-success">
+						<a href="{{admin_url('/mod/blog/categories/edit/' . $cat->id)}}" class="btn btn-info btn-sm">
 							{{ __('ikpanel-blog::blog.categories.show.buttons.actionEdit') }}
-						</button>
-						<button type="button" class="btn btn-danger action-delete" data-id="{{$cat->id}}">
+						</a>
+						<button type="button" class="btn btn-sm btn-danger action-delete" data-id="{{$cat->id}}">
 							{{ __('ikpanel-blog::blog.categories.show.buttons.actionDelete') }}
 						</button>
 					</div>

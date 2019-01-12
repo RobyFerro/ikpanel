@@ -37,7 +37,8 @@
       "npm install --save @types/react-dom",
       "npm install --save @types/select2",
       "npm install --save react",
-      "npm install --save react-dom"
+      "npm install --save react-dom",
+      "npm install --save @types/ckeditor: ^4.9.3"
     ]
   }
 }

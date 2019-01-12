@@ -23,6 +23,18 @@ return [
 				'active'  => 'Active',
 				'deleted' => 'Deleted'
 			]
+		],
+		"edit" => [
+			"title"       => 'Edit category',
+			"sectionName" => "Edit category",
+			"inputs"      => [
+				"categoryName"        => "Category name",
+				"categoryDescription" => "Category description",
+				"keywordsDescription" => "Keywords"
+			],
+			"buttons"     => [
+				"delete" => "Delete category"
+			]
 		]
 	],
 	"articles"   => [

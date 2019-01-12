@@ -11,6 +11,7 @@ namespace ikdev\ikpanel\Modules\blog\app\Http\Controllers;
 
 use ikdev\ikpanel\Modules\blog\app\Categories;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class BlogCategoryController extends Controller {
@@ -22,6 +23,31 @@ class BlogCategoryController extends Controller {
 	public function show() {
 		return view('ikpanel-blog::categories.show')
 			->with(['categories' => Categories::all()]);
+	}
+	
+	/**
+	 * Edit category
+	 * @param $id
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function edit($id) {
+		return view('ikpanel-blog::categories.edit')
+			->with(['category' => Categories::find($id)]);
+	}
+	
+	public function update(Request $request) {
+		
+		try {
+			Categories::find($request->get('categoryID'))
+				->update([
+					"name"        => $request->get('name'),
+					"keywords"    => $request->get('keywords'),
+					"description" => $request->get('categoryDescription')
+				]);
+		} catch (QueryException $e) {
+			throw $e;
+		} // try
+		
 	}
 	
 	/**

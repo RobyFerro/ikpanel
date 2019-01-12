@@ -17,6 +17,7 @@ class Categories extends Model {
 	protected $table = 'blog_categories';
 	protected $primaryKey = 'id';
 	protected $dates = ['created_at', 'updated_at'];
+	protected $fillable = ['name', 'keywords', 'description'];
 	
 	use SoftDeletes;
 	
