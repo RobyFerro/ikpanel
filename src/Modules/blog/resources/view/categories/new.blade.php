@@ -1,11 +1,11 @@
 @extends('ikpanel::dashboard')
 
 @section('title')
-	{{ __('ikpanel-blog::blog.categories.edit.title') }} - {{ $category->name }}
+	{{ __('ikpanel-blog::blog.categories.new.title') }}
 @endsection
 
 @section('section_name')
-	{{ __('ikpanel-blog::blog.categories.edit.sectionName') }} - {{ $category->name }}
+	{{ __('ikpanel-blog::blog.categories.new.sectionName') }}
 @endsection
 
 @section('initial_link')
@@ -21,14 +21,13 @@
 @endsection
 
 @section('content')
-	<input type="hidden" id="categoryID" class="form-data" value="{{ $category->id }}">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group form-group-default required">
 				<label for="name">
-					{{ __('ikpanel-blog::blog.categories.edit.inputs.categoryName') }}
+					{{ __('ikpanel-blog::blog.categories.new.inputs.categoryName') }}
 				</label>
-				<input class="form-control form-data" id="name" value="{{ $category->name }}" autocomplete="off">
+				<input class="form-control form-data" id="name" autocomplete="off">
 			</div>
 		</div>
 	</div>
@@ -37,12 +36,12 @@
 			<div class="card">
 				<div class="card-header">
 					<div class="card-title">
-						{{ __('ikpanel-blog::blog.categories.edit.inputs.categoryDescription') }}
+						{{ __('ikpanel-blog::blog.categories.new.inputs.categoryDescription') }}
 					</div>
 				</div>
 				<div class="card-body">
 					<textarea id="categoryDescription" class="form-data"
-					          autocomplete="off">{{ $category->description }}</textarea>
+					          autocomplete="off"></textarea>
 				</div>
 			</div>
 		</div>
@@ -50,7 +49,7 @@
 			<div class="card">
 				<div class="card-header">
 					<div class="card-title">
-						{{ __('ikpanel-blog::blog.categories.edit.inputs.keywordsDescription') }}
+						{{ __('ikpanel-blog::blog.categories.new.inputs.keywordsDescription') }}
 					</div>
 				</div>
 				<div class="card-body">
@@ -58,15 +57,7 @@
 					          rows="50"
 					          style="min-height: 200px"
 					          autocomplete="off"
-					          class="form-control form-data">{{ $category->keywords }}</textarea>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<button class="btn btn-block btn-danger" id="deleteCategory" data-id="{{ $category->id }}">
-						<i class="fas fa-trash-alt"></i>
-						{{ __('ikpanel-blog::blog.categories.edit.buttons.delete') }}
-					</button>
+					          class="form-control form-data"></textarea>
 				</div>
 			</div>
 		</div>
@@ -76,5 +67,5 @@
 @section('final_script')
 	{!! script('ikpanel/assets/plugins/ckeditor/ckeditor.js') !!}
 	{!! script('ikpanel/assets/plugins/ckeditor/adapters/jquery.js') !!}
-	{!! script('ikpanel/modules/blog/js/category/edit.js',true) !!}
+	{!! script('ikpanel/modules/blog/js/category/new.js',true) !!}
 @endsection

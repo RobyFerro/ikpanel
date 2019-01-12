@@ -11,9 +11,12 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 				Route::get('categories/show', 'BlogCategoryController@show');
 				Route::get('categories/filter/{type}', 'BlogCategoryController@getFilteredCategories');
 				Route::get('categories/edit/{id}', 'BlogCategoryController@edit');
+				Route::get('categories/new', 'BlogCategoryController@new');
+				
 				Route::delete('categories/delete/{id}', 'BlogCategoryController@delete');
 				Route::put('categories/restore/{id}', 'BlogCategoryController@restore');
 				Route::post('categories/edit', 'BlogCategoryController@update');
+				Route::post('categories/new', 'BlogCategoryController@insert');
 				
 				// Articles
 				Route::get('articles/show', 'BlogCategoryController@show');

@@ -35,6 +35,15 @@ return [
 			"buttons"     => [
 				"delete" => "Delete category"
 			]
+		],
+		"new"  => [
+			"title"       => 'New category',
+			"sectionName" => "New category",
+			"inputs"      => [
+				"categoryName"        => "Category name",
+				"categoryDescription" => "Category description",
+				"keywordsDescription" => "Keywords"
+			]
 		]
 	],
 	"articles"   => [

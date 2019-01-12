@@ -21,7 +21,7 @@
 @section('action_navbar')
 	<div class="row action-navbar" id="action-navbar">
 		<div class="col-md-12">
-			<a type="button" href="{{admin_url('/categories/new')}}" class="btn btn-primary btn-sm">
+			<a type="button" href="{{admin_url('/mod/blog/categories/new')}}" class="btn btn-primary btn-sm">
 				<i class="fas fa-plus fa-fw"></i>
 				{{ __('ikpanel-blog::blog.categories.show.buttons.new') }}
 			</a>

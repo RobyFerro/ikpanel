@@ -35,6 +35,40 @@ class BlogCategoryController extends Controller {
 			->with(['category' => Categories::find($id)]);
 	}
 	
+	/**
+	 * Show new category view
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function new() {
+		return view('ikpanel-blog::categories.new');
+	}
+	
+	/**
+	 * Insert new category
+	 * @param Request $request
+	 * @return array
+	 */
+	public function insert(Request $request) {
+		
+		$newCategory = new Categories();
+		
+		try {
+			$id = $newCategory->insertGetId([
+				"name"        => $request->get('name'),
+				"keywords"    => $request->get('keywords'),
+				"description" => $request->get('categoryDescription')
+			]);
+		} catch (QueryException $e) {
+			throw $e;
+		} // try
+		
+		return $id;
+	}
+	
+	/**
+	 * Update specific category
+	 * @param Request $request
+	 */
 	public function update(Request $request) {
 		
 		try {
