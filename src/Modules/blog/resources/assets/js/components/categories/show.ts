@@ -2,27 +2,27 @@ import SimpleGui from '../../../../../../../resources/assets/js/modules/simple-g
 
 const SGui = new SimpleGui();
 
-// Impostazioni generali
-SGui.table = '#candidacy-step-table';
+// General settings
+SGui.table = '#blogCategoryTable';
 SGui.searchFilter = '#search-filter';
 SGui.statusFilter = '#status-filter';
-SGui.filterUrlPrefix = 'candidacy-step';
+SGui.filterUrlPrefix = 'mod/blog/categories';
 SGui.itemInTable = -1;
-SGui.resultContainer = '#candidacy-step-table';
+SGui.resultContainer = '#blogCategoryTable';
 SGui.saveOrder = true;
-SGui.sort = false;
+SGui.sort = true;
 
-// Pulsanti azione
+// Action buttons
 SGui.actionButtonRestore = '.action-restore';
 SGui.actionButtonDelete = '.action-delete';
 
-// Messaggi eliminazione
+// Delete messages
 SGui.actionDeleteMessage = 'Sto eliminando lo step selezionato... ';
 SGui.actionDeleteQuestion = 'Sei sicuro di voler eliminare lo step selezionato? ';
 
-// Messaggi ripristino
+// Restore messages
 SGui.actionRestoreMessage = 'Sto ripristinando lo step selezionato...';
 SGui.actionRestoreQuestion = 'Sei sicuro di voler ripristinare lo step selezionato?';
 
-// Attivo lo script
+// Start script
 SGui.init();

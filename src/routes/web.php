@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix(env('IKPANEL_URL'))->group(function() {
+Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_panel_url'))->group(function() {
 	
 	//region Authentication
 	Route::post('/login', 'LoginController@authenticate');

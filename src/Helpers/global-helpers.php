@@ -51,12 +51,12 @@ function app_url($url = '') {
  */
 function admin_url($url = '') {
 	if (App::runningInConsole()) {
-		$fullurl = env('ECIT_PANEL_URL') . '/' . $url;
+		$fullurl = env('IKPANEL_URL') . '/' . $url;
 		return env('MAIN_DOMAIN') . $fullurl;
 	} else {
 		$protocol = 'http' . (Request::secure() ? 's' : '') . '://';
 		$host = $_SERVER['HTTP_HOST'] . str_replace('/index.php', '', $_SERVER['PHP_SELF']);
-		$fullurl = $host . (\Illuminate\Support\Facades\Config::get('admin-panel.admin_panel_url') == '/' ? '' : \Illuminate\Support\Facades\Config::get('admin-panel.admin_panel_url')) . $url;
+		$fullurl = $host . (\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_panel_url') == '/' ? '' : \Illuminate\Support\Facades\Config::get('ikpanel-config.admin_panel_url')) . $url;
 		$fullurl = str_replace('//', '/', $fullurl);
 		return $protocol . $fullurl;
 	}

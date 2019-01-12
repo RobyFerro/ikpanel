@@ -40,6 +40,32 @@ var ItemInPage = /** @class */ (function(_super) {
 	}
 	
 	/**
+	 * Ottengo valore attuale dell'IPP
+	 */
+	ItemInPage.prototype.getValue = function() {
+		return Number($("#" + this.itemID).val());
+	};
+	/**
+	 * Imposto un valore all'IPP
+	 * @param value
+	 */
+	ItemInPage.prototype.setValue = function(value) {
+		var main = this, select = $("#" + main.itemID);
+		select.val(value).trigger('change.select2');
+	};
+	/**
+	 * Ricarico il valore dal cookie se disponibile
+	 */
+	ItemInPage.prototype.setFromCookie = function() {
+		var main = this, select = $("#" + main.itemID), cookieName = main.itemID + "-cookie";
+		if(Cookies.get(cookieName) !== undefined) {
+			//leggo cookie per impostare l'elemento
+			select.find("option[value=\"" + Cookies.get(cookieName) + "\"]")
+				.prop('selected', true)
+				.trigger('change.select2');
+		}
+	};
+	/**
 	 * Inizializza componente
 	 */
 	ItemInPage.prototype.init = function() {
@@ -135,32 +161,6 @@ var ItemInPage = /** @class */ (function(_super) {
 					Cookies.set(cookieName, select.val());
 				}
 			});
-		}
-	};
-	/**
-	 * Ottengo valore attuale dell'IPP
-	 */
-	ItemInPage.prototype.getValue = function() {
-		return Number($("#" + this.itemID).val());
-	};
-	/**
-	 * Imposto un valore all'IPP
-	 * @param value
-	 */
-	ItemInPage.prototype.setValue = function(value) {
-		var main = this, select = $("#" + main.itemID);
-		select.val(value).trigger('change.select2');
-	};
-	/**
-	 * Ricarico il valore dal cookie se disponibile
-	 */
-	ItemInPage.prototype.setFromCookie = function() {
-		var main = this, select = $("#" + main.itemID), cookieName = main.itemID + "-cookie";
-		if(Cookies.get(cookieName) !== undefined) {
-			//leggo cookie per impostare l'elemento
-			select.find("option[value=\"" + Cookies.get(cookieName) + "\"]")
-				.prop('selected', true)
-				.trigger('change.select2');
 		}
 	};
 	return ItemInPage;

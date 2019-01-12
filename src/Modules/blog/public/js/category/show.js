@@ -466,25 +466,25 @@
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var simple_gui_1 = __webpack_require__(/*! ../../../../../../../resources/assets/js/modules/simple-gui */ "./packages/ikdev/ikpanel/src/resources/assets/js/modules/simple-gui.js");
 		var SGui = new simple_gui_1.default();
-// Impostazioni generali
-		SGui.table = '#candidacy-step-table';
+// General settings
+		SGui.table = '#blogCategoryTable';
 		SGui.searchFilter = '#search-filter';
 		SGui.statusFilter = '#status-filter';
-		SGui.filterUrlPrefix = 'candidacy-step';
+		SGui.filterUrlPrefix = 'blog';
 		SGui.itemInTable = -1;
-		SGui.resultContainer = '#candidacy-step-table';
+		SGui.resultContainer = '#blogCategoryTable';
 		SGui.saveOrder = true;
 		SGui.sort = false;
-// Pulsanti azione
+// Action buttons
 		SGui.actionButtonRestore = '.action-restore';
 		SGui.actionButtonDelete = '.action-delete';
-// Messaggi eliminazione
+// Delete messages
 		SGui.actionDeleteMessage = 'Sto eliminando lo step selezionato... ';
 		SGui.actionDeleteQuestion = 'Sei sicuro di voler eliminare lo step selezionato? ';
-// Messaggi ripristino
+// Restore messages
 		SGui.actionRestoreMessage = 'Sto ripristinando lo step selezionato...';
 		SGui.actionRestoreQuestion = 'Sei sicuro di voler ripristinare lo step selezionato?';
-// Attivo lo script
+// Start script
 		SGui.init();
 		
 		
@@ -1145,6 +1145,40 @@
 				}
 				
 				/**
+				 * Ottengo valore attuale dell'IPP
+				 */
+				
+				
+				ItemInPage.prototype.getValue = function() {
+					return Number($("#" + this.itemID).val());
+				};
+				/**
+				 * Imposto un valore all'IPP
+				 * @param value
+				 */
+				
+				
+				ItemInPage.prototype.setValue = function(value) {
+					var main = this,
+						select = $("#" + main.itemID);
+					select.val(value).trigger('change.select2');
+				};
+				/**
+				 * Ricarico il valore dal cookie se disponibile
+				 */
+				
+				
+				ItemInPage.prototype.setFromCookie = function() {
+					var main = this,
+						select = $("#" + main.itemID),
+						cookieName = main.itemID + "-cookie";
+					
+					if(Cookies.get(cookieName) !== undefined) {
+						//leggo cookie per impostare l'elemento
+						select.find("option[value=\"" + Cookies.get(cookieName) + "\"]").prop('selected', true).trigger('change.select2');
+					}
+				};
+				/**
 				 * Inizializza componente
 				 */
 				
@@ -1267,40 +1301,6 @@
 								Cookies.set(cookieName, select.val());
 							}
 						});
-					}
-				};
-				/**
-				 * Ottengo valore attuale dell'IPP
-				 */
-				
-				
-				ItemInPage.prototype.getValue = function() {
-					return Number($("#" + this.itemID).val());
-				};
-				/**
-				 * Imposto un valore all'IPP
-				 * @param value
-				 */
-				
-				
-				ItemInPage.prototype.setValue = function(value) {
-					var main = this,
-						select = $("#" + main.itemID);
-					select.val(value).trigger('change.select2');
-				};
-				/**
-				 * Ricarico il valore dal cookie se disponibile
-				 */
-				
-				
-				ItemInPage.prototype.setFromCookie = function() {
-					var main = this,
-						select = $("#" + main.itemID),
-						cookieName = main.itemID + "-cookie";
-					
-					if(Cookies.get(cookieName) !== undefined) {
-						//leggo cookie per impostare l'elemento
-						select.find("option[value=\"" + Cookies.get(cookieName) + "\"]").prop('selected', true).trigger('change.select2');
 					}
 				};
 				
