@@ -15,20 +15,21 @@ use Illuminate\Routing\Controller;
 
 class BlogCategoryController extends Controller {
 	
+	/**
+	 * Show category list
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
 	public function show() {
 		return view('ikpanel-blog::categories.show')
-			->with(['categories' => $this->getAllCategories()]);
-	}
-	
-	public function getFilteredItems($filter) {
-		return $this->getAllCategories($filter);
+			->with(['categories' => Categories::all()]);
 	}
 	
 	/**
+	 * Get filtered categories
 	 * @param null $filter
 	 * @return Categories[]|\Illuminate\Database\Eloquent\Collection
 	 */
-	public function getAllCategories($filter = null) {
+	public function getFilteredCategories($filter = null) {
 		
 		if (is_null($filter)) {
 			return Categories::all();
@@ -68,6 +69,36 @@ class BlogCategoryController extends Controller {
 			
 		} // if
 		
+	}
+	
+	/**
+	 * Remove category
+	 * @param $id
+	 * @return void
+	 */
+	public function delete($id) {
+		try {
+			Categories::find($id)
+				->delete();
+		} catch (QueryException $e) {
+			throw $e;
+		} // try
+		
+	}
+	
+	/**
+	 * Restore category
+	 * @param $id
+	 */
+	public function restore($id) {
+		
+		try {
+			Categories::onlyTrashed()
+				->where('id', $id)
+				->restore();
+		} catch (QueryException $e) {
+			throw $e;
+		} // try
 	}
 	
 }
