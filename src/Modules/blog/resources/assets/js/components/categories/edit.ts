@@ -14,7 +14,8 @@ $(function () {
 	});
 	
 	body.on('click', '.action-save', function () {
-		let object = FormUtils.retrieveAllInputs();
+		let object = FormUtils.retrieveAllInputs(),
+			action = $(this).data('action');
 		
 		$.ajax({
 			type: 'POST',
@@ -24,7 +25,16 @@ $(function () {
 				ModernGui.loading(true, 'Modifica categoria in corso');
 			},
 			success: function () {
-				location.reload()
+				
+				switch (action) {
+					case 'close':
+						location.href = `${admin_panel_url}/mod/blog/categories/new`;
+						break;
+					default:
+						location.reload();
+						break;
+				} // switch
+				
 			},
 			error: function (xhr) {
 				FormUtils.sendNotifications(xhr);

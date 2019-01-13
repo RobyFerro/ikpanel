@@ -19,7 +19,7 @@ class EditCategoryRequest extends FormRequest {
 	
 	public function rules() {
 		return [
-			'categoryID'          => 'required|exists:blog_category,id',
+			'categoryID'          => 'required|exists:blog_categories,id',
 			'name'                => 'required|max:255',
 			'keywords'            => 'nullable|max:255',
 			'categoryDescription' => 'nullable'

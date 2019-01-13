@@ -14,7 +14,8 @@ $(function () {
 	});
 	
 	body.on('click', '.action-save', function () {
-		let object = FormUtils.retrieveAllInputs();
+		let object = FormUtils.retrieveAllInputs(),
+			action = $(this).data('action');
 		
 		$.ajax({
 			type: 'POST',
@@ -24,7 +25,16 @@ $(function () {
 				ModernGui.loading(true, 'Creazione categoria in corso...');
 			},
 			success: function (data) {
-				location.href = `${admin_panel_url}/mod/blog/categories/edit/${data}`
+				
+				switch (action) {
+					case 'close':
+						location.reload();
+						break;
+					default:
+						location.href = `${admin_panel_url}/mod/blog/categories/edit/${data}`;
+						break;
+				} // switch
+				
 			},
 			error: function (xhr) {
 				FormUtils.sendNotifications(xhr);

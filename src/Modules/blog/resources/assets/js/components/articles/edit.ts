@@ -22,7 +22,8 @@ $(function () {
 	$('#author').select2();
 	
 	body.on('click', '.action-save', function () {
-		let object = FormUtils.retrieveAllInputs();
+		let object = FormUtils.retrieveAllInputs(),
+			action = $(this).data('action');
 		
 		$.ajax({
 			type: 'POST',
@@ -32,7 +33,16 @@ $(function () {
 				ModernGui.loading(true, 'Modifica articolo in corso');
 			},
 			success: function () {
-				location.reload()
+				
+				switch (action) {
+					case 'close':
+						location.href = `${admin_panel_url}/mod/blog/articles/new`;
+						break;
+					default:
+						location.reload();
+						break;
+				} // switch
+				
 			},
 			error: function (xhr) {
 				FormUtils.sendNotifications(xhr);
