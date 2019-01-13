@@ -2,7 +2,7 @@
 
 return [
 	"categories" => [
-		"show" => [
+		"show"   => [
 			"title"       => "Categories",
 			"sectionName" => "Categories",
 			"table"       => [
@@ -24,7 +24,7 @@ return [
 				'deleted' => 'Deleted'
 			]
 		],
-		"edit" => [
+		"edit"   => [
 			"title"       => 'Edit category',
 			"sectionName" => "Edit category",
 			"inputs"      => [
@@ -36,7 +36,7 @@ return [
 				"delete" => "Delete category"
 			]
 		],
-		"new"  => [
+		"new"    => [
 			"title"       => 'New category',
 			"sectionName" => "New category",
 			"inputs"      => [
@@ -44,12 +44,85 @@ return [
 				"categoryDescription" => "Category description",
 				"keywordsDescription" => "Keywords"
 			]
+		],
+		"errors" => [
+			'idRequired'        => 'Cannot update category without ID',
+			'idExists'          => 'Missing category ID',
+			'nameRequired'      => 'Name field is required',
+			'nameMaxLength'     => 'Name field is too long',
+			'keywordsMaxLength' => 'Keywords field is too long'
 		]
 	],
 	"articles"   => [
 		"show" => [
 			"title"       => "Articles",
 			"sectionName" => "Articles",
+			"table"       => [
+				"title"       => "Title",
+				"description" => "Description",
+				"publishDate" => 'Publish date',
+				"categories"  => "Categories",
+				"author"      => "Author"
+			],
+			"buttons"     => [
+				"new"           => "New article",
+				"close"         => "Close",
+				"actionDelete"  => "Delete",
+				"actionRestore" => "Restore",
+				"actionEdit"    => "Edit"
+			],
+			"search"      => "Search",
+			'filterLabel' => "Filter for status",
+			'filters'     => [
+				'all'     => 'All',
+				'active'  => 'Active',
+				'deleted' => 'Deleted'
+			]
+		],
+		"edit" => [
+			"title"       => 'Edit article',
+			"sectionName" => "Edit article",
+			"inputs"      => [
+				"title"            => "Title",
+				"shortDescription" => "Short description",
+				"content"          => "Article content",
+				"keywords"         => "Keywords",
+				"categories"       => "Categories",
+				"ownerLabel"       => "Author",
+				"ownerAlias"       => "Author alias",
+				"authorList"       => "Authors"
+			],
+			"buttons"     => [
+				"delete" => "Delete article"
+			],
+			"errors"      => [
+				"titleRequired"   => 'Title field is required',
+				"contentRequired" => 'Content field is required',
+				"ownerRequired"   => 'Author field is required',
+				"ownerExist"      => "Author does not exist"
+			]
+		],
+		"new"  => [
+			"title"       => 'New article',
+			"sectionName" => "New article",
+			"inputs"      => [
+				"title"            => "Title",
+				"shortDescription" => "Short description",
+				"content"          => "Article content",
+				"keywords"         => "Keywords",
+				"categories"       => "Categories",
+				"ownerLabel"       => "Author",
+				"ownerAlias"       => "Author alias",
+				"authorList"       => "Authors"
+			],
+			"errors"      => [
+				"titleRequired"     => 'Title field is required',
+				"titleMaxLength"    => 'Title is too long',
+				"contentRequired"   => 'Content field is required',
+				"ownerRequired"     => 'Author field is required',
+				"ownerExist"        => "Author does not exist",
+				'keywordsMaxLength' => 'Keywords field is too long'
+			]
 		]
 	]
 ];

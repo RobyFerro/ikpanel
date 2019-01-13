@@ -14,7 +14,7 @@ class CreateBlogCategoriesTable extends Migration {
 		Schema::create('blog_categories', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name', 255);
-			$table->string('keywords', 255);
+			$table->string('keywords', 255)->nullable();
 			$table->text('description')->nullable();
 			$table->softDeletes();
 			$table->timestamps();

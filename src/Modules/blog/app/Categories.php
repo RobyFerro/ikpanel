@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by Interactive Knowledge Development.
- * User: roberto.ferro
- * Date: 07/01/2019
- * Time: 15:36
- */
 
 namespace ikdev\ikpanel\Modules\blog\app;
 
@@ -20,6 +14,18 @@ class Categories extends Model {
 	protected $fillable = ['name', 'keywords', 'description'];
 	
 	use SoftDeletes;
+	
+	/**
+	 * Get all related posts
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function posts() {
+		return $this->belongsToMany(
+			Post::class,
+			'post_category',
+			'id_category',
+			'id_post');
+	}
 	
 	
 }

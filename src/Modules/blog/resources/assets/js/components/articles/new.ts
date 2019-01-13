@@ -7,24 +7,32 @@ $(function () {
 	
 	let body = $('body');
 	
-	$('#categoryDescription').ckeditor(function () {
+	$('#content').ckeditor(function () {
 	}, {
 		language: 'it',
 		height: 500
 	});
+	
+	$('#shortDescription').ckeditor(function () {
+	}, {
+		language: 'it',
+		height: 150
+	});
+	
+	$('#author').select2();
 	
 	body.on('click', '.action-save', function () {
 		let object = FormUtils.retrieveAllInputs();
 		
 		$.ajax({
 			type: 'POST',
-			url: `${admin_panel_url}/mod/blog/categories/new`,
+			url: `${admin_panel_url}/mod/blog/articles/new`,
 			data: object,
 			beforeSend: function () {
-				ModernGui.loading(true, 'Creazione categoria in corso...');
+				ModernGui.loading(true, 'Salvataggio articolo in corso...');
 			},
 			success: function (data) {
-				location.href = `${admin_panel_url}/mod/blog/categories/edit/${data}`
+				location.href = `${admin_panel_url}/mod/blog/articles/edit/${data}`
 			},
 			error: function (xhr) {
 				FormUtils.sendNotifications(xhr);

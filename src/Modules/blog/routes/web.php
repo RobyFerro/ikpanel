@@ -19,7 +19,16 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 				Route::post('categories/new', 'BlogCategoryController@insert');
 				
 				// Articles
-				Route::get('articles/show', 'BlogCategoryController@show');
+				Route::get('articles/show', 'BlogPostController@show');
+				Route::get('articles/filter/{type}', 'BlogPostController@getFilteredCategories');
+				Route::get('articles/edit/{id}', 'BlogPostController@edit');
+				Route::get('articles/new', 'BlogPostController@new');
+				
+				Route::delete('articles/delete/{id}', 'BlogPostController@delete');
+				Route::put('articles/restore/{id}', 'BlogPostController@restore');
+				Route::post('articles/edit', 'BlogPostController@update');
+				Route::post('articles/new', 'BlogPostController@insert');
+				
 			});
 		});
 		

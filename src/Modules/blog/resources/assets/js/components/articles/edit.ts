@@ -7,21 +7,29 @@ $(function () {
 	
 	let body = $('body');
 	
-	$('#categoryDescription').ckeditor(function () {
+	$('#content').ckeditor(function () {
 	}, {
 		language: 'it',
 		height: 500
 	});
+	
+	$('#shortDescription').ckeditor(function () {
+	}, {
+		language: 'it',
+		height: 150
+	});
+	
+	$('#author').select2();
 	
 	body.on('click', '.action-save', function () {
 		let object = FormUtils.retrieveAllInputs();
 		
 		$.ajax({
 			type: 'POST',
-			url: `${admin_panel_url}/mod/blog/categories/edit`,
+			url: `${admin_panel_url}/mod/blog/articles/edit`,
 			data: object,
 			beforeSend: function () {
-				ModernGui.loading(true, 'Modifica categoria in corso');
+				ModernGui.loading(true, 'Modifica articolo in corso');
 			},
 			success: function () {
 				location.reload()
@@ -35,17 +43,17 @@ $(function () {
 		});
 	});
 	
-	body.on('click', '#deleteCategory', async function () {
+	body.on('click', '#deleteArticles', async function () {
 		
-		if (await ModernGui.confirm('Sei sicuro di voler eliminare questa catagoria?')) {
+		if (await ModernGui.confirm('Sei sicuro di voler eliminare questo articolo?')) {
 			$.ajax({
 				type: 'DELETE',
-				url: `${admin_panel_url}/mod/blog/categories/delete/${$(this).data('id')}`,
+				url: `${admin_panel_url}/mod/blog/articles/delete/${$(this).data('id')}`,
 				beforeSend: function () {
-					ModernGui.loading(true, 'Eliminazione categoria in corso...');
+					ModernGui.loading(true, 'Eliminazione articolo in corso...');
 				},
 				success: function () {
-					location.href = `${admin_panel_url}/mod/blog/categories/show`
+					location.href = `${admin_panel_url}/mod/blog/articles/show`
 				},
 				complete: function () {
 					ModernGui.loading(false)

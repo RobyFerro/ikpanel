@@ -10,8 +10,9 @@ namespace ikdev\ikpanel\Modules\blog\app\Http\Controllers;
 
 
 use ikdev\ikpanel\Modules\blog\app\Categories;
+use ikdev\ikpanel\Modules\blog\app\Http\Requests\EditCategoryRequest;
+use ikdev\ikpanel\Modules\blog\app\Http\Requests\NewCategoryRequest;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class BlogCategoryController extends Controller {
@@ -45,10 +46,10 @@ class BlogCategoryController extends Controller {
 	
 	/**
 	 * Insert new category
-	 * @param Request $request
+	 * @param NewCategoryRequest $request
 	 * @return array
 	 */
-	public function insert(Request $request) {
+	public function insert(NewCategoryRequest $request) {
 		
 		$newCategory = new Categories();
 		
@@ -67,9 +68,9 @@ class BlogCategoryController extends Controller {
 	
 	/**
 	 * Update specific category
-	 * @param Request $request
+	 * @param EditCategoryRequest $request
 	 */
-	public function update(Request $request) {
+	public function update(EditCategoryRequest $request) {
 		
 		try {
 			Categories::find($request->get('categoryID'))

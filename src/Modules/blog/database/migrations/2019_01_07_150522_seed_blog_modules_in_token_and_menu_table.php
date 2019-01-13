@@ -108,7 +108,18 @@ class SeedBlogModulesInTokenAndMenuTable extends Migration {
 		DB::beginTransaction();
 		
 		try {
-			TokenGroup::where('id', '=', 'BLOG')
+			Menu::whereIn('id', [
+				'FOLDER_BLOG_MODULE',
+				'ITEM_SHOW_BLOG_CATEGORIES',
+				'ITEM_SHOW_BLOG_ARTICLES'
+			])->delete();
+		} catch (QueryException $e) {
+			DB::rollBack();
+			throw $e;
+		} // try
+		
+		try {
+			RouteGroup::where('name', '=', 'blogIkpanelModule')
 				->delete();
 		} catch (QueryException $e) {
 			DB::rollBack();
@@ -124,15 +135,7 @@ class SeedBlogModulesInTokenAndMenuTable extends Migration {
 		} // try
 		
 		try {
-			RouteGroup::where('name', '=', 'blogIkpanelModule')
-				->delete();
-		} catch (QueryException $e) {
-			DB::rollBack();
-			throw $e;
-		} // try
-		
-		try {
-			Menu::whereIn('id', ['ITEM_SHOW_BLOG_CATEGORIES', 'ITEM_SHOW_BLOG_ARTICLES'])
+			TokenGroup::where('id', '=', 'BLOG')
 				->delete();
 		} catch (QueryException $e) {
 			DB::rollBack();
