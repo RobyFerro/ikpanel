@@ -1,7 +1,13 @@
 <?php
-/**
- * Created by Interactive Knowledge Development.
- * User: roberto.ferro
- * Date: 16/01/2019
- * Time: 18:14
- */
+
+Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_panel_url'))->group(function() {
+	
+	Route::group(['middleware' => 'ikpanel'], function() {
+		
+		Route::group(['as' => 'calendarIkpanelModule'], function() {
+			Route::prefix('mod/calendar')->group(function() {
+			
+			});
+		});
+	});
+});

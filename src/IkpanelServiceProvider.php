@@ -41,6 +41,17 @@ class IkpanelServiceProvider extends ServiceProvider {
 			__DIR__ . '/Modules/blog/public/js' => public_path('ikpanel/modules/blog/js')
 		], 'ikpanel-blog');
 		
+		// CALENDAR MODULE
+		$this->loadMigrationsFrom(__DIR__ . '/Modules/calendar/database/migrations');
+		$this->loadViewsFrom(__DIR__ . '/Modules/calendar/resources/view', 'ikpanel-blog');
+		$this->loadRoutesFrom(__DIR__ . '/Modules/calendar/routes/web.php');
+		$this->loadTranslationsFrom(__DIR__ . '/Modules/calendar/resources/lang', 'ikpanel-calendar');
+		
+		$this->publishes([
+			__DIR__ . '/Modules/calendar/public/js' => public_path('ikpanel/modules/calendar/js')
+		], 'ikpanel-calendar');
+		
+		
 		parent::boot();
 	}
 	
