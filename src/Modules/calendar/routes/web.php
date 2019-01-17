@@ -6,7 +6,7 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 		
 		Route::group(['as' => 'calendarIkpanelModule'], function() {
 			Route::prefix('mod/calendar')->group(function() {
-			
+				Route::get('/', 'CalendarController@index');
 			});
 		});
 	});

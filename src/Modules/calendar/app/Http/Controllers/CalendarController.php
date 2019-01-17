@@ -2,6 +2,7 @@
 
 namespace ikdev\ikpanel\Modules\calendar\app\Http\Controllers;
 
+use ikdev\ikpanel\Modules\calendar\app\Event;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -13,7 +14,8 @@ class CalendarController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		//
+		return view('ikpanel-calendar::calendar')
+			->with(['events' => Event::all()]);
 	}
 	
 	/**

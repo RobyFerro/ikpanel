@@ -43,7 +43,7 @@ class IkpanelServiceProvider extends ServiceProvider {
 		
 		// CALENDAR MODULE
 		$this->loadMigrationsFrom(__DIR__ . '/Modules/calendar/database/migrations');
-		$this->loadViewsFrom(__DIR__ . '/Modules/calendar/resources/view', 'ikpanel-blog');
+		$this->loadViewsFrom(__DIR__ . '/Modules/calendar/resources/view', 'ikpanel-calendar');
 		$this->loadRoutesFrom(__DIR__ . '/Modules/calendar/routes/web.php');
 		$this->loadTranslationsFrom(__DIR__ . '/Modules/calendar/resources/lang', 'ikpanel-calendar');
 		
@@ -76,9 +76,14 @@ class IkpanelServiceProvider extends ServiceProvider {
 			->namespace("ikdev\ikpanel\app\Http\Controllers")
 			->group(__DIR__ . '/routes/web.php');
 		
-		// Blog modules
+		// Blog module
 		Route::middleware('web')
 			->namespace("ikdev\ikpanel\Modules\blog\app\Http\Controllers")
 			->group(__DIR__ . '/Modules/blog/routes/web.php');
+		
+		// Calendar module
+		Route::middleware('web')
+			->namespace("ikdev\ikpanel\Modules\calendar\app\Http\Controllers")
+			->group(__DIR__ . '/Modules/calendar/routes/web.php');
 	}
 }
