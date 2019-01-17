@@ -1,7 +1,9 @@
 import 'fullcalendar';
 
 $(function () {
-	let calendarContainer = $('#calendar');
+	let calendarContainer = $('#calendar'),
+		modalEvent = $('#event'),
+		modalEventTitle = $('#modalEventTitle');
 	
 	calendarContainer.fullCalendar({
 		eventSources: [
@@ -36,12 +38,15 @@ $(function () {
 		eventRender: function (eventObj, $el) {
 			//
 		},
+		dayClick: function (date, jsEvent, view) {
+			modalEvent.modal('toggle');
+		},
 		selectable: true,
 		//@ts-ignore
 		selectMinDistance: 0,
 		unselectAuto: true,
 		select: function (start, end) {
-			//
+		
 		},
 		height: 500,
 		fixedWeekCount: false,

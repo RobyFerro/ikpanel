@@ -36,6 +36,36 @@
 	</div>
 @endsection
 
+@push('modal-container')
+	<!-- Modal -->
+	<div class="modal fade slide-right disable-scroll" id="event" tabindex="-1" role="dialog"
+	     aria-labelledby="modelTitleId" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">
+						{{ __('ikpanel-calendar::calendar.show.newEventModalTitle') }}
+					</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Body
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">
+						{{ __('ikpanel-calendar::calendar.show.buttons.closeEventModal') }}
+					</button>
+					<button type="button" class="btn btn-primary">
+						{{ __('ikpanel-calendar::calendar.show.buttons.saveEventModal') }}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+@endpush
+
 @section('final_script')
 	{!! script('ikpanel/modules/calendar/js/plugins/fullcalendar-3.10.0/lib/moment.min.js') !!}
 	{!! script('ikpanel/modules/calendar/js/plugins/fullcalendar-3.10.0/fullcalendar.min.js') !!}
