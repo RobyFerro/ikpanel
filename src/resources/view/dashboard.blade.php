@@ -42,6 +42,8 @@
 	<link class="main-stylesheet" href="{{ asset('ikpanel/pages/css/pages.css') }}" rel="stylesheet" type="text/css"/>
 	<link href="{{ asset('ikpanel/plugins/fontawesome-pro-5.2.0/css/all.min.css') }}"
 	      rel="stylesheet" type="text/css"/>
+	<link href="{{ asset('ikpanel/assets/css/ikpanel.css') }}"
+	      rel="stylesheet" type="text/css"/>
 	<!-- ikpanel  -->
 	<link href="{{ asset('ikpanel/assets/css/style.css') }}" rel="stylesheet" type="text/css"/>
 	<!-- BACKEND -->

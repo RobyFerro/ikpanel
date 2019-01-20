@@ -3,7 +3,25 @@ import 'fullcalendar';
 $(function () {
 	let calendarContainer = $('#calendar'),
 		modalEvent = $('#event'),
-		modalEventTitle = $('#modalEventTitle');
+		eventContent = $('#eventContent');
+	
+	eventContent.ckeditor(function () {
+	}, {
+		language: 'it',
+		height: 500
+	});
+	
+	$('.input-daterange input').each(function () {
+		$(this).datepicker({
+			language: 'it',
+			autoclose: true,
+			orientation: "auto",
+			weekStart: 1,
+			todayBtn: true,
+			todayHighlight: true,
+			container: '#event'
+		});
+	});
 	
 	calendarContainer.fullCalendar({
 		eventSources: [

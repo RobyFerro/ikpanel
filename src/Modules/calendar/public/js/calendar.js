@@ -330,7 +330,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.compensateScroll = compensateScroll;
-
 // Undoes compensateScroll and restores all borders/margins
 					function uncompensateScroll(rowEls) {
 						rowEls.css({
@@ -342,14 +341,12 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.uncompensateScroll = uncompensateScroll;
-
 // Make the mouse cursor express that an event is not allowed in the current area
 					function disableCursor() {
 						$('body').addClass('fc-not-allowed');
 					}
 					
 					exports.disableCursor = disableCursor;
-
 // Returns the mouse cursor to its original look
 					function enableCursor() {
 						$('body').removeClass('fc-not-allowed');
@@ -403,7 +400,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.distributeHeight = distributeHeight;
-
 // Undoes distrubuteHeight, restoring all els to their natural height
 					function undistributeHeight(els) {
 						els.height('');
@@ -445,7 +441,6 @@ only include the helpers we need, to keep down filesize
 					exports.subtractInnerElHeight = subtractInnerElHeight;
 					/* Element Geom Utilities
 ----------------------------------------------------------------------------------------------------------------------*/
-
 // borrowed from https://github.com/jquery/jquery-ui/blob/1.11.0/ui/core.js#L51
 					function getScrollParent(el) {
 						var position = el.css('position');
@@ -536,7 +531,6 @@ only include the helpers we need, to keep down filesize
 						width = Math.round(width);
 						return width;
 					}
-
 // Logic for determining if, when the element is right-to-left, the scrollbar appears on the left side
 					var _isLeftRtlScrollbars = null;
 					
@@ -564,7 +558,6 @@ only include the helpers we need, to keep down filesize
 						el.remove();
 						return res;
 					}
-
 // Retrieves a jQuery element's computed CSS value as a floating-point number.
 // If the queried value is non-numeric (ex: IE can return "medium" for border width), will just return zero.
 					function getCssFloat(el, prop) {
@@ -573,7 +566,6 @@ only include the helpers we need, to keep down filesize
 					
 					/* Mouse / Touch Utilities
 ----------------------------------------------------------------------------------------------------------------------*/
-
 // Returns a boolean whether this was a left mouse click and no ctrl key (which means right click on Mac)
 					function isPrimaryMouseButton(ev) {
 						return ev.which === 1 && !ev.ctrlKey;
@@ -624,7 +616,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.allowSelection = allowSelection;
-
 // Stops a mouse/touch event from doing it's native browser action
 					function preventDefault(ev) {
 						ev.preventDefault();
@@ -633,7 +624,6 @@ only include the helpers we need, to keep down filesize
 					exports.preventDefault = preventDefault;
 					/* General Geometry Utils
 ----------------------------------------------------------------------------------------------------------------------*/
-
 // Returns a new rectangle that is the intersection of the two rectangles. If they don't intersect, returns false
 					function intersectRects(rect1, rect2) {
 						var res = {
@@ -649,7 +639,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.intersectRects = intersectRects;
-
 // Returns a new point that will have been moved to reside within the given rectangle
 					function constrainPoint(point, rect) {
 						return {
@@ -659,7 +648,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.constrainPoint = constrainPoint;
-
 // Returns a point that is the center of the given rectangle
 					function getRectCenter(rect) {
 						return {
@@ -669,7 +657,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.getRectCenter = getRectCenter;
-
 // Subtracts point2's coordinates from point1's coordinates, returning a delta
 					function diffPoints(point1, point2) {
 						return {
@@ -771,7 +758,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.diffDayTime = diffDayTime;
-
 // Diffs the two moments via their start-of-day (regardless of timezone). Produces whole-day durations.
 					function diffDay(a, b) {
 						return moment.duration({
@@ -780,7 +766,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.diffDay = diffDay;
-
 // Diffs two moments, producing a duration, made of a whole-unit-increment of the given unit. Uses rounding.
 					function diffByUnit(a, b, unit) {
 						return moment.duration(Math.round(a.diff(b, unit, true)), // returnFloat=true
@@ -806,7 +791,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.computeGreatestUnit = computeGreatestUnit;
-
 // like computeGreatestUnit, but has special abilities to interpret the source input for clues
 					function computeDurationGreatestUnit(duration, durationInput) {
 						var unit = computeGreatestUnit(duration);
@@ -831,7 +815,6 @@ only include the helpers we need, to keep down filesize
 							return start.end.diff(start.start, unit, true);
 						}
 					}
-
 // Intelligently divides a range (specified by a start/end params) by a duration
 					function divideRangeByDuration(start, end, dur) {
 						var months;
@@ -846,7 +829,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.divideRangeByDuration = divideRangeByDuration;
-
 // Intelligently divides one duration by another
 					function divideDurationByDuration(dur1, dur2) {
 						var months1;
@@ -864,7 +846,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.divideDurationByDuration = divideDurationByDuration;
-
 // Intelligently multiplies a duration by a number
 					function multiplyDuration(dur, n) {
 						var months;
@@ -879,7 +860,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.multiplyDuration = multiplyDuration;
-
 // Returns a boolean about whether the given duration has any time parts (hours/minutes/seconds/ms)
 					function durationHasTime(dur) {
 						return Boolean(dur.hours() || dur.minutes() || dur.seconds() || dur.milliseconds());
@@ -892,7 +872,6 @@ only include the helpers we need, to keep down filesize
 					}
 					
 					exports.isNativeDate = isNativeDate;
-
 // Returns a boolean about whether the given input is a time string, like "06:40:00" or "06:00"
 					function isTimeString(str) {
 						return typeof str === 'string' &&
@@ -1718,7 +1697,6 @@ Call this if you want Moment's original format method to be used
 						mom._fullCalendar = true; // flag for extended functionality
 						return mom;
 					}
-
 // Week Number
 // -------------------------------------------------------------------------------------------------
 // Returns the week number, considering the locale's custom week number calcuation
@@ -2262,7 +2240,6 @@ options:
 						}
 						return false;
 					}
-
 // Returns true if all of subHit's non-standard properties are within superHit
 					function isHitPropsWithin(subHit, superHit) {
 						for(var propName in subHit) {
@@ -3063,7 +3040,6 @@ Normalizes mouse/touch events. For examples:
 								'[' + options.weekNumberTitle + ']w';
 						}
 					};
-
 // TODO: make these computable properties in optionsManager
 					function populateInstanceComputableOptions(options) {
 						$.each(instanceComputableOptions, function(name, func) {
@@ -3104,7 +3080,6 @@ Normalizes mouse/touch events. For examples:
 					}
 					
 					exports.datepickerLocale = datepickerLocale;
-
 // Sets FullCalendar-specific translations. Will set the locales as the global default.
 					function locale(localeCode, newFcOptions) {
 						var fcOptions;
@@ -3129,7 +3104,6 @@ Normalizes mouse/touch events. For examples:
 					}
 					
 					exports.locale = locale;
-
 // Returns moment's internal locale data. If doesn't exist, returns English.
 					function getMomentLocaleData(localeCode) {
 						return moment.localeData(localeCode) || moment.localeData('en');
@@ -3249,7 +3223,6 @@ Normalizes mouse/touch events. For examples:
 						'buttonIcons',
 						'themeButtonIcons'
 					];
-
 // Merges an array of option objects into a single object
 					function mergeOptions(optionObjs) {
 						return util_1.mergeProps(optionObjs, complexOptions);
@@ -5206,7 +5179,6 @@ Embodies a div that has potential scrollbars
 						}
 						return mom;
 					}
-
 // Config
 // ---------------------------------------------------------------------------------------------------------------------
 					/*
@@ -5330,7 +5302,6 @@ Renders a range with an already-parsed format string.
 						}
 						return processMaybeMarkers(leftStr + middleStr + rightStr);
 					}
-
 // Format String Parsing
 // ---------------------------------------------------------------------------------------------------------------------
 					var parsedFormatStrCache = {};
@@ -5449,7 +5420,6 @@ The `chunks` can be nested (because of "maybe" chunks), however, the returned ar
 						}
 						return units;
 					}
-
 // Rendering to text
 // ---------------------------------------------------------------------------------------------------------------------
 					/*
@@ -5494,7 +5464,6 @@ Accepts an almost-finally-formatted string and processes the "maybe" control cha
 							}
 						});
 					}
-
 // Misc Utils
 // -------------------------------------------------------------------------------------------------
 					/*
@@ -8459,7 +8428,6 @@ Prerequisite: the object being mixed into needs to be a *Grid*
 					exports.default = BasicView;
 					BasicView.prototype.dateProfileGeneratorClass = BasicViewDateProfileGenerator_1.default;
 					BasicView.prototype.dayGridClass = DayGrid_1.default;
-
 // customize the rendering behavior of BasicView's dayGrid
 					function makeDayGridSubclass(SuperClass) {
 						return /** @class */ (function(_super) {
@@ -8927,7 +8895,6 @@ Prerequisite: the object being mixed into needs to be a *Grid*
 						return Constraints;
 					}());
 					exports.default = Constraints;
-
 // optional subjectEventInstance
 					function isOverlapsAllowedByFunc(overlapEventFootprints, overlapFunc, subjectEventInstance) {
 						var i;
@@ -10950,7 +10917,6 @@ Options:
 						return DateComponent;
 					}(Component_1.default));
 					exports.default = DateComponent;
-
 // legacy
 					function convertEventsPayloadToLegacyArray(eventsPayload) {
 						var eventDefId;
@@ -13896,7 +13862,6 @@ Does not own rendering. Use for low-level util methods by TimeGrid.
 						}
 						return levels;
 					}
-
 // For every segment, figure out the other segments that are in subsequent
 // levels that also occupy the same vertical space. Accumulate in seg.forwardSegs
 					function computeForwardSlotSegs(levels) {
@@ -13916,7 +13881,6 @@ Does not own rendering. Use for low-level util methods by TimeGrid.
 							}
 						}
 					}
-
 // Figure out which path forward (via seg.forwardSegs) results in the longest path until
 // the furthest edge is reached. The number of segments in this path will be seg.forwardPressure
 					function computeSlotSegPressures(seg) {
@@ -13936,7 +13900,6 @@ Does not own rendering. Use for low-level util methods by TimeGrid.
 							seg.forwardPressure = forwardPressure;
 						}
 					}
-
 // Find all the segments in `otherSegs` that vertically collide with `seg`.
 // Append into an optionally-supplied `results` array and return.
 					function computeSlotSegCollisions(seg, otherSegs, results) {
@@ -13950,7 +13913,6 @@ Does not own rendering. Use for low-level util methods by TimeGrid.
 						}
 						return results;
 					}
-
 // Do these segments occupy the same vertical space?
 					function isSlotSegCollision(seg1, seg2) {
 						return seg1.bottom > seg2.top && seg1.top < seg2.bottom;
@@ -14275,7 +14237,6 @@ Does not own rendering. Use for low-level util methods by TimeGrid.
 						return DayGridEventRenderer;
 					}(EventRenderer_1.default));
 					exports.default = DayGridEventRenderer;
-
 // Computes whether two segments' columns collide. They are assumed to be in the same row.
 					function isDaySegCollision(seg, otherSegs) {
 						var i;
@@ -14289,7 +14250,6 @@ Does not own rendering. Use for low-level util methods by TimeGrid.
 						}
 						return false;
 					}
-
 // A cmp function for determining the leftmost event
 					function compareDaySegCols(a, b) {
 						return a.leftCol - b.leftCol;
@@ -18381,6 +18341,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 			var rsingleTag = (/^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i);
 
 
+
 // Implement the identical functionality for filter and not
 			function winnow(elements, qualifier, not) {
 				if(isFunction(qualifier)) {
@@ -18761,6 +18722,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 				};
 			});
 			var rnothtmlwhite = (/[^\x20\t\r\n\f]+/g);
+
 
 
 // Convert String-formatted options into Object-formatted ones
@@ -19401,6 +19363,8 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 			};
 
 
+
+
 // The deferred used on DOM ready
 			var readyList = jQuery.Deferred();
 			
@@ -19476,6 +19440,8 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 				// A fallback to window.onload, that will always work
 				window.addEventListener("load", completed);
 			}
+
+
 
 
 // Multifunctional method to get and set values of a collection
@@ -19721,6 +19687,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 			var dataPriv = new Data();
 			
 			var dataUser = new Data();
+
 
 
 //	Implementation Summary
@@ -20237,6 +20204,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 			var rtagName = (/<([a-z][^\/\0>\x20\t\r\n\f]+)/i);
 			
 			var rscriptType = (/^$|^module$|\/(?:java|ecma)script/i);
+
 
 
 // We have to close these tags to support XHTML (#13200)
@@ -23701,6 +23669,8 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 			});
 
 
+
+
 // Return jQuery for attributes-only inclusion
 			
 			
@@ -23938,6 +23908,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 			var nonce = Date.now();
 			
 			var rquery = (/\?/);
+
 
 
 // Cross-browser xml parsing
@@ -25170,6 +25141,8 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 			});
 
 
+
+
 // Prevent auto-execution of scripts when no explicit dataType was provided (See gh-2432)
 			jQuery.ajaxPrefilter(function(s) {
 				if(s.crossDomain) {
@@ -25332,6 +25305,8 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 			});
 
 
+
+
 // Support: Safari 8 only
 // In Safari 8 documents created via document.implementation.createHTMLDocument
 // collapse sibling forms: the second one becomes a child of the first one.
@@ -25457,6 +25432,8 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 				
 				return this;
 			};
+
+
 
 
 // Attach a bunch of functions for handling common AJAX events
@@ -25845,6 +25822,8 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 			};
 
 
+
+
 // Register as a named AMD module, since jQuery can be concatenated with other
 // files that may use define, but not via a proper concatenation script that
 // understands anonymous AMD modules. A named AMD is safest and most robust
@@ -26196,7 +26175,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -26279,7 +26258,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -26348,7 +26327,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -26417,7 +26396,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -26549,7 +26528,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -26618,7 +26597,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -26732,7 +26711,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -26801,7 +26780,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -26946,7 +26925,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -27061,7 +27040,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -27202,7 +27181,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -27302,7 +27281,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -27370,7 +27349,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -27499,7 +27478,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -27628,7 +27607,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -27750,7 +27729,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -27911,7 +27890,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28009,7 +27988,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28200,7 +28179,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28273,7 +28252,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28363,7 +28342,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28433,7 +28412,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28519,7 +28498,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28605,7 +28584,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28691,7 +28670,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28800,7 +28779,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28910,7 +28889,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -28987,7 +28966,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29060,7 +29039,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29137,7 +29116,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29214,7 +29193,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29286,7 +29265,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29363,7 +29342,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29444,7 +29423,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29546,7 +29525,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29639,7 +29618,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29741,7 +29720,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29831,7 +29810,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -29907,7 +29886,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30023,7 +30002,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30144,7 +30123,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30214,7 +30193,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30298,7 +30277,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30386,7 +30365,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30479,7 +30458,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30564,7 +30543,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30650,7 +30629,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30737,7 +30716,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -30870,7 +30849,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -31004,7 +30983,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -31111,7 +31090,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -31245,7 +31224,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -31409,7 +31388,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -31531,7 +31510,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -31636,7 +31615,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -31728,7 +31707,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -31871,7 +31850,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -31950,7 +31929,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -32052,7 +32031,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -32144,7 +32123,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -32243,7 +32222,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -32340,7 +32319,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -32460,7 +32439,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -32596,7 +32575,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -32687,7 +32666,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -32816,7 +32795,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -32913,7 +32892,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -33062,7 +33041,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -33142,7 +33121,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -33276,7 +33255,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -33387,7 +33366,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -33509,7 +33488,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -33583,7 +33562,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -33683,7 +33662,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -33774,7 +33753,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -33888,7 +33867,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34104,7 +34083,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34196,7 +34175,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34288,7 +34267,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34358,7 +34337,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34461,7 +34440,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34533,7 +34512,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34666,7 +34645,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34763,7 +34742,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34860,7 +34839,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -34930,7 +34909,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -35064,7 +35043,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -35202,7 +35181,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -35273,7 +35252,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -35348,7 +35327,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -35433,7 +35412,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -35626,7 +35605,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -35734,7 +35713,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -35804,7 +35783,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -35885,7 +35864,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -36053,7 +36032,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -36236,7 +36215,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -36314,7 +36293,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -36435,7 +36414,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -36556,7 +36535,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -36654,7 +36633,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -36733,7 +36712,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -36802,7 +36781,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -36941,7 +36920,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37040,7 +37019,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37117,7 +37096,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37243,7 +37222,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37320,7 +37299,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37392,7 +37371,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37628,7 +37607,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37729,7 +37708,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37797,7 +37776,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37865,7 +37844,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -37994,7 +37973,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -38156,7 +38135,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -38264,7 +38243,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -38332,7 +38311,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -38400,7 +38379,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -38489,7 +38468,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -38567,7 +38546,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -38637,7 +38616,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -38757,7 +38736,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -38870,7 +38849,7 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		
 		;(function(global, factory) {
 			true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-				undefined;
+				undefined
 		}(this, (function(moment) {
 			'use strict';
 			
@@ -43579,7 +43558,23 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 		Object.defineProperty(exports, "__esModule", {value: true});
 		__webpack_require__(/*! fullcalendar */ "./node_modules/fullcalendar/dist/fullcalendar.js");
 		$(function() {
-			var calendarContainer = $('#calendar');
+			var calendarContainer = $('#calendar'), modalEvent = $('#event'), eventContent = $('#eventContent');
+			eventContent.ckeditor(function() {
+			}, {
+				language: 'it',
+				height: 500
+			});
+			$('.input-daterange input').each(function() {
+				$(this).datepicker({
+					language: 'it',
+					autoclose: true,
+					orientation: "auto",
+					weekStart: 1,
+					todayBtn: true,
+					todayHighlight: true,
+					container: '#event'
+				});
+			});
 			calendarContainer.fullCalendar({
 				eventSources: [
 					//
@@ -43613,12 +43608,14 @@ Responsible for the scroller, and forwarding event-related actions into the "gri
 				eventRender: function(eventObj, $el) {
 					//
 				},
+				dayClick: function(date, jsEvent, view) {
+					modalEvent.modal('toggle');
+				},
 				selectable: true,
 				//@ts-ignore
 				selectMinDistance: 0,
 				unselectAuto: true,
 				select: function(start, end) {
-					//
 				},
 				height: 500,
 				fixedWeekCount: false,
