@@ -77,4 +77,8 @@ class CalendarController extends Controller {
 	public function destroy($id) {
 		//
 	}
+	
+	public function getEvents() {
+		return Event::all();
+	}
 }
