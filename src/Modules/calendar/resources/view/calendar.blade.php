@@ -219,5 +219,6 @@
 	{!! script('ikpanel/modules/calendar/js/plugins/fullcalendar-3.10.0/lib/moment.min.js') !!}
 	{!! script('ikpanel/modules/calendar/js/plugins/fullcalendar-3.10.0/fullcalendar.min.js') !!}
 	{!! script('ikpanel/modules/calendar/js/plugins/fullcalendar-3.10.0/locale/it.js') !!}
+	{!! script('ikpanel/assets/plugins/jquery-mask/jquery.mask.min.js') !!}
 	{!! script('ikpanel/modules/calendar/js/calendar.js',true) !!}
 @endsection
