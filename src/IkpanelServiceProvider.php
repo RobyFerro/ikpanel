@@ -22,7 +22,7 @@ class IkpanelServiceProvider extends ServiceProvider {
 		], 'ikpanel_kernel');
 		
 		$this->publishes([
-			__DIR__ . '/config/admin-panel.php' => base_path('config/ikpanel-panel.php')
+			__DIR__ . '/config/ikpanel-config.php' => base_path('config/ikpanel-config.php')
 		], 'ikpanel_config');
 		
 		$this->loadRoutesFrom(__DIR__ . '/routes/web.php');
