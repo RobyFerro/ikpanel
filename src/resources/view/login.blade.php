@@ -57,12 +57,12 @@
     <!-- START Login Right Container-->
     <div class="login-container bg-white">
         <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
-            <img src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
-                 alt="logo"
-                 data-src="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
-                 data-src-retina="{{ asset('ikpanel/assets/img/ikpanel.png') }}"
-                 class="img img-responsive"
-                 width="100%"
+	        <img src="{{ asset('ikpanel/assets/img/logo.png') }}"
+	             alt="logo"
+	             data-src="{{ asset('ikpanel/assets/img/logo.png') }}"
+	             data-src-retina="{{ asset('ikpanel/assets/img/logo.png') }}"
+	             class="img img-responsive"
+	             width="100%"
                  {{--width="78"
                  height="22"--}}>
             <p class="p-t-35">Sign into your ikpanel account</p>

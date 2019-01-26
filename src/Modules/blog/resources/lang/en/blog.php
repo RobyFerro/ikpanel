@@ -90,7 +90,8 @@ return [
 				"categories"       => "Categories",
 				"ownerLabel"       => "Author",
 				"ownerAlias"       => "Author alias",
-				"authorList"       => "Authors"
+				"authorList"       => "Authors",
+				"mainPic"          => "Main picture"
 			],
 			"buttons"     => [
 				"delete" => "Delete article"
@@ -113,7 +114,8 @@ return [
 				"categories"       => "Categories",
 				"ownerLabel"       => "Author",
 				"ownerAlias"       => "Author alias",
-				"authorList"       => "Authors"
+				"authorList"       => "Authors",
+				"mainPic"          => "Main picture"
 			],
 			"errors"      => [
 				"titleRequired"     => 'Title field is required',

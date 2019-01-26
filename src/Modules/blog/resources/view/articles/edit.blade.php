@@ -141,6 +141,22 @@
 				</div>
 			</div>
 			<div class="card">
+				<div class="card-header">
+					<div class="card-title">
+						{{ __('ikpanel-blog::blog.articles.new.inputs.mainPic') }}
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="form-group form-group-default">
+						<input class="form-control form-data"
+						       type="file"
+						       id="main-pic"
+						       value=""
+						       autocomplete="off">
+					</div>
+				</div>
+			</div>
+			<div class="card">
 				<div class="card-body">
 					<button class="btn btn-block btn-danger" id="deleteArticles" data-id="{{ $post->id }}">
 						<i class="fas fa-trash-alt"></i>

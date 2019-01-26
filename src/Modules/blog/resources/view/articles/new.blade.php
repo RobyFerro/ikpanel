@@ -25,7 +25,7 @@
 		<div class="col-md-12">
 			<div class="form-group form-group-default required">
 				<label for="title">
-					{{ __('ikpanel-blog::blog.articles.edit.inputs.title') }}
+					{{ __('ikpanel-blog::blog.articles.new.inputs.title') }}
 				</label>
 				<input class="form-control form-data" id="title" value="" autocomplete="off">
 			</div>
@@ -107,7 +107,7 @@
 				<div class="card-body">
 					<div class="form-group form-group-default required">
 						<label for="title">
-							{{ __('ikpanel-blog::blog.articles.edit.inputs.ownerAlias') }}
+							{{ __('ikpanel-blog::blog.articles.new.inputs.ownerAlias') }}
 						</label>
 						<input class="form-control form-data"
 						       id="ownerAlias"
@@ -116,7 +116,7 @@
 					</div>
 					<div class="form-group form-group-default form-group-default-select2">
 						<label for="author">
-							{{ __('ikpanel-blog::blog.articles.edit.inputs.authorList') }}
+							{{ __('ikpanel-blog::blog.articles.new.inputs.authorList') }}
 						</label>
 						<select id="author" class="full-width select2-hidden-accessible form-data" tabindex="-1"
 						        aria-hidden="true"
@@ -133,6 +133,22 @@
 								@endif
 							@endforeach
 						</select>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<div class="card-title">
+						{{ __('ikpanel-blog::blog.articles.new.inputs.mainPic') }}
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="form-group form-group-default">
+						<input class="form-control form-data"
+						       type="file"
+						       id="main-pic"
+						       value=""
+						       autocomplete="off">
 					</div>
 				</div>
 			</div>
