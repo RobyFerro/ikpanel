@@ -9,9 +9,9 @@
 namespace ikdev\ikpanel\Modules\blog\app\Http\Requests;
 
 
-use Illuminate\Foundation\Http\FormRequest;
+use ikdev\ikpanel\App\Http\Requests\FormDataRequest;
 
-class EditPostRequest extends FormRequest {
+class EditPostRequest extends FormDataRequest {
 	
 	public function authorize() {
 		return true;

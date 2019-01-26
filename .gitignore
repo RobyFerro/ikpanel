@@ -28,3 +28,5 @@ src/resources/assets/js/**/*.js.map
 
 src/Modules/blog/resources/assets/js/**/*.js
 src/Modules/blog/resources/assets/js/**/*.js.map
+/mix-manifest.json
+/package-lock.json
