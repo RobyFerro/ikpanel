@@ -164,6 +164,25 @@ class BlogPostController extends Controller {
 		
 		$categories = [];
 		
+		if ($request->hasFile('main-pic') && $request->file('main-pic')->isValid()) {
+			
+			$file = $request->file('main-pic');
+			$filename = $file->getFilename() . "." . $file->extension();
+			$storagePath = "blog/post/{$request->get('acticleID')}";
+			$file->storeAs($storagePath, $filename);
+			
+			try {
+				Post::find($request->get('articleID'))
+					->update([
+						"main_pic" => $storagePath . $filename
+					]);
+			} catch (QueryException $e) {
+				DB::rollBack();
+				throw $e;
+			} // try
+			
+		} // if
+		
 		foreach ($request->all() as $key => $item) {
 			if (preg_match('/category/', $key) == 1 && filter_var($item, FILTER_VALIDATE_BOOLEAN)) {
 				$categories[] = (int)explode('-', $key)[1];

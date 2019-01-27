@@ -123,7 +123,8 @@ return [
 				"contentRequired"   => 'Content field is required',
 				"ownerRequired"     => 'Author field is required',
 				"ownerExist"        => "Author does not exist",
-				'keywordsMaxLength' => 'Keywords field is too long'
+				'keywordsMaxLength' => 'Keywords field is too long',
+				'mainPicWrongMime'  => 'Image type is not supported'
 			]
 		]
 	]

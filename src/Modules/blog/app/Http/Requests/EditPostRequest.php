@@ -8,10 +8,9 @@
 
 namespace ikdev\ikpanel\Modules\blog\app\Http\Requests;
 
+use ikdev\ikpanel\App\Http\Requests\FormDataJsonRequest;
 
-use ikdev\ikpanel\App\Http\Requests\FormDataRequest;
-
-class EditPostRequest extends FormDataRequest {
+class EditPostRequest extends FormDataJsonRequest {
 	
 	public function authorize() {
 		return true;
@@ -24,7 +23,8 @@ class EditPostRequest extends FormDataRequest {
 			'title'       => 'required|max:255',
 			'description' => 'nullable',
 			'content'     => 'required',
-			'keywords'    => 'nullable|max:255'
+			'keywords'    => 'nullable|max:255',
+			'main_pic'    => 'nullable|mimes:jpeg,bmp,png,jpg'
 		];
 	}
 	
@@ -35,7 +35,8 @@ class EditPostRequest extends FormDataRequest {
 			"content.required" => __('ikpanel-blog::blog.articles.edit.errors.contentRequired'),
 			'author.required'  => __('ikpanel-blog::blog.articles.edit.errors.ownerRequired'),
 			'author.exist'     => __('ikpanel-blog::blog.articles.edit.errors.ownerExist'),
-			'keywords.max'     => __('ikpanel-blog::blog.articles.edit.errors.keywordsMaxLength')
+			'keywords.max'     => __('ikpanel-blog::blog.articles.edit.errors.keywordsMaxLength'),
+			'main_pic.mime'    => __('ikpanel-blog::blog.articles.edit.errors.mainPicWrongMime')
 		];
 	}
 	

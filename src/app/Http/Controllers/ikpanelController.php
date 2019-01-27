@@ -8,10 +8,10 @@
 
 namespace ikdev\ikpanel\App\Http\Controllers;
 
+
 use ikdev\ikpanel\App\Http\Requests\ProfileRequest;
 use ikdev\ikpanel\app\Http\Classes\PanelUtilities;
 use ikdev\ikpanel\app\Users;
-
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
@@ -100,6 +100,7 @@ class ikpanelController extends BaseController {
 	 * Update user profile
 	 * @param ProfileRequest $request
 	 * @return array
+	 * @throws \Exception
 	 */
 	public function profileUpdate(ProfileRequest $request) {
 		
@@ -114,7 +115,7 @@ class ikpanelController extends BaseController {
 			if (!is_null($password)) {
 				$user->password = bcrypt($password);
 				$user->save();
-			}
+			} // if
 			
 			if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
 				PanelUtilities::saveUserAvatar($user->id, $request->file('avatar'));
@@ -124,7 +125,7 @@ class ikpanelController extends BaseController {
 			
 			return [true];
 			
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			DB::rollBack();
 			throw $e;
 		}

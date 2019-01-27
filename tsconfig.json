@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es5",
+		"lib": [
+			"es2015",
+			"dom"
+		],
+		"baseUrl": "src/",
+		"paths": {
+			"@ikpanel/*": [
+				"resources/assets/js/modules/*"
+			]
+		}
+	},
+	"exclude": [
+		"node_modules",
+		"vendor"
+	]
+}

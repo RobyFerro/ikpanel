@@ -5,7 +5,7 @@ export default class FormUtils {
 	
 	/**
 	 * Inizializza il componente select2 a nazione e città
-	 * @param {number} country_id ID nazione
+	 * @param {number} country_id ID nazione-
 	 * @param {number} city_id ID città
 	 * @param {string} modal ID modal. Se presente
 	 * @param {string} side Modalità: back|front

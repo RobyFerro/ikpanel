@@ -1,11 +1,11 @@
 @extends('ikpanel::dashboard')
 
 @section('title')
-	{{ __('users.show.title') }}
+	{{ __('ikpanel::users.show.title') }}
 @endsection
 
 @section('section_name')
-	{{ __('users.show.breadcrumb') }}
+	{{ __('ikpanel::users.show.breadcrumb') }}
 @endsection
 
 @section('initial_link')
@@ -26,12 +26,12 @@
 		<div class="col-md-12">
 			<a type="button" href="{{admin_url('/users/new')}}" class="btn btn-primary btn-sm">
 				<i class="fas fa-plus fa-fw"></i>
-				{{ __('users.show.buttons.new') }}
+				{{ __('ikpanel::users.show.buttons.new') }}
 			</a>
 			
 			<a type='button' class="btn btn-danger btn-sm" href="{{admin_url()}}">
 				<i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>
-				{{ __('users.show.buttons.close') }}
+				{{ __('ikpanel::users.show.buttons.close') }}
 			</a>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 		<div class="col-md-4">
 			<div class="form-group form-group-default ">
 				<label for="search-filter">
-					{{ __('users.show.search') }}
+					{{ __('ikpanel::users.show.search') }}
 				</label>
 				<input type="text" class="form-control" id="search-filter">
 			</div>
@@ -51,18 +51,18 @@
 		<div class="col-md-3">
 			<div class="form-group form-group-default form-group-default-select2">
 				<label for="status-filter">
-					{{ __('users.show.filter_label') }}
+					{{ __('ikpanel::users.show.filter_label') }}
 				</label>
 				<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1" aria-hidden="true"
 				        autocomplete="off">
 					<option value="ALL">
-						{{ __('users.show.filters.all') }}
+						{{ __('ikpanel::users.show.filters.all') }}
 					</option>
 					<option value="ACTIVE" selected>
-						{{ __('users.show.filters.active') }}
+						{{ __('ikpanel::users.show.filters.active') }}
 					</option>
 					<option value="DELETED">
-						{{ __('users.show.filters.deleted') }}
+						{{ __('ikpanel::users.show.filters.deleted') }}
 					</option>
 				</select>
 			</div>

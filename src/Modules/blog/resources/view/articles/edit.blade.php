@@ -150,6 +150,7 @@
 					<div class="form-group form-group-default">
 						<input class="form-control form-data"
 						       type="file"
+						       accept="image/*"
 						       id="main-pic"
 						       value=""
 						       autocomplete="off">
