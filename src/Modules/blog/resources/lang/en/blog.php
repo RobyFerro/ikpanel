@@ -97,10 +97,12 @@ return [
 				"delete" => "Delete article"
 			],
 			"errors"      => [
-				"titleRequired"   => 'Title field is required',
-				"contentRequired" => 'Content field is required',
-				"ownerRequired"   => 'Author field is required',
-				"ownerExist"      => "Author does not exist"
+				"titleRequired"     => 'Title field is required',
+				"contentRequired"   => 'Content field is required',
+				"ownerRequired"     => 'Author field is required',
+				"ownerExist"        => "Author does not exist",
+				'keywordsMaxLength' => 'Keywords field is too long',
+				'mainPicWrongMime'  => 'Image type is not supported'
 			]
 		],
 		"new"  => [

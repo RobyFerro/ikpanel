@@ -1,4 +1,3 @@
-import FormDataBag from "@ikpanel/form-data-bag";
 import ModernGui from "@ikpanel/modern-gui";
 import FormUtils from "@ikpanel/form_utils";
 
@@ -23,21 +22,7 @@ $(function () {
 	$('#author').select2();
 	
 	body.on('click', '.action-save', function () {
-		let action = $(this).data('action');/*,
-			file: FileList = ($('#main-pic')[0] as HTMLInputElement).files,
-			formData: FormDataBag = new FormDataBag();
-		
-		formData.addFiles('mainPic', file);
-		formData.add('title', $('#title').val());
-		formData.add('content', $('#content').val());
-		formData.add('shortDescription', $('#shortDescription').val());
-		formData.add('keywords', $('#keywords').val());
-		formData.add('ownerAlias', $('#ownerAlias').val());
-		formData.add('author', $('#author').val());
-		
-		$('input[type=checkbox]').each(function () {
-			formData.add($(this).attr('id'), $(this).val());
-		});*/
+		let action = $(this).data('action');
 		
 		$.ajax({
 			type: 'POST',
@@ -45,7 +30,6 @@ $(function () {
 			contentType: false,
 			processData: false,
 			url: `${admin_panel_url}/mod/blog/articles/edit`,
-			// data: formData.getFormData(),
 			data: FormUtils.getInputFormDataJson(),
 			beforeSend: function () {
 				ModernGui.loading(true, 'Modifica articolo in corso');
@@ -90,6 +74,21 @@ $(function () {
 		} // if
 		
 	});
+	
+	let fileReader = new FileReader();
+	
+	$('#main-pic').on('change', function (e) {
+		// @ts-ignore
+		fileReader.readAsDataURL(e.target.files[0]);
+	});
+	
+	fileReader.onload = function (e) {
+		let mainPic = $('#main-pic-preview'),
+			mainPicWidth = mainPic.width();
+		// @ts-ignore
+		mainPic.prop('src', e.target.result);
+		mainPic.height(mainPicWidth);
+	};
 	
 	
 });

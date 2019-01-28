@@ -144,6 +144,12 @@
 				</div>
 				<div class="card-body">
 					<div class="form-group form-group-default">
+						<img
+							src="{{ asset('ikpanel/modules/blog/img/no-image.jpg') }}"
+							class="img-fluid img-thumbnail"
+							id="main-pic-preview"
+							alt="Main image">
+						<hr>
 						<input class="form-control form-data"
 						       type="file"
 						       id="main-pic"

@@ -1,6 +1,8 @@
 {
 	"/src/Modules/blog/public/js/articles/edit.js": "/src/Modules/blog/public/js/articles/edit.js",
 	"/src/Modules/blog/public/js/articles/edit.js.map": "/src/Modules/blog/public/js/articles/edit.js.map",
+	"/src/Modules/blog/public/js/articles/new.js": "/src/Modules/blog/public/js/articles/new.js",
+	"/src/Modules/blog/public/js/articles/new.js.map": "/src/Modules/blog/public/js/articles/new.js.map",
 	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/edit.js": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/edit.js",
 	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/new.js": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/new.js",
 	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/show.js": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/show.js"

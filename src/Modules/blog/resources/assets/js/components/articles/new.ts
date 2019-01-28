@@ -1,5 +1,5 @@
-import FormUtils from "../../../../../../../../../../../resources/assets/js/modules/form_utils";
-import ModernGui from "../../../../../../../../../../../resources/assets/js/modules/modern-gui";
+import FormUtils from "@ikpanel/form_utils";
+import ModernGui from "@ikpanel/modern-gui";
 
 declare let admin_panel_url: string;
 
@@ -22,13 +22,15 @@ $(function () {
 	$('#author').select2();
 	
 	body.on('click', '.action-save', function () {
-		let object = FormUtils.retrieveAllInputs(),
-			action = $(this).data('action');
+		let action = $(this).data('action');
 		
 		$.ajax({
 			type: 'POST',
+			cache: false,
+			contentType: false,
+			processData: false,
 			url: `${admin_panel_url}/mod/blog/articles/new`,
-			data: object,
+			data: FormUtils.getInputFormDataJson(),
 			beforeSend: function () {
 				ModernGui.loading(true, 'Salvataggio articolo in corso...');
 			},
@@ -52,5 +54,20 @@ $(function () {
 			}
 		});
 	});
+	
+	let fileReader = new FileReader();
+	
+	$('#main-pic').on('change', function (e) {
+		// @ts-ignore
+		fileReader.readAsDataURL(e.target.files[0]);
+	});
+	
+	fileReader.onload = function (e) {
+		let mainPic = $('#main-pic-preview'),
+			mainPicWidth = mainPic.width();
+		// @ts-ignore
+		mainPic.prop('src', e.target.result);
+		mainPic.height(mainPicWidth);
+	};
 	
 });

@@ -14,6 +14,7 @@ let mix = require('laravel-mix');
 // Todo: Fix JS Debug
 
 mix.ts('src/Modules/blog/resources/assets/js/components/articles/edit.ts', 'src/Modules/blog/public/js/articles')
+	.ts('src/Modules/blog/resources/assets/js/components/articles/new.ts', 'src/Modules/blog/public/js/articles')
 	.copy('src/Modules/blog/public/js/articles/*.js', '../../../public/ikpanel/modules/blog/js/articles')
 	.copy('src/Modules/blog/public/js/articles/!*.js.map', '../../../public/ikpanel/modules/blog/js/articles');
 

@@ -164,17 +164,18 @@ class BlogPostController extends Controller {
 		
 		$categories = [];
 		
+		
 		if ($request->hasFile('main-pic') && $request->file('main-pic')->isValid()) {
 			
 			$file = $request->file('main-pic');
 			$filename = $file->getFilename() . "." . $file->extension();
-			$storagePath = "blog/post/{$request->get('acticleID')}";
+			$storagePath = "public/blog/post/{$request->get('articleID')}/";
 			$file->storeAs($storagePath, $filename);
 			
 			try {
 				Post::find($request->get('articleID'))
 					->update([
-						"main_pic" => $storagePath . $filename
+						"main_pic" => str_replace('public', 'storage', $storagePath) . $filename
 					]);
 			} catch (QueryException $e) {
 				DB::rollBack();
@@ -238,7 +239,7 @@ class BlogPostController extends Controller {
 	}
 	
 	/**
-	 * Insert new category
+	 * Insert new post
 	 * @param NewPostRequest $request
 	 * @return array
 	 */
@@ -261,6 +262,25 @@ class BlogPostController extends Controller {
 			DB::rollBack();
 			throw $e;
 		} // try
+		
+		if ($request->hasFile('main-pic') && $request->file('main-pic')->isValid()) {
+			
+			$file = $request->file('main-pic');
+			$filename = $file->getFilename() . "." . $file->extension();
+			$storagePath = "public/blog/post/{$id}/";
+			$file->storeAs($storagePath, $filename);
+			
+			try {
+				Post::find($id)
+					->update([
+						"main_pic" => str_replace('public', 'storage', $storagePath) . $filename
+					]);
+			} catch (QueryException $e) {
+				DB::rollBack();
+				throw $e;
+			} // try
+			
+		} // if
 		
 		$categories = [];
 		

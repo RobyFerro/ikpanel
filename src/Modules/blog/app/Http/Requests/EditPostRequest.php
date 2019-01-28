@@ -36,7 +36,7 @@ class EditPostRequest extends FormDataJsonRequest {
 			'author.required'  => __('ikpanel-blog::blog.articles.edit.errors.ownerRequired'),
 			'author.exist'     => __('ikpanel-blog::blog.articles.edit.errors.ownerExist'),
 			'keywords.max'     => __('ikpanel-blog::blog.articles.edit.errors.keywordsMaxLength'),
-			'main_pic.mime'    => __('ikpanel-blog::blog.articles.edit.errors.mainPicWrongMime')
+			'main_pic.mimes'   => __('ikpanel-blog::blog.articles.edit.errors.mainPicWrongMime')
 		];
 	}
 	

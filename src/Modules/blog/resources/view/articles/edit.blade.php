@@ -148,6 +148,16 @@
 				</div>
 				<div class="card-body">
 					<div class="form-group form-group-default">
+						<img
+							@if(is_null($post->main_pic))
+							src="{{ asset('ikpanel/assets/modules/blog/img/no-image.jpg') }}"
+							@else
+							src="{{ asset($post->main_pic) }}"
+							@endif
+							id="main-pic-preview"
+							class="img-fluid img-thumbnail"
+							alt="Main image">
+						<hr>
 						<input class="form-control form-data"
 						       type="file"
 						       accept="image/*"
