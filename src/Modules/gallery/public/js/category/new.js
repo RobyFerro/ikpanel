@@ -133,16 +133,68 @@
 	/******/
 	/******/ 	// Load entry module and return exports
 	/******/
-	return __webpack_require__(__webpack_require__.s = 4);
+	return __webpack_require__(__webpack_require__.s = 7);
 	/******/
 })
 /************************************************************************/
 /******/({
 	
-	/***/ "../../../resources/assets/js/modules/form_utils.ts":
-	/*!****************************************************************************************************!*\
-	  !*** C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/resources/assets/js/modules/form_utils.ts ***!
-	  \****************************************************************************************************/
+	/***/ "./src/Modules/gallery/resources/assets/js/components/categories/new.ts":
+	/*!******************************************************************************!*\
+	  !*** ./src/Modules/gallery/resources/assets/js/components/categories/new.ts ***!
+	  \******************************************************************************/
+	/*! no static exports found */
+	/***/ (function(module, exports, __webpack_require__) {
+		
+		"use strict";
+		
+		Object.defineProperty(exports, "__esModule", {value: true});
+		var form_utils_1 = __webpack_require__(/*! @ikpanel/form_utils */ "./src/resources/assets/js/modules/form_utils.ts");
+		var modern_gui_1 = __webpack_require__(/*! @ikpanel/modern-gui */ "./src/resources/assets/js/modules/modern-gui.ts");
+		$(function() {
+			var body = $('body');
+			$('#categoryDescription').ckeditor(function() {
+			}, {
+				language: 'it',
+				height: 500
+			});
+			body.on('click', '.action-save', function() {
+				var object = form_utils_1.default.retrieveAllInputs(), action = $(this).data('action');
+				$.ajax({
+					type: 'POST',
+					url: admin_panel_url + "/mod/gallery/categories/new",
+					data: object,
+					beforeSend: function() {
+						modern_gui_1.default.loading(true, 'Creazione categoria in corso...');
+					},
+					success: function(data) {
+						switch(action) {
+							case 'close':
+								location.reload();
+								break;
+							default:
+								location.href = admin_panel_url + "/mod/gallery/categories/edit/" + data;
+								break;
+						} // switch
+					},
+					error: function(xhr) {
+						form_utils_1.default.sendNotifications(xhr);
+					},
+					complete: function() {
+						modern_gui_1.default.loading(false);
+					}
+				});
+			});
+		});
+		
+		
+		/***/
+	}),
+	
+	/***/ "./src/resources/assets/js/modules/form_utils.ts":
+	/*!*******************************************************!*\
+	  !*** ./src/resources/assets/js/modules/form_utils.ts ***!
+	  \*******************************************************/
 	/*! no static exports found */
 	/***/ (function(module, exports, __webpack_require__) {
 		
@@ -155,7 +207,7 @@
 			
 			/**
 			 * Inizializza il componente select2 a nazione e città
-			 * @param {number} country_id ID nazione
+			 * @param {number} country_id ID nazione-
 			 * @param {number} city_id ID città
 			 * @param {string} modal ID modal. Se presente
 			 * @param {string} side Modalità: back|front
@@ -675,10 +727,10 @@
 		/***/
 	}),
 	
-	/***/ "../../../resources/assets/js/modules/modern-gui.ts":
-	/*!****************************************************************************************************!*\
-	  !*** C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/resources/assets/js/modules/modern-gui.ts ***!
-	  \****************************************************************************************************/
+	/***/ "./src/resources/assets/js/modules/modern-gui.ts":
+	/*!*******************************************************!*\
+	  !*** ./src/resources/assets/js/modules/modern-gui.ts ***!
+	  \*******************************************************/
 	/*! no static exports found */
 	/***/ (function(module, exports, __webpack_require__) {
 		
@@ -826,66 +878,14 @@
 		/***/
 	}),
 	
-	/***/ "./src/Modules/blog/resources/assets/js/components/categories/new.ts":
-	/*!***************************************************************************!*\
-	  !*** ./src/Modules/blog/resources/assets/js/components/categories/new.ts ***!
-	  \***************************************************************************/
+	/***/ 7:
+	/*!************************************************************************************!*\
+	  !*** multi ./src/Modules/gallery/resources/assets/js/components/categories/new.ts ***!
+	  \************************************************************************************/
 	/*! no static exports found */
 	/***/ (function(module, exports, __webpack_require__) {
 		
-		"use strict";
-		
-		Object.defineProperty(exports, "__esModule", {value: true});
-		var form_utils_1 = __webpack_require__(/*! ../../../../../../../../../../../resources/assets/js/modules/form_utils */ "../../../resources/assets/js/modules/form_utils.ts");
-		var modern_gui_1 = __webpack_require__(/*! ../../../../../../../../../../../resources/assets/js/modules/modern-gui */ "../../../resources/assets/js/modules/modern-gui.ts");
-		$(function() {
-			var body = $('body');
-			$('#categoryDescription').ckeditor(function() {
-			}, {
-				language: 'it',
-				height: 500
-			});
-			body.on('click', '.action-save', function() {
-				var object = form_utils_1.default.retrieveAllInputs(), action = $(this).data('action');
-				$.ajax({
-					type: 'POST',
-					url: admin_panel_url + "/mod/blog/categories/new",
-					data: object,
-					beforeSend: function() {
-						modern_gui_1.default.loading(true, 'Creazione categoria in corso...');
-					},
-					success: function(data) {
-						switch(action) {
-							case 'close':
-								location.reload();
-								break;
-							default:
-								location.href = admin_panel_url + "/mod/blog/categories/edit/" + data;
-								break;
-						} // switch
-					},
-					error: function(xhr) {
-						form_utils_1.default.sendNotifications(xhr);
-					},
-					complete: function() {
-						modern_gui_1.default.loading(false);
-					}
-				});
-			});
-		});
-		
-		
-		/***/
-	}),
-	
-	/***/ 4:
-	/*!*********************************************************************************!*\
-	  !*** multi ./src/Modules/blog/resources/assets/js/components/categories/new.ts ***!
-	  \*********************************************************************************/
-	/*! no static exports found */
-	/***/ (function(module, exports, __webpack_require__) {
-		
-		module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\OmniGarden\packages\ikdev\ikpanel\src\Modules\blog\resources\assets\js\components\categories\new.ts */"./src/Modules/blog/resources/assets/js/components/categories/new.ts");
+		module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\OmniGarden\packages\ikdev\ikpanel\src\Modules\gallery\resources\assets\js\components\categories\new.ts */"./src/Modules/gallery/resources/assets/js/components/categories/new.ts");
 		
 		
 		/***/

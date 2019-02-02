@@ -41,6 +41,16 @@ class IkpanelServiceProvider extends ServiceProvider {
 			__DIR__ . '/Modules/blog/public/js' => public_path('ikpanel/modules/blog/js')
 		], 'ikpanel-blog');
 		
+		// GALLERY MODULE
+		$this->loadMigrationsFrom(__DIR__ . '/Modules/gallery/database/migrations');
+		$this->loadViewsFrom(__DIR__ . '/Modules/gallery/resources/view', 'ikpanel-gallery');
+		$this->loadRoutesFrom(__DIR__ . '/Modules/gallery/routes/web.php');
+		$this->loadTranslationsFrom(__DIR__ . '/Modules/gallery/resources/lang', 'ikpanel-gallery');
+		
+		$this->publishes([
+			__DIR__ . '/Modules/gallery/public/js' => public_path('ikpanel/modules/gallery/js')
+		], 'ikpanel-gallery');
+		
 		// CALENDAR MODULE
 		$this->loadMigrationsFrom(__DIR__ . '/Modules/calendar/database/migrations');
 		$this->loadViewsFrom(__DIR__ . '/Modules/calendar/resources/view', 'ikpanel-calendar');
@@ -80,6 +90,11 @@ class IkpanelServiceProvider extends ServiceProvider {
 		Route::middleware('web')
 			->namespace("ikdev\ikpanel\Modules\blog\app\Http\Controllers")
 			->group(__DIR__ . '/Modules/blog/routes/web.php');
+		
+		// Gallery module
+		Route::middleware('web')
+			->namespace("ikdev\ikpanel\Modules\gallery\app\Http\Controllers")
+			->group(__DIR__ . '/Modules/gallery/routes/web.php');
 		
 		// Calendar module
 		Route::middleware('web')

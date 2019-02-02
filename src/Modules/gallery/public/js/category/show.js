@@ -133,7 +133,7 @@
 	/******/
 	/******/ 	// Load entry module and return exports
 	/******/
-	return __webpack_require__(__webpack_require__.s = 5);
+	return __webpack_require__(__webpack_require__.s = 8);
 	/******/
 })
 /************************************************************************/
@@ -601,10 +601,10 @@
 		/***/
 	}),
 	
-	/***/ "./src/Modules/blog/resources/assets/js/components/categories/show.ts":
-	/*!****************************************************************************!*\
-	  !*** ./src/Modules/blog/resources/assets/js/components/categories/show.ts ***!
-	  \****************************************************************************/
+	/***/ "./src/Modules/gallery/resources/assets/js/components/categories/show.ts":
+	/*!*******************************************************************************!*\
+	  !*** ./src/Modules/gallery/resources/assets/js/components/categories/show.ts ***!
+	  \*******************************************************************************/
 	/*! no static exports found */
 	/***/ (function(module, exports, __webpack_require__) {
 		
@@ -614,12 +614,12 @@
 		var simple_gui_1 = __webpack_require__(/*! ../../../../../../../resources/assets/js/modules/simple-gui */ "./src/resources/assets/js/modules/simple-gui.ts");
 		var SGui = new simple_gui_1.default();
 // General settings
-		SGui.table = '#blogCategoryTable';
+		SGui.table = '#galleryCategoryTable';
 		SGui.searchFilter = '#search-filter';
 		SGui.statusFilter = '#status-filter';
-		SGui.filterUrlPrefix = 'mod/blog/categories';
+		SGui.filterUrlPrefix = 'mod/gallery/categories';
 		SGui.itemInTable = -1;
-		SGui.resultContainer = '#blogCategoryTable';
+		SGui.resultContainer = '#galleryCategoryTable';
 		SGui.saveOrder = true;
 		SGui.sort = true;
 // Action buttons
@@ -1306,14 +1306,14 @@
 		/***/
 	}),
 	
-	/***/ 5:
-	/*!**********************************************************************************!*\
-	  !*** multi ./src/Modules/blog/resources/assets/js/components/categories/show.ts ***!
-	  \**********************************************************************************/
+	/***/ 8:
+	/*!*************************************************************************************!*\
+	  !*** multi ./src/Modules/gallery/resources/assets/js/components/categories/show.ts ***!
+	  \*************************************************************************************/
 	/*! no static exports found */
 	/***/ (function(module, exports, __webpack_require__) {
 		
-		module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\OmniGarden\packages\ikdev\ikpanel\src\Modules\blog\resources\assets\js\components\categories\show.ts */"./src/Modules/blog/resources/assets/js/components/categories/show.ts");
+		module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\OmniGarden\packages\ikdev\ikpanel\src\Modules\gallery\resources\assets\js\components\categories\show.ts */"./src/Modules/gallery/resources/assets/js/components/categories/show.ts");
 		
 		
 		/***/
