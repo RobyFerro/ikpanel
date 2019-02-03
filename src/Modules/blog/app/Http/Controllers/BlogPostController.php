@@ -187,7 +187,7 @@ class BlogPostController extends Controller {
 				Post::find($request->get('articleID'))
 					->update([
 						"main_pic"  => str_replace('public', 'storage', $storagePath) . $filename,
-						"thumbnail" => str_replace('public', 'storage', $thumbnailPath) . $filename,
+						"thumbnail" => str_replace('public', 'storage', $thumbnailPath) . "/" . $filename,
 					]);
 			} catch (QueryException $e) {
 				DB::rollBack();
@@ -295,7 +295,7 @@ class BlogPostController extends Controller {
 				Post::find($id)
 					->update([
 						"main_pic"  => str_replace('public', 'storage', $storagePath) . $filename,
-						"thumbnail" => str_replace('public', 'storage', $thumbnailPath) . $filename,
+						"thumbnail" => str_replace('public', 'storage', $thumbnailPath) . "/" . $filename,
 					]);
 			} catch (QueryException $e) {
 				DB::rollBack();

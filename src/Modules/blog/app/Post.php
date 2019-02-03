@@ -26,7 +26,8 @@ class Post extends Model {
 		'description',
 		'content',
 		'keywords',
-		'main_pic'
+		'main_pic',
+		'thumbnail'
 	];
 	
 	/**
