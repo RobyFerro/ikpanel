@@ -1,11 +1,11 @@
 @extends('ikpanel::dashboard')
 
 @section('title')
-	{{ __('ikpanel-blog::blog.articles.show.title') }}
+	{{ __('ikpanel-gallery::gallery.images.show.title') }}
 @endsection
 
 @section('section_name')
-	{{ __('ikpanel-blog::blog.articles.show.sectionName') }}
+	{{ __('ikpanel-gallery::gallery.images.show.sectionName') }}
 @endsection
 
 @section('initial_link')
@@ -21,13 +21,13 @@
 @section('action_navbar')
 	<div class="row action-navbar" id="action-navbar">
 		<div class="col-md-12">
-			<a type="button" href="{{admin_url('/mod/blog/articles/new')}}" class="btn btn-primary btn-sm">
+			<a type="button" href="{{admin_url('/mod/gallery/images/new')}}" class="btn btn-primary btn-sm">
 				<i class="fas fa-plus fa-fw"></i>
-				{{ __('ikpanel-blog::blog.articles.show.buttons.new') }}
+				{{ __('ikpanel-gallery::gallery.images.show.buttons.new') }}
 			</a>
 			<a type='button' class="btn btn-danger btn-sm" href="{{admin_url()}}">
 				<i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>
-				{{ __('ikpanel-blog::blog.articles.show.buttons.close') }}
+				{{ __('ikpanel-gallery::gallery.images.show.buttons.close') }}
 			</a>
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 		<div class="col-md-4">
 			<div class="form-group form-group-default ">
 				<label for="search-filter">
-					{{ __('ikpanel-blog::blog.articles.show.search') }}
+					{{ __('ikpanel-gallery::gallery.images.show.search') }}
 				</label>
 				<input type="text" class="form-control" id="search-filter" autocomplete="off">
 			</div>
@@ -46,19 +46,19 @@
 		<div class="col-md-3">
 			<div class="form-group form-group-default form-group-default-select2">
 				<label for="status-filter">
-					{{ __('ikpanel-blog::blog.articles.show.filterLabel') }}
+					{{ __('ikpanel-gallery::gallery.images.show.filterLabel') }}
 				</label>
 				<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1"
 				        aria-hidden="true"
 				        autocomplete="off">
 					<option value="ALL">
-						{{ __('ikpanel-blog::blog.articles.show.filters.all') }}
+						{{ __('ikpanel-gallery::gallery.images.show.filters.all') }}
 					</option>
 					<option value="ACTIVE" selected>
-						{{ __('ikpanel-blog::blog.articles.show.filters.active') }}
+						{{ __('ikpanel-gallery::gallery.images.show.filters.active') }}
 					</option>
 					<option value="DELETED">
-						{{ __('ikpanel-blog::blog.articles.show.filters.deleted') }}
+						{{ __('ikpanel-gallery::gallery.images.show.filters.deleted') }}
 					</option>
 				</select>
 			</div>
@@ -68,7 +68,7 @@
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-body">
-					@component('ikpanel-blog::articles.table', ['posts' => $posts])
+					@component('ikpanel-gallery::images.table', ['images' => $images])
 					@endcomponent
 				</div>
 			</div>
@@ -83,5 +83,5 @@
 	{!! script('ikpanel/assets/plugins/datatables-responsive/js/datatables.responsive.js') !!}
 	{!! script('ikpanel/assets/plugins/datatables-responsive/js/lodash.min.js') !!}
 	{!! script('ikpanel/assets/plugins/select2/js/select2.js') !!}
-	{!! script('ikpanel/modules/blog/js/articles/show.js',true) !!}
+	{!! script('ikpanel/modules/gallery/js/images/show.js',true) !!}
 @endsection

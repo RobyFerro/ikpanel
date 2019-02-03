@@ -34,6 +34,14 @@ mix.ts('src/Modules/gallery/resources/assets/js/components/categories/edit.ts', 
 	.copy('src/Modules/gallery/public/js/category/*.js', '../../../public/ikpanel/modules/gallery/js/category')
 	.copy('src/Modules/gallery/public/js/category/*.js.map', '../../../public/ikpanel/modules/gallery/js/category');
 
+// Gallery images
+mix.ts('src/Modules/gallery/resources/assets/js/components/images/edit.ts', 'src/Modules/gallery/public/js/images')
+	.ts('src/Modules/gallery/resources/assets/js/components/images/new.ts', 'src/Modules/gallery/public/js/images')
+	.ts('src/Modules/gallery/resources/assets/js/components/images/show.ts', 'src/Modules/gallery/public/js/images')
+	.copy('src/Modules/gallery/public/js/images/*.js', '../../../public/ikpanel/modules/gallery/js/images')
+	.copy('src/Modules/gallery/public/js/images/*.js.map', '../../../public/ikpanel/modules/gallery/js/images');
+
+
 if(!mix.inProduction()) {
 	mix.sourceMaps();
 	mix.webpackConfig({

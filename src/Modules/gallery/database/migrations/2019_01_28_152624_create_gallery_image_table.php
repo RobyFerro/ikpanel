@@ -15,7 +15,8 @@ class CreateGalleryImageTable extends Migration {
 			$table->increments('id');
 			$table->string('name', 255);
 			$table->text('description')->nullable();
-			$table->string('path', 255);
+			$table->string('keywords', 255)->nullable();
+			$table->string('path', 255)->nullable();
 			$table->softDeletes();
 			$table->timestamps();
 		});
