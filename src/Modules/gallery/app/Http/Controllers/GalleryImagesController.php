@@ -11,6 +11,7 @@ use ikdev\ikpanel\Modules\gallery\app\Http\Requests\EditGalleryImageRequest;
 use ikdev\ikpanel\Modules\gallery\app\Http\Requests\NewGalleryImageRequest;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class GalleryImagesController extends Controller {
 	
@@ -154,13 +155,26 @@ class GalleryImagesController extends Controller {
 			
 			$file = $request->file('pic');
 			$filename = $file->getFilename() . "." . $file->extension();
-			$storagePath = "public/gallery/image/{$id}/";
+			$storagePath = "public/gallery/images/{$id}/";
+			$thumbnailPath = "public/gallery/images/{$id}/thumb";
 			$file->storeAs($storagePath, $filename);
+			
+			$image = $request->file('pic');
+			
+			$image_resize = Image::make($image->getRealPath());
+			$image_resize->resize(370, 220);
+			
+			if (!file_exists(public_path("storage/gallery/images/{$id}/thumb"))) {
+				mkdir(public_path("storage/gallery/images/{$id}/thumb"));
+			} // if
+			
+			$image_resize->save(public_path("storage/gallery/images/{$id}/thumb/{$filename}"));
 			
 			try {
 				GalleryImage::find($id)
 					->update([
-						"path" => str_replace('public', 'storage', $storagePath) . $filename
+						"path"      => str_replace('public', 'storage', $storagePath) . $filename,
+						"thumbnail" => str_replace('public', 'storage', $thumbnailPath) . "/" . $filename
 					]);
 			} catch (QueryException $e) {
 				DB::rollBack();
@@ -206,12 +220,24 @@ class GalleryImagesController extends Controller {
 			$file = $request->file('pic');
 			$filename = $file->getFilename() . "." . $file->extension();
 			$storagePath = "public/gallery/images/{$request->get('imageID')}/";
+			$thumbnailPath = "public/gallery/images/{$request->get('imageID')}/thumb";
 			$file->storeAs($storagePath, $filename);
+			
+			$image = $request->file('pic');
+			
+			if (!file_exists(public_path("storage/gallery/images/{$request->get('imageID')}/thumb"))) {
+				mkdir(public_path("storage/gallery/images/{$request->get('imageID')}/thumb"));
+			} // if
+			
+			$image_resize = Image::make($image->getRealPath());
+			$image_resize->resize(370, 220);
+			$image_resize->save(storage_path("app/public/gallery/images/{$request->get('imageID')}/thumb/{$filename}"));
 			
 			try {
 				GalleryImage::find($request->get('imageID'))
 					->update([
-						"path" => str_replace('public', 'storage', $storagePath) . $filename
+						"path"      => str_replace('public', 'storage', $storagePath) . $filename,
+						"thumbnail" => str_replace('public', 'storage', $thumbnailPath) . "/" . $filename
 					]);
 			} catch (QueryException $e) {
 				DB::rollBack();

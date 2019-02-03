@@ -13,7 +13,7 @@ class GalleryImage extends Model {
 	protected $primaryKey = 'id';
 	protected $table = 'gallery_image';
 	protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-	protected $fillable = ['name', 'description', 'path', 'keywords'];
+	protected $fillable = ['name', 'description', 'path', 'keywords', 'thumbnail'];
 	
 	/**
 	 * Get related categories

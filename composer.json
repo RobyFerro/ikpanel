@@ -1,44 +1,44 @@
 {
-  "name": "ikdev/ikpanel",
-  "description": "Administration panel for Laravel framework",
-  "license": "GPL-3.0-or-later",
-  "type": "library",
-  "version": "v1.0-beta.1",
-  "keywords": [
-    "laravel",
-    "administration-panel",
-    "manager",
-    "filemanager"
-  ],
-  "authors": [
-    {
-      "name": "Roberto Ferro",
-      "email": "roberto.ferro@ikdev.eu"
-    }
-  ],
-  "require": {
-    "php": ">=7.1",
-    "unisharp/laravel-filemanager": "~1.8",
-    "intervention/image": "^2.4",
-    "alexusmai/laravel-file-manager": "^1.0",
-    "sentry/sentry-laravel": "latest"
-  },
-  "autoload": {
-    "psr-4": {
-      "ikdev\\ikpanel\\": "src/"
-    }
-  },
-  "script": {
-    "post-package-install": [
-      "npm install",
-      "npm install --save @types/jquery",
-      "npm install --save @types/jquery-maskmoney",
-      "npm install --save @types/react",
-      "npm install --save @types/react-dom",
-      "npm install --save @types/select2",
-      "npm install --save react",
-      "npm install --save react-dom",
-      "npm install --save @types/ckeditor: ^4.9.3"
-    ]
-  }
+	"name": "ikdev/ikpanel",
+	"description": "Administration panel for Laravel framework",
+	"license": "GPL-3.0-or-later",
+	"type": "library",
+	"version": "v1.0-beta.1",
+	"keywords": [
+		"laravel",
+		"administration-panel",
+		"manager",
+		"filemanager"
+	],
+	"authors": [
+		{
+			"name": "Roberto Ferro",
+			"email": "roberto.ferro@ikdev.eu"
+		}
+	],
+	"require": {
+		"php": ">=7.1",
+		"unisharp/laravel-filemanager": "~1.8",
+		"intervention/image": "^2.4",
+		"alexusmai/laravel-file-manager": "^1.0",
+		"sentry/sentry-laravel": "latest"
+	},
+	"autoload": {
+		"psr-4": {
+			"ikdev\\ikpanel\\": "src/"
+		}
+	},
+	"script": {
+		"post-package-install": [
+			"npm install",
+			"npm install --save @types/jquery",
+			"npm install --save @types/jquery-maskmoney",
+			"npm install --save @types/react",
+			"npm install --save @types/react-dom",
+			"npm install --save @types/select2",
+			"npm install --save react",
+			"npm install --save react-dom",
+			"npm install --save @types/ckeditor: ^4.9.3"
+		]
+	}
 }

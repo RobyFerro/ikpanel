@@ -18,6 +18,7 @@ use ikdev\ikpanel\Modules\blog\app\Post;
 use Illuminate\Database\QueryException;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class BlogPostController extends Controller {
 	
@@ -170,12 +171,23 @@ class BlogPostController extends Controller {
 			$file = $request->file('main-pic');
 			$filename = $file->getFilename() . "." . $file->extension();
 			$storagePath = "public/blog/post/{$request->get('articleID')}/";
+			$thumbnailPath = "public/blog/post/{$request->get('articleID')}/thumb";
 			$file->storeAs($storagePath, $filename);
+			
+			$image_resize = Image::make($file->getRealPath());
+			$image_resize->resize(370, 220);
+			
+			if (!file_exists(public_path("storage/blog/post/{$request->get('articleID')}/thumb"))) {
+				mkdir(public_path("storage/blog/post/{$request->get('articleID')}/thumb"));
+			} // if
+			
+			$image_resize->save(public_path("storage/blog/post/{$request->get('articleID')}/thumb/{$filename}"));
 			
 			try {
 				Post::find($request->get('articleID'))
 					->update([
-						"main_pic" => str_replace('public', 'storage', $storagePath) . $filename
+						"main_pic"  => str_replace('public', 'storage', $storagePath) . $filename,
+						"thumbnail" => str_replace('public', 'storage', $thumbnailPath) . $filename,
 					]);
 			} catch (QueryException $e) {
 				DB::rollBack();
@@ -268,12 +280,22 @@ class BlogPostController extends Controller {
 			$file = $request->file('main-pic');
 			$filename = $file->getFilename() . "." . $file->extension();
 			$storagePath = "public/blog/post/{$id}/";
+			$thumbnailPath = "public/blog/post/{$id}/thumb";
 			$file->storeAs($storagePath, $filename);
+			
+			if (!file_exists(public_path("storage/blog/post/{$id}/thumb"))) {
+				mkdir(public_path("storage/blog/post/{$id}/thumb"));
+			} // if
+			
+			$image_resize = Image::make($file->getRealPath());
+			$image_resize->resize(370, 220);
+			$image_resize->save(storage_path("app/public/blog/post/{$id}}/thumb/{$filename}"));
 			
 			try {
 				Post::find($id)
 					->update([
-						"main_pic" => str_replace('public', 'storage', $storagePath) . $filename
+						"main_pic"  => str_replace('public', 'storage', $storagePath) . $filename,
+						"thumbnail" => str_replace('public', 'storage', $thumbnailPath) . $filename,
 					]);
 			} catch (QueryException $e) {
 				DB::rollBack();
