@@ -1,4 +1,5 @@
 # Interactive Knowledge Development: ikpanel management system
+Click [here](https://www.linkedin.com/in/robyferro/) for full documentation.
 
 #### Warning
 This package require [Laravel Framework](https://github.com/laravel/laravel).
@@ -58,8 +59,6 @@ php composer.phar update && php composer.phar dump-autoload -o
 php artisan vendor:publish --tag=fm-config
 php artisan vendor:publish --tag=fm-assets
 php artisan vendor:publish --tag=ikpanel
-php artisan vendor:publish --tag=ikpanel-blog
-php artisan vendor:publish --tag=ikpanel-gallery
 ```
 
 Remove default migration from your laravel installation and execute the last command:
