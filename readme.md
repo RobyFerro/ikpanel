@@ -1,5 +1,5 @@
 # Interactive Knowledge Development: ikpanel management system
-Click [here](https://www.linkedin.com/in/robyferro/) for full documentation.
+Click [here](https://ikdev.gitbook.io/ikpanel/) for full documentation.
 
 #### Warning
 This package require [Laravel Framework](https://github.com/laravel/laravel).
