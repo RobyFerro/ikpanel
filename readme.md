@@ -3,15 +3,10 @@
 #### Warning
 This package require [Laravel Framework](https://github.com/laravel/laravel).
 
-#### Demo
-Click [here](https://demo.ikpanel.eu/) to try ikpanel
-* Username: boba.fett@ikpanel.eu
-* Password: toor
-
 #### Getting started
-Execute the following command:
+Create packages/ikdev folder in your project root and run this command.
 ``` 
-composer require "ikdev/ikpanel:dev-master"
+git clone git@github.com:RobyFerro/ikpanel.git
 ```
 
 * Add the following string into your .env file
@@ -69,7 +64,6 @@ Remove default migration from your laravel installation and execute the last com
 ```
 php artisan migrate
 ```
-
 
 ## Default users credentials:
 * Username : boba.fett@ikpanel.eu
