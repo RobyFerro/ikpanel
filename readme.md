@@ -1,4 +1,4 @@
-# Interactive Knowledge Development: @ikpanel - Web App Generator
+# Interactive Knowledge Development: ikpanel management system
 
 [![Latest Stable Version](https://poser.pugx.org/ikdev/ikpanel/v/stable)](https://packagist.org/packages/ikdev/ikpanel)
 [![Total Downloads](https://poser.pugx.org/ikdev/ikpanel/downloads)](https://packagist.org/packages/ikdev/ikpanel)
@@ -78,15 +78,4 @@ php artisan migrate
 
 ## Default users credentials:
 * Username : boba.fett@ikpanel.eu
-* Password : toor
-
-## v1.0 progress
-
-- [x] Administration panel (done)
-- [x] Integrate Laravel Filemanager (done)
-- [ ] Improve installation procedure
-- [x] User avatar (done)
-- [x] Permission manager (done)
-- [x] Notification manager (done)
-- [x] Role managing (done)
-- [ ] Traslate Laravel Filemanager
+* Password : 0
