@@ -16,13 +16,6 @@ git clone git@github.com:RobyFerro/ikpanel.git
 IKPANEL_URL=MY_URL
 ```
 
-* Add the followings service provider in config/app.php 
-```
-ikdev\ikpanel\IkpanelServiceProvider::class,
-Alexusmai\LaravelFileManager\FileManagerServiceProvider::class,
-Intervention\Image\ImageServiceProvider::class,
-```
-
 * Replace the Model User into config/auth.php like the following example:
 ```
 'providers' => [
@@ -48,14 +41,9 @@ with:
     ],
 ```
 
-* Add the following class alias
-```
- 'Image' => Intervention\Image\Facades\Image::class,
-```
-
 Execute the followings commands:
 ```
-php composer.phar update && php composer.phar dump-autoload -o
+php composer.phar update
 php artisan vendor:publish --tag=fm-config
 php artisan vendor:publish --tag=fm-assets
 php artisan vendor:publish --tag=ikpanel
