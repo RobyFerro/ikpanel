@@ -1,4 +1,4 @@
-# Interactive Knowledge Development: ikpanel management system
+# ikdev: ikpanel management system
 Click [here](https://ikdev.gitbook.io/ikpanel/) for full documentation.
 
 #### Warning
