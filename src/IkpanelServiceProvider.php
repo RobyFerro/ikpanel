@@ -13,13 +13,13 @@ class IkpanelServiceProvider extends ServiceProvider {
 	 */
 	public function boot() {
 		$this->publishes([
-			__DIR__ . '/public'                       => public_path('ikpanel/'),
-			__DIR__ . '/resources/assets'             => resource_path('assets/'),
-			__DIR__ . '/resources/assets/lang/vendor' => resource_path('assets/lang/vendor'),
-			__DIR__ . '/config/ikpanel-config.php'    => base_path('config/ikpanel-config.php'),
-			__DIR__ . '/config/backup.php'            => base_path('config/backup.php'),
-			__DIR__ . '/config/database.php'          => base_path('config/database.php'),
-			__DIR__ . '/app/Http/Kernel.php'          => app_path('Http/Kernel.php'),
+			__DIR__ . '/public'                    => public_path('ikpanel/'),
+			__DIR__ . '/resources/assets'          => resource_path('assets/'),
+			__DIR__ . '/resources/lang/vendor'     => resource_path('lang/vendor'),
+			__DIR__ . '/config/ikpanel-config.php' => base_path('config/ikpanel-config.php'),
+			__DIR__ . '/config/backup.php'         => base_path('config/backup.php'),
+			__DIR__ . '/config/database.php'       => base_path('config/database.php'),
+			__DIR__ . '/app/Http/Kernel.php'       => app_path('Http/Kernel.php'),
 		], 'ikpanel');
 		
 		$this->loadRoutesFrom(__DIR__ . '/routes/web.php');
