@@ -52,6 +52,11 @@ return [
 			'prefix'      => '',
 			'strict'      => true,
 			'engine'      => null,
+			'dump'        => [
+				'dump_binary_path' => config('backup.bin_path'),
+				'use_single_transaction',
+				'timeout'          => 60 * 5
+			]
 		],
 		
 		'pgsql' => [
