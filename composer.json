@@ -23,7 +23,8 @@
 		"alexusmai/laravel-file-manager": "^1.0",
 		"sentry/sentry-laravel": "*",
 		"spatie/laravel-backup": "*",
-		"spatie/flysystem-dropbox": "*"
+		"spatie/flysystem-dropbox": "*",
+		"vanilo/framework": "^0.5"
 	},
 	"extra": {
 		"laravel": {
