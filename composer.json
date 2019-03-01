@@ -3,7 +3,7 @@
 	"description": "Administration panel for Laravel framework",
 	"license": "GPL-3.0-or-later",
 	"type": "library",
-	"version": "v0.1.0",
+	"version": "dev-master",
 	"keywords": [
 		"laravel",
 		"administration-panel",
@@ -23,7 +23,8 @@
 		"alexusmai/laravel-file-manager": "^1.0",
 		"sentry/sentry-laravel": "*",
 		"spatie/laravel-backup": "*",
-		"spatie/flysystem-dropbox": "*"
+		"spatie/flysystem-dropbox": "*",
+		"vanilo/framework": "^0.5"
 	},
 	"extra": {
 		"laravel": {
