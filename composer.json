@@ -31,8 +31,7 @@
 			"providers": [
 				"ikdev\\ikpanel\\IkpanelServiceProvider",
 				"Alexusmai\\LaravelFileManager\\FileManagerServiceProvider",
-				"Intervention\\Image\\ImageServiceProvider",
-				"App\\Providers\\DropboxServiceProvider"
+				"Intervention\\Image\\ImageServiceProvider"
 			]
 		}
 	},
