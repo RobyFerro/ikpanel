@@ -1,3 +1,11 @@
+/*
+ *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+ *  * Unauthorized copying of this file, via any medium is strictly prohibited
+ *  * Proprietary and confidential
+ *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+ *
+ */
+
 export default class ModernGui {
 	
 	private static modernGUI = {
@@ -137,8 +145,7 @@ export default class ModernGui {
 				//inserisco messaggio
 				main.modernGUI.mloading.message.html(message);
 				main.modernGUI.mloading.gui.modal('show');
-			}
-			else {
+			} else {
 				main.modernGUI.mloading.gui.modal('hide');
 			}
 		}, status ? 0 : 500);
