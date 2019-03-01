@@ -3,7 +3,7 @@
 	"description": "Administration panel for Laravel framework",
 	"license": "GPL-3.0-or-later",
 	"type": "library",
-	"version": "v0.1.0",
+	"version": "dev-master",
 	"keywords": [
 		"laravel",
 		"administration-panel",
@@ -31,7 +31,8 @@
 			"providers": [
 				"ikdev\\ikpanel\\IkpanelServiceProvider",
 				"Alexusmai\\LaravelFileManager\\FileManagerServiceProvider",
-				"Intervention\\Image\\ImageServiceProvider"
+				"Intervention\\Image\\ImageServiceProvider",
+				"App\\Providers\\DropboxServiceProvider"
 			]
 		}
 	},
