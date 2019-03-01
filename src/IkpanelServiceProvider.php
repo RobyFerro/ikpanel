@@ -11,6 +11,10 @@ namespace ikdev\ikpanel;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use Spatie\Dropbox\Client as DropboxClient;
+use Spatie\FlysystemDropbox\DropboxAdapter;
+use League\Flysystem\Filesystem;
 
 class IkpanelServiceProvider extends ServiceProvider {
 	/**
@@ -64,6 +68,14 @@ class IkpanelServiceProvider extends ServiceProvider {
 			__DIR__ . '/Modules/calendar/public/js' => public_path('ikpanel/modules/calendar/js')
 		], 'ikpanel-calendar');
 		
+		// DROPBOX FILESYSTEM
+		Storage::extends('dropbox', function($app, $config) {
+			$client = new DropboxClient(
+				$config['authorization_token']
+			);
+			
+			return new Filesystem(new DropboxAdapter($client));
+		});
 		
 		parent::boot();
 	}
