@@ -97,7 +97,7 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 		
 		Route::prefix('file-manager')->group(function() {
 			
-			Route::group(['as' => 'filemanager'], function() {
+			Route::middleware('can:file-manager.view')->group(function() {
 				Route::get('/', 'ikpanelController@showFileManager');
 			});
 			

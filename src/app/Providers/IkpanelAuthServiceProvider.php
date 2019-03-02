@@ -9,6 +9,7 @@
 
 namespace ikdev\ikpanel\app\Providers;
 
+use ikdev\ikpanel\app\Policies\FileManagerPolicy;
 use ikdev\ikpanel\app\Policies\LogsPolicy;
 use ikdev\ikpanel\app\Policies\RolesPolicy;
 use ikdev\ikpanel\app\Policies\UserPolicy;
@@ -28,6 +29,7 @@ class IkpanelAuthServiceProvider extends AuthServiceProvider {
 		Gate::resource('users', UserPolicy::class);
 		Gate::resource('roles', RolesPolicy::class);
 		Gate::resource('logs', LogsPolicy::class);
+		Gate::define('file-manager.view', FileManagerPolicy::class);
 	}
 	
 }
