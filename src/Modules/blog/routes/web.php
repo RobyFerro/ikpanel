@@ -11,32 +11,57 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 	
 	Route::group(['middleware' => 'ikpanel'], function() {
 		
-		Route::group(['as' => 'blogIkpanelModule'], function() {
-			Route::prefix('mod/blog')->group(function() {
-				
-				// Categories
+		Route::prefix('mod/blog')->group(function() {
+			
+			// Categories
+			Route::middleware('can:blog-categories.view')->group(function() {
 				Route::get('categories/show', 'BlogCategoryController@show');
 				Route::get('categories/filter/{type}', 'BlogCategoryController@getFilteredCategories');
-				Route::get('categories/edit/{id}', 'BlogCategoryController@edit');
+			});
+			
+			Route::middleware('can:blog-categories.create')->group(function() {
 				Route::get('categories/new', 'BlogCategoryController@new');
-				
-				Route::delete('categories/delete/{id}', 'BlogCategoryController@delete');
-				Route::put('categories/restore/{id}', 'BlogCategoryController@restore');
-				Route::post('categories/edit', 'BlogCategoryController@update');
 				Route::post('categories/new', 'BlogCategoryController@insert');
-				
-				// Articles
+			});
+			
+			Route::middleware('can:blog-categories.update')->group(function() {
+				Route::get('categories/edit/{id}', 'BlogCategoryController@edit');
+				Route::post('categories/edit', 'BlogCategoryController@update');
+			});
+			
+			Route::middleware('can:blog-categories.delete')->group(function() {
+				Route::delete('categories/delete/{id}', 'BlogCategoryController@delete');
+			});
+			
+			Route::middleware('can:blog-categories.restore')->group(function() {
+				Route::put('categories/restore/{id}', 'BlogCategoryController@restore');
+			});
+			
+			// Articles
+			
+			Route::middleware('can:blog-articles.view')->group(function() {
 				Route::get('articles/show', 'BlogPostController@show');
 				Route::get('articles/filter/{type}', 'BlogPostController@getFilteredCategories');
-				Route::get('articles/edit/{id}', 'BlogPostController@edit');
-				Route::get('articles/new', 'BlogPostController@new');
-				
-				Route::delete('articles/delete/{id}', 'BlogPostController@delete');
-				Route::put('articles/restore/{id}', 'BlogPostController@restore');
-				Route::post('articles/edit', 'BlogPostController@update');
-				Route::post('articles/new', 'BlogPostController@insert');
-				
 			});
+			
+			Route::middleware('can:blog-articles.create')->group(function() {
+				Route::get('articles/new', 'BlogPostController@new');
+				Route::post('articles/new', 'BlogPostController@insert');
+			});
+			
+			Route::middleware('can:blog-articles.update')->group(function() {
+				Route::get('articles/edit/{id}', 'BlogPostController@edit');
+				Route::post('articles/edit', 'BlogPostController@update');
+			});
+			
+			Route::middleware('can:blog-articles.delete')->group(function() {
+				Route::delete('articles/delete/{id}', 'BlogPostController@delete');
+			});
+			
+			Route::middleware('can:blog-articles.restore')->group(function() {
+				Route::put('articles/restore/{id}', 'BlogPostController@restore');
+			});
+			
 		});
 		
 	});
