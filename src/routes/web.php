@@ -64,23 +64,27 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 		});
 		
 		Route::prefix('roles')->group(function() {
-			Route::group(['as' => 'showRoles'], function() {
+			
+			Route::middleware('can:roles.view')->group(function() {
 				Route::get('/', 'RoleController@show');
 				Route::get('/filter/{filter}', 'RoleController@filter');
 			});
 			
-			Route::group(['as' => 'addRole'], function() {
+			Route::middleware('can:roles.create')->group(function() {
 				Route::get('/new', 'RoleController@add');
 				Route::post('/insert', 'RoleController@insert');
 			});
 			
-			Route::group(['as' => 'editRole'], function() {
+			Route::middleware('can:roles.update')->group(function() {
 				Route::get('/edit/{id}', 'RoleController@edit');
 				Route::put('/update', 'RoleController@update');
 			});
 			
-			Route::group(['as' => 'deleteRole'], function() {
+			Route::middleware('can:roles.delete')->group(function() {
 				Route::delete('/delete/{id}', 'RoleController@delete');
+			});
+			
+			Route::middleware('can:roles.restore')->group(function() {
 				Route::put('/restore/{id}', 'RoleController@restore');
 			});
 		});

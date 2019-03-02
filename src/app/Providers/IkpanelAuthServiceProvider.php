@@ -9,6 +9,7 @@
 
 namespace ikdev\ikpanel\app\Providers;
 
+use ikdev\ikpanel\app\Policies\RolesPolicy;
 use ikdev\ikpanel\app\Policies\UserPolicy;
 use ikdev\ikpanel\app\Users;
 use Illuminate\Support\Facades\Gate;
@@ -24,6 +25,7 @@ class IkpanelAuthServiceProvider extends AuthServiceProvider {
 		$this->registerPolicies();
 		
 		Gate::resource('users', UserPolicy::class);
+		Gate::resource('roles', RolesPolicy::class);
 	}
 	
 }

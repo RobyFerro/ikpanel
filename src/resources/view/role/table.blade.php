@@ -29,20 +29,26 @@
 			</td>
 			<td style="text-align: right">
 				@if(is_null($role->deleted_at))
-					<a href="{{admin_url('/roles/edit/'.$role->id)}}"
-					   class="btn btn-info btn-sm" style="min-width: 110px;">
-						<i class="fas fa-edit fa-fw"></i>
-						Modifica
-					</a>
-					<button class="btn btn-danger btn-sm action-delete" style="min-width: 110px;"
-					        data-id="{{ $role->id }}">
-						<i class="fas fa-trash-alt fa-fw"></i> Elimina
-					</button>
+					@can('roles.update')
+						<a href="{{admin_url('/roles/edit/'.$role->id)}}"
+						   class="btn btn-info btn-sm" style="min-width: 110px;">
+							<i class="fas fa-edit fa-fw"></i>
+							Modifica
+						</a>
+					@endcan
+					@can('roles.delete')
+						<button class="btn btn-danger btn-sm action-delete" style="min-width: 110px;"
+						        data-id="{{ $role->id }}">
+							<i class="fas fa-trash-alt fa-fw"></i> Elimina
+						</button>
+					@endcan
 				@else
-					<button class="btn btn-success btn-sm action-restore" style="min-width: 110px;"
-					        data-id="{{ $role->id }}">
-						<i class="fas fa-undo-alt fa-fw"></i> Ripristina
-					</button>
+					@can('roles.restore')
+						<button class="btn btn-success btn-sm action-restore" style="min-width: 110px;"
+						        data-id="{{ $role->id }}">
+							<i class="fas fa-undo-alt fa-fw"></i> Ripristina
+						</button>
+					@endcan
 				@endif
 			</td>
 		</tr>
