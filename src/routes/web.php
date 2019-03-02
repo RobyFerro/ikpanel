@@ -39,7 +39,7 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 		
 		Route::prefix('users')->group(function() {
 			
-			Route::group(['as' => 'showUsers'], function() {
+			Route::middleware('can:users.view')->group(function() {
 				Route::get('/', 'UserController@show');
 				Route::get('/filter/{filter}', 'UserController@filter');
 			});
