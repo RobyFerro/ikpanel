@@ -41,22 +41,28 @@
 			</td>
 			<td style="text-align: right;">
 				@if(is_null($user->deleted_at))
-					<a href="{{admin_url('/users/edit/'.$user->id)}}"
-					   class="btn btn-info btn-sm" style="min-width: 110px;">
-						<i class="fas fa-edit fa-fw"></i>
-						{{ __('ikpanel::users.show.buttons.edit') }}
-					</a>
-					<button class="btn btn-danger btn-sm action-delete" style="min-width: 110px;"
-					        data-id="{{ $user->id }}">
-						<i class="fas fa-trash-alt fa-fw"></i>
-						{{ __('ikpanel::users.show.buttons.delete') }}
-					</button>
+					@can('users.update')
+						<a href="{{admin_url('/users/edit/'.$user->id)}}"
+						   class="btn btn-info btn-sm" style="min-width: 110px;">
+							<i class="fas fa-edit fa-fw"></i>
+							{{ __('ikpanel::users.show.buttons.edit') }}
+						</a>
+					@endcan
+					@can('users.delete')
+						<button class="btn btn-danger btn-sm action-delete" style="min-width: 110px;"
+						        data-id="{{ $user->id }}">
+							<i class="fas fa-trash-alt fa-fw"></i>
+							{{ __('ikpanel::users.show.buttons.delete') }}
+						</button>
+					@endcan
 				@else
-					<button class="btn btn-success btn-sm action-restore" style="min-width: 110px;"
-					        data-id="{{ $user->id }}">
-						<i class="fas fa-undo-alt fa-fw"></i>
-						{{ __('ikpanel::users.show.buttons.restore') }}
-					</button>
+					@can('users.restore')
+						<button class="btn btn-success btn-sm action-restore" style="min-width: 110px;"
+						        data-id="{{ $user->id }}">
+							<i class="fas fa-undo-alt fa-fw"></i>
+							{{ __('ikpanel::users.show.buttons.restore') }}
+						</button>
+					@endcan
 				@endif
 			</td>
 		</tr>

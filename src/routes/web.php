@@ -44,18 +44,21 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 				Route::get('/filter/{filter}', 'UserController@filter');
 			});
 			
-			Route::group(['as' => 'addUser'], function() {
+			Route::middleware('can:users.create')->group(function() {
 				Route::get('/new', 'UserController@add');
 				Route::post('/insert', 'UserController@insert');
 			});
 			
-			Route::group(['as' => 'editUser'], function() {
+			Route::middleware('can:users.update')->group(function() {
 				Route::get('/edit/{id}', 'UserController@edit');
 				Route::post('/update', 'UserController@update');
 			});
 			
-			Route::group(['as' => 'deleteUser'], function() {
+			Route::middleware('can:users.delete')->group(function() {
 				Route::delete('/delete/{id}', 'UserController@delete');
+			});
+			
+			Route::middleware('can:users.restore')->group(function() {
 				Route::put('/restore/{id}', 'UserController@restore');
 			});
 		});
