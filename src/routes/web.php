@@ -90,7 +90,7 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 		});
 		
 		Route::prefix('logs')->group(function() {
-			Route::group(['as' => 'showLogs'], function() {
+			Route::middleware('can:logs.view')->group(function() {
 				Route::get('/', 'LogsController@show');
 			});
 		});
