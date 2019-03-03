@@ -18,6 +18,8 @@ use ikdev\ikpanel\Modules\blog\app\Policies\ArticlesPolicy;
 use ikdev\ikpanel\Modules\blog\app\Policies\CategoriesPolicy;
 use Illuminate\Support\Facades\Gate;
 use App\Providers\AuthServiceProvider;
+use ikdev\ikpanel\Modules\gallery\app\Http\Policies\CategoriesPolicy as GalleryCategoryPolicy;
+use ikdev\ikpanel\Modules\gallery\app\Http\Policies\ImagesPolicy;
 
 class IkpanelAuthServiceProvider extends AuthServiceProvider {
 	
@@ -36,6 +38,10 @@ class IkpanelAuthServiceProvider extends AuthServiceProvider {
 		// BLOG POLICY
 		Gate::resource('blog-articles', ArticlesPolicy::class);
 		Gate::resource('blog-categories', CategoriesPolicy::class);
+		
+		// GALLERY POLICY
+		Gate::resource('gallery-categories', GalleryCategoryPolicy::class);
+		Gate::resource('gallery-images', ImagesPolicy::class);
 	}
 	
 }

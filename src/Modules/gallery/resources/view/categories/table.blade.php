@@ -29,19 +29,26 @@
 			<td style="text-align: right">
 				@if(is_null($cat->deleted_at))
 					<div class="btn-group" role="group" aria-label="edit-category">
-						<a href="{{admin_url('/mod/gallery/categories/edit/' . $cat->id)}}" class="btn btn-info btn-sm">
-							{{ __('ikpanel-gallery::gallery.categories.show.buttons.actionEdit') }}
-						</a>
-						<button type="button" class="btn btn-sm btn-danger action-delete" data-id="{{$cat->id}}">
-							{{ __('ikpanel-gallery::gallery.categories.show.buttons.actionDelete') }}
-						</button>
+						@can('gallery-categories.update')
+							<a href="{{admin_url('/mod/gallery/categories/edit/' . $cat->id)}}"
+							   class="btn btn-info btn-sm">
+								{{ __('ikpanel-gallery::gallery.categories.show.buttons.actionEdit') }}
+							</a>
+						@endcan
+						@can('gallery-categories.delete')
+							<button type="button" class="btn btn-sm btn-danger action-delete" data-id="{{$cat->id}}">
+								{{ __('ikpanel-gallery::gallery.categories.show.buttons.actionDelete') }}
+							</button>
+						@endcan
 					</div>
 				@else
-					<button class="btn btn-success btn-sm action-restore" style="min-width: 110px;"
-					        data-id="{{ $cat->id }}">
-						<i class="fas fa-undo-alt fa-fw"></i>
-						{{ __('ikpanel-gallery::gallery.categories.show.buttons.actionRestore') }}
-					</button>
+					@can('gallery-categories.restore')
+						<button class="btn btn-success btn-sm action-restore" style="min-width: 110px;"
+						        data-id="{{ $cat->id }}">
+							<i class="fas fa-undo-alt fa-fw"></i>
+							{{ __('ikpanel-gallery::gallery.categories.show.buttons.actionRestore') }}
+						</button>
+					@endcan
 				@endif
 			</td>
 		</tr>

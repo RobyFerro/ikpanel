@@ -11,31 +11,56 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 	
 	Route::group(['middleware' => 'ikpanel'], function() {
 		
-		Route::group(['as' => 'galleryIkpanelModule'], function() {
-			Route::prefix('mod/gallery')->group(function() {
-				
+		Route::prefix('mod/gallery')->group(function() {
+			
+			// Images
+			Route::middleware('can:gallery-images.view')->group(function() {
 				Route::get('images/show', 'GalleryImagesController@index');
-				Route::get('images/new', 'GalleryImagesController@new');
-				Route::get('images/edit/{id}', 'GalleryImagesController@edit');
 				Route::get('images/filter/{type}', 'GalleryImagesController@getFilteredCategories');
-				
-				Route::get('categories/show', 'GalleryCategoryController@index');
-				Route::get('categories/new', 'GalleryCategoryController@new');
-				Route::get('categories/edit/{id}', 'GalleryCategoryController@edit');
-				Route::get('categories/filter/{type}', 'GalleryCategoryController@getFilteredCategories');
-				
-				Route::post('image/new', 'GalleryImagesController@insert');
-				Route::post('image/edit', 'GalleryImagesController@update');
-				Route::post('categories/new', 'GalleryCategoryController@insert');
-				Route::post('categories/edit', 'GalleryCategoryController@update');
-				
-				Route::delete('images/delete/{id}', 'GalleryImagesController@delete');
-				Route::delete('categories/delete/{id}', 'GalleryCategoryController@delete');
-				
-				Route::put('images/restore/{id}', 'GalleryImagesController@restore');
-				Route::put('categories/restore/{id}', 'GalleryCategoryController@restore');
-				
 			});
+			
+			Route::middleware('can:gallery-images.create')->group(function() {
+				Route::get('images/new', 'GalleryImagesController@new');
+				Route::post('image/new', 'GalleryImagesController@insert');
+			});
+			
+			Route::middleware('can:gallery-images.update')->group(function() {
+				Route::get('images/edit/{id}', 'GalleryImagesController@edit');
+				Route::post('image/edit', 'GalleryImagesController@update');
+			});
+			
+			Route::middleware('can:gallery-images.delete')->group(function() {
+				Route::delete('images/delete/{id}', 'GalleryImagesController@delete');
+			});
+			
+			Route::middleware('can:gallery-images.restore')->group(function() {
+				Route::put('images/restore/{id}', 'GalleryImagesController@restore');
+			});
+			
+			// Categories
+			Route::middleware('can:gallery-categories.view')->group(function() {
+				Route::get('categories/show', 'GalleryCategoryController@index');
+				Route::get('categories/filter/{type}', 'GalleryCategoryController@getFilteredCategories');
+			});
+			
+			Route::middleware('can:gallery-categories.create')->group(function() {
+				Route::get('categories/new', 'GalleryCategoryController@new');
+				Route::post('categories/new', 'GalleryCategoryController@insert');
+			});
+			
+			Route::middleware('can:gallery-categories.update')->group(function() {
+				Route::get('categories/edit/{id}', 'GalleryCategoryController@edit');
+				Route::post('categories/edit', 'GalleryCategoryController@update');
+			});
+			
+			Route::middleware('can:gallery-categories.delete')->group(function() {
+				Route::delete('categories/delete/{id}', 'GalleryCategoryController@delete');
+			});
+			
+			Route::middleware('can:gallery-categories.restore')->group(function() {
+				Route::put('categories/restore/{id}', 'GalleryCategoryController@restore');
+			});
+			
 		});
 	});
 });
