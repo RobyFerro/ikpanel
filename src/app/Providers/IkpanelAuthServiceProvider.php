@@ -18,8 +18,8 @@ use ikdev\ikpanel\Modules\blog\app\Policies\ArticlesPolicy;
 use ikdev\ikpanel\Modules\blog\app\Policies\CategoriesPolicy;
 use Illuminate\Support\Facades\Gate;
 use App\Providers\AuthServiceProvider;
-use ikdev\ikpanel\Modules\gallery\app\Http\Policies\CategoriesPolicy as GalleryCategoryPolicy;
-use ikdev\ikpanel\Modules\gallery\app\Http\Policies\ImagesPolicy;
+use ikdev\ikpanel\Modules\gallery\app\Policies\CategoriesPolicy as GalleryCategoryPolicy;
+use ikdev\ikpanel\Modules\gallery\app\Policies\ImagesPolicy;
 
 class IkpanelAuthServiceProvider extends AuthServiceProvider {
 	

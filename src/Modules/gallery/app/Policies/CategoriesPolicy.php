@@ -7,7 +7,7 @@
  *
  */
 
-namespace ikdev\ikpanel\Modules\gallery\app\Http\Policies;
+namespace ikdev\ikpanel\Modules\gallery\app\Policies;
 
 
 use ikdev\ikpanel\app\Users;
