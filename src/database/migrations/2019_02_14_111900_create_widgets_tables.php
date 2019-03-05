@@ -1,4 +1,11 @@
 <?php
+/**
+ *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+ *  * Unauthorized copying of this file, via any medium is strictly prohibited
+ *  * Proprietary and confidential
+ *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+ *
+ */
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -12,16 +19,16 @@ class CreateWidgetsTables extends Migration {
 	 */
 	public function up() {
 		Schema::create('widgets_category', function(Blueprint $table) {
-			$table->string('id');
-			$table->json('option');
+			$table->string('id')->primary();
+			$table->json('option')->nullable();
 		});
 		
 		Schema::create('widgets', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name');
-			$table->string('path');
-			$table->string('id_category');
-			
+			$table->string('name', 255);
+			$table->string('path', 255);
+			$table->string('id_category', 255);
+			$table->foreign('id_category')->references('id')->on('widgets_category');
 		});
 		
 		Schema::create('widgets_role', function(Blueprint $table) {
