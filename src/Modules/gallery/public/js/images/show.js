@@ -1,11 +1,3 @@
-/*
- *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
- *  * Unauthorized copying of this file, via any medium is strictly prohibited
- *  * Proprietary and confidential
- *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
- *
- */
-
 /******/
 (function(modules) { // webpackBootstrap
 	/******/ 	// The module cache
@@ -618,6 +610,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var simple_gui_1 = __webpack_require__(/*! @ikpanel/simple-gui */ "./src/resources/assets/js/modules/simple-gui.ts");
 		var SGui = new simple_gui_1.default();
@@ -655,6 +654,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var ModernGui = /** @class */ (function() {
 			function ModernGui() {
@@ -806,6 +812,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		var __awaiter = (this && this.__awaiter) || function(thisArg, _arguments, P, generator) {
 			return new (P || (P = Promise))(function(resolve, reject) {
 				function fulfilled(value) {
@@ -1141,6 +1154,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		var __extends = (this && this.__extends) || (function() {
 			var extendStatics = function(d, b) {
 				extendStatics = Object.setPrototypeOf ||

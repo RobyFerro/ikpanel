@@ -41,6 +41,12 @@ class Role extends Model {
 	}
 	
 	public function token() {
-		return $this->belongsToMany(Token::class, 'token_role', 'roleid','tokenid');
+		return $this->belongsToMany(Token::class, 'token_role', 'roleid', 'tokenid');
+	}
+	
+	public function widgets() {
+		return $this
+			->belongsToMany(Widgets::class, 'widgets_role', 'id_role', 'id_widget')
+			->withPivot('span', 'row', 'order');
 	}
 }

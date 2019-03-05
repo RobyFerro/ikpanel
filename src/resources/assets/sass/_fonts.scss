@@ -1,0 +1,14 @@
+@font-face {
+	font-family: 'HelveticaThinExt';
+	src: url('../fonts/HelveticaNeueLT-ThinExt.eot');
+	src: local('☺'),
+	url('../fonts/HelveticaNeueLT-ThinExt.woff') format('woff'),
+	url('../fonts/HelveticaNeueLT-ThinExt.ttf') format('truetype'),
+	url('../fonts/HelveticaNeueLT-ThinExt.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.helvetica {
+	font-family: 'HelveticaThinExt', sans-serif;
+}

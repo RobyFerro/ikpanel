@@ -1,11 +1,3 @@
-/*
- *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
- *  * Unauthorized copying of this file, via any medium is strictly prohibited
- *  * Proprietary and confidential
- *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
- *
- */
-
 /******/
 (function(modules) { // webpackBootstrap
 	/******/ 	// The module cache
@@ -156,6 +148,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var form_utils_1 = __webpack_require__(/*! @ikpanel/form_utils */ "./src/resources/assets/js/modules/form_utils.ts");
 		var modern_gui_1 = __webpack_require__(/*! @ikpanel/modern-gui */ "./src/resources/assets/js/modules/modern-gui.ts");
@@ -222,6 +221,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var FormUtils = /** @class */ (function() {
 			function FormUtils() {
@@ -758,6 +764,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var ModernGui = /** @class */ (function() {
 			function ModernGui() {

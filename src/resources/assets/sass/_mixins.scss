@@ -1,0 +1,63 @@
+@mixin transition($property...) {
+	-webkit-transition: $property;
+	-moz-transition: $property;
+	-o-transition: $property;
+	transition: $property;
+}
+
+@mixin box-shadow($property) {
+	-webkit-box-shadow: $property;
+	-moz-box-shadow: $property;
+	box-shadow: $property;
+}
+
+@mixin opacity($property) {
+	opacity: $property/100;
+	filter: alpha(opacity=$property);
+	-moz-opacity: $property/100;
+	-ms-filter: alpha(opacity=$property);
+}
+
+@mixin transform($property) {
+	-webkit-transform: $property;
+	-moz-transform: $property;
+	-ms-transform: $property;
+	-o-transform: $property;
+	transform: $property;
+}
+
+@mixin border-radius($property) {
+	-webkit-border-radius: $property;
+	-moz-border-radius: $property;
+	border-radius: $property;
+}
+
+@mixin create-background-color($className, $color) {
+	.bg-#{$className} {
+		background-color: $color;
+	}
+}
+
+@mixin create-foreground-color($className, $color) {
+	.fg-#{$className} {
+		color: $color;
+	}
+}
+
+@mixin placeholder {
+	&::placeholder {
+		@content
+	}
+	&::-webkit-input-placeholder {
+		@content
+	}
+	&:-moz-placeholder {
+		@content
+	}
+	&::-moz-placeholder {
+		@content
+	}
+	&:-ms-input-placeholder {
+		@content
+	}
+}

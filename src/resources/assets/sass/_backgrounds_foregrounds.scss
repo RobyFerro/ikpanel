@@ -1,0 +1,15 @@
+/*region BACKGROUNDS*/
+@include create-background-color("accent", $accent);
+@include create-background-color("black", $black);
+@include create-background-color("white", $white);
+@include create-background-color("ecit", $ecit);
+@include create-background-color("danger", $danger);
+/*endregion*/
+
+/*region FOREGROUND*/
+@include create-foreground-color("accent", $accent);
+@include create-foreground-color("black", $black);
+@include create-foreground-color("white", $white);
+@include create-foreground-color("ecit", $ecit);
+@include create-foreground-color("danger", $danger);
+/*endregion*/

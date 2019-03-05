@@ -1,6 +1,8 @@
 {
 	"/src/Modules/blog/public/js/articles/edit.js": "/src/Modules/blog/public/js/articles/edit.js",
+	"/src/public/assets/css/ikpanel.css": "/src/public/assets/css/ikpanel.css",
 	"/src/Modules/blog/public/js/articles/edit.js.map": "/src/Modules/blog/public/js/articles/edit.js.map",
+	"/src/public/assets/css/ikpanel.css.map": "/src/public/assets/css/ikpanel.css.map",
 	"/src/Modules/blog/public/js/articles/new.js": "/src/Modules/blog/public/js/articles/new.js",
 	"/src/Modules/blog/public/js/articles/new.js.map": "/src/Modules/blog/public/js/articles/new.js.map",
 	"/src/Modules/blog/public/js/articles/show.js": "/src/Modules/blog/public/js/articles/show.js",
@@ -23,6 +25,10 @@
 	"/src/Modules/gallery/public/js/images/new.js.map": "/src/Modules/gallery/public/js/images/new.js.map",
 	"/src/Modules/gallery/public/js/images/show.js": "/src/Modules/gallery/public/js/images/show.js",
 	"/src/Modules/gallery/public/js/images/show.js.map": "/src/Modules/gallery/public/js/images/show.js.map",
+	"/src/public/assets/js/widgets/widgets.js": "/src/public/assets/js/widgets/widgets.js",
+	"/src/public/assets/js/widgets/widgets.js.map": "/src/public/assets/js/widgets/widgets.js.map",
+	"/src/public/assets/js/widgets/widgets-edit.js": "/src/public/assets/js/widgets/widgets-edit.js",
+	"/src/public/assets/js/widgets/widgets-edit.js.map": "/src/public/assets/js/widgets/widgets-edit.js.map",
 	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/edit.js": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/edit.js",
 	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/new.js": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/new.js",
 	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/show.js": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/blog/js/articles/show.js",
@@ -46,5 +52,11 @@
 	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/show.js": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/show.js",
 	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/edit.js.map": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/edit.js.map",
 	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/new.js.map": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/new.js.map",
-	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/show.js.map": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/show.js.map"
+	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/show.js.map": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/modules/gallery/js/images/show.js.map",
+	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/plugins/js/widgets/widgets-edit.js": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/plugins/js/widgets/widgets-edit.js",
+	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/plugins/js/widgets/widgets.js": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/plugins/js/widgets/widgets.js",
+	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/plugins/js/widgets/widgets-edit.js.map": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/plugins/js/widgets/widgets-edit.js.map",
+	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/plugins/js/widgets/widgets.js.map": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/plugins/js/widgets/widgets.js.map",
+	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/assets/css/ikpanel.css": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/assets/css/ikpanel.css",
+	"/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/assets/css/ikpanel.css.map": "/C:/Users/roberto.ferro/PhpstormProjects/OmniGarden/public/ikpanel/assets/css/ikpanel.css.map"
 }

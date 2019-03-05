@@ -1,0 +1,21 @@
+<div class="row" id="{{id}}">
+	{{#each rows}}
+		<div class="col-md-{{pivot.span}} mb-2 widget-sorting" id="widget-{{id}}" style="float: left">
+			<div class='widget-loader text-center'>
+				<i class='fas fa-circle-notch fa-spin loader'></i>
+			</div>
+			<div class="card" style="height: 100%; max-height: 400px; min-height: 150px;overflow:auto">
+				<div class="card-header">
+					<div class="card-title">
+						{{name}}
+					</div>
+				</div>
+				<div class="card-body widget-animation-{{id}}">
+					<div id="widget-body-{{id}}" style="opacity: 0; height: 100%">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	{{/each}}
+</div>

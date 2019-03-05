@@ -41,6 +41,15 @@ mix.ts('src/Modules/gallery/resources/assets/js/components/images/edit.ts', 'src
 	.copy('src/Modules/gallery/public/js/images/*.js', '../../../public/ikpanel/modules/gallery/js/images')
 	.copy('src/Modules/gallery/public/js/images/*.js.map', '../../../public/ikpanel/modules/gallery/js/images');
 
+// Widgets
+mix.ts('src/resources/assets/js/components/widgets/widgets.ts', 'src/public/assets/js/widgets')
+	.ts('src/resources/assets/js/components/widgets/widgets-edit.ts', 'src/public/assets/js/widgets')
+	.copy('src/public/assets/js/widgets/*.js', '../../../public/ikpanel/plugins/js/widgets')
+	.copy('src/public/assets/js/widgets/*.js.map', '../../../public/ikpanel/plugins/js/widgets');
+
+// Sass
+mix.sass('src/resources/assets/sass/ikpanel.scss', 'src/public/assets/css')
+	.copy('src/public/assets/css/ikpanel.css*', '../../../public/ikpanel/assets/css');
 
 if(!mix.inProduction()) {
 	mix.sourceMaps();
@@ -51,6 +60,19 @@ if(!mix.inProduction()) {
 				"@ikpanel": path.resolve(__dirname, 'src/resources/assets/js/modules')
 			}
 		},
-		devtool: "source-map"
+		devtool: "source-map",
+		module: {
+			rules: [
+				{
+					test: /\.hbs/,
+					loader: 'handlebars-loader',
+					options: {
+						precompileOptions: {
+							knownHelpersOnly: false,
+						}
+					}
+				},
+			]
+		}
 	});
 } // if

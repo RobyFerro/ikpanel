@@ -1,11 +1,3 @@
-/*
- *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
- *  * Unauthorized copying of this file, via any medium is strictly prohibited
- *  * Proprietary and confidential
- *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
- *
- */
-
 /******/
 (function(modules) { // webpackBootstrap
 	/******/ 	// The module cache
@@ -156,6 +148,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		var __awaiter = (this && this.__awaiter) || function(thisArg, _arguments, P, generator) {
 			return new (P || (P = Promise))(function(resolve, reject) {
 				function fulfilled(value) {
@@ -359,6 +358,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var FormUtils = /** @class */ (function() {
 			function FormUtils() {
@@ -895,6 +901,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var ModernGui = /** @class */ (function() {
 			function ModernGui() {
@@ -1037,14 +1050,27 @@
 		/***/
 	}),
 	
+	/***/ "./src/resources/assets/sass/ikpanel.scss":
+	/*!************************************************!*\
+	  !*** ./src/resources/assets/sass/ikpanel.scss ***!
+	  \************************************************/
+	/*! no static exports found */
+	/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+		
+		/***/
+	}),
+	
 	/***/ 0:
-	/*!********************************************************************************!*\
-	  !*** multi ./src/Modules/blog/resources/assets/js/components/articles/edit.ts ***!
-	  \********************************************************************************/
+	/*!*************************************************************************************************************************!*\
+	  !*** multi ./src/Modules/blog/resources/assets/js/components/articles/edit.ts ./src/resources/assets/sass/ikpanel.scss ***!
+	  \*************************************************************************************************************************/
 	/*! no static exports found */
 	/***/ (function(module, exports, __webpack_require__) {
 		
-		module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\OmniGarden\packages\ikdev\ikpanel\src\Modules\blog\resources\assets\js\components\articles\edit.ts */"./src/Modules/blog/resources/assets/js/components/articles/edit.ts");
+		__webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\OmniGarden\packages\ikdev\ikpanel\src\Modules\blog\resources\assets\js\components\articles\edit.ts */"./src/Modules/blog/resources/assets/js/components/articles/edit.ts");
+		module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\OmniGarden\packages\ikdev\ikpanel\src\resources\assets\sass\ikpanel.scss */"./src/resources/assets/sass/ikpanel.scss");
 		
 		
 		/***/

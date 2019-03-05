@@ -1,11 +1,3 @@
-/*
- *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
- *  * Unauthorized copying of this file, via any medium is strictly prohibited
- *  * Proprietary and confidential
- *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
- *
- */
-
 /******/
 (function(modules) { // webpackBootstrap
 	/******/ 	// The module cache
@@ -156,6 +148,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		var __awaiter = (this && this.__awaiter) || function(thisArg, _arguments, P, generator) {
 			return new (P || (P = Promise))(function(resolve, reject) {
 				function fulfilled(value) {
@@ -353,6 +352,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var FormUtils = /** @class */ (function() {
 			function FormUtils() {
@@ -889,6 +895,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var ModernGui = /** @class */ (function() {
 			function ModernGui() {

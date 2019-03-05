@@ -103,5 +103,18 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 			
 		});
 		
+		Route::prefix('widgets')->group(function() {
+			Route::group(['as' => 'widgets'], function() {
+				//Dashboard
+				Route::get('/load', 'WidgetController@getWidgets');
+				Route::get('/usersNumber', 'WidgetController@numberOfUsers');
+				
+				//Edit
+				Route::get('/edit-load-all', 'WidgetController@getAllWidgets');
+				Route::get('/load-rows/{id}', 'WidgetController@getRowsWidgets');
+				Route::post('/save/{id}', 'WidgetController@saveOrder');
+			});
+		});
+		
 	});
 });

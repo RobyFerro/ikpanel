@@ -1,11 +1,3 @@
-/*
- *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
- *  * Unauthorized copying of this file, via any medium is strictly prohibited
- *  * Proprietary and confidential
- *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
- *
- */
-
 /******/
 (function(modules) { // webpackBootstrap
 	/******/ 	// The module cache
@@ -163,7 +155,7 @@
 			
 			/**
 			 * Inizializza il componente select2 a nazione e città
-			 * @param {number} country_id ID nazione
+			 * @param {number} country_id ID nazione-
 			 * @param {number} city_id ID città
 			 * @param {string} modal ID modal. Se presente
 			 * @param {string} side Modalità: back|front
@@ -843,6 +835,13 @@
 		
 		"use strict";
 		
+		/*
+		 *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+		 *  * Unauthorized copying of this file, via any medium is strictly prohibited
+		 *  * Proprietary and confidential
+		 *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+		 *
+		 */
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var form_utils_1 = __webpack_require__(/*! ../../../../../../../../../../../resources/assets/js/modules/form_utils */ "../../../resources/assets/js/modules/form_utils.ts");
 		var modern_gui_1 = __webpack_require__(/*! ../../../../../../../../../../../resources/assets/js/modules/modern-gui */ "../../../resources/assets/js/modules/modern-gui.ts");
