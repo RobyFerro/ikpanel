@@ -151,11 +151,7 @@
 		Object.defineProperty(exports, "__esModule", {value: true});
 		var widgets_edit_1 = __webpack_require__(/*! ../../modules/widgets/widgets_edit */ "./src/resources/assets/js/modules/widgets/widgets_edit.ts");
 		$(function() {
-			/*let builder = new WidgetsEdit($('#roleID').data('id'));*/
-			var path = window.location.pathname;
-			var split = path.split('/');
-			var role = split[split.length - 1];
-			var builder = new widgets_edit_1.default(role);
+			var builder = new widgets_edit_1.default($('#roleID').data('id'));
 			builder.isCurrentFormStatic = true;
 			builder.init();
 			builder.currentForm = 1;
