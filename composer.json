@@ -24,7 +24,8 @@
 		"sentry/sentry-laravel": "*",
 		"spatie/laravel-backup": "*",
 		"spatie/flysystem-dropbox": "*",
-		"vanilo/framework": "^0.5"
+		"vanilo/framework": "^0.5",
+		"pusher/pusher-php-server": "~3.0"
 	},
 	"extra": {
 		"laravel": {
