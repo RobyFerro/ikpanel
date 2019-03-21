@@ -9,12 +9,11 @@
 
 namespace ikdev\ikpanel;
 
-use Storage;
-use League\Flysystem\Filesystem;
-use Spatie\Dropbox\Client as DropboxClient;
-use Spatie\FlysystemDropbox\DropboxAdapter;
+use ikdev\ikpanel\app\Classes\Exception\ExceptionReporting;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Storage;
 
 class IkpanelServiceProvider extends ServiceProvider {
 	/**
@@ -80,6 +79,10 @@ class IkpanelServiceProvider extends ServiceProvider {
 		foreach (glob(__DIR__ . '/Helpers/*.php') as $filename) {
 			require_once($filename);
 		}
+		
+		App::bind('PanelException', function() {
+			return new ExceptionReporting();
+		});
 	}
 	
 	public function map() {

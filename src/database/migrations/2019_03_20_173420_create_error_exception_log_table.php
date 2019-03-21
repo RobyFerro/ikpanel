@@ -13,11 +13,13 @@ class CreateErrorExceptionLogTable extends Migration {
 	public function up() {
 		Schema::create('error_exception_log', function(Blueprint $table) {
 			$table->increments('id');
+			$table->enum('type', ['front', 'back']);
 			$table->integer('guilty_id')->nullable();
-			$table->integer('assign_to');
-			$table->timestamp('fixed_at');
-			$table->integer('fixed_by');
+			$table->integer('assign_to')->nullable();
+			$table->timestamp('fixed_at')->nullable();
+			$table->integer('fixed_by')->nullable();
 			$table->json('exception');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}

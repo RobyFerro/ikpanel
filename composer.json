@@ -35,7 +35,10 @@
 				"Intervention\\Image\\ImageServiceProvider",
 				"ikdev\\ikpanel\\app\\Providers\\DropboxServiceProvider",
 				"ikdev\\ikpanel\\app\\Providers\\IkpanelAuthServiceProvider"
-			]
+			],
+			"aliases": {
+				"PanelException": "ikdev\\ikpanel\\app\\Facades\\PanelException"
+			}
 		}
 	},
 	"autoload": {

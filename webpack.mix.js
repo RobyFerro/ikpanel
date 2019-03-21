@@ -47,6 +47,11 @@ mix.ts('src/resources/assets/js/components/widgets/widgets.ts', 'src/public/asse
 	.copy('src/public/assets/js/widgets/*.js', '../../../public/ikpanel/plugins/js/widgets')
 	.copy('src/public/assets/js/widgets/*.js.map', '../../../public/ikpanel/plugins/js/widgets');
 
+// Error tracker
+mix.ts('src/resources/assets/js/components/guard.ts', 'src/public/assets/js')
+	.copy('src/public/assets/js/guard.js', '../../../public/ikpanel/plugins/js')
+	.copy('src/public/assets/js/guard.js.map', '../../../public/ikpanel/plugins/js');
+
 // Sass
 mix.sass('src/resources/assets/sass/ikpanel.scss', 'src/public/assets/css')
 	.copy('src/public/assets/css/ikpanel.css*', '../../../public/ikpanel/assets/css');

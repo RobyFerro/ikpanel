@@ -36,6 +36,7 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 		Route::get('/profile', 'ikpanelController@profile');
 		Route::get('/notifications', 'NotificationController@showNotifications');
 		Route::post('/profile/update', 'ikpanelController@profileUpdate');
+		Route::post('/report-exception', 'ikpanelController@reportFrontEndException');
 		
 		Route::prefix('users')->group(function() {
 			

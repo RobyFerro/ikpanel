@@ -1,3 +1,4 @@
+"use strict";
 /*
  *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
  *  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -5,18 +6,16 @@
  *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
  *
  */
-
-"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("fullcalendar");
 $(function () {
 	var calendarContainer = $('#calendar'), modalEvent = $('#event'), eventContent = $('#eventContent');
-	eventContent.ckeditor(function () {
+	eventContent.ckeditor(function() {
 	}, {
 		language: 'it',
 		height: 500
 	});
-	$('.input-daterange input').each(function () {
+	$('.input-daterange input').each(function() {
 		$(this).datepicker({
 			language: 'it',
 			autoclose: true,
@@ -35,39 +34,39 @@ $(function () {
 		showNonCurrentDates: false,
 		slotDuration: "00:30",
 		slotLabelFormat: "HH:mm",
-		eventClick: function (event) {
+		eventClick: function(event) {
 			//nascondo tooltip
 			$('.tooltip').tooltip('hide');
 		},
-		eventResizeStart: function () {
+		eventResizeStart: function() {
 			$('.tooltip').tooltip('hide');
 		},
-		eventResizeStop: function () {
+		eventResizeStop: function() {
 			$('.tooltip').tooltip('hide');
 		},
-		eventDragStart: function () {
+		eventDragStart: function() {
 			$('.tooltip').tooltip('hide');
 		},
-		eventDragStop: function () {
+		eventDragStop: function() {
 			$('.tooltip').tooltip('hide');
 		},
-		eventResize: function (event) {
+		eventResize: function(event) {
 			//
 		},
-		eventDrop: function (event) {
+		eventDrop: function(event) {
 			//
 		},
-		eventRender: function (eventObj, $el) {
+		eventRender: function(eventObj, $el) {
 			//
 		},
-		dayClick: function (date, jsEvent, view) {
+		dayClick: function(date, jsEvent, view) {
 			modalEvent.modal('toggle');
 		},
 		selectable: true,
 		//@ts-ignore
 		selectMinDistance: 0,
 		unselectAuto: true,
-		select: function (start, end) {
+		select: function(start, end) {
 		},
 		height: 500,
 		fixedWeekCount: false,
@@ -88,7 +87,7 @@ $(function () {
 		firstDay: 1,
 		eventColor: '#6d5cae',
 		eventTextColor: '#ffffff',
-		viewRender: function () {
+		viewRender: function() {
 		}
 	});
 });

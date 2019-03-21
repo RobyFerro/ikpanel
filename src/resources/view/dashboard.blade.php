@@ -798,6 +798,7 @@
 	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
 	        integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
 	        crossorigin="anonymous"></script>
+	<script src="{{ asset('ikpanel/plugins/js/guard.js') }}"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/modernizr.custom.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('ikpanel/assets/plugins/bootstrap-4.1.1/js/bootstrap.bundle.min.js') }}"

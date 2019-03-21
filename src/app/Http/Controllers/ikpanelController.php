@@ -17,6 +17,7 @@
 namespace ikdev\ikpanel\App\Http\Controllers;
 
 
+use ikdev\ikpanel\app\Facades\PanelException;
 use ikdev\ikpanel\App\Http\Requests\ProfileRequest;
 use ikdev\ikpanel\app\Http\Classes\PanelUtilities;
 use ikdev\ikpanel\app\Users;
@@ -146,5 +147,11 @@ class ikpanelController extends BaseController {
 		return view('ikpanel::file_manager');
 	}
 	
-	
+	/**
+	 * Report front end exception
+	 * @param Request $request
+	 */
+	public function reportFrontEndException(Request $request) {
+		PanelException::report($request->get('exception'), 'front');
+	}
 }
