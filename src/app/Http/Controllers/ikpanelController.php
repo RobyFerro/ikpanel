@@ -147,11 +147,4 @@ class ikpanelController extends BaseController {
 		return view('ikpanel::file_manager');
 	}
 	
-	/**
-	 * Report front end exception
-	 * @param Request $request
-	 */
-	public function reportFrontEndException(Request $request) {
-		PanelException::report($request->get('exception'), 'front');
-	}
 }

@@ -18,6 +18,8 @@ class CreateErrorExceptionLogTable extends Migration {
 			$table->integer('assign_to')->nullable();
 			$table->timestamp('fixed_at')->nullable();
 			$table->integer('fixed_by')->nullable();
+			$table->timestamp('first_seen')->nullable();
+			$table->timestamp('last_seen')->nullable();
 			$table->json('exception');
 			$table->softDeletes();
 			$table->timestamps();
