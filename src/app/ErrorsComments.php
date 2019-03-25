@@ -10,8 +10,10 @@ namespace ikdev\ikpanel\app;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ErrorsComments extends Model {
+	use SoftDeletes;
 	
 	protected $table = 'exception_comment';
 	protected $primaryKey = 'id';

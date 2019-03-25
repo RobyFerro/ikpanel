@@ -10,8 +10,10 @@ namespace ikdev\ikpanel\app;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Errors extends Model {
+	use SoftDeletes;
 	
 	protected $primaryKey = 'id';
 	protected $table = 'error_exception_log';

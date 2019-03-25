@@ -8,6 +8,7 @@
 
 namespace ikdev\ikpanel\App\Http\Controllers;
 
+use ikdev\ikpanel\app\Errors;
 use ikdev\ikpanel\app\Facades\PanelException;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
@@ -20,6 +21,12 @@ class ExceptionController extends BaseController {
 	 */
 	public function reportFrontEndException(Request $request) {
 		PanelException::report($request->get('exception'), 'front');
+	}
+	
+	public function show() {
+		return view('ikpanel::exception.show')->with([
+			'exceptions' => Errors::get()
+		]);
 	}
 	
 }

@@ -9,6 +9,7 @@
 
 namespace ikdev\ikpanel\app\Providers;
 
+use ikdev\ikpanel\app\Policies\ExceptionPolicy;
 use ikdev\ikpanel\app\Policies\FileManagerPolicy;
 use ikdev\ikpanel\app\Policies\LogsPolicy;
 use ikdev\ikpanel\app\Policies\RolesPolicy;
@@ -42,6 +43,9 @@ class IkpanelAuthServiceProvider extends AuthServiceProvider {
 		// GALLERY POLICY
 		Gate::resource('gallery-categories', GalleryCategoryPolicy::class);
 		Gate::resource('gallery-images', ImagesPolicy::class);
+		
+		// EXCEPTION POLICY
+		Gate::resource('exceptions', ExceptionPolicy::class);
 	}
 	
 }

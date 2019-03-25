@@ -14,6 +14,7 @@ class CreateExceptionCommentTable extends Migration {
 		Schema::create('exception_comment', function(Blueprint $table) {
 			$table->increments('id');
 			$table->text('text');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}
