@@ -10,6 +10,8 @@
 namespace ikdev\ikpanel;
 
 use ikdev\ikpanel\app\Classes\Exception\ExceptionReporting;
+use ikdev\ikpanel\app\Exception\IkpanelExceptionHandler;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +24,7 @@ class IkpanelServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
+		$this->app->bind(ExceptionHandler::class, IkpanelExceptionHandler::class);
 		$this->publishes([
 			__DIR__ . '/public'                    => public_path('ikpanel/'),
 			__DIR__ . '/resources/assets'          => resource_path('assets/'),

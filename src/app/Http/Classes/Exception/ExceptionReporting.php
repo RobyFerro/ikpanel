@@ -9,7 +9,7 @@
 namespace ikdev\ikpanel\app\Classes\Exception;
 
 use Carbon\Carbon;
-use ikdev\ikpanel\app\ErrorExceptionLog;
+use ikdev\ikpanel\app\Errors;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +23,7 @@ class ExceptionReporting {
 	public function report($exception, $type) {
 		
 		try {
-			$id = ErrorExceptionLog::insertGetId([
+			$id = Errors::insertGetId([
 				"type"       => $type,
 				"guilty_id"  => Auth::id(),
 				"exception"  => json_encode($exception),
