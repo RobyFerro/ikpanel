@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>403 You shall not pass! ðŸ˜… #CodePenChallenge</title>
+	<title>YOU SHALL NOT PASS!</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	<style>
 		* {
