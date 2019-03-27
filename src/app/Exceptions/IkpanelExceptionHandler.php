@@ -10,6 +10,7 @@ namespace ikdev\ikpanel\app\Exception;
 
 use Exception;
 use ikdev\ikpanel\app\Facades\PanelException;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -54,7 +55,10 @@ class IkpanelExceptionHandler extends ExceptionHandler {
 	public function render($request, Exception $exception) {
 		if ($exception instanceof NotFoundHttpException) {
 			return response()->view('errors.404', [], 404);
-		}
+		} elseif ($exception instanceof AuthorizationException) {
+			return response()->view('ikpanel::errors.403');
+		} // if
+		
 		return parent::render($request, $exception);
 	}
 	

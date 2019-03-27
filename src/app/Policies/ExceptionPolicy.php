@@ -24,7 +24,7 @@ class ExceptionPolicy {
 	 * @return mixed
 	 */
 	public function view(Users $user) {
-		return $user->hasToken('');
+		return $user->hasToken('SHOW_EXCEPTIONS');
 	}
 	
 	/**
@@ -34,7 +34,7 @@ class ExceptionPolicy {
 	 * @return mixed
 	 */
 	public function create(Users $user) {
-		return $user->hasToken('');
+		return $user->hasToken('SHOW_EXCEPTIONS');
 	}
 	
 	/**
@@ -44,7 +44,7 @@ class ExceptionPolicy {
 	 * @return mixed
 	 */
 	public function update(Users $user) {
-		return $user->hasToken('');
+		return $user->hasToken('SHOW_EXCEPTIONS');
 	}
 	
 	/**
@@ -54,7 +54,7 @@ class ExceptionPolicy {
 	 * @return mixed
 	 */
 	public function delete(Users $user) {
-		return $user->hasToken('');
+		return $user->hasToken('SHOW_EXCEPTIONS');
 	}
 	
 	/**
@@ -64,7 +64,7 @@ class ExceptionPolicy {
 	 * @return mixed
 	 */
 	public function restore(Users $user) {
-		return $user->hasToken('');
+		return $user->hasToken('SHOW_EXCEPTIONS');
 	}
 	
 	/**
@@ -74,6 +74,6 @@ class ExceptionPolicy {
 	 * @return mixed
 	 */
 	public function forceDelete(Users $user) {
-		return $user->hasToken('');
+		return $user->hasToken('SHOW_EXCEPTIONS');
 	}
 }
