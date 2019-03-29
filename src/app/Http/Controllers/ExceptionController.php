@@ -30,7 +30,7 @@ class ExceptionController extends BaseController {
 	 */
 	public function show() {
 		return view('ikpanel::exception.show')->with([
-			'exceptions' => Errors::orderByDesc('id')->get()
+			'exceptions' => Errors::orderByDesc('id')->paginate(10)
 		]);
 	}
 	

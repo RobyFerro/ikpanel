@@ -13,6 +13,7 @@ use ikdev\ikpanel\app\Classes\Exception\ExceptionReporting;
 use ikdev\ikpanel\app\Exception\IkpanelExceptionHandler;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Storage;
@@ -70,6 +71,7 @@ class IkpanelServiceProvider extends ServiceProvider {
 			__DIR__ . '/Modules/calendar/public/js' => public_path('ikpanel/modules/calendar/js')
 		], 'ikpanel-calendar');
 		
+		Paginator::defaultView('ikpanel::pagination.default');
 		parent::boot();
 	}
 	

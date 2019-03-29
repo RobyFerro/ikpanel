@@ -45,7 +45,11 @@
 						<tbody>
 						@forelse($exceptions as $error)
 							<tr>
-								<td>{{ str_limit($error->exception,120) }}</td>
+								<td>
+									<a href="#" style="font-size: medium">
+										{{ str_limit($error->exception,100) }}
+									</a>
+								</td>
 								<td>{{ $error->ip }}</td>
 								<td>{{ $error->created_at->format('d/m/Y H:i:s') }}</td>
 								<td>
@@ -74,6 +78,11 @@
 					</table>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			{{ $exceptions->links() }}
 		</div>
 	</div>
 @endsection

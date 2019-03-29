@@ -7,7 +7,7 @@ return [
 		"card_title"   => "What's happening?",
 		"table"        => [
 			"type"         => "Locations",
-			"exception"    => "Error",
+			"exception"    => "Details",
 			"created_date" => "Created date",
 			"no_rows"      => "There's no exceptions!",
 			"ip_address"   => "IP"
