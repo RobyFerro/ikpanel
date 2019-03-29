@@ -31,11 +31,13 @@
 						<colgroup>
 							<col style="width: auto">
 							<col style="width: 250px">
+							<col style="width: 250px">
 							<col style="width: 150px">
 						</colgroup>
 						<thead>
 						<tr>
 							<th>{{ __('ikpanel::exceptions.show.table.exception') }}</th>
+							<th>{{ __('ikpanel::exceptions.show.table.ip_address') }}</th>
 							<th>{{ __('ikpanel::exceptions.show.table.created_date') }}</th>
 							<th>{{ __('ikpanel::exceptions.show.table.type') }}</th>
 						</tr>
@@ -44,6 +46,7 @@
 						@forelse($exceptions as $error)
 							<tr>
 								<td>{{ str_limit($error->exception,120) }}</td>
+								<td>{{ $error->ip }}</td>
 								<td>{{ $error->created_at->format('d/m/Y H:i:s') }}</td>
 								<td>
 									@switch($error->type)

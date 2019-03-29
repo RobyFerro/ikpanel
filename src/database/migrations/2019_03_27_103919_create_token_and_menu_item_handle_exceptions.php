@@ -29,12 +29,12 @@ class CreateTokenAndMenuItemHandleExceptions extends Migration {
 		
 		try {
 			Menu::insert([
-				"id"        => "ITEM_HANDLE_EXCEPTIONS",
-				"id_token"  => "SHOW_EXCEPTIONS",
-				"name"      => "Gestione errori di sistema",
-				"route"     => "/exceptions/show",
-				"icon"      => "far fa-bug",
-				"relations" => "FOLDER_SETTINGS"
+				"id"       => "ITEM_HANDLE_EXCEPTIONS",
+				"id_token" => "SHOW_EXCEPTIONS",
+				"name"     => "Gestione errori di sistema",
+				"route"    => "/exceptions/show",
+				"icon"     => "far fa-bug",
+				"relation" => "FOLDER_SETTINGS"
 			]);
 		} catch (QueryException $e) {
 			DB::rollBack();

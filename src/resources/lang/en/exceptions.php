@@ -9,7 +9,8 @@ return [
 			"type"         => "Locations",
 			"exception"    => "Error",
 			"created_date" => "Created date",
-			"no_rows"      => "There's no exceptions!"
+			"no_rows"      => "There's no exceptions!",
+			"ip_address"   => "IP"
 		]
 	]
 ];
