@@ -133,7 +133,7 @@
 	/******/
 	/******/ 	// Load entry module and return exports
 	/******/
-	return __webpack_require__(__webpack_require__.s = 0);
+	return __webpack_require__(__webpack_require__.s = 1);
 	/******/
 })
 /************************************************************************/
@@ -1180,27 +1180,14 @@
 		/***/
 	}),
 	
-	/***/ "./src/resources/assets/sass/ikpanel.scss":
-	/*!************************************************!*\
-	  !*** ./src/resources/assets/sass/ikpanel.scss ***!
-	  \************************************************/
-	/*! no static exports found */
-	/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-		
-		/***/
-	}),
-	
-	/***/ 0:
-	/*!*************************************************************************************************************************!*\
-	  !*** multi ./src/Modules/blog/resources/assets/js/components/articles/edit.ts ./src/resources/assets/sass/ikpanel.scss ***!
-	  \*************************************************************************************************************************/
+	/***/ 1:
+	/*!********************************************************************************!*\
+	  !*** multi ./src/Modules/blog/resources/assets/js/components/articles/edit.ts ***!
+	  \********************************************************************************/
 	/*! no static exports found */
 	/***/ (function(module, exports, __webpack_require__) {
 		
-		__webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\Modules\blog\resources\assets\js\components\articles\edit.ts */"./src/Modules/blog/resources/assets/js/components/articles/edit.ts");
-		module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\resources\assets\sass\ikpanel.scss */"./src/resources/assets/sass/ikpanel.scss");
+		module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\Modules\blog\resources\assets\js\components\articles\edit.ts */"./src/Modules/blog/resources/assets/js/components/articles/edit.ts");
 		
 		
 		/***/

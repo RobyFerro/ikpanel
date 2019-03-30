@@ -11,8 +11,8 @@ namespace ikdev\ikpanel\app\Classes\Exception;
 use Carbon\Carbon;
 use ikdev\ikpanel\app\Errors;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 
 class ExceptionReporting {
 	
@@ -27,7 +27,8 @@ class ExceptionReporting {
 			$id = Errors::insertGetId([
 				"type"       => $type,
 				"guilty_id"  => Auth::id(),
-				"ip"         => \request()->ip(),
+				"ip"         => Request::ip(),
+				"user_agent" => Request::userAgent(),
 				"exception"  => json_encode($exception),
 				"created_at" => Carbon::now()
 			]);

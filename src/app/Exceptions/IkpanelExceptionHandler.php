@@ -36,20 +36,22 @@ class IkpanelExceptionHandler extends ExceptionHandler {
 	 *
 	 * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
 	 *
-	 * @param  \Exception $exception
+	 * @param \Exception $exception
 	 * @return void
 	 * @throws Exception
 	 */
 	public function report(Exception $exception) {
-		PanelException::report($exception, 'back');
+		if ($this->shouldReport($exception)) {
+			PanelException::report($exception, 'back');
+		}
 		parent::report($exception);
 	}
 	
 	/**
 	 * Render an exception into an HTTP response.
 	 *
-	 * @param  \Illuminate\Http\Request $request
-	 * @param  \Exception $exception
+	 * @param \Illuminate\Http\Request $request
+	 * @param \Exception $exception
 	 * @return \Illuminate\Http\Response
 	 */
 	public function render($request, Exception $exception) {
@@ -65,7 +67,7 @@ class IkpanelExceptionHandler extends ExceptionHandler {
 	/**
 	 * Convert an authentication exception into an unauthenticated response.
 	 *
-	 * @param  \Illuminate\Http\Request $request
+	 * @param \Illuminate\Http\Request $request
 	 * @param AuthenticationException $exception
 	 * @return \Illuminate\Http\Response
 	 */

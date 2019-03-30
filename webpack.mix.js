@@ -11,7 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
-// Todo: Fix JS Debug
+// Errors
+mix.ts('src/resources/assets/js/components/exceptions/edit.ts', 'src/public/assets/js/exceptions')
+	.copy('src/public/assets/js/exceptions/*.js', '../../../public/ikpanel/plugins/js/exceptions')
+	.copy('src/public/assets/js/exceptions/*.js.map', '../../../public/ikpanel/plugins/js/exceptions');
 
 // Blog articles
 mix.ts('src/Modules/blog/resources/assets/js/components/articles/edit.ts', 'src/Modules/blog/public/js/articles')

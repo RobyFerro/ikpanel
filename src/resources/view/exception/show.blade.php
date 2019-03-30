@@ -46,8 +46,8 @@
 						@forelse($exceptions as $error)
 							<tr>
 								<td>
-									<a href="#" style="font-size: medium">
-										{{ str_limit($error->exception,100) }}
+									<a href="{{admin_url('/exceptions/edit/'.$error->id)}}" style="font-size: medium">
+										{{ str_limit(json_encode($error->exception),100) }}
 									</a>
 								</td>
 								<td>{{ $error->ip }}</td>
@@ -69,7 +69,7 @@
 							</tr>
 						@empty
 							<tr>
-								<td colspan="3">
+								<td colspan="4">
 									<h4>{{ __('ikpanel::exceptions.show.table.no_rows') }}</h4>
 								</td>
 							</tr>

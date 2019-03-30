@@ -18,6 +18,9 @@ class Errors extends Model {
 	protected $primaryKey = 'id';
 	protected $table = 'error_exception_log';
 	protected $dates = ['fixed_at', 'first_seen', 'last_seen', 'created_at', 'updated_at'];
+	protected $casts = [
+		'exception' => 'array'
+	];
 	
 	public function comments() {
 		return $this->belongsToMany(ErrorsComments::class, 'comment_error', 'exception_id', 'id');

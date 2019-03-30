@@ -121,6 +121,16 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 			Route::middleware('can:exceptions.view')->group(function() {
 				Route::get('/show', 'ExceptionController@show');
 			});
+			
+			Route::middleware('can:exceptions.update')->group(function() {
+				Route::get('/edit/{id}', 'ExceptionController@edit');
+				Route::put('/resolve', 'ExceptionController@resolve');
+				Route::delete('/remove', 'ExceptionController@remove');
+			});
+			
+			Route::middleware('can:exceptions.delete')->group(function() {
+				Route::delete('/remove', 'ExceptionController@remove');
+			});
 		});
 	});
 });

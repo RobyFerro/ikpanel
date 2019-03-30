@@ -9,8 +9,24 @@ return [
 			"type"         => "Locations",
 			"exception"    => "Details",
 			"created_date" => "Created date",
-			"no_rows"      => "There's no exceptions!",
+			"no_rows"      => "Congrats! There's no exceptions!",
 			"ip_address"   => "IP"
+		]
+	],
+	"edit" => [
+		"title"          => "Show exception",
+		"section-name"   => "Show exception",
+		"ip_address"     => "IP address:",
+		"reported_at"    => "Reported at:",
+		"exception_type" => "Error type:",
+		"user_agent"     => "User agent:",
+		"first_seen"     => "First seen:",
+		"last_seen"      => "Last seen:",
+		"fixed_at"       => "Fixed at:",
+		"assign_to"      => "Assign to:",
+		"buttons"        => [
+			"resolve" => "Resolve this error",
+			"delete"  => "Remove",
 		]
 	]
 ];
