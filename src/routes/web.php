@@ -120,6 +120,7 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 		Route::prefix('exceptions')->group(function() {
 			Route::middleware('can:exceptions.view')->group(function() {
 				Route::get('/show', 'ExceptionController@show');
+				Route::get('/filter/{filter}', 'ExceptionController@filter');
 			});
 			
 			Route::middleware('can:exceptions.update')->group(function() {

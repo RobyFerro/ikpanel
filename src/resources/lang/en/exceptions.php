@@ -2,15 +2,24 @@
 
 return [
 	"show" => [
-		"title"        => "View errors",
-		"section-name" => "View errors",
-		"card_title"   => "What's happening?",
-		"table"        => [
+		"title"         => "View errors",
+		"section-name"  => "View errors",
+		"card_title"    => "What's happening?",
+		"table"         => [
 			"type"         => "Locations",
 			"exception"    => "Details",
 			"created_date" => "Created date",
 			"no_rows"      => "Congrats! There's no exceptions!",
 			"ip_address"   => "IP"
+		],
+		"status_filter" => [
+			"label"   => "Status filter",
+			"options" => [
+				"resolved" => "Fixed errors",
+				"active"   => "Active exceptions",
+				"deleted"  => "Deleted errors",
+				"all"      => "All errors"
+			]
 		]
 	],
 	"edit" => [

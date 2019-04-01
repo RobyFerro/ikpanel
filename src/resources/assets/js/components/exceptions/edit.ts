@@ -1,6 +1,6 @@
-import ModernGui from "../../../../../../../../../resources/assets/js/modules/modern-gui";
-import FormUtils from "../../../../../../../../../resources/assets/js/modules/form_utils";
-import Notify from "../../../../../../../../../resources/assets/js/modules/notify";
+import ModernGui from "@ikpanel/modern-gui";
+import FormUtils from "@ikpanel/form_utils";
+import Notify from "@ikpanel/notify";
 
 declare let admin_panel_url: string;
 

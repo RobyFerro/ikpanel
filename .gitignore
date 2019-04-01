@@ -30,3 +30,4 @@ src/Modules/blog/resources/assets/js/**/*.js
 src/Modules/blog/resources/assets/js/**/*.js.map
 /mix-manifest.json
 /package-lock.json
+!/src/resources/assets/js/helpers/**/*

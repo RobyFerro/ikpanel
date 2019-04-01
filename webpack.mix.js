@@ -13,6 +13,7 @@ let mix = require('laravel-mix');
 
 // Errors
 mix.ts('src/resources/assets/js/components/exceptions/edit.ts', 'src/public/assets/js/exceptions')
+	.ts('src/resources/assets/js/components/exceptions/show.ts', 'src/public/assets/js/exceptions')
 	.copy('src/public/assets/js/exceptions/*.js', '../../../public/ikpanel/plugins/js/exceptions')
 	.copy('src/public/assets/js/exceptions/*.js.map', '../../../public/ikpanel/plugins/js/exceptions');
 
@@ -77,9 +78,11 @@ if(!mix.inProduction()) {
 					options: {
 						precompileOptions: {
 							knownHelpersOnly: false,
-						}
-					}
-				},
+						},
+						helperDirs: path.join(__dirname, 'src/resources/assets/js/helpers'),
+						debug: true
+					},
+				}
 			]
 		}
 	});

@@ -11,6 +11,7 @@ namespace ikdev\ikpanel\App\Http\Controllers;
 use Carbon\Carbon;
 use ikdev\ikpanel\app\Errors;
 use ikdev\ikpanel\app\Facades\PanelException;
+use ikdev\ikpanel\app\Users;
 use ikdev\ikpanel\Http\Middleware\AuthMiddleware;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -24,9 +25,11 @@ class ExceptionController extends BaseController {
 	 * @var Errors
 	 */
 	protected $errors;
+	protected $itemInPage;
 	
 	public function __construct(Errors $errors) {
 		$this->errors = $errors;
+		$this->itemInPage = 10;
 	}
 	
 	/**
@@ -43,7 +46,7 @@ class ExceptionController extends BaseController {
 	 */
 	public function show() {
 		return view('ikpanel::exception.show')->with([
-			'exceptions' => $this->errors->orderByDesc('id')->paginate(10)
+			'exceptions' => $this->errors->orderByDesc('id')->paginate($this->itemInPage)
 		]);
 	}
 	
@@ -86,6 +89,33 @@ class ExceptionController extends BaseController {
 	 */
 	public function remove(Request $request) {
 		$this->errors->find($request->get('id'))->delete();
+	}
+	
+	/**
+	 * Obtain exception collection instead of filter
+	 * @param Request $request
+	 * @param string $filter
+	 * @return Errors | null
+	 */
+	public function filter(Request $request, $filter = 'active') {
+		
+		switch ($filter) {
+			case 'active':
+				return $this->errors->whereNull('fixed_at')->paginate($this->itemInPage);
+				break;
+			case 'all':
+				return $this->errors->withTrashed()->paginate($this->itemInPage);
+				break;
+			case 'deleted':
+				return $this->errors->onlyTrashed()->paginate($this->itemInPage);
+				break;
+			case 'resolved':
+				return $this->errors->whereNotNull('fixed_at')->paginate($this->itemInPage);
+				break;
+			default:
+				return null;
+				break;
+		}
 	}
 	
 }
