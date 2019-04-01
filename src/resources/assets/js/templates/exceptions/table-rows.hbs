@@ -1,8 +1,23 @@
 {{#each rows}}
 	<tr>
-		<td>{{truncate exception.xdebug_message 120}}</td>
+		<td>
+			<a href="{{../adminUrl}}/exceptions/edit/{{id}}" style="font-size: medium">
+				{{truncate exception.xdebug_message 120}}
+			</a>
+		</td>
 		<td>{{ip}}</td>
 		<td>{{created_at}}</td>
-		<td>{{type}}</td>
+		<td>
+			{{#compare type '===' 'back'}}
+				<span class="badge badge-pill badge-success">
+						Back end
+					</span>
+			{{/compare}}
+			{{#compare type '===' 'front'}}
+				<span class="badge badge-pill badge-primary">
+					Front end
+				</span>
+			{{/compare}}
+		</td>
 	</tr>
 {{/each}}

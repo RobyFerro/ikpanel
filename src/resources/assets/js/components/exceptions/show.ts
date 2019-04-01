@@ -20,8 +20,8 @@ $(function () {
 				ModernGui.loading(true, 'Caricamento errori in corso...');
 			},
 			success: function (data) {
-				console.log(data);
-				$('#errorsTable > tbody').html(ExceptionTableContent({rows: data, adminUrl: admin_panel_url}));
+				console.log(data.data);
+				$('#errorsTable > tbody').html(ExceptionTableContent({rows: data.data, adminUrl: admin_panel_url}));
 			},
 			error: function (xhr) {
 				FormUtils.sendNotifications(xhr);
