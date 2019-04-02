@@ -37,7 +37,7 @@
 								<strong>
 									{{ __('ikpanel::exceptions.edit.reported_at') }}
 								</strong>
-								{{ $exception->created_at}}
+								{{ $exception->created_at }}
 							</h4>
 						</div>
 						<div class="col-md-4">
@@ -56,7 +56,21 @@
 							<strong>
 								{{ __('ikpanel::exceptions.edit.user_agent') }}
 							</strong>
-							{{ $exception->user_agent }}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							{{ $exception->user_agent->browser->toString() }}
+						</div>
+						<div class="col-md-4">
+							{{ $exception->user_agent->os->toString() }}
+						</div>
+						<div class="col-md-4">
+							@if(!empty($exception->user_agent->device->toString()))
+								{{ $exception->user_agent->device->toString() }}
+							@else
+								{{__('ikpanel::exceptions.edit.unknown_device')}}
+							@endif
 						</div>
 					</div>
 				</div>

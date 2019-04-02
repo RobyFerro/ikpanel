@@ -25,7 +25,8 @@
 		"spatie/laravel-backup": "*",
 		"spatie/flysystem-dropbox": "*",
 		"vanilo/framework": "^0.5",
-		"pusher/pusher-php-server": "~3.0"
+		"pusher/pusher-php-server": "~3.0",
+		"whichbrowser/parser": ">=2.0"
 	},
 	"extra": {
 		"laravel": {

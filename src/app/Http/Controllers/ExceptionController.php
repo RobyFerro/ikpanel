@@ -101,16 +101,16 @@ class ExceptionController extends BaseController {
 		
 		switch ($filter) {
 			case 'active':
-				return $this->errors->whereNull('fixed_at')->paginate($this->itemInPage);
+				return $this->errors->whereNull('fixed_at')->orderByDesc('id')->paginate($this->itemInPage);
 				break;
 			case 'all':
-				return $this->errors->withTrashed()->paginate($this->itemInPage);
+				return $this->errors->withTrashed()->orderByDesc('id')->paginate($this->itemInPage);
 				break;
 			case 'deleted':
-				return $this->errors->onlyTrashed()->paginate($this->itemInPage);
+				return $this->errors->onlyTrashed()->orderByDesc('id')->paginate($this->itemInPage);
 				break;
 			case 'resolved':
-				return $this->errors->whereNotNull('fixed_at')->paginate($this->itemInPage);
+				return $this->errors->whereNotNull('fixed_at')->orderByDesc('id')->paginate($this->itemInPage);
 				break;
 			default:
 				return null;

@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use WhichBrowser\Parser;
 
 class Errors extends Model {
 	use SoftDeletes;
@@ -37,7 +38,11 @@ class Errors extends Model {
 	 * @return string
 	 */
 	public function getCreatedAtAttribute($value) {
-		return Carbon::parse($value)->format($this->customFormat);
+		if (!is_null($value)) {
+			return Carbon::parse($value)->format($this->customFormat);
+		} else {
+			return null;
+		}
 	}
 	
 	/**
@@ -45,7 +50,11 @@ class Errors extends Model {
 	 * @return string
 	 */
 	public function getFirstSeenAttribute($value) {
-		return Carbon::parse($value)->format($this->customFormat);
+		if (!is_null($value)) {
+			return Carbon::parse($value)->format($this->customFormat);
+		} else {
+			return null;
+		}
 	}
 	
 	/**
@@ -53,7 +62,11 @@ class Errors extends Model {
 	 * @return string
 	 */
 	public function getLastSeenAttribute($value) {
-		return Carbon::parse($value)->format($this->customFormat);
+		if (!is_null($value)) {
+			return Carbon::parse($value)->format($this->customFormat);
+		} else {
+			return null;
+		}
 	}
 	
 	/**
@@ -61,7 +74,19 @@ class Errors extends Model {
 	 * @return string
 	 */
 	public function getFixedAtAttribute($value) {
-		return Carbon::parse($value)->format($this->customFormat);
+		if (!is_null($value)) {
+			return Carbon::parse($value)->format($this->customFormat);
+		} else {
+			return null;
+		}
+	}
+	
+	/**
+	 * @param $value
+	 * @return Parser
+	 */
+	public function getUserAgentAttribute($value) {
+		return new Parser($value);
 	}
 	
 }
