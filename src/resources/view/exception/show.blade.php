@@ -83,7 +83,7 @@
 											</a>
 										</td>
 										<td>{{ $error->ip }}</td>
-										<td>{{ $error->created_at->format('d/m/Y H:i:s') }}</td>
+										<td>{{ $error->created_at }}</td>
 										<td>
 											@switch($error->type)
 												@case('back')
@@ -116,7 +116,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			{{ $exceptions->appends(['sort' => 'votes'])->links() }}
+			{{ $exceptions->links() }}
 		</div>
 	</div>
 @endsection

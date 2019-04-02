@@ -2,7 +2,9 @@
 	<tr>
 		<td>
 			<a href="{{../adminUrl}}/exceptions/edit/{{id}}" style="font-size: medium">
-				{{truncate exception.xdebug_message 120}}
+				{{#each exception as |value key|}}
+					{{truncate value 100}}
+				{{/each}}
 			</a>
 		</td>
 		<td>{{ip}}</td>
@@ -10,8 +12,8 @@
 		<td>
 			{{#compare type '===' 'back'}}
 				<span class="badge badge-pill badge-success">
-						Back end
-					</span>
+					Back end
+				</span>
 			{{/compare}}
 			{{#compare type '===' 'front'}}
 				<span class="badge badge-pill badge-primary">

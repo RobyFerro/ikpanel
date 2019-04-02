@@ -37,7 +37,7 @@
 								<strong>
 									{{ __('ikpanel::exceptions.edit.reported_at') }}
 								</strong>
-								{{ $exception->created_at->format('d/m/Y H:i:s') }}
+								{{ $exception->created_at}}
 							</h4>
 						</div>
 						<div class="col-md-4">
@@ -70,9 +70,13 @@
 					<div class="card-title"></div>
 				</div>
 				<div class="card-body">
-					@if($exception->type == 'back')
-						{!! $exception->exception['xdebug_message'] !!}
-					@endif
+					@forelse($exception->exception as $stack)
+						{!! $stack !!}
+					@empty
+						<h2>
+							{{ __('ikpanel::exceptions.edit.no_stack_found') }}
+						</h2>
+					@endforelse
 				</div>
 			</div>
 		</div>
@@ -83,7 +87,7 @@
 						<div class="col-md-12">
 							<h5>
 								<strong>{{ __('ikpanel::exceptions.edit.first_seen') }}</strong>
-								{{ $exception->first_seen->format('d/m/y H:i:s') }}
+								{{ $exception->first_seen}}
 							</h5>
 						</div>
 					</div>
@@ -91,7 +95,7 @@
 						<div class="col-md-12">
 							<h5>
 								<strong>{{ __('ikpanel::exceptions.edit.last_seen') }}</strong>
-								{{ $exception->last_seen->format('d/m/y H:i:s') }}
+								{{ $exception->last_seen}}
 							</h5>
 						</div>
 					</div>
@@ -103,7 +107,7 @@
 									@if(empty($exception->fixed_at))
 										N/A
 									@else
-										{{ $exception->fixed_at->format('d/m/y H:i:s') }}
+										{{ $exception->fixed_at}}
 									@endif
 								</span>
 							</h5>
