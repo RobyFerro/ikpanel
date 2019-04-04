@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 	<meta charset="utf-8"/>
-	<title>{{ env('APP_NAME') }}  @if(View::hasSection('section_name')) - @yield('section_name') @endif</title>
+	<title>{{ env('APP_NAME') 1}}  @if(View::hasSection('section_name')) - @yield('section_name') @endif</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<meta name="csrf-token" content="{{ csrf_token() }}"/>
 	<link rel="apple-touch-icon" href="{{ asset('ikpanel/pages/ico/60.png') }}">

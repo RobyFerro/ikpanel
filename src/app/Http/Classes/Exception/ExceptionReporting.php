@@ -10,6 +10,7 @@ namespace ikdev\ikpanel\app\Classes\Exception;
 
 use Carbon\Carbon;
 use ikdev\ikpanel\app\Errors;
+use ikdev\ikpanel\app\Events\FoundExceptions;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
@@ -35,6 +36,8 @@ class ExceptionReporting {
 		} catch (QueryException $e) {
 			throw $e;
 		} // try
+		
+		event(new FoundExceptions(Errors::find($id)));
 		
 		return $id;
 		

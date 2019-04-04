@@ -35,7 +35,8 @@
 				"Alexusmai\\LaravelFileManager\\FileManagerServiceProvider",
 				"Intervention\\Image\\ImageServiceProvider",
 				"ikdev\\ikpanel\\app\\Providers\\DropboxServiceProvider",
-				"ikdev\\ikpanel\\app\\Providers\\IkpanelAuthServiceProvider"
+				"ikdev\\ikpanel\\app\\Providers\\IkpanelAuthServiceProvider",
+				"ikdev\\ikpanel\\app\\Providers\\IkpanelEventServiceProvider"
 			],
 			"aliases": {
 				"PanelException": "ikdev\\ikpanel\\app\\Facades\\PanelException"
