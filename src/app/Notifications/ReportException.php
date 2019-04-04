@@ -2,9 +2,13 @@
 
 namespace ikdev\ikpanel\app\Notifications;
 
+use ikdev\ikpanel\app\Mail\ExceptionReported;
+use ikdev\ikpanel\app\Users;
 use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\Mail;
 
 class ReportException extends Notification {
 	
@@ -33,13 +37,10 @@ class ReportException extends Notification {
 	
 	/**
 	 * @param $notifiable
-	 * @return MailMessage
+	 * @return mixed
 	 */
 	public function toMail($notifiable) {
-		return (new MailMessage)
-			->line('The introduction to the notification.')
-			->action('Notification Action', url('/'))
-			->line('Thank you for using our application!');
+		return new ExceptionReported($this->error, $notifiable);
 	}
 	
 	/**

@@ -37,7 +37,7 @@ class ExceptionReporting {
 			throw $e;
 		} // try
 		
-		event(new FoundExceptions(Errors::find($id)));
+		event(new FoundExceptions(Errors::findOrFail($id)));
 		
 		return $id;
 		

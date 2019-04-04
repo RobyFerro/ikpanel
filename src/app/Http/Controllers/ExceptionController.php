@@ -61,7 +61,8 @@ class ExceptionController extends BaseController {
 		$error->save();
 		
 		return view('ikpanel::exception.edit')->with([
-			'exception' => $error
+			'exception' => $error,
+			'stack'     => $error->exception
 		]);
 	}
 	

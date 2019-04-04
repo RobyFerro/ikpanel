@@ -22,7 +22,7 @@ class SendFoundExceptionNotification implements ShouldQueue {
 	
 	// Todo: Change users
 	public function handle(FoundExceptions $event) {
-		Notification::send(Users::find(1), new ReportException($event));
+		Notification::send(Users::find(1), new ReportException($event->error));
 	}
 	
 }

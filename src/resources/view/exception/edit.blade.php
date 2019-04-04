@@ -171,13 +171,13 @@
 					<div class="card-title"></div>
 				</div>
 				<div class="card-body">
-					@forelse($exception->exception as $stack)
-						{!! $stack !!}
-					@empty
-						<h2>
-							{{ __('ikpanel::exceptions.edit.no_stack_found') }}
-						</h2>
-					@endforelse
+					@if(!is_null($exception->exception))
+						<table width="100%" style="table-layout: fixed">
+							{!! print_r($exception->exception) !!}
+						</table>
+					@else
+						{{ __('ikpanel::exceptions.edit.no_stack_found') }}
+					@endif
 				</div>
 			</div>
 		</div>
