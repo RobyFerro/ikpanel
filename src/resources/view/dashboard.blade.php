@@ -830,5 +830,8 @@
 	
 	@yield('final_script')
 	@stack('final_script')
+	<script>
+	
+	</script>
 </body>
 </html>
