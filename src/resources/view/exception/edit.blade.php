@@ -24,7 +24,7 @@
 			<div class="card">
 				<div class="card-body">
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-4 text-center">
 							<h4>
 								<strong>
 									{{ __('ikpanel::exceptions.edit.ip_address') }}
@@ -32,7 +32,7 @@
 								{{ $exception->ip }}
 							</h4>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4 text-center">
 							<h4>
 								<strong>
 									{{ __('ikpanel::exceptions.edit.reported_at') }}
@@ -40,37 +40,120 @@
 								{{ $exception->created_at }}
 							</h4>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4 text-center">
 							<h4>
 								<strong>
 									{{ __('ikpanel::exceptions.edit.exception_type') }}
 								</strong>
-								<span class="badge badge-pill badge-success">
+								@switch($exception->type)
+									@case('back')
 									Back end
-								</span>
+									@break
+									@case('front')
+									Front end
+									@break
+								@endswitch
+							
 							</h4>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<strong>
-								{{ __('ikpanel::exceptions.edit.user_agent') }}
-							</strong>
+							<hr>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
-							{{ optional($exception->user_agent)->browser->toString() }}
+							<div class="row">
+								<div class="col-md-12 text-center">
+									@if($exception->user_agent)
+										@switch($exception->user_agent->browser->name)
+											@case('Chrome')
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/chrome.png')}}" alt="chrome">
+											@break;
+											@case('Firefox')
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/firefox.png')}}" alt="firefox">
+											@break;
+											@case('Safari')
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/safari.png')}}" alt="safari">
+											@break;
+											@case('Internet Explorer')
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/explorer.png')}}"
+											     alt="explorer">
+											@break;
+											@case('Edge')
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/edge.png')}}" alt="edge">
+											@default
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/unknown.png')}}" alt="unknown">
+											@break;
+											@break;
+										@endswitch
+									@endif
+								</div>
+								<div class="col-md-12 text-center">
+									<h4>{{ optional($exception->user_agent)->browser->toString() }}</h4>
+								</div>
+							</div>
 						</div>
 						<div class="col-md-4">
-							{{ optional($exception->user_agent)->os->toString() }}
+							<div class="row">
+								<div class="col-md-12 text-center">
+									@if($exception->user_agent)
+										@if($exception->user_agent->isOs('Windows'))
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/win-8.png')}}" alt="windows">
+										@elseif($exception->user_agent->isOs('OS X') || $exception->user_agent->isOs('iOS'))
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/apple.png')}}" alt="apple">
+										@elseif($exception->user_agent->isOs('Android'))
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/android.png')}}" alt="android">
+										@endif
+									@endif
+								</div>
+								<div class="col-md-12 text-center">
+									<h4>{{ optional($exception->user_agent)->os->toString() }}</h4>
+								</div>
+							</div>
 						</div>
 						<div class="col-md-4">
-							@if(!empty($exception->user_agent->device->toString()))
-								{{ optional($exception->user_agent)->device->toString() }}
-							@else
-								{{__('ikpanel::exceptions.edit.unknown_device')}}
-							@endif
+							<div class="row">
+								<div class="col-md-12 text-center">
+									@if(!is_null($exception->user_agent->device))
+										@switch($exception->user_agent->device->type)
+											@case('desktop')
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/desktop.png')}}" alt="desktop">
+											@break;
+											@case('mobile')
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/mobile.png')}}" alt="mobile">
+											@break
+											@case('tablet')
+											<img class="img img-fluid rounded" style="max-width: 100px"
+											     src="{{asset('ikpanel/assets/img/icons/tablet.png')}}" alt="tablet">
+											@break
+										@endswitch
+									@else
+										<img class="img img-fluid rounded" style="max-width: 100px"
+										     src="{{asset('ikpanel/assets/img/icons/unknown.png')}}" alt="unknown">
+									@endif
+								</div>
+								<div class="col-md-12 text-center">
+									@if(!empty($exception->user_agent->device->toString()))
+										<h4>{{ optional($exception->user_agent)->device->toString() }}</h4>
+									@else
+										<h4>{{ucfirst($exception->user_agent->device->type)}}
+											: {{__('ikpanel::exceptions.edit.unknown_device')}}</h4>
+									@endif
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
