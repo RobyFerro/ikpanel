@@ -15,8 +15,6 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class ExceptionPolicy {
 	use HandlesAuthorization;
 	
-	//Todo: Insert new token in followings methods
-	
 	/**
 	 * Determine whether the user can view the users.
 	 *
@@ -60,7 +58,7 @@ class ExceptionPolicy {
 	/**
 	 * Determine whether the user can restore the users.
 	 *
-	 * @param  \ikdev\ikpanel\app\Users $user
+	 * @param Users $user
 	 * @return mixed
 	 */
 	public function restore(Users $user) {
@@ -70,7 +68,7 @@ class ExceptionPolicy {
 	/**
 	 * Determine whether the user can permanently delete the users.
 	 *
-	 * @param  \ikdev\ikpanel\app\Users $user
+	 * @param Users $user
 	 * @return mixed
 	 */
 	public function forceDelete(Users $user) {

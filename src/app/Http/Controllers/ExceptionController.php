@@ -11,8 +11,6 @@ namespace ikdev\ikpanel\App\Http\Controllers;
 use Carbon\Carbon;
 use ikdev\ikpanel\app\Errors;
 use ikdev\ikpanel\app\Facades\PanelException;
-use ikdev\ikpanel\app\Users;
-use ikdev\ikpanel\Http\Middleware\AuthMiddleware;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
@@ -56,14 +54,14 @@ class ExceptionController extends BaseController {
 	 * @return Factory|View
 	 */
 	public function edit($id) {
-		$error = $this->errors->find($id);
+		$error = $this->errors->withTrashed()->find($id);
 		is_null($error->first_seen) ? $error->first_seen = Carbon::now() : null;
 		
 		$error->last_seen = Carbon::now();
 		$error->save();
 		
 		return view('ikpanel::exception.edit')->with([
-			'exception' => $this->errors->where('id', $id)->first()
+			'exception' => $error
 		]);
 	}
 	
@@ -89,6 +87,10 @@ class ExceptionController extends BaseController {
 	 */
 	public function remove(Request $request) {
 		$this->errors->find($request->get('id'))->delete();
+	}
+	
+	public function restore(Request $request) {
+		$this->errors->withTrashed()->find($request->id)->restore();
 	}
 	
 	/**

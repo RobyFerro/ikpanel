@@ -46,6 +46,8 @@ class IkpanelAuthServiceProvider extends AuthServiceProvider {
 		
 		// EXCEPTION POLICY
 		Gate::resource('exceptions', ExceptionPolicy::class);
+		//Todo: with resources gate the restore method does not work
+		Gate::define('exceptions.restore', 'ikdev\ikpanel\app\Policies\ExceptionPolicy@restore');
 	}
 	
 }

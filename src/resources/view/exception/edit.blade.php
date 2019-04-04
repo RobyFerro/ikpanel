@@ -60,14 +60,14 @@
 					</div>
 					<div class="row">
 						<div class="col-md-4">
-							{{ $exception->user_agent->browser->toString() }}
+							{{ optional($exception->user_agent)->browser->toString() }}
 						</div>
 						<div class="col-md-4">
-							{{ $exception->user_agent->os->toString() }}
+							{{ optional($exception->user_agent)->os->toString() }}
 						</div>
 						<div class="col-md-4">
 							@if(!empty($exception->user_agent->device->toString()))
-								{{ $exception->user_agent->device->toString() }}
+								{{ optional($exception->user_agent)->device->toString() }}
 							@else
 								{{__('ikpanel::exceptions.edit.unknown_device')}}
 							@endif
@@ -132,24 +132,36 @@
 							<hr>
 						</div>
 					</div>
-					@if(empty($exception->fixed_at))
-						<div class="row">
-							<div class="col-md-12">
-								<button class="btn btn-animated btn-complete btn-block mb-1" id="resolve">
-									{{ __('ikpanel::exceptions.edit.buttons.resolve') }}
-								</button>
+					@if(empty($exception->deleted_at))
+						@if(empty($exception->fixed_at))
+							<div class="row">
+								<div class="col-md-12">
+									<button class="btn btn-animated btn-complete btn-block mb-1" id="resolve">
+										{{ __('ikpanel::exceptions.edit.buttons.resolve') }}
+									</button>
+								</div>
 							</div>
-						</div>
+						@endif
+						@can('exceptions.delete')
+							<div class="row">
+								<div class="col-md-12">
+									<button class="btn btn-animated btn-danger btn-block" id="delete">
+										{{ __('ikpanel::exceptions.edit.buttons.delete') }}
+									</button>
+								</div>
+							</div>
+						@endcan
+					@else
+						@can('exceptions.restore')
+							<div class="row">
+								<div class="col-md-12">
+									<button class="btn btn-animated btn-success btn-block" id="restore">
+										{{ __('ikpanel::exceptions.edit.buttons.restore') }}
+									</button>
+								</div>
+							</div>
+						@endcan
 					@endif
-					@can('exceptions.delete')
-						<div class="row">
-							<div class="col-md-12">
-								<button class="btn btn-animated btn-danger btn-block" id="delete">
-									{{ __('ikpanel::exceptions.edit.buttons.delete') }}
-								</button>
-							</div>
-						</div>
-					@endcan
 				</div>
 			</div>
 		</div>

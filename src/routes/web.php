@@ -132,6 +132,10 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 			Route::middleware('can:exceptions.delete')->group(function() {
 				Route::delete('/remove', 'ExceptionController@remove');
 			});
+			
+			Route::middleware('can:exceptions.restore')->group(function() {
+				Route::put('/restore', 'ExceptionController@restore');
+			});
 		});
 	});
 });

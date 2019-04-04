@@ -54,7 +54,31 @@ $(function () {
 				complete: function () {
 					ModernGui.loading(false);
 				}
-			})
+			});
 		}
 	});
+	
+	body.on('click', '#restore', async function () {
+		if (await ModernGui.confirm('Sei sicuro di voler ripristinare questo errore?')) {
+			$.ajax({
+				type: 'PUT',
+				url: `${admin_panel_url}/exceptions/restore`,
+				data: {
+					id: exceptionID
+				},
+				beforeSend: function () {
+					ModernGui.loading(true, "Ripristino in corso...");
+				},
+				success: function (data) {
+					location.reload();
+				},
+				error: function (xhr) {
+					FormUtils.sendNotifications(xhr);
+				},
+				complete: function () {
+					ModernGui.loading(false);
+				}
+			});
+		}
+	})
 });

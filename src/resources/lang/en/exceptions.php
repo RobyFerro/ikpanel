@@ -36,6 +36,7 @@ return [
 		"buttons"        => [
 			"resolve" => "Resolve this error",
 			"delete"  => "Remove",
+			"restore" => "Restore this error"
 		],
 		"no_stack_found" => "Ooops... No stack error found",
 		"unknown_device" => "Unknown device"

@@ -86,7 +86,11 @@ class Errors extends Model {
 	 * @return Parser
 	 */
 	public function getUserAgentAttribute($value) {
-		return new Parser($value);
+		if (!is_null($value)) {
+			return new Parser($value);
+		} else {
+			return null;
+		}
 	}
 	
 }
