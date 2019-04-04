@@ -15,6 +15,10 @@
 @endsection
 
 @section('action_navbar')
+	<a type='button' class="btn btn-danger btn-cons" href="{{admin_url('/exceptions/show')}}">
+		<i class="fa fa-times-circle" aria-hidden="true"></i>
+		{{ __('ikpanel::action-button.buttons.close') }}
+	</a>
 @endsection
 
 @section('content')
