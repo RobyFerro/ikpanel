@@ -39,39 +39,47 @@
 
 @section('content')
 	<div class="row">
-		<div class="col-md-4">
-			<div class="form-group form-group-default ">
-				<label for="search-filter">
-					{{ __('ikpanel::users.show.search') }}
-				</label>
-				<input type="text" class="form-control" id="search-filter">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group form-group-default ">
+								<label for="search-filter">
+									{{ __('ikpanel::users.show.search') }}
+								</label>
+								<input type="text" class="form-control" id="search-filter">
+							</div>
+						</div>
+						<div class="col-md-5"></div>
+						<div class="col-md-3">
+							<div class="form-group form-group-default form-group-default-select2">
+								<label for="status-filter">
+									{{ __('ikpanel::users.show.filter_label') }}
+								</label>
+								<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1" aria-hidden="true"
+								        autocomplete="off">
+									<option value="ALL">
+										{{ __('ikpanel::users.show.filters.all') }}
+									</option>
+									<option value="ACTIVE" selected>
+										{{ __('ikpanel::users.show.filters.active') }}
+									</option>
+									<option value="DELETED">
+										{{ __('ikpanel::users.show.filters.deleted') }}
+									</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12" id="table-content">
+							@component('ikpanel::user.table',['users'=>$users])
+							@endcomponent
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="col-md-5"></div>
-		<div class="col-md-3">
-			<div class="form-group form-group-default form-group-default-select2">
-				<label for="status-filter">
-					{{ __('ikpanel::users.show.filter_label') }}
-				</label>
-				<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1" aria-hidden="true"
-				        autocomplete="off">
-					<option value="ALL">
-						{{ __('ikpanel::users.show.filters.all') }}
-					</option>
-					<option value="ACTIVE" selected>
-						{{ __('ikpanel::users.show.filters.active') }}
-					</option>
-					<option value="DELETED">
-						{{ __('ikpanel::users.show.filters.deleted') }}
-					</option>
-				</select>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12" id="table-content">
-			@component('ikpanel::user.table',['users'=>$users])
-			@endcomponent
 		</div>
 	</div>
 @endsection
