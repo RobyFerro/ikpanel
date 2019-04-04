@@ -25,86 +25,94 @@
 @endsection
 
 @section('content')
-	<input type="hidden" data-id="{{$role->id}}" id="roleID">
-	<div class="panel">
-		<ul class="nav nav-tabs nav-tabs-simple">
-			<li class="active">
-				<a data-toggle="tab" href="#role">Permessi</a>
-			</li>
-			<li>
-				<a data-toggle="tab" href="#widget">Dashboard widget</a>
-			</li>
-		</ul>
-		<div class="tab-content">
-			<div class="tab-pane active" id="role">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="form-group form-group-default required">
-							<label>Nome</label>
-							<input type="text"
-							       id="role_name"
-							       class="form-control dati-utente"
-							       value="{{ $role->group_name }}"
-							       autocomplete="off">
-							<input type="hidden" id="role_id" value="{{$role->id}}"/>
-						</div>
-					</div>
-				</div>
-				<table class="table table-bordered table-condensed">
-					<thead>
-					<tr>
-						<th class="header-white">Permessi</th>
-					</tr>
-					</thead>
-					<tbody>
-					@foreach($groups as $group)
-						<tr class="header-row">
-							<td>{{ $group->group_name }}</td>
-						</tr>
-						@foreach($group->token as $token)
-							<tr>
-								<td>
-									<div class="checkbox check-default" style="margin:0;">
-										<input type="checkbox"
-										       class="data-permissions"
-										       id="permission-{{ $token->id }}"
-										       data-id="{{ $token->id }}"
-										       {{ $token->isChecked or '' }}
-										       autocomplete="off">
-										<label for="permission-{{  $token->id }}">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body">
+					<input type="hidden" data-id="{{$role->id}}" id="roleID">
+					<div class="panel">
+						<ul class="nav nav-tabs nav-tabs-simple">
+							<li class="active">
+								<a data-toggle="tab" href="#role">Permessi</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#widget">Dashboard widget</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="role">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group form-group-default required">
+											<label>Nome</label>
+											<input type="text"
+											       id="role_name"
+											       class="form-control dati-utente"
+											       value="{{ $role->group_name }}"
+											       autocomplete="off">
+											<input type="hidden" id="role_id" value="{{$role->id}}"/>
+										</div>
+									</div>
+								</div>
+								<table class="table table-bordered table-condensed">
+									<thead>
+									<tr>
+										<th class="header-white">Permessi</th>
+									</tr>
+									</thead>
+									<tbody>
+									@foreach($groups as $group)
+										<tr class="header-row">
+											<td>{{ $group->group_name }}</td>
+										</tr>
+										@foreach($group->token as $token)
+											<tr>
+												<td>
+													<div class="checkbox check-default" style="margin:0;">
+														<input type="checkbox"
+														       class="data-permissions"
+														       id="permission-{{ $token->id }}"
+														       data-id="{{ $token->id }}"
+														       {{ $token->isChecked or '' }}
+														       autocomplete="off">
+														<label for="permission-{{  $token->id }}">
 									<span class="text-bold"
 									      style="vertical-align: top !important;">{{  $token->name }}</span>
-										</label>
-									</div>
-								</td>
-							</tr>
-							@foreach($token->children as $child)
-								<tr>
-									<td style="padding-left: 40px !important;">
-										<div class="checkbox check-default" style="margin:0;">
-											<input type="checkbox"
-											       class="data-permissions"
-											       id="permission-{{ $child->id }}"
-											       data-id="{{ $child->id }}"
-											       {{ $child->isChecked or '' }}
-											       autocomplete="off">
-											<label for="permission-{{  $child->id }}">
+														</label>
+													</div>
+												</td>
+											</tr>
+											@foreach($token->children as $child)
+												<tr>
+													<td style="padding-left: 40px !important;">
+														<div class="checkbox check-default" style="margin:0;">
+															<input type="checkbox"
+															       class="data-permissions"
+															       id="permission-{{ $child->id }}"
+															       data-id="{{ $child->id }}"
+															       {{ $child->isChecked or '' }}
+															       autocomplete="off">
+															<label for="permission-{{  $child->id }}">
 										<span class="text-bold"
 										      style="vertical-align: top !important;">{{  $child->name }}</span>
-											</label>
-										</div>
-									</td>
-								</tr>
-							@endforeach
-						@endforeach
-					@endforeach
-					</tbody>
-				</table>
-			</div>
-			<div class="tab-pane" id="widget">
-				<div class="row">
-					<div class="col-md-12">
-						@include('ikpanel::components.form_generator.builder')
+															</label>
+														</div>
+													</td>
+												</tr>
+											@endforeach
+										@endforeach
+									@endforeach
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-pane" id="widget">
+								<div class="row">
+									<div class="col-md-12">
+										@include('ikpanel::components.form_generator.builder')
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -37,28 +37,36 @@
 
 @section('content')
 	<div class="row">
-		<div class="col-md-4">
-			<div class="form-group form-group-default ">
-				<label for="search-filter">Cerca</label>
-				<input type="text" class="form-control" id="search-filter">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group form-group-default ">
+								<label for="search-filter">Cerca</label>
+								<input type="text" class="form-control" id="search-filter">
+							</div>
+						</div>
+						<div class="col-md-5"></div>
+						<div class="col-md-3">
+							<div class="form-group form-group-default form-group-default-select2">
+								<label for="status-filter">Filtro per stato</label>
+								<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1" aria-hidden="true" autocomplete="off">
+									<option value="ALL">Tutti</option>
+									<option value="ACTIVE" selected>Attivi</option>
+									<option value="DELETED">Eliminati</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12" id="table-content">
+							@component('ikpanel::role.table',['roles'=>$roles])
+							@endcomponent
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="col-md-5"></div>
-		<div class="col-md-3">
-			<div class="form-group form-group-default form-group-default-select2">
-				<label for="status-filter">Filtro per stato</label>
-				<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1" aria-hidden="true" autocomplete="off">
-					<option value="ALL">Tutti</option>
-					<option value="ACTIVE" selected>Attivi</option>
-					<option value="DELETED">Eliminati</option>
-				</select>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12" id="table-content">
-			@component('ikpanel::role.table',['roles'=>$roles])
-			@endcomponent
 		</div>
 	</div>
 @endsection
