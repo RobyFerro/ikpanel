@@ -25,21 +25,18 @@ class ExceptionReporting {
 	public function report($exception, $type) {
 		
 		try {
-			$id = Errors::insertGetId([
-				"type"       => $type,
-				"guilty_id"  => Auth::id(),
-				"ip"         => Request::ip(),
-				"user_agent" => Request::userAgent(),
-				"exception"  => json_encode($exception),
-				"created_at" => Carbon::now()
-			]);
+			$error = new Errors();
+			$error->type = $type;
+			$error->guilty_id = Auth::id();
+			$error->ip = Request::ip();
+			$error->user_agent = Request::userAgent();
+			$error->exception = json_encode($exception);
+			$error->save();
 		} catch (QueryException $e) {
 			throw $e;
 		} // try
 		
-		event(new FoundExceptions(Errors::findOrFail($id)));
-		
-		return $id;
+		return $error->id;
 		
 	}
 	

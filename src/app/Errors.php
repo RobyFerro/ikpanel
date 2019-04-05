@@ -10,6 +10,7 @@ namespace ikdev\ikpanel\app;
 
 
 use Carbon\Carbon;
+use ikdev\ikpanel\app\Events\FoundExceptions;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -22,6 +23,9 @@ class Errors extends Model {
 	protected $table = 'error_exception_log';
 	protected $dates = ['fixed_at', 'first_seen', 'last_seen', 'created_at', 'updated_at'];
 	protected $customFormat = "d/m/Y H:i:s";
+	protected $dispatchesEvents = [
+		"created" => FoundExceptions::class
+	];
 	protected $casts = [
 		'exception' => 'array'
 	];

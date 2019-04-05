@@ -10,7 +10,9 @@
 namespace ikdev\ikpanel;
 
 use ikdev\ikpanel\app\Classes\Exception\ExceptionReporting;
+use ikdev\ikpanel\app\Errors;
 use ikdev\ikpanel\app\Exception\IkpanelExceptionHandler;
+use ikdev\ikpanel\App\Observer\ErrorObserver;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Pagination\Paginator;
