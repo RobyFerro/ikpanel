@@ -12,11 +12,11 @@ namespace ikdev\ikpanel;
 use ikdev\ikpanel\app\Classes\Exception\ExceptionReporting;
 use ikdev\ikpanel\app\Errors;
 use ikdev\ikpanel\app\Exception\IkpanelExceptionHandler;
-use ikdev\ikpanel\App\Observer\ErrorObserver;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use Storage;
 
@@ -27,6 +27,7 @@ class IkpanelServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
+		Broadcast::routes();
 		$this->app->bind(ExceptionHandler::class, IkpanelExceptionHandler::class);
 		$this->publishes([
 			__DIR__ . '/public'                    => public_path('ikpanel/'),
@@ -39,6 +40,7 @@ class IkpanelServiceProvider extends ServiceProvider {
 		], 'ikpanel');
 		
 		$this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+		$this->loadRoutesFrom(__DIR__ . '/routes/channels.php');
 		$this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 		$this->loadViewsFrom(__DIR__ . '/resources/view', 'ikpanel');
 		$this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'ikpanel');

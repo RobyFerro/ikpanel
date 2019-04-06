@@ -21,7 +21,8 @@
 		"sass-loader": "^7.1.0",
 		"ts-loader": "^5.3.3",
 		"typescript": "^3.2.2",
-		"vue": "^2.5.7"
+		"vue": "^2.5.7",
+		"vue-template-compiler": "^2.6.10"
 	},
 	"dependencies": {
 		"@types/bootstrap": "^4.1.2",
@@ -38,6 +39,7 @@
 		"@types/jqueryui": "^1.12.2",
 		"@types/raty": "^2.7.28",
 		"@types/select2": "^4.0.47",
+		"@types/socket.io-client": "^1.4.32",
 		"bootstrap-slider": "^10.0.2",
 		"chart.js": "^2.7.3",
 		"datatables": "^1.10.18",
@@ -49,8 +51,10 @@
 		"jquery": "^3.3.1",
 		"jquery-maskmoney": "^3.0.2",
 		"jquery.typewatch": "^3.0.0",
+		"laravel-echo": "^1.5.3",
 		"moment": "^2.23.0",
 		"select2": "^4.0.6-rc.1",
+		"socket.io-client": "^2.2.0",
 		"unlazy-loader": "^0.1.3"
 	}
 }

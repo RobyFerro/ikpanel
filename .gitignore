@@ -31,3 +31,4 @@ src/Modules/blog/resources/assets/js/**/*.js.map
 /mix-manifest.json
 /package-lock.json
 !/src/resources/assets/js/helpers/**/*
+!/src/resources/assets/js/components/exceptions/broadcast.js

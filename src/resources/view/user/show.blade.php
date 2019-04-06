@@ -57,7 +57,8 @@
 								<label for="status-filter">
 									{{ __('ikpanel::users.show.filter_label') }}
 								</label>
-								<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1" aria-hidden="true"
+								<select id="status-filter" class="full-width select2-hidden-accessible" tabindex="-1"
+								        aria-hidden="true"
 								        autocomplete="off">
 									<option value="ALL">
 										{{ __('ikpanel::users.show.filters.all') }}

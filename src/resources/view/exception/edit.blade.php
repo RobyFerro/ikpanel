@@ -101,7 +101,11 @@
 									@endif
 								</div>
 								<div class="col-md-12 text-center">
-									<h4>{{ optional($exception->user_agent)->browser->toString() }}</h4>
+									@if($exception->user_agent)
+										<h4>{{ $exception->user_agent->browser->toString() }}</h4>
+									@else
+										<h4>N/D</h4>
+									@endif
 								</div>
 							</div>
 						</div>
@@ -122,14 +126,18 @@
 									@endif
 								</div>
 								<div class="col-md-12 text-center">
-									<h4>{{ optional($exception->user_agent)->os->toString() }}</h4>
+									@if($exception->user_agent)
+										<h4>{{ $exception->user_agent->os->toString() }}</h4>
+									@else
+										<h4>N/D</h4>
+									@endif
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-12 text-center">
-									@if(!is_null($exception->user_agent->device))
+									@if(isset($exception->user_agent->device))
 										@switch($exception->user_agent->device->type)
 											@case('desktop')
 											<img class="img img-fluid rounded" style="max-width: 100px"
@@ -150,11 +158,13 @@
 									@endif
 								</div>
 								<div class="col-md-12 text-center">
-									@if(!empty($exception->user_agent->device->toString()))
-										<h4>{{ optional($exception->user_agent)->device->toString() }}</h4>
-									@else
-										<h4>{{ucfirst($exception->user_agent->device->type)}}
-											: {{__('ikpanel::exceptions.edit.unknown_device')}}</h4>
+									@if(isset($exception->user_agent->device))
+										@if(!empty($exception->user_agent->device->toString()))
+											<h4>{{ optional($exception->user_agent)->device->toString() }}</h4>
+										@else
+											<h4>{{ucfirst($exception->user_agent->device->type)}}
+												: {{__('ikpanel::exceptions.edit.unknown_device')}}</h4>
+										@endif
 									@endif
 								</div>
 							</div>
