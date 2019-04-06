@@ -113,31 +113,4 @@ class ExceptionController extends BaseController {
 		$this->errors->withTrashed()->find($request->id)->restore();
 	}
 	
-	/**
-	 * Obtain exception collection instead of filter
-	 * @param Request $request
-	 * @param string $filter
-	 * @return Errors | null
-	 */
-	public function filter(Request $request, $filter = 'active') {
-		
-		switch ($filter) {
-			case 'active':
-				return $this->errors->whereNull('fixed_at')->orderByDesc('id')->paginate();
-				break;
-			case 'all':
-				return $this->errors->withTrashed()->orderByDesc('id')->paginate();
-				break;
-			case 'deleted':
-				return $this->errors->onlyTrashed()->orderByDesc('id')->paginate();
-				break;
-			case 'resolved':
-				return $this->errors->whereNotNull('fixed_at')->orderByDesc('id')->paginate();
-				break;
-			default:
-				return null;
-				break;
-		}
-	}
-	
 }
