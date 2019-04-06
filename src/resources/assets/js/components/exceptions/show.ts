@@ -1,4 +1,5 @@
 import Echo from 'laravel-echo';
+import * as ExceptionRowTemplate from '../../templates/exceptions/table-rows.hbs';
 
 declare let admin_panel_url: string;
 
@@ -16,7 +17,10 @@ $(function () {
 	//@ts-ignore
 	window.Echo.channel('private-exceptions')
 		.listen('.new', function (e) {
-			alert('New error');
+			let error = e.error;
+			error.exception = JSON.parse(error.exception);
+			$('#errorsTable > tbody')
+				.before(ExceptionRowTemplate({rows: [error], adminUrl: admin_panel_url}));
 		});
 	
 	let body = $('body');
@@ -29,15 +33,18 @@ $(function () {
 	
 	body.on('click', '#eventListener', function () {
 		if ($(this).hasClass('paused')) {
-			$(this).switchClass('paused','listening');
+			$(this).switchClass('paused', 'listening');
 			$(this).html("<i class='fas fa-pause'></i>");
 			//@ts-ignore
 			window.Echo.channel('private-exceptions')
 				.listen('.new', function (e) {
-					alert('New error');
+					let error = e.error;
+					error.exception = JSON.parse(error.exception);
+					$('#errorsTable > tbody')
+						.before(ExceptionRowTemplate({rows: [error], adminUrl: admin_panel_url}));
 				});
 		} else if ($(this).hasClass('listening')) {
-			$(this).switchClass('listening','paused');
+			$(this).switchClass('listening', 'paused');
 			$(this).html("<i class='fas fa-play'></i>");
 			//@ts-ignore
 			window.Echo.leave('private-exceptions');
