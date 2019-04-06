@@ -138,9 +138,12 @@ $(function () {
     var body = $('body'), exceptionID = $('input#exceptionID').data('id');
     body.on('click', '#resolve', function () {
         return __awaiter(this, void 0, void 0, function () {
+            var thisButton;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, modern_gui_1.default.confirm('Sei sicuro di voler risolvere questo errore?')];
+                    case 0:
+                        thisButton = $(this);
+                        return [4 /*yield*/, modern_gui_1.default.confirm('Sei sicuro di voler risolvere questo errore?')];
                     case 1:
                         if (_a.sent()) {
                             $.ajax({
@@ -154,6 +157,7 @@ $(function () {
                                 },
                                 success: function (data) {
                                     $('#fixed_at').text(data);
+                                    thisButton.hide();
                                     notify_1.default.success("L'errore è stato risolto correttamente");
                                 },
                                 error: function (xhr) {

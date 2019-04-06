@@ -9,6 +9,7 @@ $(function () {
 		exceptionID = $('input#exceptionID').data('id');
 	
 	body.on('click', '#resolve', async function () {
+		let thisButton = $(this);
 		if (await ModernGui.confirm('Sei sicuro di voler risolvere questo errore?')) {
 			
 			$.ajax({
@@ -22,6 +23,7 @@ $(function () {
 				},
 				success: function (data) {
 					$('#fixed_at').text(data);
+					thisButton.hide();
 					Notify.success("L'errore è stato risolto correttamente")
 				},
 				error: function (xhr) {
