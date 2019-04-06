@@ -86,6 +86,72 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../../../resources/assets/js/modules/notify.js":
+/*!*********************************************************************************************!*\
+  !*** C:/Users/roberto.ferro/PhpstormProjects/ikpanel/resources/assets/js/modules/notify.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+ *  Copyright (C) Interactive Knowledge Development, Inc - All Rights Reserved
+ *  * Unauthorized copying of this file, via any medium is strictly prohibited
+ *  * Proprietary and confidential
+ *  * Written by Roberto Ferro <roberto.ferro@ikdev.eu>, March 2019
+ *
+ */
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var Notify =
+/** @class */
+function () {
+  function Notify() {}
+
+  Notify.send = function (options) {
+    //@ts-ignore
+    $('body').pgNotification(options).show();
+  };
+
+  Notify.info = function (message) {
+    this.send({
+      type: 'info',
+      message: message
+    });
+  };
+
+  Notify.warning = function (message) {
+    this.send({
+      type: 'warning',
+      message: message
+    });
+  };
+
+  Notify.success = function (message) {
+    this.send({
+      type: 'success',
+      message: message
+    });
+  };
+
+  Notify.danger = function (message) {
+    this.send({
+      type: 'danger',
+      message: message
+    });
+  };
+
+  return Notify;
+}();
+
+exports.default = Notify;
+
+/***/ }),
+
 /***/ "./node_modules/after/index.js":
 /*!*************************************!*\
   !*** ./node_modules/after/index.js ***!
@@ -11565,6 +11631,7 @@ module.exports = yeast;
 Object.defineProperty(exports, "__esModule", { value: true });
 var laravel_echo_1 = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
 var ExceptionRowTemplate = __webpack_require__(/*! ../../templates/exceptions/table-rows.hbs */ "./src/resources/assets/js/templates/exceptions/table-rows.hbs");
+var notify_1 = __webpack_require__(/*! ../../../../../../../../../resources/assets/js/modules/notify */ "../../../resources/assets/js/modules/notify.js");
 $(function () {
     //@ts-ignore
     window.io = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
@@ -11576,10 +11643,16 @@ $(function () {
     //@ts-ignore
     window.Echo.channel('private-exceptions')
         .listen('.new', function (e) {
-        var error = e.error;
-        error.exception = JSON.parse(error.exception);
-        $('#errorsTable > tbody')
-            .before(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }));
+        var statusFilterValue = $('#statusFilter').val();
+        if (statusFilterValue === 'active' || statusFilterValue === 'all') {
+            var error = e.error;
+            error.exception = JSON.parse(error.exception);
+            $('#errorsTable > tbody')
+                .before(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }));
+        }
+        else {
+            notify_1.default.danger("A new exception occurs");
+        }
     });
     var body = $('body');
     $('#statusFilter').select2({ placeholder: 'Seleziona un filtro' });
@@ -11593,10 +11666,16 @@ $(function () {
             //@ts-ignore
             window.Echo.channel('private-exceptions')
                 .listen('.new', function (e) {
-                var error = e.error;
-                error.exception = JSON.parse(error.exception);
-                $('#errorsTable > tbody')
-                    .before(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }));
+                var statusFilterValue = $('#statusFilter').val();
+                if (statusFilterValue === 'active' || statusFilterValue === 'all') {
+                    var error = e.error;
+                    error.exception = JSON.parse(error.exception);
+                    $('#errorsTable > tbody')
+                        .before(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }));
+                }
+                else {
+                    notify_1.default.danger("A new exception occurs");
+                }
             });
         }
         else if ($(this).hasClass('listening')) {

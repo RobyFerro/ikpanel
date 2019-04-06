@@ -5,7 +5,7 @@
 @endsection
 
 @section('section_name')
-	{{ __('ikpanel::users.show.breadcrumb') }}
+	{{ __('ikpanel::users.show.breadcrumb') 7}}
 @endsection
 
 @section('initial_link')
