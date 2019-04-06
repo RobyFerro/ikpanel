@@ -1,7 +1,3 @@
-import FormUtils from "@ikpanel/form_utils";
-import ModernGui from "@ikpanel/modern-gui";
-import * as ExceptionTableContent from "../../templates/exceptions/table-rows.hbs";
-
 declare let admin_panel_url: string;
 
 $(function () {
@@ -12,23 +8,6 @@ $(function () {
 	});
 	
 	body.on('change', '#statusFilter', function () {
-		
-		$.ajax({
-			type: 'GET',
-			url: `${admin_panel_url}/exceptions/filter/${$(this).val()}`,
-			beforeSend: function () {
-				ModernGui.loading(true, 'Caricamento errori in corso...');
-			},
-			success: function (data) {
-				console.log(data.data);
-				$('#errorsTable > tbody').html(ExceptionTableContent({rows: data.data, adminUrl: admin_panel_url}));
-			},
-			error: function (xhr) {
-				FormUtils.sendNotifications(xhr);
-			},
-			complete: function () {
-				ModernGui.loading(false);
-			}
-		})
+		window.location.href = `${admin_panel_url}/exceptions/show/${$(this).val()}`;
 	});
 });

@@ -23,6 +23,7 @@ class Errors extends Model {
 	protected $table = 'error_exception_log';
 	protected $dates = ['fixed_at', 'first_seen', 'last_seen', 'created_at', 'updated_at'];
 	protected $customFormat = "d/m/Y H:i:s";
+	protected $perPage = 10;
 	protected $dispatchesEvents = [
 		"created" => FoundExceptions::class
 	];

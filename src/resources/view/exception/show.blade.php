@@ -40,16 +40,16 @@
 								        tabindex="-1"
 								        aria-hidden="true"
 								        autocomplete="off">
-									<option value="resolved">
-										{{ __('ikpanel::exceptions.show.status_filter.options.resolved') }}
-									</option>
-									<option value="active">
+									<option value="active" @if($filter === 'active') selected="selected" @endif>
 										{{ __('ikpanel::exceptions.show.status_filter.options.active') }}
 									</option>
-									<option value="all">
+									<option value="resolved" @if($filter === 'resolved') selected="selected" @endif>
+										{{ __('ikpanel::exceptions.show.status_filter.options.resolved') }}
+									</option>
+									<option value="all" @if($filter === 'all') selected="selected" @endif>
 										{{ __('ikpanel::exceptions.show.status_filter.options.all') }}
 									</option>
-									<option value="deleted">
+									<option value="deleted" @if($filter === 'deleted') selected="selected" @endif>
 										{{ __('ikpanel::exceptions.show.status_filter.options.deleted') }}
 									</option>
 								</select>

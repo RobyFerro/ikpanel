@@ -23,11 +23,9 @@ class ExceptionController extends BaseController {
 	 * @var Errors
 	 */
 	protected $errors;
-	protected $itemInPage;
 	
 	public function __construct(Errors $errors) {
 		$this->errors = $errors;
-		$this->itemInPage = 10;
 	}
 	
 	/**
@@ -40,11 +38,32 @@ class ExceptionController extends BaseController {
 	
 	/**
 	 * Show all reported exceptions
+	 * @param string $filter
 	 * @return Factory|View
 	 */
-	public function show() {
+	public function show($filter = 'active') {
+		
+		switch ($filter) {
+			case 'active':
+				$exceptions = $this->errors->whereNull('fixed_at')->orderByDesc('id')->paginate();
+				break;
+			case 'all':
+				$exceptions = $this->errors->withTrashed()->orderByDesc('id')->paginate();
+				break;
+			case 'deleted':
+				$exceptions = $this->errors->onlyTrashed()->orderByDesc('id')->paginate();
+				break;
+			case 'resolved':
+				$exceptions = $this->errors->whereNotNull('fixed_at')->orderByDesc('id')->paginate();
+				break;
+			default:
+				return null;
+				break;
+		}
+		
 		return view('ikpanel::exception.show')->with([
-			'exceptions' => $this->errors->orderByDesc('id')->paginate($this->itemInPage)
+			'exceptions' => $exceptions,
+			'filter'     => $filter
 		]);
 	}
 	
@@ -104,16 +123,16 @@ class ExceptionController extends BaseController {
 		
 		switch ($filter) {
 			case 'active':
-				return $this->errors->whereNull('fixed_at')->orderByDesc('id')->paginate($this->itemInPage);
+				return $this->errors->whereNull('fixed_at')->orderByDesc('id')->paginate();
 				break;
 			case 'all':
-				return $this->errors->withTrashed()->orderByDesc('id')->paginate($this->itemInPage);
+				return $this->errors->withTrashed()->orderByDesc('id')->paginate();
 				break;
 			case 'deleted':
-				return $this->errors->onlyTrashed()->orderByDesc('id')->paginate($this->itemInPage);
+				return $this->errors->onlyTrashed()->orderByDesc('id')->paginate();
 				break;
 			case 'resolved':
-				return $this->errors->whereNotNull('fixed_at')->orderByDesc('id')->paginate($this->itemInPage);
+				return $this->errors->whereNotNull('fixed_at')->orderByDesc('id')->paginate();
 				break;
 			default:
 				return null;
