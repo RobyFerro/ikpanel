@@ -55,6 +55,11 @@
 								</select>
 							</div>
 						</div>
+						<div class="col-md-1">
+							<button class="btn btn-lg listening" style="height: 85%" id="eventListener">
+								<i class="fas fa-pause"></i>
+							</button>
+						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
