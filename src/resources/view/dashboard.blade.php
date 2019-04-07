@@ -109,11 +109,6 @@
 		<!-- END SIDEBAR HEADER -->
 		<!-- BEGIN SIDEBAR MENU -->
 		<div class="sidebar-menu">
-			{{-- NAVIGATION IN VUE JS --}}
-			{{--<ul class="menu-items" id="navigation">
-				<navigation></navigation>
-			</ul>--}}
-			{{-- NAVIGATION IN VUE JS --}}
 			<ul class="menu-items">
 				@component('ikpanel::navigation',
 				['items' => \ikdev\ikpanel\App\Http\Controllers\ikpanelController::getUserMenu()])
@@ -166,6 +161,17 @@
 				</div>
 			</div>
 			<!-- END MOBILE CONTROLS -->--}}
+			<div class="pull-left full-height visible-sm visible-xs">
+				<!-- START ACTION BAR -->
+				<div class="header-inner">
+					<a href="#"
+					   class="btn-link toggle-sidebar visible-sm-inline-block visible-xs-inline-block padding-5"
+					   data-toggle="sidebar">
+						<span class="fas fa-bars"></span>
+					</a>
+				</div>
+				<!-- END ACTION BAR -->
+			</div>
 			<div class=" pull-left sm-table hidden-xs hidden-sm">
 				<div class="header-inner">
 					<div class="brand inline">
