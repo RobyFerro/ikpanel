@@ -1133,6 +1133,17 @@ exports.default = Notify;
 
 /***/ }),
 
+/***/ "./src/resources/assets/sass/404.scss":
+/*!********************************************!*\
+  !*** ./src/resources/assets/sass/404.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./src/resources/assets/sass/ikpanel.scss":
 /*!************************************************!*\
   !*** ./src/resources/assets/sass/ikpanel.scss ***!
@@ -1145,14 +1156,15 @@ exports.default = Notify;
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************!*\
-  !*** multi ./src/resources/assets/js/components/exceptions/edit.ts ./src/resources/assets/sass/ikpanel.scss ***!
-  \**************************************************************************************************************/
+/*!***************************************************************************************************************************************************!*\
+  !*** multi ./src/resources/assets/js/components/exceptions/edit.ts ./src/resources/assets/sass/ikpanel.scss ./src/resources/assets/sass/404.scss ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\resources\assets\js\components\exceptions\edit.ts */"./src/resources/assets/js/components/exceptions/edit.ts");
-module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\resources\assets\sass\ikpanel.scss */"./src/resources/assets/sass/ikpanel.scss");
+__webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\resources\assets\sass\ikpanel.scss */"./src/resources/assets/sass/ikpanel.scss");
+module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\resources\assets\sass\404.scss */"./src/resources/assets/sass/404.scss");
 
 
 /***/ })

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2380,7 +2380,7 @@ exports.default = WidgetsEdit;
 
 /***/ }),
 
-/***/ 16:
+/***/ 17:
 /*!**************************************************************************!*\
   !*** multi ./src/resources/assets/js/components/widgets/widgets-edit.ts ***!
   \**************************************************************************/

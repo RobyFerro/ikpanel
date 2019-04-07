@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -34352,7 +34352,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 /***/ }),
 
-/***/ 15:
+/***/ 16:
 /*!*********************************************************************!*\
   !*** multi ./src/resources/assets/js/components/widgets/widgets.ts ***!
   \*********************************************************************/

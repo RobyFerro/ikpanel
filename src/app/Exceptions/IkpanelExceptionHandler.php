@@ -56,9 +56,9 @@ class IkpanelExceptionHandler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $exception) {
 		if ($exception instanceof NotFoundHttpException) {
-			return response()->view('errors.404', [], 404);
+			return response()->view('ikpanel::errors.404-error');
 		} elseif ($exception instanceof AuthorizationException) {
-			return response()->view('ikpanel::errors.403');
+			return response()->view('ikpanel::errors.403-error');
 		} // if
 		
 		return parent::render($request, $exception);

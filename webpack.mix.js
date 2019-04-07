@@ -14,8 +14,11 @@ let mix = require('laravel-mix');
 // Errors
 mix.ts('src/resources/assets/js/components/exceptions/edit.ts', 'src/public/assets/js/exceptions')
 	.ts('src/resources/assets/js/components/exceptions/show.ts', 'src/public/assets/js/exceptions')
+	.ts('src/resources/assets/js/components/errors/404.ts', 'src/public/assets/js/errors')
 	.copy('src/public/assets/js/exceptions/*.js', '../../../public/ikpanel/plugins/js/exceptions')
-	.copy('src/public/assets/js/exceptions/*.js.map', '../../../public/ikpanel/plugins/js/exceptions');
+	.copy('src/public/assets/js/exceptions/*.js.map', '../../../public/ikpanel/plugins/js/exceptions')
+	.copy('src/public/assets/js/errors/*.js', '../../../public/ikpanel/plugins/js/errors')
+	.copy('src/public/assets/js/errors/*.js.map', '../../../public/ikpanel/plugins/js/errors');
 
 // Blog articles
 mix.ts('src/Modules/blog/resources/assets/js/components/articles/edit.ts', 'src/Modules/blog/public/js/articles')
@@ -58,7 +61,9 @@ mix.ts('src/resources/assets/js/components/guard.ts', 'src/public/assets/js')
 
 // Sass
 mix.sass('src/resources/assets/sass/ikpanel.scss', 'src/public/assets/css')
-	.copy('src/public/assets/css/ikpanel.css*', '../../../public/ikpanel/assets/css');
+	.sass('src/resources/assets/sass/404.scss', 'src/public/assets/css')
+	.copy('src/public/assets/css/ikpanel.css*', '../../../public/ikpanel/assets/css')
+	.copy('src/public/assets/css/404.css*', '../../../public/ikpanel/assets/css');
 
 if(!mix.inProduction()) {
 	mix.sourceMaps();
