@@ -759,8 +759,8 @@ tr.table-active {
 	0% {
 	}
 	50% {
-		background: rgba(249, 220, 61, 0.8);
-		border-color: rgba(249, 220, 61, 0.8);
+		background: lightblue;
+		border-color: lightblue;
 	}
 	100% {
 	}
@@ -905,4 +905,11 @@ tr.table-active {
 		letter-spacing: 0.06em;
 		line-height: 34.5px;
 	}
+}
+
+#errorsTable tr.new-exception > td {
+	animation-name: pulse_animation;
+	animation-duration: 3000ms;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
 }

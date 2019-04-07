@@ -767,15 +767,15 @@ tr.table-active > th * {
 
 @-webkit-keyframes pulse_animation {
   50% {
-    background: rgba(249, 220, 61, 0.8);
-    border-color: rgba(249, 220, 61, 0.8);
+    background: lightblue;
+    border-color: lightblue;
   }
 }
 
 @keyframes pulse_animation {
   50% {
-    background: rgba(249, 220, 61, 0.8);
-    border-color: rgba(249, 220, 61, 0.8);
+    background: lightblue;
+    border-color: lightblue;
   }
 }
 
@@ -914,6 +914,17 @@ tr.table-active > th * {
   font-family: "Montserrat";
   letter-spacing: 0.06em;
   line-height: 34.5px;
+}
+
+#errorsTable tr.new-exception > td {
+  -webkit-animation-name: pulse_animation;
+          animation-name: pulse_animation;
+  -webkit-animation-duration: 3000ms;
+          animation-duration: 3000ms;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
 }
 
 

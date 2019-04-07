@@ -11647,12 +11647,10 @@ $(function () {
         if (statusFilterValue === 'active' || statusFilterValue === 'all') {
             var error = e.error;
             error.exception = JSON.parse(error.exception);
-            $('#errorsTable > tbody')
-                .before(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }));
+            $(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }))
+                .insertBefore('#errorsTable > tbody > tr:first-child');
         }
-        else {
-            notify_1.default.danger("A new exception occurs");
-        }
+        notify_1.default.danger("A new exception occurs");
     });
     var body = $('body');
     $('#statusFilter').select2({ placeholder: 'Seleziona un filtro' });
@@ -11670,12 +11668,10 @@ $(function () {
                 if (statusFilterValue === 'active' || statusFilterValue === 'all') {
                     var error = e.error;
                     error.exception = JSON.parse(error.exception);
-                    $('#errorsTable > tbody')
-                        .before(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }));
+                    $(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }))
+                        .insertBefore('#errorsTable > tbody > tr:first-child');
                 }
-                else {
-                    notify_1.default.danger("A new exception occurs");
-                }
+                notify_1.default.danger("A new exception occurs");
             });
         }
         else if ($(this).hasClass('listening')) {
@@ -11799,7 +11795,7 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, helper, alias1=container.escapeExpression, alias2=depth0 != null ? depth0 : (container.nullContext || {}), alias3=helpers.helperMissing, alias4="function";
 
-  return "	<tr>\n		<td>\n			<a href=\""
+  return "	<tr class=\"new-exception\">\n		<td>\n			<a href=\""
     + alias1(container.lambda((depths[1] != null ? depths[1].adminUrl : depths[1]), depth0))
     + "/exceptions/edit/"
     + alias1(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias3),(typeof helper === alias4 ? helper.call(alias2,{"name":"id","hash":{},"data":data,"blockParams":blockParams}) : helper)))

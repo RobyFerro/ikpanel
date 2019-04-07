@@ -22,11 +22,10 @@ $(function () {
 			if (statusFilterValue === 'active' || statusFilterValue === 'all') {
 				let error = e.error;
 				error.exception = JSON.parse(error.exception);
-				$('#errorsTable > tbody')
-					.before(ExceptionRowTemplate({rows: [error], adminUrl: admin_panel_url}));
-			} else {
-				Notify.danger("A new exception occurs");
+				$(ExceptionRowTemplate({rows: [error], adminUrl: admin_panel_url}))
+					.insertBefore('#errorsTable > tbody > tr:first-child');
 			}
+			Notify.danger("A new exception occurs");
 		});
 	
 	let body = $('body');
@@ -48,11 +47,10 @@ $(function () {
 					if (statusFilterValue === 'active' || statusFilterValue === 'all') {
 						let error = e.error;
 						error.exception = JSON.parse(error.exception);
-						$('#errorsTable > tbody')
-							.before(ExceptionRowTemplate({rows: [error], adminUrl: admin_panel_url}));
-					} else {
-						Notify.danger("A new exception occurs");
+						$(ExceptionRowTemplate({rows: [error], adminUrl: admin_panel_url}))
+							.insertBefore('#errorsTable > tbody > tr:first-child');
 					}
+					Notify.danger("A new exception occurs");
 				});
 		} else if ($(this).hasClass('listening')) {
 			$(this).switchClass('listening', 'paused');
