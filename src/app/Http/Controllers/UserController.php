@@ -91,7 +91,6 @@ class UserController extends BaseController {
 			$user->surname = $request->surname;
 			$user->email = $request->mail;
 			$user->role = $request->role;
-			$user->username = $request->username;
 			$user->password = bcrypt($request->password);
 			$user->save();
 			
@@ -159,6 +158,7 @@ class UserController extends BaseController {
 			$user->name = $request->name;
 			$user->surname = $request->surname;
 			$user->role = $request->role;
+			$user->report_exceptions = $request->exceptionReports;
 			
 			if (!empty($request->password)) {
 				$user->password = bcrypt($request->password);

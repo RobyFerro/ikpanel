@@ -9,8 +9,8 @@
 
 namespace ikdev\ikpanel\App\Http\Requests\users;
 
+use ikdev\ikpanel\App\Traits\Requests\HandleJsonRequest;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
 /**
  * Class AddUserRequest
@@ -24,25 +24,7 @@ use Illuminate\Http\Request;
  */
 class AddUserRequest extends FormRequest {
 	
-	/**
-	 * AddUserRequest constructor.
-	 * @param Request $request
-	 */
-	public function __construct(Request $request) {
-		
-		$data = json_decode($request->data, true);
-		$request->request->remove('data');
-		
-		foreach ($data as $item) {
-			$myvalue = isset($item['value']) ? $item['value'] : null;
-			
-			if (is_string($myvalue) && strlen($myvalue) == 0) {
-				$myvalue = null;
-			} // if
-			
-			$request->request->set($item['id'], $myvalue);
-		} // foreach
-	}
+	use HandleJsonRequest;
 	
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -58,17 +40,16 @@ class AddUserRequest extends FormRequest {
 	 *
 	 * @return array
 	 */
-	public function rules(Request $request) {
-		$rules = [];
+	public function rules() {
+		return [
+			'name'             => 'required|min:1|max:50',
+			'surname'          => 'required|min:1|max:50',
+			'mail'             => 'required|email|max:50|unique:users,email',
+			'password'         => 'required|min:1|max:255|same:repassword|required_with:repassword',
+			'role'             => 'required|exists:role,id',
+			'avatar'           => 'nullable|file|mimes:jpeg,png,jpg|max:2048|dimensions:min_width=50',
+		];
 		
-		$rules['name'] = 'required|min:1|max:50';
-		$rules['surname'] = 'required|min:1|max:50';
-		$rules['mail'] = 'required|email|max:50|unique:users,email';
-		$rules['password'] = 'required|min:1|max:255|same:repassword|required_with:repassword';
-		$rules['role'] = 'required|exists:role,id';
-		$rules['avatar'] = 'nullable|file|mimes:jpeg,png,jpg|max:2048|dimensions:min_width=50';
-		
-		return $rules;
 	}
 	
 	/**
@@ -76,33 +57,32 @@ class AddUserRequest extends FormRequest {
 	 * @return array
 	 */
 	public function messages() {
-		$message = [];
 		
-		$message['id.required'] = 'Il campo "id" è richiesto.';
-		$message['id.exists'] = 'Questo candidato non esiste.';
-		$message['name.required'] = 'Il campo "Nome" è richiesto.';
-		$message['name.max'] = 'Il campo "Nome" deve avere massimo 50 caratteri.';
-		$message['name.min'] = 'Il campo "Nome" deve avere minimo 1 carattere.';
-		$message['surname.required'] = 'Il campo "Cognome" è richiesto.';
-		$message['surname.max'] = 'Il campo "Cognome" deve avere massimo 50 caratteri.';
-		$message['surname.min'] = 'Il campo "Cognome" deve avere minimo 1 carattere.';
-		$message['mail.max'] = 'Il campo "Email" deve avere massimo 255 caratteri.';
-		$message['mail.email'] = 'Il campo "Email" non contiene una email valida.';
-		$message['mail.unique'] = 'Il campo "Email" esiste già nel database.';
-		$message['mail.required'] = 'Il campo "Email" è richiesto.';
-		$message['password.max'] = 'Il campo "Password" deve avere massimo 255 caratteri.';
-		$message['password.min'] = 'Il campo "Password" deve avere minimo 1 carattere.';
-		$message['password.same'] = 'Il campo "Password" deve essere uguale al campo "Ripeti password".';
-		$message['password.required_with'] = 'Il campo "Ripeti password" è richiesto.';
-		$message['password.required'] = 'Il campo "Password" è richiesto.';
-		$message['role.required'] = 'Il campo "Ruolo" è richiesto.';
-		$message['role.exists'] = 'Il ruolo selezionato non esiste.';
-		$message['avatar.required'] = 'La foto del candidato è richiesta!';
-		$message['avatar.mimes'] = 'La foto del candidato deve essere un file jpeg o png!';
-		$message['avatar.file'] = 'La foto del candidato deve essere un file.';
-		$message['avatar.max'] = 'La foto del candidato non può superare i 2MB di grandezza!';
-		$message['avatar.dimensions'] = 'La foto del candidato deve essere minimo di 50 pixel larghezza/altezza.';
-		
-		return $message;
+		return [
+			'id.required'            => 'Il campo "id" è richiesto.',
+			'id.exists'              => 'Questo candidato non esiste.',
+			'name.required'          => 'Il campo "Nome" è richiesto.',
+			'name.max'               => 'Il campo "Nome" deve avere massimo 50 caratteri.',
+			'name.min'               => 'Il campo "Nome" deve avere minimo 1 carattere.',
+			'surname.required'       => 'Il campo "Cognome" è richiesto.',
+			'surname.max'            => 'Il campo "Cognome" deve avere massimo 50 caratteri.',
+			'surname.min'            => 'Il campo "Cognome" deve avere minimo 1 carattere.',
+			'mail.max'               => 'Il campo "Email" deve avere massimo 255 caratteri.',
+			'mail.email'             => 'Il campo "Email" non contiene una email valida.',
+			'mail.unique'            => 'Il campo "Email" esiste già nel database.',
+			'mail.required'          => 'Il campo "Email" è richiesto.',
+			'password.max'           => 'Il campo "Password" deve avere massimo 255 caratteri.',
+			'password.min'           => 'Il campo "Password" deve avere minimo 1 carattere.',
+			'password.same'          => 'Il campo "Password" deve essere uguale al campo "Ripeti password".',
+			'password.required_with' => 'Il campo "Ripeti password" è richiesto.',
+			'password.required'      => 'Il campo "Password" è richiesto.',
+			'role.required'          => 'Il campo "Ruolo" è richiesto.',
+			'role.exists'            => 'Il ruolo selezionato non esiste.',
+			'avatar.required'        => 'La foto del candidato è richiesta!',
+			'avatar.mimes'           => 'La foto del candidato deve essere un file jpeg o png!',
+			'avatar.file'            => 'La foto del candidato deve essere un file.',
+			'avatar.max'             => 'La foto del candidato non può superare i 2MB di grandezza!',
+			'avatar.dimensions'      => 'La foto del candidato deve essere minimo di 50 pixel larghezza/altezza.'
+		];
 	}
 }

@@ -96,6 +96,23 @@
 							</div>
 						</div>
 					</div>
+					@can('exceptions.view')
+						<div class="row">
+							<div class="col-md-12">
+								<div class="checkbox check-warning">
+									<input type="checkbox"
+									       @if($user->report_exceptions)
+									       checked="checked"
+									       @endif
+									       value="report" id="exceptionReports"
+									       class="form-data">
+									<label for="exceptionReports">
+										{{ __('ikpanel::users.edit.inputs.report-exceptions') }}
+									</label>
+								</div>
+							</div>
+						</div>
+					@endcan
 				</div>
 			</div>
 		</div>
@@ -118,7 +135,7 @@
 										     src="{{url($user->avatar)}}"
 										     @else
 										     src="{{asset('ikpanel/assets/img/profiles/avatar-default.png')}}"
-												@endif
+											@endif
 										/>
 										<div id="avatar-button" class="avatar-cool-edit">
 											<i class="fas fa-pencil-alt fa-fw"></i>
@@ -142,7 +159,8 @@
 								        autocomplete="off">
 									<option selected hidden></option>
 									@foreach($roles as $role)
-										<option value="{{ $role->id }}" {{$role->isSelected}}>{{ $role->group_name }}</option>
+										<option
+											value="{{ $role->id }}" {{$role->isSelected}}>{{ $role->group_name }}</option>
 									@endforeach
 								</select>
 							</div>

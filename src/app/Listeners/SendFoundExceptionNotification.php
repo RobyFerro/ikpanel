@@ -16,13 +16,14 @@ use Illuminate\Support\Facades\Notification;
 
 class SendFoundExceptionNotification implements ShouldQueue {
 	
-	public function __construct() {
-		//
+	protected $users;
+	
+	public function __construct(Users $users) {
+		$this->users = $users->where('report_exceptions', true)->get();
 	}
 	
-	// Todo: Change users
 	public function handle(FoundExceptions $event) {
-		Notification::send(Users::find(1), new ReportException($event->error));
+		Notification::send($this->users, new ReportException($event->error));
 	}
 	
 }
