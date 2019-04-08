@@ -11633,6 +11633,7 @@ var laravel_echo_1 = __webpack_require__(/*! laravel-echo */ "./node_modules/lar
 var ExceptionRowTemplate = __webpack_require__(/*! ../../templates/exceptions/table-rows.hbs */ "./src/resources/assets/js/templates/exceptions/table-rows.hbs");
 var notify_1 = __webpack_require__(/*! ../../../../../../../../../resources/assets/js/modules/notify */ "../../../resources/assets/js/modules/notify.js");
 $(function () {
+    var body = $('body'), eventListener = $('#eventListener');
     //@ts-ignore
     window.io = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
     //@ts-ignore
@@ -11640,19 +11641,24 @@ $(function () {
         broadcaster: 'socket.io',
         host: window.location.hostname + ':6001'
     });
-    //@ts-ignore
-    window.Echo.channel('private-exceptions')
-        .listen('.new', function (e) {
-        var statusFilterValue = $('#statusFilter').val();
-        if (statusFilterValue === 'active' || statusFilterValue === 'all') {
-            var error = e.error;
-            error.exception = JSON.parse(error.exception);
-            $(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }))
-                .insertBefore('#errorsTable > tbody > tr:first-child');
-        }
-        notify_1.default.danger("A new exception occurs");
-    });
-    var body = $('body');
+    if (localStorage.getItem('exceptionStreaming') !== null && localStorage.getItem('exceptionStreaming') === 'paused') {
+        eventListener.switchClass('listening', 'paused');
+        eventListener.html("<i class='fas fa-play'></i>");
+    }
+    else {
+        //@ts-ignore
+        window.Echo.channel('private-exceptions')
+            .listen('.new', function (e) {
+            var statusFilterValue = $('#statusFilter').val();
+            if (statusFilterValue === 'active' || statusFilterValue === 'all') {
+                var error = e.error;
+                error.exception = JSON.parse(error.exception);
+                $(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }))
+                    .insertBefore('#errorsTable > tbody > tr:first-child');
+            }
+            notify_1.default.danger("A new exception occurs");
+        });
+    }
     $('#statusFilter').select2({ placeholder: 'Seleziona un filtro' });
     body.on('change', '#statusFilter', function () {
         window.location.href = admin_panel_url + "/exceptions/show/" + $(this).val();
@@ -11661,6 +11667,7 @@ $(function () {
         if ($(this).hasClass('paused')) {
             $(this).switchClass('paused', 'listening');
             $(this).html("<i class='fas fa-pause'></i>");
+            localStorage.setItem('exceptionStreaming', 'listening');
             //@ts-ignore
             window.Echo.channel('private-exceptions')
                 .listen('.new', function (e) {
@@ -11677,6 +11684,7 @@ $(function () {
         else if ($(this).hasClass('listening')) {
             $(this).switchClass('listening', 'paused');
             $(this).html("<i class='fas fa-play'></i>");
+            localStorage.setItem('exceptionStreaming', 'paused');
             //@ts-ignore
             window.Echo.leave('private-exceptions');
         }
