@@ -128,5 +128,5 @@
 
 @section('final_script')
 	<script type="text/javascript" src="{{ asset('ikpanel/assets/plugins/select2/js/select2.js') }}"></script>
-	<script src="{{asset('ikpanel/plugins/js/exceptions/show.js')}}"></script>
+	<script src="{{asset('ikpanel/assets/js/exceptions/show.js')}}"></script>
 @endsection
