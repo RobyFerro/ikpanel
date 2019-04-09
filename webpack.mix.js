@@ -15,10 +15,10 @@ let mix = require('laravel-mix');
 mix.ts('src/resources/assets/js/components/exceptions/edit.ts', 'src/public/assets/js/exceptions')
 	.ts('src/resources/assets/js/components/exceptions/show.ts', 'src/public/assets/js/exceptions')
 	.ts('src/resources/assets/js/components/errors/404.ts', 'src/public/assets/js/errors')
-	.copy('src/public/assets/js/exceptions/*.js', '../../../public/ikpanel/plugins/js/exceptions')
-	.copy('src/public/assets/js/exceptions/*.js.map', '../../../public/ikpanel/plugins/js/exceptions')
-	.copy('src/public/assets/js/errors/*.js', '../../../public/ikpanel/plugins/js/errors')
-	.copy('src/public/assets/js/errors/*.js.map', '../../../public/ikpanel/plugins/js/errors');
+	.copy('src/public/assets/js/exceptions/*.js', '../../../public/ikpanel/assets/js/exceptions')
+	.copy('src/public/assets/js/exceptions/*.js.map', '../../../public/ikpanel/assets/js/exceptions')
+	.copy('src/public/assets/js/errors/*.js', '../../../public/ikpanel/assets/js/errors')
+	.copy('src/public/assets/js/errors/*.js.map', '../../../public/ikpanel/assets/js/errors');
 
 // Blog articles
 mix.ts('src/Modules/blog/resources/assets/js/components/articles/edit.ts', 'src/Modules/blog/public/js/articles')
