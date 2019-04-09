@@ -28,5 +28,5 @@
 	        src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js') }}"></script>
 	<script type="text/javascript"
 	        src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/datatables.responsive.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('ikpanel/plugins/js/widgets/widgets.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('ikpanel/assets/js/widgets/widgets.js') }}"></script>
 @endsection
