@@ -23,7 +23,9 @@ class SendFoundExceptionNotification implements ShouldQueue {
 	}
 	
 	public function handle(FoundExceptions $event) {
-		Notification::send($this->users, new ReportException($event->error));
+		if ($this->users->count() !== 0) {
+			Notification::send($this->users, new ReportException($event->error));
+		}
 	}
 	
 }
