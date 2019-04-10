@@ -15,6 +15,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\View\View;
 
 class ExceptionController extends BaseController {
@@ -63,7 +64,8 @@ class ExceptionController extends BaseController {
 		
 		return view('ikpanel::exception.show')->with([
 			'exceptions' => $exceptions,
-			'filter'     => $filter
+			'filter'     => $filter,
+			'broadcast'  => Config::get('ikpanel-config.broadcasting') ? 'active' : 'disabled'
 		]);
 	}
 	

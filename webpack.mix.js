@@ -56,8 +56,8 @@ mix.ts('src/resources/assets/js/components/widgets/widgets.ts', 'src/public/asse
 
 // Error tracker
 mix.ts('src/resources/assets/js/components/guard.ts', 'src/public/assets/js')
-	.copy('src/public/assets/js/guard.js', '../../../public/ikpanel/plugins/js')
-	.copy('src/public/assets/js/guard.js.map', '../../../public/ikpanel/plugins/js');
+	.copy('src/public/assets/js/guard.js', '../../../public/ikpanel/assets/js')
+	.copy('src/public/assets/js/guard.js.map', '../../../public/ikpanel/assets/js');
 
 // Sass
 mix.sass('src/resources/assets/sass/ikpanel.scss', 'src/public/assets/css')
