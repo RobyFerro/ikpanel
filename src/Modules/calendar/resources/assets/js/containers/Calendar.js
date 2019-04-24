@@ -34,7 +34,7 @@ class Calendar extends Component {
 		return (
 			<div>
 				<FullCalendar dateClick={this.handleDateClick} plugins={[dayGridPlugin, interactionPlugin]}/>
-				<Modal show={this.state.modalShow} onHide={this.handleModalHide}>
+				<Modal show={this.state.modalShow} onHide={this.handleModalHide} size="lg">
 					<Modal.Header closeButton>
 						<Modal.Title>Modal heading</Modal.Title>
 					</Modal.Header>
