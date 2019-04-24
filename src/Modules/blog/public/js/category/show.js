@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1422,7 +1422,7 @@ exports.default = ItemInPage;
 
 /***/ }),
 
-/***/ 9:
+/***/ 10:
 /*!**********************************************************************************!*\
   !*** multi ./src/Modules/blog/resources/assets/js/components/categories/show.ts ***!
   \**********************************************************************************/

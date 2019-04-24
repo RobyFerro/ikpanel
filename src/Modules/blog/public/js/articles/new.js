@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -989,7 +989,7 @@ exports.default = ModernGui;
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /*!*******************************************************************************!*\
   !*** multi ./src/Modules/blog/resources/assets/js/components/articles/new.ts ***!
   \*******************************************************************************/

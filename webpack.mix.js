@@ -41,6 +41,11 @@ mix.ts('src/Modules/gallery/resources/assets/js/components/categories/edit.ts', 
 	.copy('src/Modules/gallery/public/js/category/*.js', '../../../public/ikpanel/modules/gallery/js/category')
 	.copy('src/Modules/gallery/public/js/category/*.js.map', '../../../public/ikpanel/modules/gallery/js/category');
 
+// Calendar
+mix.react('src/Modules/calendar/resources/assets/js/index.js', 'src/Modules/calendar/public/js')
+	.copy('src/Modules/calendar/public/js/*.js', '../../../public/ikpanel/modules/calendar/js')
+	.copy('src/Modules/calendar/public/js/*.js.map', '../../../public/ikpanel/modules/calendar/js');
+
 // Gallery images
 mix.ts('src/Modules/gallery/resources/assets/js/components/images/edit.ts', 'src/Modules/gallery/public/js/images')
 	.ts('src/Modules/gallery/resources/assets/js/components/images/new.ts', 'src/Modules/gallery/public/js/images')

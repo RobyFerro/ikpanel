@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1133,38 +1133,14 @@ exports.default = Notify;
 
 /***/ }),
 
-/***/ "./src/resources/assets/sass/404.scss":
-/*!********************************************!*\
-  !*** ./src/resources/assets/sass/404.scss ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./src/resources/assets/sass/ikpanel.scss":
-/*!************************************************!*\
-  !*** ./src/resources/assets/sass/ikpanel.scss ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!***************************************************************************************************************************************************!*\
-  !*** multi ./src/resources/assets/js/components/exceptions/edit.ts ./src/resources/assets/sass/ikpanel.scss ./src/resources/assets/sass/404.scss ***!
-  \***************************************************************************************************************************************************/
+/***/ 1:
+/*!*********************************************************************!*\
+  !*** multi ./src/resources/assets/js/components/exceptions/edit.ts ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\resources\assets\js\components\exceptions\edit.ts */"./src/resources/assets/js/components/exceptions/edit.ts");
-__webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\resources\assets\sass\ikpanel.scss */"./src/resources/assets/sass/ikpanel.scss");
-module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\resources\assets\sass\404.scss */"./src/resources/assets/sass/404.scss");
+module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects\ikpanel\packages\ikdev\ikpanel\src\resources\assets\js\components\exceptions\edit.ts */"./src/resources/assets/js/components/exceptions/edit.ts");
 
 
 /***/ })

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -5121,7 +5121,7 @@ if (typeof WebSocket !== 'undefined') {
   BrowserWebSocket = self.WebSocket || self.MozWebSocket;
 } else {
   try {
-    NodeWebSocket = __webpack_require__(/*! ws */ 2);
+    NodeWebSocket = __webpack_require__(/*! ws */ 3);
   } catch (e) { }
 }
 
@@ -11837,7 +11837,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*********************************************************************!*\
   !*** multi ./src/resources/assets/js/components/exceptions/show.ts ***!
   \*********************************************************************/
@@ -11849,7 +11849,7 @@ module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!********************!*\
   !*** ws (ignored) ***!
   \********************/

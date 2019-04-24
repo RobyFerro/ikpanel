@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1030,7 +1030,7 @@ exports.default = ModernGui;
 
 /***/ }),
 
-/***/ 10:
+/***/ 11:
 /*!*************************************************************************************!*\
   !*** multi ./src/Modules/gallery/resources/assets/js/components/categories/edit.ts ***!
   \*************************************************************************************/
