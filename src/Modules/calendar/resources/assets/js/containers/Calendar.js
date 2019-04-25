@@ -2,58 +2,49 @@ import React, {Component} from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import {Modal, Button} from 'react-bootstrap';
+import {Event} from '../components/Event';
+import {connect} from 'react-redux';
+import {newEvent, editEvent, closeEvent} from "../actions/eventActions";
 import moment from 'moment';
+import Fade from 'react-reveal/Fade';
 import '../../sass/main.scss';
 
 class Calendar extends Component {
 	
-	constructor(props) {
-		super(props);
-		this.handleDateClick.bind(this);
-		this.handleModalHide.bind(this);
-	}
-	
-	state = {
-		modalShow: false,
-		selectedDate: null
-	};
-	
-	handleDateClick = (arg) => {
-		this.setState({
-			modalShow: true,
-			selectedDate: moment(arg.date).format('DD/MM/YYYY')
-		});
-	};
-	
-	handleModalHide = () => {
-		this.setState({modalShow: false});
-	};
-	
 	render() {
 		return (
 			<div>
-				<FullCalendar dateClick={this.handleDateClick} plugins={[dayGridPlugin, interactionPlugin]}/>
-				<Modal show={this.state.modalShow} onHide={this.handleModalHide} size="lg">
-					<Modal.Header closeButton>
-						<Modal.Title>Modal heading</Modal.Title>
-					</Modal.Header>
-					<Modal.Body>
-						<p>{this.state.selectedDate}</p>
-					</Modal.Body>
-					<Modal.Footer>
-						<Button variant="secondary" onClick={this.handleModalHide}>
-							Close
-						</Button>
-						<Button variant="primary" onClick={this.handleModalHide}>
-							Save Changes
-						</Button>
-					</Modal.Footer>
-				</Modal>
+				<Fade>
+					<FullCalendar dateClick={this.props.newEvent}
+					              plugins={[dayGridPlugin, interactionPlugin]}/>
+					<Event show={this.props.event.showModal}
+					       data={this.props.event.selectedDate}
+					       closeModal={() => this.props.closeEvent()}/>
+				</Fade>
 			</div>
 		);
 	}
 	
 }
 
-export default Calendar;
+const mapStateToProps = (state) => {
+	return {
+		event: state.event
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		newEvent: (data) => {
+			dispatch(newEvent(data));
+		},
+		editEvent: (data) => {
+			dispatch(editEvent(data));
+		},
+		closeEvent: (data) => {
+			dispatch(closeEvent(data));
+		}
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
