@@ -5,7 +5,6 @@ import interactionPlugin from '@fullcalendar/interaction';
 import {Event} from '../components/Event';
 import {connect} from 'react-redux';
 import {newEvent, editEvent, closeEvent} from "../actions/eventActions";
-import moment from 'moment';
 import Fade from 'react-reveal/Fade';
 import '../../sass/main.scss';
 
@@ -19,6 +18,7 @@ class Calendar extends Component {
 					              plugins={[dayGridPlugin, interactionPlugin]}/>
 					<Event show={this.props.event.showModal}
 					       data={this.props.event.selectedDate}
+					       title={this.props.event.title}
 					       closeModal={() => this.props.closeEvent()}/>
 				</Fade>
 			</div>

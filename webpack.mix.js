@@ -90,7 +90,7 @@ if(!mix.inProduction()) {
 							knownHelpersOnly: false,
 						},
 						helperDirs: path.join(__dirname, 'src/resources/assets/js/helpers'),
-						debug: true
+						debug: false
 					},
 				}
 			]

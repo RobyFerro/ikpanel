@@ -9,21 +9,24 @@ const eventReducer = (state = {
 			state = {
 				...state,
 				showModal: true,
-				selectedDate: moment(action.payload.date).format('DD/MM/YYYY')
+				selectedDate: moment(action.payload.date).format('DD/MM/YYYY'),
+				title:'New event'
 			};
 			break;
 		case 'EVENT_EDIT':
 			state = {
 				...state,
 				showModal: true,
-				selectedDate: action.payload
+				selectedDate: action.payload,
+				title:'Edit event'
 			};
 			break;
 		case 'EVENT_CLOSE':
 			state = {
 				...state,
 				showModal: false,
-				selectedDate: null
+				selectedDate: null,
+				title:null,
 			};
 	}
 	

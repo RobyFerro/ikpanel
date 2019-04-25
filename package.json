@@ -47,6 +47,7 @@
 		"@types/socket.io-client": "^1.4.32",
 		"babel-plugin-transform-class-properties": "^6.24.1",
 		"babel-preset-react": "^6.24.1",
+		"bootstrap-datepicker": "^1.8.0",
 		"bootstrap-slider": "^10.0.2",
 		"chart.js": "^2.7.3",
 		"datatables": "^1.10.18",
