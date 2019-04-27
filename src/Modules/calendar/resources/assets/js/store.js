@@ -11,7 +11,8 @@ export default createStore(
 				title: '',
 				date: null,
 				content: null
-			}
+			},
+			loading: false
 		}
 	},
 	applyMiddleware()

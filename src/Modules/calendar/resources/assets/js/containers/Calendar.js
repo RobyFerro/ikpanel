@@ -4,7 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import Event from '../components/Event';
 import {connect} from 'react-redux';
-import {newEvent, editEvent, closeEvent, saveEvent} from "../actions/eventActions";
+import {newEvent, editEvent, closeEvent, saveEvent, showLoader} from "../actions/eventActions";
 import Fade from 'react-reveal/Fade';
 import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
@@ -37,7 +37,7 @@ class Calendar extends Component {
 					       content={this.props.event.eventData.content}
 					       title={this.props.event.eventData.title}
 					       type={this.props.event.type}
-					       loader={this.state.loading}
+					       loader={this.props.event.loading}
 					       save={this.props.saveEvent}
 					       closeModal={() => this.props.closeEvent()}/>
 				</Fade>
@@ -67,6 +67,7 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(closeEvent(data));
 		},
 		saveEvent: (data) => {
+			dispatch(showLoader(true));
 			axios.post(`${location.href}/${data.type}`, {data})
 				.then(response => {
 					dispatch(saveEvent(data));
@@ -74,6 +75,9 @@ const mapDispatchToProps = (dispatch) => {
 				})
 				.catch(error => {
 					NotificationManager.error(error);
+				})
+				.then(() => {
+					dispatch(showLoader(false));
 				});
 		}
 	};

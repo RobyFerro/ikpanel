@@ -53,9 +53,14 @@ const eventReducer = (state = {
 					title: '',
 					date: '',
 					content: ''
-				},
+				}
 			};
 			break;
+		case 'SHOW_LOADER':
+			state = {
+				...state,
+				loading: action.payload
+			};
 	}
 	
 	return state;

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Button, Modal} from "react-bootstrap";
 import Datepicker from './Datepicker';
+import {ModernGuiLoader} from './ModernGuiLoader';
 import CKEditor from 'ckeditor4-react';
-import Loader from 'react-loader-spinner';
 
 
 class Event extends Component {
@@ -14,7 +14,6 @@ class Event extends Component {
 		this.handleTitleChange.bind(this);
 		this.showModalTitle.bind(this);
 		this.handleSave.bind(this);
-		this.showLoader.bind(this);
 		
 		this.state = {
 			event: {
@@ -22,8 +21,7 @@ class Event extends Component {
 				date: this.props.data,
 				content: this.props.content,
 				type: this.props.type
-			},
-			loading: false
+			}
 		};
 		
 	}
@@ -80,18 +78,7 @@ class Event extends Component {
 	};
 	
 	handleSave = () => {
-		this.setState({
-			...this.state,
-			loading: true
-		});
 		this.props.save(this.state.event);
-	};
-	
-	/* TODO: Handle modal loader hide */
-	showLoader = () => {
-		if(this.state.loading) {
-			return <Loader type="CradleLoader" color="#00BFFF" height="100" width="100"/>;
-		}
 	};
 	
 	render() {
@@ -137,8 +124,8 @@ class Event extends Component {
 							Save
 						</Button>
 					</Modal.Footer>
-					{this.showLoader()}
 				</Modal>
+				<ModernGuiLoader show={this.props.loader} message={'Loading...'}/>
 			</div>
 		);
 	}

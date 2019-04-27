@@ -20,9 +20,16 @@ export function closeEvent(data) {
 }
 
 export function saveEvent(data) {
-	console.log('saving',data);
+	console.log('saving', data);
 	return {
 		type: 'EVENT_SAVE',
+		payload: data
+	};
+}
+
+export function showLoader(data) {
+	return {
+		type: 'SHOW_LOADER',
 		payload: data
 	};
 }
