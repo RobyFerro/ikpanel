@@ -8,26 +8,54 @@ const eventReducer = (state = {
 		case 'EVENT_NEW':
 			state = {
 				...state,
+				type: 'new',
 				showModal: true,
-				selectedDate: moment(action.payload.date).format('DD/MM/YYYY'),
-				title:'New event'
+				title: 'New event',
+				eventData: {
+					title: '',
+					date: moment(action.payload.date).format('DD/MM/YYYY'),
+					content: ''
+				},
 			};
 			break;
 		case 'EVENT_EDIT':
 			state = {
 				...state,
+				type: 'edit',
 				showModal: true,
-				selectedDate: action.payload,
-				title:'Edit event'
+				title: 'Edit event',
+				eventData: {
+					title: action.payload.event.title,
+					date: moment(action.payload.event.start).format('DD/MM/YYYY'),
+					content: null
+				},
 			};
 			break;
 		case 'EVENT_CLOSE':
 			state = {
 				...state,
+				type: null,
 				showModal: false,
-				selectedDate: null,
-				title:null,
+				title: null,
+				eventData: {
+					title: '',
+					date: null,
+					content: ''
+				},
 			};
+			break;
+		case 'EVENT_SAVE':
+			state = {
+				...state,
+				type: null,
+				showModal: false,
+				eventData: {
+					title: '',
+					date: '',
+					content: ''
+				},
+			};
+			break;
 	}
 	
 	return state;

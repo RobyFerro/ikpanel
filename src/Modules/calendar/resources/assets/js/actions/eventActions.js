@@ -18,3 +18,11 @@ export function closeEvent(data) {
 		payload: null
 	};
 }
+
+export function saveEvent(data) {
+	console.log('saving',data);
+	return {
+		type: 'EVENT_SAVE',
+		payload: data
+	};
+}

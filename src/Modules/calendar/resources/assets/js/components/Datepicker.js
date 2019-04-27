@@ -6,15 +6,20 @@ import moment from 'moment';
 
 class Datepicker extends Component {
 	
+	constructor(props) {
+		super(props);
+		
+		this.state = {
+			date: this.props.selectedDate
+		};
+	}
+	
 	componentWillMount() {
 		return false;
 	}
 	
-	componentWillReceiveProps(nextProps, nextContext) {
-		this.datePicker.datepicker('update', this.props.selectedDate);
-	}
-	
 	componentDidMount() {
+		const main = this;
 		$.fn.datepicker.dates['it'] = {
 			days: ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
 			daysShort: ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
@@ -37,7 +42,13 @@ class Datepicker extends Component {
 			todayHighlight: true
 		});
 		
-		this.datePicker.datepicker('setDate', moment(this.props.selectedDate, 'DD/MM/YYYY').toDate());
+		this.datePicker.datepicker('setDate', moment(this.state.date, 'DD/MM/YYYY').toDate());
+		
+		this.datePicker.datepicker().on('changeDate', function(e) {
+			main.setState({date: e.date});
+			main.props.onChange(e.date);
+		});
+		
 	}
 	
 	render() {
@@ -48,7 +59,6 @@ class Datepicker extends Component {
 					<div className="form-input-group">
 						<label htmlFor="birthday">{this.props.title}</label>
 						<input type="text"
-						       id={this.props.title}
 						       ref="datePicker"
 						       className="form-control form-data"
 						       autoComplete="off"/>
