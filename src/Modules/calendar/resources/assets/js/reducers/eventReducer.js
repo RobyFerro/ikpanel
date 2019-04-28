@@ -14,7 +14,10 @@ const eventReducer = (state = {
 				eventData: {
 					title: '',
 					date: moment(action.payload.date).format('DD/MM/YYYY'),
-					content: ''
+					content: '',
+					startTime: '',
+					stopTime: '',
+					location: ''
 				},
 			};
 			break;
@@ -27,7 +30,10 @@ const eventReducer = (state = {
 				eventData: {
 					title: action.payload.event.title,
 					date: moment(action.payload.event.start).format('DD/MM/YYYY'),
-					content: null
+					content: action.payload.event.extendedProps.content,
+					startTime: action.payload.event.extendedProps.start,
+					stopTime: action.payload.event.extendedProps.stop,
+					location: action.payload.event.extendedProps.location
 				},
 			};
 			break;
@@ -40,11 +46,15 @@ const eventReducer = (state = {
 				eventData: {
 					title: '',
 					date: null,
-					content: ''
+					content: '',
+					startTime: '',
+					stopTime: '',
+					location: ''
 				},
 			};
 			break;
 		case 'EVENT_SAVE':
+			console.log(state);
 			state = {
 				...state,
 				type: null,
@@ -52,7 +62,10 @@ const eventReducer = (state = {
 				eventData: {
 					title: '',
 					date: '',
-					content: ''
+					content: '',
+					startTime: '',
+					stopTime: '',
+					location: ''
 				}
 			};
 			break;

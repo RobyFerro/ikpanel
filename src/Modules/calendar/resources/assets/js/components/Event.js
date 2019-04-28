@@ -3,6 +3,8 @@ import {Button, Modal} from "react-bootstrap";
 import Datepicker from './Datepicker';
 import {ModernGuiLoader} from './ModernGuiLoader';
 import CKEditor from 'ckeditor4-react';
+import InputMask from 'react-input-mask';
+import {InputGroup} from './InputGroup';
 
 
 class Event extends Component {
@@ -20,7 +22,10 @@ class Event extends Component {
 				title: this.props.title,
 				date: this.props.data,
 				content: this.props.content,
-				type: this.props.type
+				type: this.props.type,
+				startTime: this.props.startTime,
+				stopTime: this.props.stopTime,
+				location: this.props.location
 			}
 		};
 		
@@ -33,7 +38,10 @@ class Event extends Component {
 				title: nextProps.title,
 				date: nextProps.data,
 				content: nextProps.content,
-				type: nextProps.type
+				type: nextProps.type,
+				startTime: nextProps.startTime,
+				stopTime: nextProps.stopTime,
+				location: nextProps.location
 			}
 		});
 	}
@@ -68,6 +76,36 @@ class Event extends Component {
 		});
 	};
 	
+	handleStartTimeChange = (event) => {
+		this.setState({
+			...this.state,
+			event: {
+				...this.state.event,
+				startTime: event.target.value
+			}
+		});
+	};
+	
+	handleStopTimeChange = (event) => {
+		this.setState({
+			...this.state,
+			event: {
+				...this.state.event,
+				stopTime: event.target.value
+			}
+		});
+	};
+	
+	handleLocationChange = (event) => {
+		this.setState({
+			...this.state,
+			event: {
+				...this.state.event,
+				location: event.target.value
+			}
+		});
+	};
+	
 	showModalTitle = () => {
 		switch(this.state.event.type) {
 			case 'new':
@@ -84,7 +122,7 @@ class Event extends Component {
 	render() {
 		return (
 			<div>
-				<Modal show={this.props.show} onHide={() => this.props.closeModal()} size="lg">
+				<Modal show={this.props.show} onHide={() => this.props.closeModal()} size="xl">
 					<Modal.Header closeButton>
 						<Modal.Title>
 							{this.showModalTitle()}
@@ -98,16 +136,42 @@ class Event extends Component {
 								            onChange={this.handleDateChange}/>
 							</div>
 							<div className="col-md-6">
-								<div className="form-group form-group-default input-group">
-									<div className="form-input-group">
-										<label htmlFor="title">Title</label>
-										<input type="text"
-										       className="form-control"
-										       autoComplete="off"
-										       onChange={this.handleTitleChange}
-										       value={this.state.event.title}/>
-									</div>
-								</div>
+								<InputGroup label={'Title'}>
+									<input type="text"
+									       className="form-control"
+									       autoComplete="off"
+									       onChange={this.handleTitleChange}
+									       value={this.state.event.title}/>
+								</InputGroup>
+							</div>
+						</div>
+						<div className="row pt-3">
+							<div className="col-md-6">
+								<InputGroup label="Start">
+									<InputMask mask="99:99"
+									           onChange={this.handleStartTimeChange}
+									           className="form-control"
+									           value={this.state.event.startTime}/>
+								</InputGroup>
+							</div>
+							<div className="col-md-6">
+								<InputGroup label="Stop">
+									<InputMask mask="99:99"
+									           onChange={this.handleStopTimeChange}
+									           value={this.state.event.stopTime}
+									           className="form-control"/>
+								</InputGroup>
+							</div>
+						</div>
+						<div className="row pt-3">
+							<div className="col-md-12">
+								<InputGroup label='Location'>
+									<input type="text"
+									       className="form-control"
+									       autoComplete="off"
+									       onChange={this.handleLocationChange}
+									       value={this.state.event.location}/>
+								</InputGroup>
 							</div>
 						</div>
 						<div className="row pt-3">

@@ -65,6 +65,7 @@
 		"react": "^16.8.6",
 		"react-bootstrap": "^1.0.0-beta.8",
 		"react-dom": "^16.8.6",
+		"react-input-mask": "^2.0.4",
 		"react-notifications": "^1.4.3",
 		"react-redux": "^7.0.2",
 		"react-reveal": "^1.2.2",

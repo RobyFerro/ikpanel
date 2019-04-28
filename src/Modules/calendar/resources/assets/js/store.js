@@ -10,7 +10,10 @@ export default createStore(
 			eventData: {
 				title: '',
 				date: null,
-				content: null
+				content: null,
+				startTime: '',
+				stopTime: '',
+				location: ''
 			},
 			loading: false
 		}

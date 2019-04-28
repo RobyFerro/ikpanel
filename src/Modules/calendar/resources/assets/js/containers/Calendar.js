@@ -18,8 +18,26 @@ class Calendar extends Component {
 		/*TODO: Retrieve data from web server*/
 		this.state = {
 			events: [
-				{title: 'event 1', date: '2019-04-01'},
-				{title: 'event 2', date: '2019-04-02'}
+				{
+					title: 'event 1',
+					date: '2019-04-01',
+					extendedProps: {
+						content: 'Ciao',
+						start: '10:00',
+						stop: '12:00',
+						location: 'Bergamo'
+					}
+				},
+				{
+					title: 'event 2',
+					date: '2019-04-02',
+					extendedProps: {
+						content: 'Ciao',
+						start: '10:00',
+						stop: '12:00',
+						location: 'Bergamo'
+					}
+				}
 			]
 		};
 	}
@@ -36,6 +54,9 @@ class Calendar extends Component {
 					       data={this.props.event.eventData.date}
 					       content={this.props.event.eventData.content}
 					       title={this.props.event.eventData.title}
+					       startTime={this.props.event.eventData.startTime}
+					       stopTime={this.props.event.eventData.stopTime}
+					       location={this.props.event.eventData.location}
 					       type={this.props.event.type}
 					       loader={this.props.event.loading}
 					       save={this.props.saveEvent}
