@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from '@fullcalendar/interaction';
 import Event from '../components/Event';
 import {connect} from 'react-redux';
@@ -10,6 +11,8 @@ import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import '../../sass/main.scss';
+import "@fullcalendar/daygrid/main.css";
+import "@fullcalendar/timegrid/main.css";
 
 class Calendar extends Component {
 	
@@ -38,7 +41,15 @@ class Calendar extends Component {
 						location: 'Bergamo'
 					}
 				}
-			]
+			],
+			calendar: {
+				options: {
+					header: {
+						right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek today prev,next'
+					},
+					slotDuration: '00:30:00'
+				}
+			}
 		};
 	}
 	
@@ -48,8 +59,11 @@ class Calendar extends Component {
 				<Fade>
 					<FullCalendar dateClick={this.props.newEvent}
 					              eventClick={this.props.editEvent}
+					              navLinks={true}
 					              events={this.state.events}
-					              plugins={[dayGridPlugin, interactionPlugin]}/>
+					              weekends={true}
+					              plugins={[dayGridPlugin, timeGridPlugin,interactionPlugin]}
+					              {...this.state.calendar.options}/>
 					<Event show={this.props.event.showModal}
 					       data={this.props.event.eventData.date}
 					       content={this.props.event.eventData.content}
