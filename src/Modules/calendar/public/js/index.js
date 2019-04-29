@@ -96192,12 +96192,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-notifications */ "./node_modules/react-notifications/lib/index.js");
 /* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_notifications__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-notifications/lib/notifications.css */ "./node_modules/react-notifications/lib/notifications.css");
-/* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../sass/main.scss */ "./src/Modules/calendar/resources/assets/sass/main.scss");
-/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-notifications/lib/notifications.css */ "./node_modules/react-notifications/lib/notifications.css");
+/* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../sass/main.scss */ "./src/Modules/calendar/resources/assets/sass/main.scss");
+/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_12__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -96217,7 +96215,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -96254,24 +96251,7 @@ function (_Component) {
           header: {
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek today prev,next'
           },
-          events: [{
-            title: 'event 1',
-            start: moment__WEBPACK_IMPORTED_MODULE_11___default()().toDate(),
-            end: moment__WEBPACK_IMPORTED_MODULE_11___default()().add(1, 'h').toDate(),
-            allDay: true,
-            extendedProps: {
-              content: 'Ciao',
-              location: 'Bergamo'
-            }
-          }, {
-            title: 'event 2',
-            start: moment__WEBPACK_IMPORTED_MODULE_11___default()().add(1, 'd').toDate(),
-            end: moment__WEBPACK_IMPORTED_MODULE_11___default()().add(26, 'h').toDate(),
-            extendedProps: {
-              content: 'Ciao',
-              location: 'Bergamo'
-            }
-          }]
+          events: "".concat(location.href, "/events")
         }
       }
     };
@@ -96417,6 +96397,7 @@ var eventReducer = function eventReducer() {
       break;
 
     case 'EVENT_EDIT':
+      console.log('Event', action.payload);
       state = _objectSpread({}, state, {
         type: 'edit',
         showModal: true,

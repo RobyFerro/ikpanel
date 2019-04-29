@@ -23,6 +23,7 @@ const eventReducer = (state = {
 			};
 			break;
 		case 'EVENT_EDIT':
+			console.log('Event',action.payload);
 			state = {
 				...state,
 				type: 'edit',

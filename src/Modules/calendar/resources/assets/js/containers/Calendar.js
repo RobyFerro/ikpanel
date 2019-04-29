@@ -9,7 +9,6 @@ import interactionPlugin from '@fullcalendar/interaction';
 import Fade from 'react-reveal/Fade';
 import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
-import moment from 'moment';
 
 import 'react-notifications/lib/notifications.css';
 import '../../sass/main.scss';
@@ -28,27 +27,7 @@ class Calendar extends Component {
 					header: {
 						right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek today prev,next'
 					},
-					events: [
-						{
-							title: 'event 1',
-							start: moment().toDate(),
-							end: moment().add(1, 'h').toDate(),
-							allDay: true,
-							extendedProps: {
-								content: 'Ciao',
-								location: 'Bergamo'
-							}
-						},
-						{
-							title: 'event 2',
-							start: moment().add(1, 'd').toDate(),
-							end: moment().add(26, 'h').toDate(),
-							extendedProps: {
-								content: 'Ciao',
-								location: 'Bergamo'
-							}
-						}
-					]
+					events: `${location.href}/events`,
 				}
 			}
 		};
