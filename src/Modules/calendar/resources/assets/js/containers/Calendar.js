@@ -1,53 +1,54 @@
 import React, {Component} from 'react';
+import Event from '../components/Event';
+import {connect} from 'react-redux';
+import {newEvent, editEvent, closeEvent, saveEvent, showLoader} from "../actions/eventActions";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from '@fullcalendar/interaction';
-import Event from '../components/Event';
-import {connect} from 'react-redux';
-import {newEvent, editEvent, closeEvent, saveEvent, showLoader} from "../actions/eventActions";
 import Fade from 'react-reveal/Fade';
 import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 import 'react-notifications/lib/notifications.css';
 import '../../sass/main.scss';
-import "@fullcalendar/daygrid/main.css";
-import "@fullcalendar/timegrid/main.css";
 
 class Calendar extends Component {
+	
+	calendarComponentRef = React.createRef();
 	
 	constructor(props) {
 		super(props);
 		/*TODO: Retrieve data from web server*/
 		this.state = {
-			events: [
-				{
-					title: 'event 1',
-					date: '2019-04-01',
-					extendedProps: {
-						content: 'Ciao',
-						start: '10:00',
-						stop: '12:00',
-						location: 'Bergamo'
-					}
-				},
-				{
-					title: 'event 2',
-					date: '2019-04-02',
-					extendedProps: {
-						content: 'Ciao',
-						start: '10:00',
-						stop: '12:00',
-						location: 'Bergamo'
-					}
-				}
-			],
 			calendar: {
 				options: {
+					defaultView: "dayGridMonth",
 					header: {
 						right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek today prev,next'
 					},
-					slotDuration: '00:30:00'
+					events: [
+						{
+							title: 'event 1',
+							date: '2019-04-01',
+							extendedProps: {
+								content: 'Ciao',
+								start: '10:00',
+								stop: '12:00',
+								location: 'Bergamo'
+							}
+						},
+						{
+							title: 'event 2',
+							date: '2019-04-02',
+							extendedProps: {
+								content: 'Ciao',
+								start: '10:00',
+								stop: '12:00',
+								location: 'Bergamo'
+							}
+						}
+					]
 				}
 			}
 		};
@@ -57,13 +58,11 @@ class Calendar extends Component {
 		return (
 			<div>
 				<Fade>
-					<FullCalendar dateClick={this.props.newEvent}
+					<FullCalendar plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
 					              eventClick={this.props.editEvent}
-					              navLinks={true}
-					              events={this.state.events}
-					              weekends={true}
-					              plugins={[dayGridPlugin, timeGridPlugin,interactionPlugin]}
-					              {...this.state.calendar.options}/>
+					              ref={this.calendarComponentRef}
+					              dateClick={this.props.newEvent}
+					              {...this.state.calendar.options} />
 					<Event show={this.props.event.showModal}
 					       data={this.props.event.eventData.date}
 					       content={this.props.event.eventData.content}

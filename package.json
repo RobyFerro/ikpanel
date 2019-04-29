@@ -31,6 +31,7 @@
 		"@fullcalendar/interaction": "^4.0.2",
 		"@fullcalendar/list": "^4.1.0",
 		"@fullcalendar/react": "^4.0.2-beta",
+		"@fullcalendar/timegrid": "^4.1.0",
 		"@types/bootstrap": "^4.1.2",
 		"@types/bootstrap-datepicker": "0.0.13",
 		"@types/chart.js": "^2.7.45",
