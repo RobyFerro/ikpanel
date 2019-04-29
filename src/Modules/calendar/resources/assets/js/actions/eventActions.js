@@ -6,6 +6,7 @@ export function newEvent(data) {
 }
 
 export function editEvent(data) {
+	console.log('Edit action', data);
 	return {
 		type: 'EVENT_EDIT',
 		payload: data

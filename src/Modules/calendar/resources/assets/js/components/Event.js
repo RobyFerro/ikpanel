@@ -5,6 +5,7 @@ import {ModernGuiLoader} from './ModernGuiLoader';
 import CKEditor from 'ckeditor4-react';
 import InputMask from 'react-input-mask';
 import {InputGroup} from './InputGroup';
+import moment from 'moment';
 
 
 class Event extends Component {
@@ -39,8 +40,8 @@ class Event extends Component {
 				date: nextProps.data,
 				content: nextProps.content,
 				type: nextProps.type,
-				startTime: nextProps.startTime,
-				stopTime: nextProps.stopTime,
+				startTime: moment(nextProps.startTime).format('HH:mm'),
+				stopTime: moment(nextProps.stopTime).format('HH:mm'),
 				location: nextProps.location
 			}
 		});

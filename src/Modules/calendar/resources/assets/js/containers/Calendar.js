@@ -9,6 +9,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import Fade from 'react-reveal/Fade';
 import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
+import moment from 'moment';
 
 import 'react-notifications/lib/notifications.css';
 import '../../sass/main.scss';
@@ -30,21 +31,21 @@ class Calendar extends Component {
 					events: [
 						{
 							title: 'event 1',
-							date: '2019-04-01',
+							/*date: '2019-04-01',*/
+							start: moment().toDate(),
+							end: moment().add(1,'h').toDate(),
 							extendedProps: {
 								content: 'Ciao',
-								start: '10:00',
-								stop: '12:00',
 								location: 'Bergamo'
 							}
 						},
 						{
 							title: 'event 2',
-							date: '2019-04-02',
+							/*date: '2019-04-02',*/
+							start: moment().add(1,'d').toDate(),
+							end: moment().add(26,'h').toDate(),
 							extendedProps: {
 								content: 'Ciao',
-								start: '10:00',
-								stop: '12:00',
 								location: 'Bergamo'
 							}
 						}
@@ -97,7 +98,6 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(editEvent(data));
 		},
 		closeEvent: (data) => {
-			console.log('closing');
 			dispatch(closeEvent(data));
 		},
 		saveEvent: (data) => {

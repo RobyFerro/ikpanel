@@ -31,8 +31,8 @@ const eventReducer = (state = {
 					title: action.payload.event.title,
 					date: moment(action.payload.event.start).format('DD/MM/YYYY'),
 					content: action.payload.event.extendedProps.content,
-					startTime: action.payload.event.extendedProps.start,
-					stopTime: action.payload.event.extendedProps.stop,
+					startTime: action.payload.event.start,
+					stopTime: action.payload.event.end,
 					location: action.payload.event.extendedProps.location
 				},
 			};
@@ -54,7 +54,6 @@ const eventReducer = (state = {
 			};
 			break;
 		case 'EVENT_SAVE':
-			console.log(state);
 			state = {
 				...state,
 				type: null,
