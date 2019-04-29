@@ -50,6 +50,7 @@ class Calendar extends Component {
 					       startTime={this.props.event.eventData.startTime}
 					       stopTime={this.props.event.eventData.stopTime}
 					       location={this.props.event.eventData.location}
+					       id={this.props.event.eventData.id}
 					       type={this.props.event.type}
 					       loader={this.props.event.loading}
 					       save={this.props.saveEvent}
@@ -80,8 +81,22 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(closeEvent(data));
 		},
 		saveEvent: (data) => {
+			console.log(data);
+			let path = null;
+			switch(data.type) {
+				case 'edit':
+					path = `${data.type}/${data.id}`;
+					break;
+				case 'new':
+					path = `${data.type}`;
+					break;
+				default:
+					path = `${data.type}`;
+					break;
+			}
+			
 			dispatch(showLoader(true));
-			axios.post(`${location.href}/${data.type}`, {data})
+			axios.post(`${location.href}/${path}`, {data})
 				.then(response => {
 					dispatch(saveEvent(data));
 					NotificationManager.success('Success!');
@@ -91,6 +106,7 @@ const mapDispatchToProps = (dispatch) => {
 				})
 				.then(() => {
 					dispatch(showLoader(false));
+					location.reload();
 				});
 		}
 	};

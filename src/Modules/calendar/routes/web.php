@@ -15,6 +15,8 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 			Route::prefix('mod/calendar')->group(function() {
 				Route::get('/', 'CalendarController@index');
 				Route::get('/events', 'CalendarController@getEvents');
+				Route::post('/new', 'CalendarController@store');
+				Route::post('/edit/{id}', 'CalendarController@update');
 			});
 		});
 	});

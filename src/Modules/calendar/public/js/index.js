@@ -95768,7 +95768,7 @@ function (_Component) {
         main.setState({
           date: e.date
         });
-        main.props.onChange(e.date);
+        main.props.onChange(moment__WEBPACK_IMPORTED_MODULE_3___default()(e.date).format('DD/MM/YYYY'));
       });
     }
   }, {
@@ -95998,6 +95998,7 @@ function (_Component) {
 
     _this.state = {
       event: {
+        id: _this.props.id,
         title: _this.props.title,
         date: _this.props.data,
         content: _this.props.content,
@@ -96016,6 +96017,7 @@ function (_Component) {
     value: function componentWillReceiveProps(nextProps, nextContext) {
       this.setState(_objectSpread({}, this.state, {
         event: {
+          id: nextProps.id,
           title: nextProps.title,
           date: nextProps.data,
           content: nextProps.content,
@@ -96277,6 +96279,7 @@ function (_Component) {
         startTime: this.props.event.eventData.startTime,
         stopTime: this.props.event.eventData.stopTime,
         location: this.props.event.eventData.location,
+        id: this.props.event.eventData.id,
         type: this.props.event.type,
         loader: this.props.event.loading,
         save: this.props.saveEvent,
@@ -96308,8 +96311,25 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["closeEvent"])(data));
     },
     saveEvent: function saveEvent(data) {
+      console.log(data);
+      var path = null;
+
+      switch (data.type) {
+        case 'edit':
+          path = "".concat(data.type, "/").concat(data.id);
+          break;
+
+        case 'new':
+          path = "".concat(data.type);
+          break;
+
+        default:
+          path = "".concat(data.type);
+          break;
+      }
+
       dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["showLoader"])(true));
-      axios__WEBPACK_IMPORTED_MODULE_9___default.a.post("".concat(location.href, "/").concat(data.type), {
+      axios__WEBPACK_IMPORTED_MODULE_9___default.a.post("".concat(location.href, "/").concat(path), {
         data: data
       }).then(function (response) {
         dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["saveEvent"])(data));
@@ -96318,6 +96338,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         react_notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationManager"].error(error);
       }).then(function () {
         dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["showLoader"])(false));
+        location.reload();
       });
     }
   };
@@ -96385,6 +96406,7 @@ var eventReducer = function eventReducer() {
         showModal: true,
         title: 'New event',
         eventData: {
+          id: '',
           title: '',
           date: moment__WEBPACK_IMPORTED_MODULE_0___default()(action.payload.date).format('DD/MM/YYYY'),
           content: '',
@@ -96403,6 +96425,7 @@ var eventReducer = function eventReducer() {
         showModal: true,
         title: 'Edit event',
         eventData: {
+          id: action.payload.event.id,
           title: action.payload.event.title,
           date: moment__WEBPACK_IMPORTED_MODULE_0___default()(action.payload.event.start).format('DD/MM/YYYY'),
           content: action.payload.event.extendedProps.content,
@@ -96420,6 +96443,7 @@ var eventReducer = function eventReducer() {
         showModal: false,
         title: null,
         eventData: {
+          id: '',
           title: '',
           date: null,
           content: '',
@@ -96436,6 +96460,7 @@ var eventReducer = function eventReducer() {
         type: null,
         showModal: false,
         eventData: {
+          id: '',
           title: '',
           date: '',
           content: '',
