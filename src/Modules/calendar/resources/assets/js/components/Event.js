@@ -15,6 +15,9 @@ class Event extends Component {
 		this.handleDateChange.bind(this);
 		this.handleContentChange.bind(this);
 		this.handleTitleChange.bind(this);
+		this.handleAllDayChange.bind(this);
+		this.renderEventDuration.bind(this);
+		this.renderAllDayChecked.bind(this);
 		this.showModalTitle.bind(this);
 		this.handleSave.bind(this);
 		
@@ -26,7 +29,8 @@ class Event extends Component {
 				type: this.props.type,
 				startTime: this.props.startTime,
 				stopTime: this.props.stopTime,
-				location: this.props.location
+				location: this.props.location,
+				allDay: this.props.allDay
 			}
 		};
 		
@@ -42,10 +46,21 @@ class Event extends Component {
 				type: nextProps.type,
 				startTime: moment(nextProps.startTime).format('HH:mm'),
 				stopTime: moment(nextProps.stopTime).format('HH:mm'),
-				location: nextProps.location
+				location: nextProps.location,
+				allDay: nextProps.allDay
 			}
 		});
 	}
+	
+	handleAllDayChange = () => {
+		this.setState({
+			...this.state,
+			event: {
+				...this.state.event,
+				allDay: !this.state.event.allDay
+			}
+		});
+	};
 	
 	handleDateChange = (value) => {
 		this.setState({
@@ -107,6 +122,43 @@ class Event extends Component {
 		});
 	};
 	
+	renderEventDuration = () => {
+		if(!this.state.event.allDay) {
+			return (
+				<div className="row pt-3">
+					<div className="col-md-6">
+						<InputGroup label="Start">
+							<InputMask mask="99:99"
+							           onChange={this.handleStartTimeChange}
+							           className="form-control"
+							           value={this.state.event.startTime}/>
+						</InputGroup>
+					</div>
+					<div className="col-md-6">
+						<InputGroup label="Stop">
+							<InputMask mask="99:99"
+							           onChange={this.handleStopTimeChange}
+							           value={this.state.event.stopTime}
+							           className="form-control"/>
+						</InputGroup>
+					</div>
+				</div>
+			);
+		}
+	};
+	
+	renderAllDayChecked = () => {
+		if(this.state.event.allDay) {
+			return (
+				<input type="checkbox" value={this.state.event.allDay} id="allDay" checked={'checked'} onChange={this.handleAllDayChange}/>
+			);
+		} else {
+			return (
+				<input type="checkbox" value={this.state.event.allDay} id="allDay" checked={''}  onChange={this.handleAllDayChange}/>
+			);
+		}
+	};
+	
 	showModalTitle = () => {
 		switch(this.state.event.type) {
 			case 'new':
@@ -146,24 +198,7 @@ class Event extends Component {
 								</InputGroup>
 							</div>
 						</div>
-						<div className="row pt-3">
-							<div className="col-md-6">
-								<InputGroup label="Start">
-									<InputMask mask="99:99"
-									           onChange={this.handleStartTimeChange}
-									           className="form-control"
-									           value={this.state.event.startTime}/>
-								</InputGroup>
-							</div>
-							<div className="col-md-6">
-								<InputGroup label="Stop">
-									<InputMask mask="99:99"
-									           onChange={this.handleStopTimeChange}
-									           value={this.state.event.stopTime}
-									           className="form-control"/>
-								</InputGroup>
-							</div>
-						</div>
+						{this.renderEventDuration()}
 						<div className="row pt-3">
 							<div className="col-md-12">
 								<InputGroup label='Location'>
@@ -173,6 +208,14 @@ class Event extends Component {
 									       onChange={this.handleLocationChange}
 									       value={this.state.event.location}/>
 								</InputGroup>
+							</div>
+						</div>
+						<div className="row pt-3">
+							<div className="col-md-12">
+								<div className="checkbox check-default">
+									{this.renderAllDayChecked()}
+									<label htmlFor="allDay">All day</label>
+								</div>
 							</div>
 						</div>
 						<div className="row pt-3">

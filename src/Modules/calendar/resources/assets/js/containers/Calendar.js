@@ -31,9 +31,9 @@ class Calendar extends Component {
 					events: [
 						{
 							title: 'event 1',
-							/*date: '2019-04-01',*/
 							start: moment().toDate(),
-							end: moment().add(1,'h').toDate(),
+							end: moment().add(1, 'h').toDate(),
+							allDay: true,
 							extendedProps: {
 								content: 'Ciao',
 								location: 'Bergamo'
@@ -41,9 +41,8 @@ class Calendar extends Component {
 						},
 						{
 							title: 'event 2',
-							/*date: '2019-04-02',*/
-							start: moment().add(1,'d').toDate(),
-							end: moment().add(26,'h').toDate(),
+							start: moment().add(1, 'd').toDate(),
+							end: moment().add(26, 'h').toDate(),
 							extendedProps: {
 								content: 'Ciao',
 								location: 'Bergamo'
@@ -68,6 +67,7 @@ class Calendar extends Component {
 					       data={this.props.event.eventData.date}
 					       content={this.props.event.eventData.content}
 					       title={this.props.event.eventData.title}
+					       allDay={this.props.event.eventData.allDay}
 					       startTime={this.props.event.eventData.startTime}
 					       stopTime={this.props.event.eventData.stopTime}
 					       location={this.props.event.eventData.location}

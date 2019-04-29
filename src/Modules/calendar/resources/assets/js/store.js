@@ -13,7 +13,8 @@ export default createStore(
 				content: null,
 				startTime: '',
 				stopTime: '',
-				location: ''
+				location: '',
+				allDay: false
 			},
 			loading: false
 		}

@@ -17,7 +17,8 @@ const eventReducer = (state = {
 					content: '',
 					startTime: '',
 					stopTime: '',
-					location: ''
+					location: '',
+					allDay: false
 				},
 			};
 			break;
@@ -33,7 +34,8 @@ const eventReducer = (state = {
 					content: action.payload.event.extendedProps.content,
 					startTime: action.payload.event.start,
 					stopTime: action.payload.event.end,
-					location: action.payload.event.extendedProps.location
+					location: action.payload.event.extendedProps.location,
+					allDay: action.payload.event.allDay
 				},
 			};
 			break;
@@ -49,7 +51,8 @@ const eventReducer = (state = {
 					content: '',
 					startTime: '',
 					stopTime: '',
-					location: ''
+					location: '',
+					allDay: false
 				},
 			};
 			break;
@@ -64,7 +67,8 @@ const eventReducer = (state = {
 					content: '',
 					startTime: '',
 					stopTime: '',
-					location: ''
+					location: '',
+					allDay: false
 				}
 			};
 			break;
