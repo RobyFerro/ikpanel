@@ -27,6 +27,7 @@ class Event extends Model {
 			->whereDate('end', '<=', $end->toDateString())
 			->get()->map(function($item) {
 				return [
+					"id"            => $item->id,
 					"title"         => $item->title,
 					"start"         => $item->start->toIso8601String(),
 					"end"           => $item->end->toIso8601String(),

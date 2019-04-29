@@ -12,6 +12,7 @@ const eventReducer = (state = {
 				showModal: true,
 				title: 'New event',
 				eventData: {
+					id: '',
 					title: '',
 					date: moment(action.payload.date).format('DD/MM/YYYY'),
 					content: '',
@@ -23,13 +24,14 @@ const eventReducer = (state = {
 			};
 			break;
 		case 'EVENT_EDIT':
-			console.log('Event',action.payload);
+			console.log('Event', action.payload);
 			state = {
 				...state,
 				type: 'edit',
 				showModal: true,
 				title: 'Edit event',
 				eventData: {
+					id: action.payload.event.id,
 					title: action.payload.event.title,
 					date: moment(action.payload.event.start).format('DD/MM/YYYY'),
 					content: action.payload.event.extendedProps.content,
@@ -47,6 +49,7 @@ const eventReducer = (state = {
 				showModal: false,
 				title: null,
 				eventData: {
+					id: '',
 					title: '',
 					date: null,
 					content: '',
@@ -63,6 +66,7 @@ const eventReducer = (state = {
 				type: null,
 				showModal: false,
 				eventData: {
+					id: '',
 					title: '',
 					date: '',
 					content: '',

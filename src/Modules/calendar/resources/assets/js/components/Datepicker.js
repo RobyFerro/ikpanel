@@ -43,16 +43,14 @@ class Datepicker extends Component {
 		});
 		
 		this.datePicker.datepicker('setDate', moment(this.state.date, 'DD/MM/YYYY').toDate());
-		
 		this.datePicker.datepicker().on('changeDate', function(e) {
 			main.setState({date: e.date});
-			main.props.onChange(e.date);
+			main.props.onChange(moment(e.date).format('DD/MM/YYYY'));
 		});
 		
 	}
 	
 	render() {
-		
 		return (
 			<div>
 				<div className="form-group form-group-default input-group">

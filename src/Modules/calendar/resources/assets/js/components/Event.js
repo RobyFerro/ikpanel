@@ -23,6 +23,7 @@ class Event extends Component {
 		
 		this.state = {
 			event: {
+				id: this.props.id,
 				title: this.props.title,
 				date: this.props.data,
 				content: this.props.content,
@@ -40,6 +41,7 @@ class Event extends Component {
 		this.setState({
 			...this.state,
 			event: {
+				id: nextProps.id,
 				title: nextProps.title,
 				date: nextProps.data,
 				content: nextProps.content,
@@ -150,11 +152,13 @@ class Event extends Component {
 	renderAllDayChecked = () => {
 		if(this.state.event.allDay) {
 			return (
-				<input type="checkbox" value={this.state.event.allDay} id="allDay" checked={'checked'} onChange={this.handleAllDayChange}/>
+				<input type="checkbox" value={this.state.event.allDay} id="allDay" checked={'checked'}
+				       onChange={this.handleAllDayChange}/>
 			);
 		} else {
 			return (
-				<input type="checkbox" value={this.state.event.allDay} id="allDay" checked={''}  onChange={this.handleAllDayChange}/>
+				<input type="checkbox" value={this.state.event.allDay} id="allDay" checked={''}
+				       onChange={this.handleAllDayChange}/>
 			);
 		}
 	};
