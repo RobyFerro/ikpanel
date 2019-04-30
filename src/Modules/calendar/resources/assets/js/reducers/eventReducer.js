@@ -24,7 +24,6 @@ const eventReducer = (state = {
 			};
 			break;
 		case 'EVENT_EDIT':
-			console.log('Event', action.payload);
 			state = {
 				...state,
 				type: 'edit',
@@ -74,13 +73,15 @@ const eventReducer = (state = {
 					stopTime: '',
 					location: '',
 					allDay: false
-				}
+				},
+				willUpdate: true
 			};
 			break;
 		case 'SHOW_LOADER':
 			state = {
 				...state,
-				loading: action.payload
+				loading: action.payload,
+				willUpdate: false
 			};
 	}
 	

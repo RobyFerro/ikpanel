@@ -14,12 +14,13 @@ class Event extends Component {
 		super(props);
 		this.handleDateChange.bind(this);
 		this.handleContentChange.bind(this);
-		this.handleTitleChange.bind(this);
 		this.handleAllDayChange.bind(this);
 		this.renderEventDuration.bind(this);
 		this.renderAllDayChecked.bind(this);
 		this.showModalTitle.bind(this);
 		this.handleSave.bind(this);
+		
+		console.log('Costruisco', props);
 		
 		this.state = {
 			event: {
@@ -28,30 +29,13 @@ class Event extends Component {
 				date: this.props.data,
 				content: this.props.content,
 				type: this.props.type,
-				startTime: this.props.startTime,
-				stopTime: this.props.stopTime,
+				startTime: moment(this.props.startTime).format('HH:mm'),
+				stopTime: moment(this.props.stopTime).format('HH:mm'),
 				location: this.props.location,
 				allDay: this.props.allDay
 			}
 		};
 		
-	}
-	
-	componentWillReceiveProps(nextProps, nextContext) {
-		this.setState({
-			...this.state,
-			event: {
-				id: nextProps.id,
-				title: nextProps.title,
-				date: nextProps.data,
-				content: nextProps.content,
-				type: nextProps.type,
-				startTime: moment(nextProps.startTime).format('HH:mm'),
-				stopTime: moment(nextProps.stopTime).format('HH:mm'),
-				location: nextProps.location,
-				allDay: nextProps.allDay
-			}
-		});
 	}
 	
 	handleAllDayChange = () => {

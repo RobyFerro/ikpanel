@@ -72,6 +72,7 @@
 		"react-redux": "^7.0.2",
 		"react-reveal": "^1.2.2",
 		"redux": "^4.0.1",
+		"redux-thunk": "^2.3.0",
 		"select2": "^4.0.6-rc.1",
 		"socket.io-client": "^2.2.0",
 		"unlazy-loader": "^0.1.3"

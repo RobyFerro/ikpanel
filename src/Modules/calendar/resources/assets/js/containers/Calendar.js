@@ -19,7 +19,8 @@ class Calendar extends Component {
 	
 	constructor(props) {
 		super(props);
-		/*TODO: Retrieve data from web server*/
+		this.showEventModal.bind(this);
+		
 		this.state = {
 			calendar: {
 				options: {
@@ -33,6 +34,33 @@ class Calendar extends Component {
 		};
 	}
 	
+	componentDidUpdate(prevProps, prevState, snapshot) {
+		if(!prevProps.event.willUpdate && prevProps.event.willUpdate !== this.props.event.willUpdate) {
+			let fullCalendar = this.calendarComponentRef.current.getApi();
+			fullCalendar.refetchEvents();
+		}
+	}
+	
+	showEventModal = () => {
+		if(this.props.event.showModal) {
+			return (
+				<Event show={this.props.event.showModal}
+				       data={this.props.event.eventData.date}
+				       content={this.props.event.eventData.content}
+				       title={this.props.event.eventData.title}
+				       allDay={this.props.event.eventData.allDay}
+				       startTime={this.props.event.eventData.startTime}
+				       stopTime={this.props.event.eventData.stopTime}
+				       location={this.props.event.eventData.location}
+				       id={this.props.event.eventData.id}
+				       type={this.props.event.type}
+				       loader={this.props.event.loading}
+				       save={this.props.saveEvent}
+				       closeModal={() => this.props.closeEvent()}/>
+			);
+		}
+	};
+	
 	render() {
 		return (
 			<div>
@@ -42,20 +70,8 @@ class Calendar extends Component {
 					              ref={this.calendarComponentRef}
 					              dateClick={this.props.newEvent}
 					              {...this.state.calendar.options} />
-					<Event show={this.props.event.showModal}
-					       data={this.props.event.eventData.date}
-					       content={this.props.event.eventData.content}
-					       title={this.props.event.eventData.title}
-					       allDay={this.props.event.eventData.allDay}
-					       startTime={this.props.event.eventData.startTime}
-					       stopTime={this.props.event.eventData.stopTime}
-					       location={this.props.event.eventData.location}
-					       id={this.props.event.eventData.id}
-					       type={this.props.event.type}
-					       loader={this.props.event.loading}
-					       save={this.props.saveEvent}
-					       closeModal={() => this.props.closeEvent()}/>
 				</Fade>
+				{this.showEventModal()}
 				<NotificationContainer/>
 			</div>
 		);
@@ -81,35 +97,7 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(closeEvent(data));
 		},
 		saveEvent: (data) => {
-			
-			let path = null;
-			switch(data.type) {
-				case 'edit':
-					path = `${data.type}/${data.id}`;
-					break;
-				case 'new':
-					path = `${data.type}`;
-					break;
-				default:
-					path = `${data.type}`;
-					break;
-			}
-			
-			dispatch(showLoader(true));
-			axios.post(`${location.href}/${path}`, {...data})
-				.then(response => {
-					dispatch(saveEvent(data));
-					NotificationManager.success('Success!');
-					location.reload();
-				})
-				.catch(error => {
-					for(let i in error.response.data.errors){
-						NotificationManager.error(error.response.data.errors[i][0]);
-					}
-				})
-				.then(() => {
-					dispatch(showLoader(false));
-				});
+			dispatch(saveEvent(data));
 		}
 	};
 };

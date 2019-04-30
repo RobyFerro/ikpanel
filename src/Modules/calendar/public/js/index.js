@@ -92718,6 +92718,38 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/redux-thunk/es/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/redux-thunk/es/index.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function createThunkMiddleware(extraArgument) {
+  return function (_ref) {
+    var dispatch = _ref.dispatch,
+        getState = _ref.getState;
+    return function (next) {
+      return function (action) {
+        if (typeof action === 'function') {
+          return action(dispatch, getState, extraArgument);
+        }
+
+        return next(action);
+      };
+    };
+  };
+}
+
+var thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
+
+/* harmony default export */ __webpack_exports__["default"] = (thunk);
+
+/***/ }),
+
 /***/ "./node_modules/redux/es/redux.js":
 /*!****************************************!*\
   !*** ./node_modules/redux/es/redux.js ***!
@@ -95641,6 +95673,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeEvent", function() { return closeEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveEvent", function() { return saveEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showLoader", function() { return showLoader; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-notifications */ "./node_modules/react-notifications/lib/index.js");
+/* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_notifications__WEBPACK_IMPORTED_MODULE_1__);
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
 function newEvent(data) {
   return {
     type: 'EVENT_NEW',
@@ -95648,7 +95690,6 @@ function newEvent(data) {
   };
 }
 function editEvent(data) {
-  console.log('Edit action', data);
   return {
     type: 'EVENT_EDIT',
     payload: data
@@ -95661,11 +95702,48 @@ function closeEvent(data) {
   };
 }
 function saveEvent(data) {
-  console.log('saving', data);
-  return {
-    type: 'EVENT_SAVE',
-    payload: data
+  return function (dispatch) {
+    var path = null;
+
+    switch (data.type) {
+      case 'edit':
+        path = "".concat(data.type, "/").concat(data.id);
+        break;
+
+      case 'new':
+        path = "".concat(data.type);
+        break;
+
+      default:
+        path = "".concat(data.type);
+        break;
+    }
+
+    dispatch({
+      type: 'SHOW_LOADER',
+      payload: true
+    });
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(location.href, "/").concat(path), _objectSpread({}, data)).then(function (response) {
+      dispatch({
+        type: 'EVENT_SAVE',
+        payload: data
+      });
+      react_notifications__WEBPACK_IMPORTED_MODULE_1__["NotificationManager"].success('Success!');
+    }).catch(function (error) {
+      for (var i in error.response.data.errors) {
+        react_notifications__WEBPACK_IMPORTED_MODULE_1__["NotificationManager"].error(error.response.data.errors[i][0]);
+      }
+    }).then(function () {
+      dispatch({
+        type: 'SHOW_LOADER',
+        payload: false
+      });
+    });
   };
+  /*return {
+  	type: 'EVENT_SAVE',
+  	payload: data
+  };*/
 }
 function showLoader(data) {
   return {
@@ -95984,8 +96062,6 @@ function (_Component) {
 
     _this.handleContentChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
 
-    _this.handleTitleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-
     _this.handleAllDayChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
 
     _this.renderEventDuration.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -95996,6 +96072,7 @@ function (_Component) {
 
     _this.handleSave.bind(_assertThisInitialized(_assertThisInitialized(_this)));
 
+    console.log('Costruisco', props);
     _this.state = {
       event: {
         id: _this.props.id,
@@ -96003,8 +96080,8 @@ function (_Component) {
         date: _this.props.data,
         content: _this.props.content,
         type: _this.props.type,
-        startTime: _this.props.startTime,
-        stopTime: _this.props.stopTime,
+        startTime: moment__WEBPACK_IMPORTED_MODULE_7___default()(_this.props.startTime).format('HH:mm'),
+        stopTime: moment__WEBPACK_IMPORTED_MODULE_7___default()(_this.props.stopTime).format('HH:mm'),
         location: _this.props.location,
         allDay: _this.props.allDay
       }
@@ -96013,23 +96090,6 @@ function (_Component) {
   }
 
   _createClass(Event, [{
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextProps, nextContext) {
-      this.setState(_objectSpread({}, this.state, {
-        event: {
-          id: nextProps.id,
-          title: nextProps.title,
-          date: nextProps.data,
-          content: nextProps.content,
-          type: nextProps.type,
-          startTime: moment__WEBPACK_IMPORTED_MODULE_7___default()(nextProps.startTime).format('HH:mm'),
-          stopTime: moment__WEBPACK_IMPORTED_MODULE_7___default()(nextProps.stopTime).format('HH:mm'),
-          location: nextProps.location,
-          allDay: nextProps.allDay
-        }
-      }));
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -96198,10 +96258,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../sass/main.scss */ "./src/Modules/calendar/resources/assets/sass/main.scss");
 /* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_12__);
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -96214,13 +96270,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -96247,9 +96303,32 @@ function (_Component) {
     _classCallCheck(this, Calendar);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Calendar).call(this, props));
-    /*TODO: Retrieve data from web server*/
-
     _this.calendarComponentRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+
+    _this.showEventModal = function () {
+      if (_this.props.event.showModal) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Event__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          show: _this.props.event.showModal,
+          data: _this.props.event.eventData.date,
+          content: _this.props.event.eventData.content,
+          title: _this.props.event.eventData.title,
+          allDay: _this.props.event.eventData.allDay,
+          startTime: _this.props.event.eventData.startTime,
+          stopTime: _this.props.event.eventData.stopTime,
+          location: _this.props.event.eventData.location,
+          id: _this.props.event.eventData.id,
+          type: _this.props.event.type,
+          loader: _this.props.event.loading,
+          save: _this.props.saveEvent,
+          closeModal: function closeModal() {
+            return _this.props.closeEvent();
+          }
+        });
+      }
+    };
+
+    _this.showEventModal.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+
     _this.state = {
       calendar: {
         options: {
@@ -96265,32 +96344,22 @@ function (_Component) {
   }
 
   _createClass(Calendar, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState, snapshot) {
+      if (!prevProps.event.willUpdate && prevProps.event.willUpdate !== this.props.event.willUpdate) {
+        var fullCalendar = this.calendarComponentRef.current.getApi();
+        fullCalendar.refetchEvents();
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fullcalendar_react__WEBPACK_IMPORTED_MODULE_4__["default"], _extends({
         plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_5___default.a, _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_6___default.a, _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_7___default.a],
         eventClick: this.props.editEvent,
         ref: this.calendarComponentRef,
         dateClick: this.props.newEvent
-      }, this.state.calendar.options)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Event__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        show: this.props.event.showModal,
-        data: this.props.event.eventData.date,
-        content: this.props.event.eventData.content,
-        title: this.props.event.eventData.title,
-        allDay: this.props.event.eventData.allDay,
-        startTime: this.props.event.eventData.startTime,
-        stopTime: this.props.event.eventData.stopTime,
-        location: this.props.event.eventData.location,
-        id: this.props.event.eventData.id,
-        type: this.props.event.type,
-        loader: this.props.event.loading,
-        save: this.props.saveEvent,
-        closeModal: function closeModal() {
-          return _this2.props.closeEvent();
-        }
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationContainer"], null));
+      }, this.state.calendar.options))), this.showEventModal(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationContainer"], null));
     }
   }]);
 
@@ -96315,34 +96384,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["closeEvent"])(data));
     },
     saveEvent: function saveEvent(data) {
-      var path = null;
-
-      switch (data.type) {
-        case 'edit':
-          path = "".concat(data.type, "/").concat(data.id);
-          break;
-
-        case 'new':
-          path = "".concat(data.type);
-          break;
-
-        default:
-          path = "".concat(data.type);
-          break;
-      }
-
-      dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["showLoader"])(true));
-      axios__WEBPACK_IMPORTED_MODULE_9___default.a.post("".concat(location.href, "/").concat(path), _objectSpread({}, data)).then(function (response) {
-        dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["saveEvent"])(data));
-        react_notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationManager"].success('Success!');
-        location.reload();
-      }).catch(function (error) {
-        for (var i in error.response.data.errors) {
-          react_notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationManager"].error(error.response.data.errors[i][0]);
-        }
-      }).then(function () {
-        dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["showLoader"])(false));
-      });
+      dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["saveEvent"])(data));
     }
   };
 };
@@ -96422,7 +96464,6 @@ var eventReducer = function eventReducer() {
       break;
 
     case 'EVENT_EDIT':
-      console.log('Event', action.payload);
       state = _objectSpread({}, state, {
         type: 'edit',
         showModal: true,
@@ -96471,13 +96512,15 @@ var eventReducer = function eventReducer() {
           stopTime: '',
           location: '',
           allDay: false
-        }
+        },
+        willUpdate: true
       });
       break;
 
     case 'SHOW_LOADER':
       state = _objectSpread({}, state, {
-        loading: action.payload
+        loading: action.payload,
+        willUpdate: false
       });
   }
 
@@ -96499,6 +96542,8 @@ var eventReducer = function eventReducer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _reducers_eventReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducers/eventReducer */ "./src/Modules/calendar/resources/assets/js/reducers/eventReducer.js");
+/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
@@ -96516,9 +96561,10 @@ __webpack_require__.r(__webpack_exports__);
       location: '',
       allDay: false
     },
-    loading: false
+    loading: false,
+    willUpdate: false
   }
-}, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])()));
+}, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"])));
 
 /***/ }),
 

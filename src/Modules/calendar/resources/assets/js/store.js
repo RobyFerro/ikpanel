@@ -1,5 +1,6 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import eventReducer from './reducers/eventReducer';
+import thunk from 'redux-thunk';
 
 export default createStore(
 	combineReducers({event: eventReducer}),
@@ -16,8 +17,9 @@ export default createStore(
 				location: '',
 				allDay: false
 			},
-			loading: false
+			loading: false,
+			willUpdate: false
 		}
 	},
-	applyMiddleware()
+	applyMiddleware(thunk)
 );
