@@ -96198,6 +96198,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../sass/main.scss */ "./src/Modules/calendar/resources/assets/sass/main.scss");
 /* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_12__);
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -96311,7 +96315,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["closeEvent"])(data));
     },
     saveEvent: function saveEvent(data) {
-      console.log(data);
       var path = null;
 
       switch (data.type) {
@@ -96329,16 +96332,16 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       }
 
       dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["showLoader"])(true));
-      axios__WEBPACK_IMPORTED_MODULE_9___default.a.post("".concat(location.href, "/").concat(path), {
-        data: data
-      }).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_9___default.a.post("".concat(location.href, "/").concat(path), _objectSpread({}, data)).then(function (response) {
         dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["saveEvent"])(data));
         react_notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationManager"].success('Success!');
+        location.reload();
       }).catch(function (error) {
-        react_notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationManager"].error(error);
+        for (var i in error.response.data.errors) {
+          react_notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationManager"].error(error.response.data.errors[i][0]);
+        }
       }).then(function () {
         dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["showLoader"])(false));
-        location.reload();
       });
     }
   };

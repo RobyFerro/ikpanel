@@ -11,6 +11,7 @@ namespace ikdev\ikpanel\Modules\calendar\app\Http\Controllers;
 
 use Carbon\Carbon;
 use ikdev\ikpanel\Modules\calendar\app\Event;
+use ikdev\ikpanel\Modules\calendar\app\Http\Requests\EventRequest;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -37,32 +38,26 @@ class CalendarController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @param Request $request
+	 * @param EventRequest $request
 	 * @return Response
 	 */
-	public function store(Request $request) {
-		$data = $request->get('data');
+	public function store(EventRequest $request) {
 		
-		if($data['startTime'] === 'Invalid date'){
-			$data['startTime'] = '00:00';
-		}
-		
-		if($data['stopTime'] === 'Invalid date'){
-			$data['stopTime'] = '00:00';
-		}
-		
-		$start = Carbon::createFromFormat('d/m/Y H:i', $data['date'] . ' ' . $data['startTime']);
-		$stop = Carbon::createFromFormat('d/m/Y H:i', $data['date'] . ' ' . $data['stopTime']);
-		
+		$start = Carbon::createFromFormat(
+			'd/m/Y H:i',
+			$request->get('date') . ' ' . $request->get('startTime'));
+		$stop = Carbon::createFromFormat(
+			'd/m/Y H:i',
+			$request->get('date') . ' ' . $request->get('stopTime'));
 		
 		try {
 			$event = $this->events;
 			$event->start = $start;
 			$event->end = $stop;
-			$event->all_day = $data['allDay'];
-			$event->title = $data['title'];
-			$event->description = $data['content'];
-			$event->location = $data['location'];
+			$event->all_day = $request->get('allDay');
+			$event->title = $request->get('title');
+			$event->description = $request->get('content');
+			$event->location = $request->get('location');
 			$event->save();
 		} catch (QueryException $e) {
 			throw $e;
@@ -74,32 +69,27 @@ class CalendarController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param Request $request
+	 * @param EventRequest $request
 	 * @param int $id
 	 * @return Response
 	 */
-	public function update(Request $request, $id) {
-		$data = $request->get('data');
+	public function update(EventRequest $request, $id) {
 		
-		if($data['startTime'] === 'Invalid date'){
-			$data['startTime'] = '00:00';
-		}
-		
-		if($data['stopTime'] === 'Invalid date'){
-			$data['stopTime'] = '00:00';
-		}
-		
-		$start = Carbon::createFromFormat('d/m/Y H:i', $data['date'] . ' ' . $data['startTime']);
-		$stop = Carbon::createFromFormat('d/m/Y H:i', $data['date'] . ' ' . $data['stopTime']);
+		$start = Carbon::createFromFormat(
+			'd/m/Y H:i',
+			$request->get('date') . ' ' . $request->get('startTime'));
+		$stop = Carbon::createFromFormat(
+			'd/m/Y H:i',
+			$request->get('date') . ' ' . $request->get('stopTime'));
 		
 		try {
 			$event = $this->events->find($id);
 			$event->start = $start;
 			$event->end = $stop;
-			$event->all_day = $data['allDay'];
-			$event->title = $data['title'];
-			$event->description = $data['content'];
-			$event->location = $data['location'];
+			$event->all_day = $request->get('allDay');
+			$event->title = $request->get('title');
+			$event->description = $request->get('content');
+			$event->location = $request->get('location');
 			$event->save();
 		} catch (QueryException $e) {
 			throw $e;

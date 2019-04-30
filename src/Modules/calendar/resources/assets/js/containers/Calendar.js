@@ -81,7 +81,7 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(closeEvent(data));
 		},
 		saveEvent: (data) => {
-			console.log(data);
+			
 			let path = null;
 			switch(data.type) {
 				case 'edit':
@@ -96,17 +96,19 @@ const mapDispatchToProps = (dispatch) => {
 			}
 			
 			dispatch(showLoader(true));
-			axios.post(`${location.href}/${path}`, {data})
+			axios.post(`${location.href}/${path}`, {...data})
 				.then(response => {
 					dispatch(saveEvent(data));
 					NotificationManager.success('Success!');
+					location.reload();
 				})
 				.catch(error => {
-					NotificationManager.error(error);
+					for(let i in error.response.data.errors){
+						NotificationManager.error(error.response.data.errors[i][0]);
+					}
 				})
 				.then(() => {
 					dispatch(showLoader(false));
-					location.reload();
 				});
 		}
 	};
