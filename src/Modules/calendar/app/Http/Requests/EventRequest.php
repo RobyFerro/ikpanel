@@ -42,7 +42,8 @@ class EventRequest extends FormRequest {
 	
 	public function rules() {
 		return [
-			'date'      => 'required|date_format:d/m/Y',
+			'date'      => 'required|date_format:d/m/Y|before_or_equal:dateEnd',
+			'dateEnd'   => 'required|date_format:d/m/Y',
 			'startTime' => [
 				'required',
 				new DailyHours,
@@ -53,7 +54,7 @@ class EventRequest extends FormRequest {
 			],
 			'allDay'    => 'required|boolean',
 			'title'     => 'required',
-			'content'   => 'string',
+			'content'   => 'nullable|string',
 			'location'  => 'string'
 		];
 	}

@@ -8,6 +8,13 @@ export function newEvent(data) {
 	};
 }
 
+export function selectRange(data) {
+	return {
+		type: 'RANGE_SELECTION',
+		payload: data
+	};
+}
+
 export function editEvent(data) {
 	return {
 		type: 'EVENT_EDIT',

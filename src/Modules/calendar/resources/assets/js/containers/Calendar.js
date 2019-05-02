@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import Event from '../components/Event';
 import {connect} from 'react-redux';
-import {newEvent, editEvent, closeEvent, saveEvent, showLoader} from "../actions/eventActions";
+import {newEvent, editEvent, closeEvent, saveEvent, selectRange} from "../actions/eventActions";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from '@fullcalendar/interaction';
 import Fade from 'react-reveal/Fade';
-import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 import 'react-notifications/lib/notifications.css';
@@ -25,6 +24,7 @@ class Calendar extends Component {
 			calendar: {
 				options: {
 					defaultView: "dayGridMonth",
+					selectable: true,
 					header: {
 						right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek today prev,next'
 					},
@@ -46,6 +46,7 @@ class Calendar extends Component {
 			return (
 				<Event show={this.props.event.showModal}
 				       data={this.props.event.eventData.date}
+				       dateEnd={this.props.event.eventData.dateEnd}
 				       content={this.props.event.eventData.content}
 				       title={this.props.event.eventData.title}
 				       allDay={this.props.event.eventData.allDay}
@@ -69,6 +70,7 @@ class Calendar extends Component {
 					              eventClick={this.props.editEvent}
 					              ref={this.calendarComponentRef}
 					              dateClick={this.props.newEvent}
+					              select={this.props.selectRange}
 					              {...this.state.calendar.options} />
 				</Fade>
 				{this.showEventModal()}
@@ -98,6 +100,9 @@ const mapDispatchToProps = (dispatch) => {
 		},
 		saveEvent: (data) => {
 			dispatch(saveEvent(data));
+		},
+		selectRange: (data) => {
+			dispatch(selectRange(data));
 		}
 	};
 };

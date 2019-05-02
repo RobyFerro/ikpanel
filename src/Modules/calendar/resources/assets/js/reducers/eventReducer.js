@@ -15,6 +15,7 @@ const eventReducer = (state = {
 					id: '',
 					title: '',
 					date: moment(action.payload.date).format('DD/MM/YYYY'),
+					dateEnd: moment(action.payload.dateEnd).format('DD/MM/YYYY'),
 					content: '',
 					startTime: '',
 					stopTime: '',
@@ -33,6 +34,7 @@ const eventReducer = (state = {
 					id: action.payload.event.id,
 					title: action.payload.event.title,
 					date: moment(action.payload.event.start).format('DD/MM/YYYY'),
+					dateEnd: moment(action.payload.event.end).format('DD/MM/YYYY'),
 					content: action.payload.event.extendedProps.content,
 					startTime: action.payload.event.start,
 					stopTime: action.payload.event.end,
@@ -51,6 +53,7 @@ const eventReducer = (state = {
 					id: '',
 					title: '',
 					date: null,
+					dataEnd: '',
 					content: '',
 					startTime: '',
 					stopTime: '',
@@ -68,6 +71,7 @@ const eventReducer = (state = {
 					id: '',
 					title: '',
 					date: '',
+					dataEnd: '',
 					content: '',
 					startTime: '',
 					stopTime: '',
@@ -75,6 +79,25 @@ const eventReducer = (state = {
 					allDay: false
 				},
 				willUpdate: true
+			};
+			break;
+		case 'RANGE_SELECTION':
+			state = {
+				...state,
+				type: 'new',
+				showModal: true,
+				title: 'New event',
+				eventData: {
+					id: '',
+					title: '',
+					date: moment(action.payload.start).format('DD/MM/YYYY'),
+					dateEnd: moment(action.payload.end).format('DD/MM/YYYY'),
+					content: '',
+					startTime: action.payload.start,
+					stopTime: action.payload.end,
+					location: '',
+					allDay: action.payload.allDay
+				},
 			};
 			break;
 		case 'SHOW_LOADER':

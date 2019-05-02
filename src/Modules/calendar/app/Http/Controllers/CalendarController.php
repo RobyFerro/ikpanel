@@ -48,7 +48,7 @@ class CalendarController extends Controller {
 			$request->get('date') . ' ' . $request->get('startTime'));
 		$stop = Carbon::createFromFormat(
 			'd/m/Y H:i',
-			$request->get('date') . ' ' . $request->get('stopTime'));
+			$request->get('dateEnd') . ' ' . $request->get('stopTime'));
 		
 		try {
 			$event = $this->events;

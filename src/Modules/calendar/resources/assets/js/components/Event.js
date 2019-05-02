@@ -15,6 +15,7 @@ class Event extends Component {
 		this.handleDateChange.bind(this);
 		this.handleContentChange.bind(this);
 		this.handleAllDayChange.bind(this);
+		this.handleDateEndChange.bind(this);
 		this.renderEventDuration.bind(this);
 		this.renderAllDayChecked.bind(this);
 		this.showModalTitle.bind(this);
@@ -27,6 +28,7 @@ class Event extends Component {
 				id: this.props.id,
 				title: this.props.title,
 				date: this.props.data,
+				dateEnd: this.props.dateEnd,
 				content: this.props.content,
 				type: this.props.type,
 				startTime: moment(this.props.startTime).format('HH:mm'),
@@ -35,6 +37,8 @@ class Event extends Component {
 				allDay: this.props.allDay
 			}
 		};
+		
+		console.log('Costruito', this.state.event);
 		
 	}
 	
@@ -54,6 +58,16 @@ class Event extends Component {
 			event: {
 				...this.state.event,
 				date: value
+			}
+		});
+	};
+	
+	handleDateEndChange = (value) => {
+		this.setState({
+			...this.state,
+			event: {
+				...this.state.event,
+				dateEnd: value
 			}
 		});
 	};
@@ -171,12 +185,7 @@ class Event extends Component {
 					</Modal.Header>
 					<Modal.Body>
 						<div className="row pt-3">
-							<div className="col-md-6">
-								<Datepicker title={'Event date'}
-								            selectedDate={this.props.data}
-								            onChange={this.handleDateChange}/>
-							</div>
-							<div className="col-md-6">
+							<div className="col-md-12">
 								<InputGroup label={'Title'}>
 									<input type="text"
 									       className="form-control"
@@ -184,6 +193,18 @@ class Event extends Component {
 									       onChange={this.handleTitleChange}
 									       value={this.state.event.title}/>
 								</InputGroup>
+							</div>
+						</div>
+						<div className="row pt-3">
+							<div className="col-md-6">
+								<Datepicker title={'Event date'}
+								            selectedDate={this.props.data}
+								            onChange={this.handleDateChange}/>
+							</div>
+							<div className="col-md-6">
+								<Datepicker title={'Event date'}
+								            selectedDate={this.props.dateEnd}
+								            onChange={this.handleDateEndChange}/>
 							</div>
 						</div>
 						{this.renderEventDuration()}

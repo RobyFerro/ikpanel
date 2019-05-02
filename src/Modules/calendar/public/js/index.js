@@ -95663,12 +95663,13 @@ module.exports = function(module) {
 /*!**************************************************************************!*\
   !*** ./src/Modules/calendar/resources/assets/js/actions/eventActions.js ***!
   \**************************************************************************/
-/*! exports provided: newEvent, editEvent, closeEvent, saveEvent, showLoader */
+/*! exports provided: newEvent, selectRange, editEvent, closeEvent, saveEvent, showLoader */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newEvent", function() { return newEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectRange", function() { return selectRange; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editEvent", function() { return editEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeEvent", function() { return closeEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveEvent", function() { return saveEvent; });
@@ -95686,6 +95687,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function newEvent(data) {
   return {
     type: 'EVENT_NEW',
+    payload: data
+  };
+}
+function selectRange(data) {
+  return {
+    type: 'RANGE_SELECTION',
     payload: data
   };
 }
@@ -95958,6 +95965,14 @@ function (_Component) {
       }));
     };
 
+    _this.handleDateEndChange = function (value) {
+      _this.setState(_objectSpread({}, _this.state, {
+        event: _objectSpread({}, _this.state.event, {
+          dateEnd: value
+        })
+      }));
+    };
+
     _this.handleContentChange = function (event) {
       _this.setState(_objectSpread({}, _this.state, {
         event: _objectSpread({}, _this.state.event, {
@@ -96064,6 +96079,8 @@ function (_Component) {
 
     _this.handleAllDayChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
 
+    _this.handleDateEndChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+
     _this.renderEventDuration.bind(_assertThisInitialized(_assertThisInitialized(_this)));
 
     _this.renderAllDayChecked.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -96078,6 +96095,7 @@ function (_Component) {
         id: _this.props.id,
         title: _this.props.title,
         date: _this.props.data,
+        dateEnd: _this.props.dateEnd,
         content: _this.props.content,
         type: _this.props.type,
         startTime: moment__WEBPACK_IMPORTED_MODULE_7___default()(_this.props.startTime).format('HH:mm'),
@@ -96086,6 +96104,7 @@ function (_Component) {
         allDay: _this.props.allDay
       }
     };
+    console.log('Costruito', _this.state.event);
     return _this;
   }
 
@@ -96105,13 +96124,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Title, null, this.showModalTitle())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row pt-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-6"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Datepicker__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        title: 'Event date',
-        selectedDate: this.props.data,
-        onChange: this.handleDateChange
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-6"
+        className: "col-md-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InputGroup__WEBPACK_IMPORTED_MODULE_6__["InputGroup"], {
         label: 'Title'
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -96120,7 +96133,21 @@ function (_Component) {
         autoComplete: "off",
         onChange: this.handleTitleChange,
         value: this.state.event.title
-      })))), this.renderEventDuration(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row pt-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Datepicker__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: 'Event date',
+        selectedDate: this.props.data,
+        onChange: this.handleDateChange
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Datepicker__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: 'Event date',
+        selectedDate: this.props.dateEnd,
+        onChange: this.handleDateEndChange
+      }))), this.renderEventDuration(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row pt-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-12"
@@ -96250,14 +96277,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-reveal/Fade */ "./node_modules/react-reveal/Fade.js");
 /* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-notifications */ "./node_modules/react-notifications/lib/index.js");
-/* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_notifications__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-notifications/lib/notifications.css */ "./node_modules/react-notifications/lib/notifications.css");
-/* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../sass/main.scss */ "./src/Modules/calendar/resources/assets/sass/main.scss");
-/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-notifications */ "./node_modules/react-notifications/lib/index.js");
+/* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_notifications__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-notifications/lib/notifications.css */ "./node_modules/react-notifications/lib/notifications.css");
+/* harmony import */ var react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_notifications_lib_notifications_css__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../sass/main.scss */ "./src/Modules/calendar/resources/assets/sass/main.scss");
+/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_11__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -96291,7 +96316,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
-
 var Calendar =
 /*#__PURE__*/
 function (_Component) {
@@ -96310,6 +96334,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Event__WEBPACK_IMPORTED_MODULE_1__["default"], {
           show: _this.props.event.showModal,
           data: _this.props.event.eventData.date,
+          dateEnd: _this.props.event.eventData.dateEnd,
           content: _this.props.event.eventData.content,
           title: _this.props.event.eventData.title,
           allDay: _this.props.event.eventData.allDay,
@@ -96333,6 +96358,7 @@ function (_Component) {
       calendar: {
         options: {
           defaultView: "dayGridMonth",
+          selectable: true,
           header: {
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek today prev,next'
           },
@@ -96358,8 +96384,9 @@ function (_Component) {
         plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_5___default.a, _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_6___default.a, _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_7___default.a],
         eventClick: this.props.editEvent,
         ref: this.calendarComponentRef,
-        dateClick: this.props.newEvent
-      }, this.state.calendar.options))), this.showEventModal(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_notifications__WEBPACK_IMPORTED_MODULE_10__["NotificationContainer"], null));
+        dateClick: this.props.newEvent,
+        select: this.props.selectRange
+      }, this.state.calendar.options))), this.showEventModal(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_notifications__WEBPACK_IMPORTED_MODULE_9__["NotificationContainer"], null));
     }
   }]);
 
@@ -96385,6 +96412,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     saveEvent: function saveEvent(data) {
       dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["saveEvent"])(data));
+    },
+    selectRange: function selectRange(data) {
+      dispatch(Object(_actions_eventActions__WEBPACK_IMPORTED_MODULE_3__["selectRange"])(data));
     }
   };
 };
@@ -96454,6 +96484,7 @@ var eventReducer = function eventReducer() {
           id: '',
           title: '',
           date: moment__WEBPACK_IMPORTED_MODULE_0___default()(action.payload.date).format('DD/MM/YYYY'),
+          dateEnd: moment__WEBPACK_IMPORTED_MODULE_0___default()(action.payload.dateEnd).format('DD/MM/YYYY'),
           content: '',
           startTime: '',
           stopTime: '',
@@ -96472,6 +96503,7 @@ var eventReducer = function eventReducer() {
           id: action.payload.event.id,
           title: action.payload.event.title,
           date: moment__WEBPACK_IMPORTED_MODULE_0___default()(action.payload.event.start).format('DD/MM/YYYY'),
+          dateEnd: moment__WEBPACK_IMPORTED_MODULE_0___default()(action.payload.event.end).format('DD/MM/YYYY'),
           content: action.payload.event.extendedProps.content,
           startTime: action.payload.event.start,
           stopTime: action.payload.event.end,
@@ -96490,6 +96522,7 @@ var eventReducer = function eventReducer() {
           id: '',
           title: '',
           date: null,
+          dataEnd: '',
           content: '',
           startTime: '',
           stopTime: '',
@@ -96507,6 +96540,7 @@ var eventReducer = function eventReducer() {
           id: '',
           title: '',
           date: '',
+          dataEnd: '',
           content: '',
           startTime: '',
           stopTime: '',
@@ -96514,6 +96548,25 @@ var eventReducer = function eventReducer() {
           allDay: false
         },
         willUpdate: true
+      });
+      break;
+
+    case 'RANGE_SELECTION':
+      state = _objectSpread({}, state, {
+        type: 'new',
+        showModal: true,
+        title: 'New event',
+        eventData: {
+          id: '',
+          title: '',
+          date: moment__WEBPACK_IMPORTED_MODULE_0___default()(action.payload.start).format('DD/MM/YYYY'),
+          dateEnd: moment__WEBPACK_IMPORTED_MODULE_0___default()(action.payload.end).format('DD/MM/YYYY'),
+          content: '',
+          startTime: action.payload.start,
+          stopTime: action.payload.end,
+          location: '',
+          allDay: action.payload.allDay
+        }
       });
       break;
 
@@ -96555,6 +96608,7 @@ __webpack_require__.r(__webpack_exports__);
     eventData: {
       title: '',
       date: null,
+      dateEnd: null,
       content: null,
       startTime: '',
       stopTime: '',

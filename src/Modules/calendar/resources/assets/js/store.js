@@ -11,6 +11,7 @@ export default createStore(
 			eventData: {
 				title: '',
 				date: null,
+				dateEnd: null,
 				content: null,
 				startTime: '',
 				stopTime: '',
