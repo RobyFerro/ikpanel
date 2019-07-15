@@ -29,6 +29,7 @@ use Illuminate\Notifications\Notifiable;
  * @property string $surname
  * @property string $email
  * @property int $role
+ * @property boolean $report_exceptions
  * @property string $password
  * @property string $remember_token
  * @property Carbon $created_at
@@ -56,9 +57,9 @@ class Users extends Authenticatable {
 	 * @param $token
 	 * @return bool
 	 */
-	public function hasToken($token){
-	    return in_array($token, $this->user_role->token()->pluck('id')->toArray());
-    }
+	public function hasToken($token) {
+		return in_array($token, $this->user_role->token()->pluck('id')->toArray());
+	}
 	
 	/**
 	 * @return null|string
@@ -69,5 +70,5 @@ class Users extends Authenticatable {
 		}
 		return null;
 	}
-
+	
 }

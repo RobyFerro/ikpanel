@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -5121,7 +5121,7 @@ if (typeof WebSocket !== 'undefined') {
   BrowserWebSocket = self.WebSocket || self.MozWebSocket;
 } else {
   try {
-    NodeWebSocket = __webpack_require__(/*! ws */ 2);
+    NodeWebSocket = __webpack_require__(/*! ws */ 3);
   } catch (e) { }
 }
 
@@ -11633,36 +11633,20 @@ var laravel_echo_1 = __webpack_require__(/*! laravel-echo */ "./node_modules/lar
 var ExceptionRowTemplate = __webpack_require__(/*! ../../templates/exceptions/table-rows.hbs */ "./src/resources/assets/js/templates/exceptions/table-rows.hbs");
 var notify_1 = __webpack_require__(/*! ../../../../../../../../../resources/assets/js/modules/notify */ "../../../resources/assets/js/modules/notify.js");
 $(function () {
-    //@ts-ignore
-    window.io = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
-    //@ts-ignore
-    window.Echo = new laravel_echo_1.default({
-        broadcaster: 'socket.io',
-        host: window.location.hostname + ':6001'
-    });
-    //@ts-ignore
-    window.Echo.channel('private-exceptions')
-        .listen('.new', function (e) {
-        var statusFilterValue = $('#statusFilter').val();
-        if (statusFilterValue === 'active' || statusFilterValue === 'all') {
-            var error = e.error;
-            error.exception = JSON.parse(error.exception);
-            $('#errorsTable > tbody')
-                .before(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }));
+    var body = $('body'), eventListener = $('#eventListener'), broadcast = $('input#broadcast').val();
+    if (broadcast === 'active') {
+        //@ts-ignore
+        window.io = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
+        //@ts-ignore
+        window.Echo = new laravel_echo_1.default({
+            broadcaster: 'socket.io',
+            host: window.location.hostname + ':6001'
+        });
+        if (localStorage.getItem('exceptionStreaming') !== null && localStorage.getItem('exceptionStreaming') === 'paused') {
+            eventListener.switchClass('listening', 'paused');
+            eventListener.html("<i class='fas fa-play'></i>");
         }
         else {
-            notify_1.default.danger("A new exception occurs");
-        }
-    });
-    var body = $('body');
-    $('#statusFilter').select2({ placeholder: 'Seleziona un filtro' });
-    body.on('change', '#statusFilter', function () {
-        window.location.href = admin_panel_url + "/exceptions/show/" + $(this).val();
-    });
-    body.on('click', '#eventListener', function () {
-        if ($(this).hasClass('paused')) {
-            $(this).switchClass('paused', 'listening');
-            $(this).html("<i class='fas fa-pause'></i>");
             //@ts-ignore
             window.Echo.channel('private-exceptions')
                 .listen('.new', function (e) {
@@ -11670,21 +11654,45 @@ $(function () {
                 if (statusFilterValue === 'active' || statusFilterValue === 'all') {
                     var error = e.error;
                     error.exception = JSON.parse(error.exception);
-                    $('#errorsTable > tbody')
-                        .before(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }));
+                    $(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }))
+                        .insertBefore('#errorsTable > tbody > tr:first-child');
                 }
-                else {
-                    notify_1.default.danger("A new exception occurs");
-                }
+                notify_1.default.danger("A new exception occurs");
             });
         }
-        else if ($(this).hasClass('listening')) {
-            $(this).switchClass('listening', 'paused');
-            $(this).html("<i class='fas fa-play'></i>");
-            //@ts-ignore
-            window.Echo.leave('private-exceptions');
-        }
+    }
+    $('#statusFilter').select2({ placeholder: 'Seleziona un filtro' });
+    body.on('change', '#statusFilter', function () {
+        window.location.href = admin_panel_url + "/exceptions/show/" + $(this).val();
     });
+    if (broadcast === 'active') {
+        body.on('click', '#eventListener', function () {
+            if ($(this).hasClass('paused')) {
+                $(this).switchClass('paused', 'listening');
+                $(this).html("<i class='fas fa-pause'></i>");
+                localStorage.setItem('exceptionStreaming', 'listening');
+                //@ts-ignore
+                window.Echo.channel('private-exceptions')
+                    .listen('.new', function (e) {
+                    var statusFilterValue = $('#statusFilter').val();
+                    if (statusFilterValue === 'active' || statusFilterValue === 'all') {
+                        var error = e.error;
+                        error.exception = JSON.parse(error.exception);
+                        $(ExceptionRowTemplate({ rows: [error], adminUrl: admin_panel_url }))
+                            .insertBefore('#errorsTable > tbody > tr:first-child');
+                    }
+                    notify_1.default.danger("A new exception occurs");
+                });
+            }
+            else if ($(this).hasClass('listening')) {
+                $(this).switchClass('listening', 'paused');
+                $(this).html("<i class='fas fa-play'></i>");
+                localStorage.setItem('exceptionStreaming', 'paused');
+                //@ts-ignore
+                window.Echo.leave('private-exceptions');
+            }
+        });
+    }
 });
 
 
@@ -11799,7 +11807,7 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, helper, alias1=container.escapeExpression, alias2=depth0 != null ? depth0 : (container.nullContext || {}), alias3=helpers.helperMissing, alias4="function";
 
-  return "	<tr>\n		<td>\n			<a href=\""
+  return "	<tr class=\"new-exception\">\n		<td>\n			<a href=\""
     + alias1(container.lambda((depths[1] != null ? depths[1].adminUrl : depths[1]), depth0))
     + "/exceptions/edit/"
     + alias1(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias3),(typeof helper === alias4 ? helper.call(alias2,{"name":"id","hash":{},"data":data,"blockParams":blockParams}) : helper)))
@@ -11829,7 +11837,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*********************************************************************!*\
   !*** multi ./src/resources/assets/js/components/exceptions/show.ts ***!
   \*********************************************************************/
@@ -11841,7 +11849,7 @@ module.exports = __webpack_require__(/*! C:\Users\roberto.ferro\PhpstormProjects
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!********************!*\
   !*** ws (ignored) ***!
   \********************/

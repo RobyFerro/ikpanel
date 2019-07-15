@@ -42,13 +42,14 @@ return [
 			'close'      => 'Close'
 		],
 		'inputs'     => [
-			'name'            => 'Name',
-			'surname'         => 'Surname',
-			'email'           => 'E-mail',
-			'password'        => 'Password',
-			'repeat-password' => 'Repeat password',
-			'role'            => 'Role',
-			'avatar'          => 'Avatar'
+			'name'              => 'Name',
+			'surname'           => 'Surname',
+			'email'             => 'E-mail',
+			'password'          => 'Password',
+			'repeat-password'   => 'Repeat password',
+			'role'              => 'Role',
+			'avatar'            => 'Avatar',
+			"report-exceptions" => "Send all exception reports"
 		],
 		'card'       => [
 			'general' => [

@@ -20,6 +20,7 @@
 @endsection
 
 @section('content')
+	<input type="hidden" id="broadcast" value="{{$broadcast}}">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="card">
@@ -56,9 +57,11 @@
 							</div>
 						</div>
 						<div class="col-md-1">
-							<button class="btn btn-lg listening" style="height: 85%" id="eventListener">
-								<i class="fas fa-pause"></i>
-							</button>
+							@if(\Illuminate\Support\Facades\Config::get('ikpanel-config.broadcasting'))
+								<button class="btn btn-lg listening" style="height: 85%" id="eventListener">
+									<i class="fas fa-pause"></i>
+								</button>
+							@endif
 						</div>
 					</div>
 					<div class="row">
@@ -128,5 +131,5 @@
 
 @section('final_script')
 	<script type="text/javascript" src="{{ asset('ikpanel/assets/plugins/select2/js/select2.js') }}"></script>
-	<script src="{{asset('ikpanel/plugins/js/exceptions/show.js')}}"></script>
+	<script src="{{asset('ikpanel/assets/js/exceptions/show.js')}}"></script>
 @endsection

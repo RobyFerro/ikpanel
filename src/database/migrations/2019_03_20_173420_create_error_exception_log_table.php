@@ -18,7 +18,7 @@ class CreateErrorExceptionLogTable extends Migration {
 			$table->integer('assign_to')->nullable();
 			$table->timestamp('fixed_at')->nullable();
 			$table->integer('fixed_by')->nullable();
-			$table->foreign('fixed_by')->referenced('id')->on('users');
+			$table->foreign('fixed_by')->references('id')->on('users');
 			$table->timestamp('first_seen')->nullable();
 			$table->timestamp('last_seen')->nullable();
 			$table->ipAddress('ip')->nullable();

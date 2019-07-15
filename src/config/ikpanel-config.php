@@ -53,7 +53,7 @@ return [
     |
     */
 	
-	"mail_max_filesize"=>env('MAIL_MAX_FILESIZE','25M'),
+	"mail_max_filesize" => env('MAIL_MAX_FILESIZE', '25M'),
 	
 	
 	/*
@@ -68,5 +68,6 @@ return [
 	"quick_search" => [
 		// Cache time
 		'cache_limit' => env('QUICK_SEARCH_CACHE_LIMIT', 0)
-	]
+	],
+	"broadcasting" => env('IKPANEL_BROADCASTING', false)
 ];
