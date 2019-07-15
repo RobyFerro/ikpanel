@@ -1,4 +1,5 @@
-# ikdev management system
+![ikpanel](logo.png)
+# ikpanel 
 Click [here](https://ikdev.gitbook.io/ikpanel/) for full documentation.
 
 #### Warning
@@ -57,3 +58,7 @@ php artisan migrate
 ## Default users credentials:
 * Username : boba.fett@ikpanel.eu
 * Password : 0
+
+
+## Need help? 
+Join in our [Telegram community](https://t.me/ikdev)
