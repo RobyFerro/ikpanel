@@ -134,5 +134,5 @@
 	        src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/lodash.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('ikpanel/assets/plugins/switchery/js/switchery.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('ikpanel/plugins/js/role_edit.js?nocache='.time()) }}"></script>
-	<script type="text/javascript" src="{{ asset('ikpanel/plugins/js/widgets/widgets-edit.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('ikpanel/assets/js/widgets/widgets-edit.js') }}"></script>
 @endsection
