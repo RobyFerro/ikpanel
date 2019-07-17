@@ -96,13 +96,9 @@
 			     data-src-retina="{{ asset('ikpanel/assets/img/logo_white.png') }}"
 			     width="78">
 			<div class="sidebar-header-controls">
-				{{--<button data-pages-toggle="#appMenu" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" type="button">
-					<i class="fa fa-angle-down fs-16"></i>
-				</button>--}}
 				<button data-toggle-pin="sidebar" id="menu-lock"
 				        class="btn btn-link visible-lg-inline"
-				        type="button"><i
-							class="fas fs-12"></i>
+				        type="button"><i class="fas fs-12"></i>
 				</button>
 			</div>
 		</div>

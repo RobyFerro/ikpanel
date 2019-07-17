@@ -30,6 +30,12 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 	
 	Route::group(['middleware' => 'ikpanel'], function() {
 		
+		Route::prefix('/react')->group(function() {
+			Route::get('/', function(){
+				return view('ikpanel::template.react-template.index');
+			});
+		});
+		
 		Route::get('/', 'ikpanelController@home');
 		Route::get('/navigation', 'ikpanelController@getUserMenu');
 		Route::get('/search', 'ikpanelController@search');
