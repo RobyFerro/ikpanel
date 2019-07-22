@@ -18,6 +18,7 @@ import Navigation from "./Navigation";
 import Grid from '@material-ui/core/Grid';
 import {Route, BrowserRouter, Switch} from "react-router-dom";
 import Users from './pages/Users';
+import Home from './pages/Home';
 
 function MadeWithLove() {
 	return (
@@ -173,6 +174,7 @@ export default function Dashboard() {
 						minHeight: '500px'
 					}}>
 						<Switch>
+							<Route exact path="/" component={Home}/>
 							<Route path="/admin/react/users" component={Users}/>
 						</Switch>
 					</Container>

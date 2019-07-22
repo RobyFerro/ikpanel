@@ -30,11 +30,15 @@ Route::prefix(\Illuminate\Support\Facades\Config::get('ikpanel-config.admin_pane
 	
 	Route::group(['middleware' => 'ikpanel'], function() {
 		
+		// TMP ROUTE
 		Route::prefix('/react')->group(function() {
-			Route::get('/', function(){
+			Route::get('/get-navigation', 'ikpanelController@getUserMenu');
+			Route::get('/get-users', 'UserController@get');
+			Route::get('/{path?}/{segment?}/{element?}', function() {
 				return view('ikpanel::template.react-template.index');
 			});
 		});
+		// TMP ROUTE
 		
 		Route::get('/', 'ikpanelController@home');
 		Route::get('/navigation', 'ikpanelController@getUserMenu');

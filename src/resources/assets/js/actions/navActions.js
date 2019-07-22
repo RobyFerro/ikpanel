@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function getMainMenuItems(data) {
 	return dispatch => {
-		axios.get('/admin/navigation')
+		axios.get('/admin/react/get-navigation')
 			.then(response => {
 				dispatch({
 					type: 'SET_MENU_ITEM',

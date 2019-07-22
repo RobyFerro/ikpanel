@@ -9,7 +9,7 @@ import Icon from '@material-ui/core/Icon';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import Collapse from '@material-ui/core/Collapse';
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class Navigation extends Component {
 	
@@ -22,7 +22,7 @@ class Navigation extends Component {
 		return (
 			<List component='nav' aria-labelledby="nested-list-subheader">
 				<div>
-					<ListItem button component="button">
+					<ListItem button component={Link} to='/'>
 						<ListItemIcon>
 							<Icon className='fas fa-home'/>
 						</ListItemIcon>
@@ -53,7 +53,7 @@ class Navigation extends Component {
 										{item.children.map((el, i) => {
 											return (
 												<List component="div" disablePadding key={i}>
-														<ListItem button style={{backgroundColor: '#efefef'}} component={NavLink} to="/admin/react/users">
+														<ListItem button style={{backgroundColor: '#efefef'}} component={Link} to="/admin/react/users">
 															<ListItemIcon>
 																<Icon className={el.icon}/>
 															</ListItemIcon>

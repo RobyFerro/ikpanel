@@ -22,6 +22,16 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends BaseController {
 	
+	protected $user;
+	
+	public function __construct(Users $user) {
+		$this->user = $user;
+	}
+	
+	public function get() {
+		return $this->user->all();
+	}
+	
 	/**
 	 * Show all users in database
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
