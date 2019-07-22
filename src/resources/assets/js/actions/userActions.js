@@ -14,3 +14,18 @@ export function getUsers() {
 			});
 	};
 }
+
+export function removeUser(id) {
+	return dispatch => {
+		axios.delete(`/admin/users/delete/${id}`)
+			.then(() => {
+				dispatch({
+					type: 'REMOVE_USER',
+					payload: id
+				});
+			})
+			.catch(err => {
+				throw err;
+			});
+	};
+}

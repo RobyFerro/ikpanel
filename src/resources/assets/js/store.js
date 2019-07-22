@@ -13,7 +13,8 @@ export default createStore(
 			navItem: []
 		},
 		users: {
-			list: []
+			list: [],
+			isLoading: true
 		}
 	},
 	applyMiddleware(thunk)
