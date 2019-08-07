@@ -62,7 +62,8 @@
                             <p>{{ $user->email }}</p>
                         </td>
                         <td class="v-align-middle" style="text-align: right">
-                            <a type="button" href="{{ env('IKPANEL_URL') }}/users/edit/{{$user->id}}" class="btn btn-success btn-sm">
+                            <a type="button" href="{{ env('IKPANEL_URL') }}/users/edit/{{$user->id}}"
+                               class="btn btn-success btn-sm">
                                 <i class="fas fa-edit"></i>
                                 Modifica
                             </a>
@@ -79,7 +80,8 @@
     </div>
 
     {{-- MODAL NUOVO UTENTE --}}
-    <div class="modal fade slide-up" id="new_user" tabindex="-1" role="dialog" aria-labelledby="NuovoUtente" aria-hidden="true">
+    <div class="modal fade slide-up" id="new_user" tabindex="-1" role="dialog" aria-labelledby="NuovoUtente"
+         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header clearfix text-left">
@@ -147,10 +149,15 @@
 @endsection
 
 @section('final_script')
-    <script type="text/javascript" src="{{ asset('ikpanel/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js') }}"></script>
-    <script src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/datatables.responsive.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/lodash.min.js') }}" type="text/javascript"></script>
+    <script type="text/javascript"
+            src="{{ asset('ikpanel/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript"
+            src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js') }}"></script>
+    <script type="text/javascript"
+            src="{{ asset('ikpanel/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js') }}"></script>
+    <script src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/datatables.responsive.js') }}"
+            type="text/javascript"></script>
+    <script src="{{ asset('ikpanel/assets/plugins/datatables-responsive/js/lodash.min.js') }}"
+            type="text/javascript"></script>
     <script src="{{ asset('ikpanel/plugins/js/users.js') }}" type="text/javascript"></script>
 @endsection

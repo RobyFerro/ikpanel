@@ -8,7 +8,7 @@
 @foreach($items as $item)
     @if(count($item->children) > 0)
         <li>
-            <a href='javascript:;'>
+            <a href="javascript:">
                 <span class="title">{{ $item->name }}</span>
                 <span class="arrow" style="padding-right: 3px;"></span>
             </a>
@@ -21,7 +21,8 @@
                         <a href="{{admin_url($child->route)}}" class='detailed'>
                             <span class='title'>{{$child->name}}</span>
                         </a>
-                        <a href='{{ admin_url($child->route) }}' class="sub-icon-link icon-thumbnail" style="padding: 0;">
+                        <a href='{{ admin_url($child->route) }}' class="sub-icon-link icon-thumbnail"
+                           style="padding: 0;">
                             <i class='{{ $child->icon }}'></i>
                         </a>
                     </li>

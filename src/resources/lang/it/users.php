@@ -8,7 +8,7 @@
  */
 
 return [
-	"show" => [
-		"breadcrumb" => 'Manage users'
-	]
+    "show" => [
+        "breadcrumb" => 'Manage users'
+    ]
 ];

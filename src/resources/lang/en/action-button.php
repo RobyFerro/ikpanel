@@ -8,9 +8,9 @@
  */
 
 return [
-	"buttons" => [
-		"save"       => "Save",
-		"saveAndNew" => "Save & New",
-		"close"      => "Close"
-	]
+    "buttons" => [
+        "save" => "Save",
+        "saveAndNew" => "Save & New",
+        "close" => "Close"
+    ]
 ];

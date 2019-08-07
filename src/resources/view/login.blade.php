@@ -57,14 +57,14 @@
     <!-- START Login Right Container-->
     <div class="login-container bg-white">
         <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
-	        <img src="{{ asset('ikpanel/assets/img/logo.png') }}"
-	             alt="logo"
-	             data-src="{{ asset('ikpanel/assets/img/logo.png') }}"
-	             data-src-retina="{{ asset('ikpanel/assets/img/logo.png') }}"
-	             class="img img-responsive"
-	             width="100%"
-                 {{--width="78"
-                 height="22"--}}>
+            <img src="{{ asset('ikpanel/assets/img/logo.png') }}"
+                 alt="logo"
+                 data-src="{{ asset('ikpanel/assets/img/logo.png') }}"
+                 data-src-retina="{{ asset('ikpanel/assets/img/logo.png') }}"
+                 class="img img-responsive"
+                 width="100%"
+                    {{--width="78"
+                    height="22"--}}>
             <p class="p-t-35">Sign into your ikpanel account</p>
             <!-- START Login Form -->
             <form id="form-login" class="p-t-15" role="form" action="{{ env('IKPANEL_URL') }}/login" method="POST">
@@ -73,11 +73,11 @@
                     <label>Login</label>
                     <div class="controls">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-	                    <input type="text" name="email"
-	                           placeholder="User Name"
-	                           class="form-control"
-	                           autocomplete="off"
-	                           required>
+                        <input type="text" name="email"
+                               placeholder="User Name"
+                               class="form-control"
+                               autocomplete="off"
+                               required>
                     </div>
                 </div>
                 <!-- END Form Control-->
@@ -85,12 +85,12 @@
                 <div class="form-group form-group-default">
                     <label>Password</label>
                     <div class="controls">
-	                    <input type="password"
-	                           class="form-control"
-	                           name="password"
-	                           autocomplete="off"
-	                           placeholder="Credentials"
-	                           required>
+                        <input type="password"
+                               class="form-control"
+                               name="password"
+                               autocomplete="off"
+                               placeholder="Credentials"
+                               required>
                     </div>
                 </div>
                 <!-- START Form Control-->
@@ -145,7 +145,8 @@
 <script src="{{ asset('ikpanel/assets/plugins/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('ikpanel/assets/plugins/jquery/jquery-easy.js') }}" type="text/javascript"></script>
 <script src="{{ asset('ikpanel/assets/plugins/jquery-unveil/jquery.unveil.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('ikpanel/assets/plugins/jquery-ios-list/jquery.ioslist.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('ikpanel/assets/plugins/jquery-ios-list/jquery.ioslist.min.js') }}"
+        type="text/javascript"></script>
 <script src="{{ asset('ikpanel/assets/plugins/jquery-actual/jquery.actual.min.js') }}"></script>
 <script src="{{ asset('ikpanel/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('ikpanel/assets/plugins/select2/js/select2.full.min.js') }}"></script>
@@ -156,9 +157,9 @@
 <!-- END VENDOR JS -->
 <script src="{{ asset('ikpanel/pages/js/pages.min.js') }}"></script>
 <script>
-    $(function () {
-        $('#form-login').validate()
-    })
+  $(function () {
+    $('#form-login').validate()
+  })
 </script>
 </body>
 </html>

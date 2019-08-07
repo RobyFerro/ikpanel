@@ -90,153 +90,152 @@
 
 <script type="text/javascript">
 
-    let modernGUI = {
-        mloading: {
-            gui: $('#mloading-gui'),
-            message: $('#mloading-message')
-        },
-        malert: {
-            gui: $('#malert-gui'),
-            message: $('#malert-message'),
-            ok: $('#malert-ok'),
-        },
-        mconfirm: {
-            gui: $('#mconfirm-gui'),
-            message: $('#mconfirm-message'),
-            ok: $('#mconfirm-ok'),
-            cancel: $('#mconfirm-cancel'),
-        },
-        mprompt: {
-            gui: $('#mprompt-gui'),
-            message: $('#mprompt-message'),
-            input: $('#mprompt-input'),
-            ok: $('#mprompt-ok'),
-            cancel: $('#mprompt-cancel'),
-        }
-    };
-
-    //region MODERN LOADING
-    /**
-     * Visualizza un'interfaccia di caricamento con eventuale messaggio personalizzato.
-     * @param {boolean} status Attiva/disattiva interfaccia.
-     * @param {string} [message="Caricamento dei dati in corso..."] Messaggio di caricamento personalizzato.
-     * @param {int} [delay=0] Ritardo animazione dell'interfaccia.
-     */
-    function mloading(status, message) {
-
-        //dati di default
-        status = status === undefined ? true : status;
-        message = message === undefined ? 'Caricamento dei dati in corso...' : message;
-        let delay = status ? 0 : 500;
-
-        //imposto delay e mostro/nascondo gui
-        setTimeout(function () {
-            if (status) {
-                //inserisco messaggio
-                modernGUI.mloading.message.html(message);
-                modernGUI.mloading.gui.modal('show');
-            }
-            else {
-                modernGUI.mloading.gui.modal('hide');
-            }
-        }, delay);
+  let modernGUI = {
+    mloading: {
+      gui: $('#mloading-gui'),
+      message: $('#mloading-message')
+    },
+    malert: {
+      gui: $('#malert-gui'),
+      message: $('#malert-message'),
+      ok: $('#malert-ok'),
+    },
+    mconfirm: {
+      gui: $('#mconfirm-gui'),
+      message: $('#mconfirm-message'),
+      ok: $('#mconfirm-ok'),
+      cancel: $('#mconfirm-cancel'),
+    },
+    mprompt: {
+      gui: $('#mprompt-gui'),
+      message: $('#mprompt-message'),
+      input: $('#mprompt-input'),
+      ok: $('#mprompt-ok'),
+      cancel: $('#mprompt-cancel'),
     }
+  }
 
-    //endregion MODERN LOADING
+  //region MODERN LOADING
+  /**
+   * Visualizza un'interfaccia di caricamento con eventuale messaggio personalizzato.
+   * @param {boolean} status Attiva/disattiva interfaccia.
+   * @param {string} [message="Caricamento dei dati in corso..."] Messaggio di caricamento personalizzato.
+   * @param {int} [delay=0] Ritardo animazione dell'interfaccia.
+   */
+  function mloading (status, message) {
 
-    //region MODERN ALERT
-    /**
-     * Visualizza un'interfaccia di alert.
-     * @param {string} message Messaggio da visualizzare.
-     */
-    function malert(message) {
+    //dati di default
+    status = status === undefined ? true : status
+    message = message === undefined ? 'Caricamento dei dati in corso...' : message
+    let delay = status ? 0 : 500
 
-        //imposto messaggio
-        modernGUI.malert.message.html(message);
+    //imposto delay e mostro/nascondo gui
+    setTimeout(function () {
+      if (status) {
+        //inserisco messaggio
+        modernGUI.mloading.message.html(message)
+        modernGUI.mloading.gui.modal('show')
+      } else {
+        modernGUI.mloading.gui.modal('hide')
+      }
+    }, delay)
+  }
 
-        //assegno evento click bottone "ok"
-        modernGUI.malert.ok.off().on('click', function () {
-            modernGUI.malert.gui.modal('hide');
-        });
+  //endregion MODERN LOADING
 
-        //mostro gui
-        modernGUI.malert.gui.modal('show');
-    }
+  //region MODERN ALERT
+  /**
+   * Visualizza un'interfaccia di alert.
+   * @param {string} message Messaggio da visualizzare.
+   */
+  function malert (message) {
 
-    //endregion MODERN ALERT
+    //imposto messaggio
+    modernGUI.malert.message.html(message)
 
-    //region MODERN CONFIRM
-    /**
-     * Visualizza un'interfaccia di conferma.
-     * @param {string} message Messaggio da visualizzare.
-     * @param {*} callback Callback che restituisce true o false.
-     */
-    function mconfirm(message, callback) {
+    //assegno evento click bottone "ok"
+    modernGUI.malert.ok.off().on('click', function () {
+      modernGUI.malert.gui.modal('hide')
+    })
 
-        //imposto il messaggio
-        modernGUI.mconfirm.message.html(message);
+    //mostro gui
+    modernGUI.malert.gui.modal('show')
+  }
 
-        //evento bottone "ok"
-        modernGUI.mconfirm.ok.off().on('click', function () {
-            modernGUI.mconfirm.gui.modal('hide');
-            callback(true);
-        });
+  //endregion MODERN ALERT
 
-        //evento bottone "annulla"
-        modernGUI.mconfirm.cancel.off().on('click', function () {
-            modernGUI.mconfirm.gui.modal('hide');
-            callback(false);
-        });
+  //region MODERN CONFIRM
+  /**
+   * Visualizza un'interfaccia di conferma.
+   * @param {string} message Messaggio da visualizzare.
+   * @param {*} callback Callback che restituisce true o false.
+   */
+  function mconfirm (message, callback) {
 
-        //mostro la gui
-        modernGUI.mconfirm.gui.modal('show');
-    }
+    //imposto il messaggio
+    modernGUI.mconfirm.message.html(message)
 
-    //endregion MODERN CONFIRM
+    //evento bottone "ok"
+    modernGUI.mconfirm.ok.off().on('click', function () {
+      modernGUI.mconfirm.gui.modal('hide')
+      callback(true)
+    })
 
-    //region MODERN PROMPT
-    /**
-     * Visualizza un'interfaccia con immissione di testo.
-     * @param {string} message Messaggio da visualizzare.
-     * @param {*} callback Callback che restituisce lo stato e il testo.
-     */
-    function mprompt(message, callback) {
+    //evento bottone "annulla"
+    modernGUI.mconfirm.cancel.off().on('click', function () {
+      modernGUI.mconfirm.gui.modal('hide')
+      callback(false)
+    })
 
-        //imposto il messaggio
-        modernGUI.mprompt.message.html(message);
+    //mostro la gui
+    modernGUI.mconfirm.gui.modal('show')
+  }
 
-        //evento bottone "ok"
-        modernGUI.mprompt.ok.off().on('click', function () {
-            modernGUI.mprompt.gui.modal('hide');
-            callback(true, modernGUI.mprompt.input.val());
-            modernGUI.mprompt.input.val('');
-        });
+  //endregion MODERN CONFIRM
 
-        //evento bottone "annulla"
-        modernGUI.mprompt.cancel.off().on('click', function () {
-            modernGUI.mprompt.gui.modal('hide');
-            callback(false, modernGUI.mprompt.input.val());
-            modernGUI.mprompt.input.val('');
-        });
+  //region MODERN PROMPT
+  /**
+   * Visualizza un'interfaccia con immissione di testo.
+   * @param {string} message Messaggio da visualizzare.
+   * @param {*} callback Callback che restituisce lo stato e il testo.
+   */
+  function mprompt (message, callback) {
 
-        //evento input al click dei tasti
-        modernGUI.mprompt.input.off().on('keyup', function (e) {
-            if (e.keyCode === 13) {
-                modernGUI.mprompt.gui.modal('hide');
-                callback(true, modernGUI.mprompt.input.val());
-                modernGUI.mprompt.input.val('');
-            }
-        });
+    //imposto il messaggio
+    modernGUI.mprompt.message.html(message)
 
-        //evento alla visualizzazione della gui
-        modernGUI.mprompt.gui.on('shown.bs.modal', function () {
-            modernGUI.mprompt.input.focus();
-        });
+    //evento bottone "ok"
+    modernGUI.mprompt.ok.off().on('click', function () {
+      modernGUI.mprompt.gui.modal('hide')
+      callback(true, modernGUI.mprompt.input.val())
+      modernGUI.mprompt.input.val('')
+    })
 
-        //mostro la gui
-        modernGUI.mprompt.gui.modal('show');
-    }
+    //evento bottone "annulla"
+    modernGUI.mprompt.cancel.off().on('click', function () {
+      modernGUI.mprompt.gui.modal('hide')
+      callback(false, modernGUI.mprompt.input.val())
+      modernGUI.mprompt.input.val('')
+    })
 
-    //endregion MODERN PROMPT
+    //evento input al click dei tasti
+    modernGUI.mprompt.input.off().on('keyup', function (e) {
+      if (e.keyCode === 13) {
+        modernGUI.mprompt.gui.modal('hide')
+        callback(true, modernGUI.mprompt.input.val())
+        modernGUI.mprompt.input.val('')
+      }
+    })
+
+    //evento alla visualizzazione della gui
+    modernGUI.mprompt.gui.on('shown.bs.modal', function () {
+      modernGUI.mprompt.input.focus()
+    })
+
+    //mostro la gui
+    modernGUI.mprompt.gui.modal('show')
+  }
+
+  //endregion MODERN PROMPT
 
 </script>
