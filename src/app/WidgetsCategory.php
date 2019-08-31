@@ -11,17 +11,19 @@ namespace ikdev\ikpanel\app;
 
 use Illuminate\Database\Eloquent\Model;
 
-class WidgetsCategory extends Model {
-	protected $table = 'widgets_category';
-	protected $primaryKey = 'id';
-	protected $dates = ['created_at', 'updated_at'];
-	protected $fillable = ['option'];
-	public $incrementing = false;
-	public $timestamps = false;
-	
-	public function widgets() {
-		return $this->hasMany(Widgets::class, 'id_category', 'id');
-	}
-	
-	
+class WidgetsCategory extends Model
+{
+    public $incrementing = false;
+    public $timestamps = false;
+    protected $table = 'widgets_category';
+    protected $primaryKey = 'id';
+    protected $dates = ['created_at', 'updated_at'];
+    protected $fillable = ['option'];
+    
+    public function widgets()
+    {
+        return $this->hasMany(Widgets::class, 'id_category', 'id');
+    }
+    
+    
 }

@@ -7,9 +7,9 @@
  *
  */
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUserTable extends Migration
 {
@@ -21,18 +21,18 @@ class CreateUserTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->integer('id',true);
-            $table->string('name',50);
-            $table->string('surname',50);
+            $table->integer('id', true);
+            $table->string('name', 50);
+            $table->string('surname', 50);
             $table->string('email', 50)->unique();
             $table->integer('role');
-            $table->string('password',255);
+            $table->string('password', 255);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

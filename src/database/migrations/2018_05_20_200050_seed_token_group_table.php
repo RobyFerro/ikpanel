@@ -8,8 +8,6 @@
  */
 
 use ikdev\ikpanel\app\TokenGroup;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class SeedTokenGroupTable extends Migration
@@ -22,17 +20,17 @@ class SeedTokenGroupTable extends Migration
     public function up()
     {
         TokenGroup::insert([
-        	[
-        		'id'=>'USERS',
-		        'group_name'=>'Utenti'
-	        ],
+            [
+                'id' => 'USERS',
+                'group_name' => 'Utenti'
+            ],
             [
                 'id' => 'GENERAL_SETTINGS',
                 'group_name' => 'Generali'
             ]
         ]);
     }
-
+    
     /**
      * Reverse the migrations.
      *

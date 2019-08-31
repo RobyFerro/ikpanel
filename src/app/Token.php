@@ -28,60 +28,70 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-class Token extends Model {
-	
-	protected $table = 'token';
-	protected $primaryKey = 'id';
-	protected $dates = ['created_at', 'updated_at'];
-	public $incrementing = false;
-	public $keyType = 'string';
-	
-	public function roles() {
-		return $this->belongsToMany(Role::class, 'token_role', 'tokenid','roleid');
-	}
-	
-	public function group(){
-		return $this->belongsTo(TokenGroup::class, 'id_group','id');
-	}
-	
-	public function type(){
-		return $this->belongsTo(TokenType::class, 'id_type','id');
-	}
-	
-	public function menu(){
-		return $this->hasMany(Menu::class,'id_token','id');
-	}
-	
-	public function route(){
-		return $this->hasMany(RouteGroup::class,'id_token','id');
-	}
-	
-	
-	public function children() {
-		return $this->hasMany(Token::class, 'relation', 'id');
-	}
-	
-	public function parent() {
-		return $this->belongsTo(Token::class, 'relation', 'id');
-	}
-	
-	public static function getList(){
-		
-		$groups=TokenGroup::with(['token'=>function($query){
-			$query->whereNull('relation');}
-			])->get();
-		
-		foreach($groups as &$group) {
-			foreach($group->token as &$token) {
-				
-				$children = $token->children()
-				                  ->with('children')
-				                  ->get();
-				if(count($children) > 0) {
-					$token->children = $children;
-				}
-			}
-		}
-		return $groups;
-	}
+class Token extends Model
+{
+    
+    public $incrementing = false;
+    public $keyType = 'string';
+    protected $table = 'token';
+    protected $primaryKey = 'id';
+    protected $dates = ['created_at', 'updated_at'];
+    
+    public static function getList()
+    {
+        
+        $groups = TokenGroup::with([
+            'token' => function ($query) {
+                $query->whereNull('relation');
+            }
+        ])->get();
+        
+        foreach ($groups as &$group) {
+            foreach ($group->token as &$token) {
+                
+                $children = $token->children()
+                    ->with('children')
+                    ->get();
+                if (count($children) > 0) {
+                    $token->children = $children;
+                }
+            }
+        }
+        return $groups;
+    }
+    
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'token_role', 'tokenid', 'roleid');
+    }
+    
+    public function group()
+    {
+        return $this->belongsTo(TokenGroup::class, 'id_group', 'id');
+    }
+    
+    public function type()
+    {
+        return $this->belongsTo(TokenType::class, 'id_type', 'id');
+    }
+    
+    public function menu()
+    {
+        return $this->hasMany(Menu::class, 'id_token', 'id');
+    }
+    
+    public function route()
+    {
+        return $this->hasMany(RouteGroup::class, 'id_token', 'id');
+    }
+    
+    public function children()
+    {
+        return $this->hasMany(Token::class, 'relation', 'id');
+    }
+    
+    public function parent()
+    {
+        return $this->belongsTo(Token::class, 'relation', 'id');
+    }
 }

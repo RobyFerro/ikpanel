@@ -14,18 +14,21 @@ use ikdev\ikpanel\app\Users;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Notification;
 
-class SendFoundExceptionNotification implements ShouldQueue {
-	
-	protected $users;
-	
-	public function __construct(Users $users) {
-		$this->users = $users->where('report_exceptions', true)->get();
-	}
-	
-	public function handle(FoundExceptions $event) {
-		if ($this->users->count() !== 0) {
-			Notification::send($this->users, new ReportException($event->error));
-		}
-	}
-	
+class SendFoundExceptionNotification implements ShouldQueue
+{
+    
+    protected $users;
+    
+    public function __construct(Users $users)
+    {
+        $this->users = $users->where('report_exceptions', true)->get();
+    }
+    
+    public function handle(FoundExceptions $event)
+    {
+        if ($this->users->count() !== 0) {
+            Notification::send($this->users, new ReportException($event->error));
+        }
+    }
+    
 }

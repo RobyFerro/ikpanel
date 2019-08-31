@@ -10,19 +10,21 @@
 namespace ikdev\ikpanel\app\Providers;
 
 use ikdev\ikpanel\app\Events\FoundExceptions;
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use ikdev\ikpanel\app\Listeners\SendFoundExceptionNotification;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
-class IkpanelEventServiceProvider extends ServiceProvider {
-	
-	protected $listen = [
-		FoundExceptions::class => [
-			SendFoundExceptionNotification::class
-		]
-	];
-	
-	public function boot() {
-		parent::boot();
-	}
-	
+class IkpanelEventServiceProvider extends ServiceProvider
+{
+    
+    protected $listen = [
+        FoundExceptions::class => [
+            SendFoundExceptionNotification::class
+        ]
+    ];
+    
+    public function boot()
+    {
+        parent::boot();
+    }
+    
 }

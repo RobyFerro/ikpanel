@@ -23,37 +23,37 @@ class RoleEdit extends FormRequest
     {
         return true;
     }
-	
-	/**
-	 * Get the validation rules that apply to the request.
-	 *
-	 * @param Request $request
-	 * @return array
-	 */
+    
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @param  Request  $request
+     * @return array
+     */
     public function rules(Request $request)
     {
-    	$rules=[];
-	
-	    $rules['role_id'] = 'exists:role,id';
-	    $rules['role_name'] = 'required|min:1|max:50';
-	    $rules['permissions.*']='exists:token,id';
-    	
+        $rules = [];
+    
+        $rules['role_id'] = 'exists:role,id';
+        $rules['role_name'] = 'required|min:1|max:50';
+        $rules['permissions.*'] = 'exists:token,id';
+        
         return $rules;
     }
-	
-	/**
-	 * Error messages
-	 * @return array
-	 */
+    
+    /**
+     * Error messages
+     * @return array
+     */
     public function messages()
     {
         return [
             "role_id.exists" => "L'id del ruolo non è valido.",
-
+    
             "role_name.required" => "Il nome è necessario.",
             "role_name.min" => "Il nome deve avere minimo 1 carattere.",
             "role_name.max" => "Il nome deve avere massimo 50 caratteri.",
-
+    
             "permissions.*.exists" => "I permessi inseriti no sono validi."
         ];
     }

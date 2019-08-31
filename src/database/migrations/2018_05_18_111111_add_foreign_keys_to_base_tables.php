@@ -7,9 +7,9 @@
  *
  */
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddForeignKeysToBaseTables extends Migration
 {
@@ -20,30 +20,30 @@ class AddForeignKeysToBaseTables extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table){
+        Schema::table('users', function (Blueprint $table) {
             $table->foreign('role')->references('id')->on('role');
         });
-
-        Schema::table('menu', function (Blueprint $table){
+    
+        Schema::table('menu', function (Blueprint $table) {
             $table->foreign('id_token')->references('id')->on('token');
         });
-
-        Schema::table('token', function (Blueprint $table){
+    
+        Schema::table('token', function (Blueprint $table) {
             $table->foreign('id_group')->references('id')->on('token_group');
             $table->foreign('id_type')->references('id')->on('token_type');
         });
-
-        Schema::table('token_role', function (Blueprint $table){
+    
+        Schema::table('token_role', function (Blueprint $table) {
             $table->foreign('tokenid')->references('id')->on('token');
             $table->foreign('roleid')->references('id')->on('role');
         });
-	
-	    Schema::table('route_group', function (Blueprint $table){
-		    $table->foreign('id_token')->references('id')->on('token');
-	    });
-
+    
+        Schema::table('route_group', function (Blueprint $table) {
+            $table->foreign('id_token')->references('id')->on('token');
+        });
+        
     }
-
+    
     /**
      * Reverse the migrations.
      *
@@ -51,26 +51,26 @@ class AddForeignKeysToBaseTables extends Migration
      */
     public function down()
     {
-        Schema::table('users', function(Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->dropForeign('users_role_foreign');
         });
-
-        Schema::table('menu', function(Blueprint $table) {
+    
+        Schema::table('menu', function (Blueprint $table) {
             $table->dropForeign('menu_id_token_foreign');
         });
-
-        Schema::table('token', function(Blueprint $table) {
+    
+        Schema::table('token', function (Blueprint $table) {
             $table->dropForeign('token_id_group_foreign');
             $table->dropForeign('token_id_type_foreign');
         });
-
-        Schema::table('token_role', function(Blueprint $table) {
+    
+        Schema::table('token_role', function (Blueprint $table) {
             $table->dropForeign('token_role_tokenid_foreign');
             $table->dropForeign('token_role_roleid_foreign');
         });
-	
-	    Schema::table('route_group', function(Blueprint $table) {
-		    $table->dropForeign('route_group_id_token_foreign');
-	    });
+    
+        Schema::table('route_group', function (Blueprint $table) {
+            $table->dropForeign('route_group_id_token_foreign');
+        });
     }
 }

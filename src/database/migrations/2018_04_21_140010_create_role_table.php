@@ -7,9 +7,9 @@
  *
  */
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateRoleTable extends Migration
 {
@@ -27,7 +27,7 @@ class CreateRoleTable extends Migration
             $table->softDeletes();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

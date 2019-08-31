@@ -14,21 +14,25 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
 
-class FoundExceptions implements ShouldBroadcast {
-	use SerializesModels;
-	
-	public $error;
-	
-	public function __construct(Errors $errors) {
-		$this->error = $errors;
-	}
-	
-	public function broadcastOn() {
-		return new PrivateChannel('exceptions');
-	}
-	
-	public function broadcastAs() {
-		return 'new';
-	}
-	
+class FoundExceptions implements ShouldBroadcast
+{
+    use SerializesModels;
+    
+    public $error;
+    
+    public function __construct(Errors $errors)
+    {
+        $this->error = $errors;
+    }
+    
+    public function broadcastOn()
+    {
+        return new PrivateChannel('exceptions');
+    }
+    
+    public function broadcastAs()
+    {
+        return 'new';
+    }
+    
 }

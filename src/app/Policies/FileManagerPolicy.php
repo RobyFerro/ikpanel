@@ -13,10 +13,12 @@ namespace ikdev\ikpanel\app\Policies;
 use ikdev\ikpanel\app\Users;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class FileManagerPolicy {
-	use HandlesAuthorization;
-	
-	public function view(Users $users) {
-		return $users->hasToken('SHOW_SETTINGS');
-	}
+class FileManagerPolicy
+{
+    use HandlesAuthorization;
+    
+    public function view(Users $users)
+    {
+        return $users->hasToken('SHOW_SETTINGS');
+    }
 }

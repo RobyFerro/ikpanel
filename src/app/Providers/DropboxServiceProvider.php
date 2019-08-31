@@ -10,23 +10,22 @@
 namespace ikdev\ikpanel\app\Providers;
 
 
-use Storage;
-use League\Flysystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
-use Spatie\Dropbox\Client as DropboxClient;
-use Spatie\FlysystemDropbox\DropboxAdapter;
+use Storage;
 
-class DropboxServiceProvider extends ServiceProvider {
-	
-	public function boot() {
-		// Disabled
-		/*Storage::extends('dropbox', function($app, $config) {
-			$client = new DropboxClient(
-				$config['authorization_token']
-			);
-			
-			return new Filesystem(new DropboxAdapter($client));
-		});*/
-	}
-	
+class DropboxServiceProvider extends ServiceProvider
+{
+    
+    public function boot()
+    {
+        // Disabled
+        /*Storage::extends('dropbox', function($app, $config) {
+            $client = new DropboxClient(
+                $config['authorization_token']
+            );
+            
+            return new Filesystem(new DropboxAdapter($client));
+        });*/
+    }
+    
 }

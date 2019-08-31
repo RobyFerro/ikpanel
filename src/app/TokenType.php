@@ -26,15 +26,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-class TokenType extends Model {
-	
-	protected $table = 'token_type';
-	protected $primaryKey = 'id';
-	protected $dates = ['created_at', 'updated_at'];
-	public $incrementing = false;
-	public $keyType = 'string';
-	
-	public function token() {
-		return $this->hasMany(Token::class, 'id_type', 'id');
-	}
+class TokenType extends Model
+{
+    
+    public $incrementing = false;
+    public $keyType = 'string';
+    protected $table = 'token_type';
+    protected $primaryKey = 'id';
+    protected $dates = ['created_at', 'updated_at'];
+    
+    public function token()
+    {
+        return $this->hasMany(Token::class, 'id_type', 'id');
+    }
 }

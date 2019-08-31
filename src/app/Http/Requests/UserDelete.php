@@ -23,7 +23,7 @@ class UserDelete extends FormRequest
     {
         return true;
     }
-
+    
     /**
      * Get the validation rules that apply to the request.
      *
@@ -35,7 +35,7 @@ class UserDelete extends FormRequest
             "id" => "exists:users,id"
         ];
     }
-
+    
     public function messages()
     {
         return [

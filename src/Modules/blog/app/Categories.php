@@ -11,28 +11,31 @@ namespace ikdev\ikpanel\Modules\blog\app;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Categories extends Model {
-	
-	protected $table = 'blog_categories';
-	protected $primaryKey = 'id';
-	protected $dates = ['created_at', 'updated_at'];
-	protected $fillable = ['name', 'keywords', 'description'];
-	
-	use SoftDeletes;
-	
-	/**
-	 * Get all related posts
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-	 */
-	public function posts() {
-		return $this->belongsToMany(
-			Post::class,
-			'post_category',
-			'id_category',
-			'id_post');
-	}
-	
-	
+class Categories extends Model
+{
+    
+    protected $table = 'blog_categories';
+    protected $primaryKey = 'id';
+    protected $dates = ['created_at', 'updated_at'];
+    protected $fillable = ['name', 'keywords', 'description'];
+    
+    use SoftDeletes;
+    
+    /**
+     * Get all related posts
+     * @return BelongsToMany
+     */
+    public function posts()
+    {
+        return $this->belongsToMany(
+            Post::class,
+            'post_category',
+            'id_category',
+            'id_post');
+    }
+    
+    
 }

@@ -8,8 +8,6 @@
  */
 
 use ikdev\ikpanel\app\TokenType;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class SeedTokenTypeTable extends Migration
@@ -22,11 +20,11 @@ class SeedTokenTypeTable extends Migration
     public function up()
     {
         TokenType::insert([
-        	['id'=>'VIEW'],
-        	['id'=>'KEY']
+            ['id' => 'VIEW'],
+            ['id' => 'KEY']
         ]);
     }
-
+    
     /**
      * Reverse the migrations.
      *

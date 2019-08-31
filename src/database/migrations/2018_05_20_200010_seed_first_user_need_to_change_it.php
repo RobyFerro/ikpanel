@@ -23,14 +23,14 @@ class SeedFirstUserNeedToChangeIt extends Migration
     {
         $mod_users = new Users();
         $mod_role = new Role();
-
+    
         try {
             $mod_role->group_name = 'Amministratore';
             $mod_role->save();
         } catch (QueryException $e) {
             throw $e;
         } // try
-
+    
         try {
             $mod_users->name = 'Super';
             $mod_users->surname = 'User';
@@ -41,9 +41,9 @@ class SeedFirstUserNeedToChangeIt extends Migration
         } catch (QueryException $e) {
             throw $e;
         } // try
-
+    
     }
-
+    
     /**
      * Reverse the migrations.
      *

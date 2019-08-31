@@ -11,42 +11,41 @@ namespace ikdev\ikpanel\Http\Middleware;
 
 use Closure;
 use ikdev\ikpanel\app\RouteGroup;
-use Illuminate\Database\QueryException;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 
 class AuthMiddleware
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  Request  $request
+     * @param  Closure  $next
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-
+    
         $mod_route_group = new RouteGroup();
-        if(!Auth::check()){
+        if (!Auth::check()) {
             return redirect(env('IKPANEL_URL').'/login');
         } // if
-	
-	    /*try {
-			$route_details = $mod_route_group->where('name','=', Route::current()->getName())
-				->first();
-		} catch (QueryException $e) {
-			throw $e;
-		} // try
+    
+        /*try {
+            $route_details = $mod_route_group->where('name','=', Route::current()->getName())
+                ->first();
+        } catch (QueryException $e) {
+            throw $e;
+        } // try
 
-		if(!is_null($route_details)){
+        if(!is_null($route_details)){
 
-			if(!Auth::user()->hasToken($route_details->id_token)){
-				return redirect(env('IKPANEL_URL'));
-			} // if
+            if(!Auth::user()->hasToken($route_details->id_token)){
+                return redirect(env('IKPANEL_URL'));
+            } // if
 
-		} // if*/
-
+        } // if*/
+        
         return $next($request);
     }
 }

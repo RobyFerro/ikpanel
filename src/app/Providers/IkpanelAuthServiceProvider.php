@@ -9,45 +9,46 @@
 
 namespace ikdev\ikpanel\app\Providers;
 
+use App\Providers\AuthServiceProvider;
 use ikdev\ikpanel\app\Policies\ExceptionPolicy;
-use ikdev\ikpanel\app\Policies\FileManagerPolicy;
 use ikdev\ikpanel\app\Policies\LogsPolicy;
 use ikdev\ikpanel\app\Policies\RolesPolicy;
 use ikdev\ikpanel\app\Policies\UserPolicy;
 use ikdev\ikpanel\app\Users;
 use ikdev\ikpanel\Modules\blog\app\Policies\ArticlesPolicy;
 use ikdev\ikpanel\Modules\blog\app\Policies\CategoriesPolicy;
-use Illuminate\Support\Facades\Gate;
-use App\Providers\AuthServiceProvider;
 use ikdev\ikpanel\Modules\gallery\app\Policies\CategoriesPolicy as GalleryCategoryPolicy;
 use ikdev\ikpanel\Modules\gallery\app\Policies\ImagesPolicy;
+use Illuminate\Support\Facades\Gate;
 
-class IkpanelAuthServiceProvider extends AuthServiceProvider {
-	
-	protected $policies = [
-		Users::class => UserPolicy::class
-	];
-	
-	public function boot() {
-		$this->registerPolicies();
-		
-		Gate::resource('users', UserPolicy::class);
-		Gate::resource('roles', RolesPolicy::class);
-		Gate::resource('logs', LogsPolicy::class);
-		Gate::define('file-manager.view', 'ikdev\ikpanel\app\Policies\FileManagerPolicy@view');
-		
-		// BLOG POLICY
-		Gate::resource('blog-articles', ArticlesPolicy::class);
-		Gate::resource('blog-categories', CategoriesPolicy::class);
-		
-		// GALLERY POLICY
-		Gate::resource('gallery-categories', GalleryCategoryPolicy::class);
-		Gate::resource('gallery-images', ImagesPolicy::class);
-		
-		// EXCEPTION POLICY
-		Gate::resource('exceptions', ExceptionPolicy::class);
-		//Todo: with resources gate the restore method does not work
-		Gate::define('exceptions.restore', 'ikdev\ikpanel\app\Policies\ExceptionPolicy@restore');
-	}
-	
+class IkpanelAuthServiceProvider extends AuthServiceProvider
+{
+    
+    protected $policies = [
+        Users::class => UserPolicy::class
+    ];
+    
+    public function boot()
+    {
+        $this->registerPolicies();
+        
+        Gate::resource('users', UserPolicy::class);
+        Gate::resource('roles', RolesPolicy::class);
+        Gate::resource('logs', LogsPolicy::class);
+        Gate::define('file-manager.view', 'ikdev\ikpanel\app\Policies\FileManagerPolicy@view');
+        
+        // BLOG POLICY
+        Gate::resource('blog-articles', ArticlesPolicy::class);
+        Gate::resource('blog-categories', CategoriesPolicy::class);
+        
+        // GALLERY POLICY
+        Gate::resource('gallery-categories', GalleryCategoryPolicy::class);
+        Gate::resource('gallery-images', ImagesPolicy::class);
+        
+        // EXCEPTION POLICY
+        Gate::resource('exceptions', ExceptionPolicy::class);
+        //Todo: with resources gate the restore method does not work
+        Gate::define('exceptions.restore', 'ikdev\ikpanel\app\Policies\ExceptionPolicy@restore');
+    }
+    
 }

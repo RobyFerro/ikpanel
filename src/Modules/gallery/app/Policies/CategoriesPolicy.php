@@ -13,30 +13,37 @@ namespace ikdev\ikpanel\Modules\gallery\app\Policies;
 use ikdev\ikpanel\app\Users;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class CategoriesPolicy {
-	use HandlesAuthorization;
-	
-	public function view(Users $user) {
-		return $user->hasToken('SHOW_GALLERY');
-	}
-	
-	public function create(Users $user) {
-		return $user->hasToken('SHOW_GALLERY');
-	}
-	
-	public function update(Users $user) {
-		return $user->hasToken('SHOW_GALLERY');
-	}
-	
-	public function delete(Users $user) {
-		return $user->hasToken('SHOW_GALLERY');
-	}
-	
-	public function restore(Users $user) {
-		return $user->hasToken('SHOW_GALLERY');
-	}
-	
-	public function forceDelete(Users $user) {
-		return $user->hasToken('SHOW_GALLERY');
-	}
+class CategoriesPolicy
+{
+    use HandlesAuthorization;
+    
+    public function view(Users $user)
+    {
+        return $user->hasToken('SHOW_GALLERY');
+    }
+    
+    public function create(Users $user)
+    {
+        return $user->hasToken('SHOW_GALLERY');
+    }
+    
+    public function update(Users $user)
+    {
+        return $user->hasToken('SHOW_GALLERY');
+    }
+    
+    public function delete(Users $user)
+    {
+        return $user->hasToken('SHOW_GALLERY');
+    }
+    
+    public function restore(Users $user)
+    {
+        return $user->hasToken('SHOW_GALLERY');
+    }
+    
+    public function forceDelete(Users $user)
+    {
+        return $user->hasToken('SHOW_GALLERY');
+    }
 }

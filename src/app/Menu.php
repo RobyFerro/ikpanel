@@ -25,25 +25,29 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-class Menu extends Model {
-	
-	protected $table = 'menu';
-	protected $primaryKey = 'id';
-	protected $dates = ['created_at', 'updated_at'];
-	public $incrementing = false;
-	public $keyType = 'string';
-	
-	public function parent() {
-		return $this->belongsTo(Menu::class, 'relation', 'id');
-	}
-	
-	public function children() {
-		return $this->hasMany(Menu::class, 'relation', 'id');
-	}
-	
-	public function token(){
-		return $this->hasOne(Token::class, 'id','id_token');
-	}
-	
+class Menu extends Model
+{
+    
+    public $incrementing = false;
+    public $keyType = 'string';
+    protected $table = 'menu';
+    protected $primaryKey = 'id';
+    protected $dates = ['created_at', 'updated_at'];
+    
+    public function parent()
+    {
+        return $this->belongsTo(Menu::class, 'relation', 'id');
+    }
+    
+    public function children()
+    {
+        return $this->hasMany(Menu::class, 'relation', 'id');
+    }
+    
+    public function token()
+    {
+        return $this->hasOne(Token::class, 'id', 'id_token');
+    }
+    
 }
 

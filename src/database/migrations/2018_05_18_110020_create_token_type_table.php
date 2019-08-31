@@ -7,9 +7,9 @@
  *
  */
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTokenTypeTable extends Migration
 {
@@ -21,11 +21,11 @@ class CreateTokenTypeTable extends Migration
     public function up()
     {
         Schema::create('token_type', function (Blueprint $table) {
-            $table->string('id',64)->primary();
+            $table->string('id', 64)->primary();
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

@@ -29,13 +29,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-class RouteGroup extends Model {
-	
-	protected $table = 'route_group';
-	protected $primaryKey = 'id';
-	protected $dates = ['created_at', 'updated_at'];
-	
-	public function token() {
-		return $this->belongsTo(Token::class, 'id', 'id_token');
-	}
+class RouteGroup extends Model
+{
+    
+    protected $table = 'route_group';
+    protected $primaryKey = 'id';
+    protected $dates = ['created_at', 'updated_at'];
+    
+    public function token()
+    {
+        return $this->belongsTo(Token::class, 'id', 'id_token');
+    }
 }

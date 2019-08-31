@@ -9,28 +9,31 @@
 
 namespace ikdev\ikpanel\tests\Feature;
 
-use Tests\TestCase;
-use Spatie\Dropbox\Client;
+use Exception;
 use GuzzleHttp\Client as GuzzleClient;
+use Spatie\Dropbox\Client;
+use Tests\TestCase;
 
-class DropboxStorageTest extends TestCase {
-	
-	/**
-	 * Test Dropbox connection
-	 * @throws \Exception
-	 */
-	public function testDropboxConnection() {
-		
-		$guzzleClient = new GuzzleClient(['verify' => false]);
-		$client = new Client(env('DROPBOX_ACCESS_TOKEN'), $guzzleClient);
-		
-		try {
-			$list = $client->getAccountInfo();
-		} catch (\Exception $e) {
-			throw $e;
-		} // try
-		
-		$this->assertNotEmpty($list);
-	}
-	
+class DropboxStorageTest extends TestCase
+{
+    
+    /**
+     * Test Dropbox connection
+     * @throws Exception
+     */
+    public function testDropboxConnection()
+    {
+        
+        $guzzleClient = new GuzzleClient(['verify' => false]);
+        $client = new Client(env('DROPBOX_ACCESS_TOKEN'), $guzzleClient);
+        
+        try {
+            $list = $client->getAccountInfo();
+        } catch (Exception $e) {
+            throw $e;
+        } // try
+        
+        $this->assertNotEmpty($list);
+    }
+    
 }
