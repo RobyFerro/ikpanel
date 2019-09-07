@@ -9,14 +9,13 @@
 
 namespace ikdev\ikpanel;
 
-use ikdev\ikpanel\app\Classes\Exception\ExceptionReporting;
-use ikdev\ikpanel\app\Exception\IkpanelExceptionHandler;
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
-use Storage;
+use Illuminate\Support\Facades\Broadcast;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use ikdev\ikpanel\app\Exception\IkpanelExceptionHandler as Handler;
+use ikdev\ikpanel\app\Classes\Exception\ExceptionReporting as Report;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class IkpanelServiceProvider extends ServiceProvider
 {
@@ -42,7 +41,7 @@ class IkpanelServiceProvider extends ServiceProvider
      */
     private function loadIkpanel()
     {
-        $this->app->bind(ExceptionHandler::class, IkpanelExceptionHandler::class);
+        $this->app->bind(ExceptionHandler::class, Handler::class);
         $this->publishes([
             __DIR__.'/public' => public_path('ikpanel/'),
             __DIR__.'/resources/assets' => resource_path('assets/'),
@@ -119,7 +118,7 @@ class IkpanelServiceProvider extends ServiceProvider
         }
         
         $this->app->bind('PanelException', function () {
-            return new ExceptionReporting();
+            return new Report();
         });
     }
     
