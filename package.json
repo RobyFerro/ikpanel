@@ -59,7 +59,7 @@
 		"handlebars": "^4.1.2",
 		"handlebars-helpers": "^0.10.0",
 		"handlebars-loader": "^1.7.1",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"jquery-maskmoney": "^3.0.2",
 		"jquery.typewatch": "^3.0.0",
 		"laravel-echo": "^1.5.4",
